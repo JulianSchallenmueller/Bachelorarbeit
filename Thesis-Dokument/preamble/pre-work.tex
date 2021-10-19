@@ -1,0 +1,56 @@
+% ------------------------------------------------------------------------
+% LaTeX - Preambel ******************************************************
+% ------------------------------------------------------------------------
+% pre-work
+% ========================================================================
+% % ToDo kennzeichnen
+\newcommand{\workTodo}[1]{\textcolor{red}{todo: #1}}
+
+% % F�r Datum und Zeit in Fusszeile
+% % !!!Inhalt bei Fertigstellung der Arbeit l�schen
+\newcommand{\workMarkDateTime}{\workTodo{\today{} - \thistime\ Uhr}}
+
+% % Alle Namen werden im Titel und im hyperref-Paket eingetragen
+% % !!! Ueberall f�r <Wert> das Entsprechende eintragen
+
+ % <Typ> Studienarbeit, Dipolmarbeit, Studienarbeit oder Bachlor-Abschlussarbeit
+\newcommand{\workTyp}{{Bachelorarbeit}\xspace}
+
+ % <Titel> der Arbeit
+\newcommand{\workTitel}{CSP Evaluierung auf Basis von IaC Unterstützung und Metriken}
+
+ % <Studiengang> z.B. Kommunikationstechnik
+\newcommand{\workStudiengang}{{Softwaretechnik und Medieninformatik}\xspace}
+
+% <Semester> mit Jahr z.B. Sommersemester 2008  
+\newcommand{\workSemester}{{Wintersemester 2021/2022}\xspace}
+
+% <Name> des Studenten
+\newcommand{\workNameStudent}{{Julian Schallenmüller}\xspace}
+
+% <Pruefer> Name des pr�fenden (betreuenden) Professor an der Hochschule
+\newcommand{\workPruefer}{{Prof. Dr.-Ing. Kai Warendorf}\xspace} 
+
+
+% %%% Nur bei Abschluss-Arbeiten
+
+% <Datum> der Abgabe der Arbeit (Eidesstatliche Erkl�rung)
+\newcommand{\workDatum}{\today\xspace}
+
+% <Zweitpr�fer>
+\newcommand{\workZweitPruefer}{{Prof. Dr. rer. nat. Mirko Sonntag}\xspace}
+
+% <Zeitraum>
+\newcommand{\workZeitraum}{{15.10.2021 - 15.01.2022}\xspace}
+
+
+% %%% Nur bei Industrie-Arbeiten:
+
+% <Firma>
+\newcommand{\workFirma}{{Noavtec Consulting GmbH}\xspace}
+
+% <Betreuer in der Firma>
+\newcommand{\workBetreuer}{{Dipl.-Ing. (BA) Matthias Häussler}\xspace}
+
+% Firmenlogo Name hier anpassen, Gr��e (wenn m�glich) nicht �ndern
+\newcommand{\workFirmenLogo}{\includegraphics[width=5cm]{fig/aa-titel/novatec-logo.eps}} 
