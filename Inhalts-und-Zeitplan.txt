@@ -4,6 +4,8 @@ Klärung mit Prof. Warendorf und Prof. Sonntag bezüglich Drucken der Arbeit und
 
 Motivation/Einleitungskapitel schreiben
 
+------------ bis 25.10 -------------
+
 Inhalt für technische Grundlagen Kapitel definieren
 -Was ist Cloud Computing
 -Was ist DevOps?
@@ -17,23 +19,35 @@ Inhalt für technische Grundlagen Kapitel definieren
 
 Kapitel Technische Grundlagen schreiben
 
+----------- bis 1.11 -------------
+
 Stand der Technik?
 -Was wird deployed, wie schnell im Vergleich
 
 Ziel und Planung der praktischen Umsetzung schreiben
 
+---------- bis 8.11 ----------------
+
 Ausarbeitung Vergleichskriterien
 - Aspekte der ISO Norm Softwarequalität heranziehen?
+
+------------ bis 15.11 ---------------
 
 Einarbeitung Azure
 
 Deployment von bestehendem Repo
 
+----------- bis 22.11 -----------------
+
 Deployment GCP
+
+---------- bis 29.11 -------------------
 
 Einarbeitung AWS
 
 Deployment AWS
+
+---------- bis 13.12 ----------------
 
 Weitere Vergleichsaspekte?
 - Wie einheitlich sind die Terraform provider
@@ -43,11 +57,15 @@ Resultat der Vergleiche
 Mögliche zusätzliche Erkenntnisse beschreiben
 (- Kosten?)
 
+---------- bis 20.12 ---------------
+
 (Aktuelle Entwicklungen?)
 
 Fazit und Ausblickskapitel schreiben
 
-Immer wieder Korrektur lesen lassen!
+----------- bis 27.12 --------------
+
+Remainder: Immer wieder Korrektur lesen lassen!
 
 26.11 Abgabe IT-Innovationen Artikel
 - Abbildung des Kontexts des Ziels der Arbeit!
