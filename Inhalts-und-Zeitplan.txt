@@ -1,0 +1,63 @@
+21.10 Heute
+
+Klärung mit Prof. Warendorf und Prof. Sonntag bezüglich Drucken der Arbeit und wissenschaftliche Vertiefung
+
+Motivation/Einleitungskapitel schreiben
+
+Inhalt für technische Grundlagen Kapitel definieren
+-Was ist Cloud Computing
+-Was ist DevOps?
+--Was ist Gitops?
+-Warum Cloud Computing?
+-Was sind die CSP Markführer
+-Was ist Infrastructure as Code
+-Warum IaC?
+-Terraform
+-Warum Terraform? / Was gibt es noch/Alternativen Absteckung Terraform Scope/Wo fängt IaC an /hört IaC auf
+
+Kapitel Technische Grundlagen schreiben
+
+Stand der Technik?
+-Was wird deployed, wie schnell im Vergleich
+
+Ziel und Planung der praktischen Umsetzung schreiben
+
+Ausarbeitung Vergleichskriterien
+- Aspekte der ISO Norm Softwarequalität heranziehen?
+
+Einarbeitung Azure
+
+Deployment von bestehendem Repo
+
+Deployment GCP
+
+Einarbeitung AWS
+
+Deployment AWS
+
+Weitere Vergleichsaspekte?
+- Wie einheitlich sind die Terraform provider
+
+Resultat der Vergleiche
+
+Mögliche zusätzliche Erkenntnisse beschreiben
+(- Kosten?)
+
+(Aktuelle Entwicklungen?)
+
+Fazit und Ausblickskapitel schreiben
+
+Immer wieder Korrektur lesen lassen!
+
+26.11 Abgabe IT-Innovationen Artikel
+
+8.12 17:00 Uhr IT-Kolloquium
+
+10.1 (???) Wissenschaftliche Vertiefung
+
+15.1 Finaler Abgabetermin
+
+19.1 17:00 Uhr IT-Kolloquium
+
+IT Kolloquium eintragen und hochladen
+
