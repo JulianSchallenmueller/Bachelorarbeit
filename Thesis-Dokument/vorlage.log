@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  21 OCT 2021 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  26 OCT 2021 13:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1354,15 +1354,15 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface .
 
-Package hyperref Info: Anchor `section.1.1' on input line 6.
-Package hyperref Info: bookmark on input line 6:
+Package hyperref Info: Anchor `section.1.1' on input line 4.
+Package hyperref Info: bookmark on input line 4:
 (hyperref)             thecounter {1.1}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.1.1}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.1.2' on input line 10.
-Package hyperref Info: bookmark on input line 10:
+Package hyperref Info: Anchor `section.1.2' on input line 22.
+Package hyperref Info: bookmark on input line 22:
 (hyperref)             thecounter {1.2}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.1.2}
@@ -1376,6 +1376,8 @@ Package hyperref Info: Anchor `page.1' on input line 50.
 
 
 ]
+Package hyperref Info: Anchor `page.2' on input line 50.
+ [2]
 \openout2 = `chapters/ch-hauptteil.aux'.
 
  (./chapters/ch-hauptteil.tex
@@ -1472,8 +1474,8 @@ Package hyperref Info: bookmark on input line 28:
 (hyperref)             reference {section.2.4}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `page.2' on input line 30.
-[2
+Package hyperref Info: Anchor `page.3' on input line 30.
+[3
 
 
 
@@ -1532,8 +1534,8 @@ Package hyperref Info: bookmark on input line 46:
 (hyperref)             type {toc}.
 Package hyperref Info: Reference (cite) `cite.doc:stz' on input line 49.
 Package hyperref Info: Reference (cite) `cite.doc:gun' on input line 49.
-Package hyperref Info: Anchor `page.3' on input line 51.
-[3
+Package hyperref Info: Anchor `page.4' on input line 51.
+[4
 
 
 Package `hyperref' Info: End of reference (cite) `cite.doc:stz', line 49.
@@ -1577,8 +1579,8 @@ Package hyperref Info: bookmark on input line 60:
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 )
-Package hyperref Info: Anchor `page.4' on input line 51.
- [4
+Package hyperref Info: Anchor `page.5' on input line 51.
+ [5
 
 
 ]
@@ -1623,8 +1625,8 @@ Package hyperref Info: bookmark on input line 11:
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 )
-Package hyperref Info: Anchor `page.5' on input line 52.
- [5
+Package hyperref Info: Anchor `page.6' on input line 52.
+ [6
 
 
 
@@ -1643,8 +1645,8 @@ Package hyperref Info: bookmark on input line 1:
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 )
-Package hyperref Info: Anchor `page.6' on input line 56.
- [6
+Package hyperref Info: Anchor `page.7' on input line 56.
+ [7
 
 
 
@@ -1670,8 +1672,8 @@ Package caption Warning: Unused \captionsetup[subfloat] on input line 375.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
-Package hyperref Info: Anchor `page.7' on input line 65.
-[7
+Package hyperref Info: Anchor `page.8' on input line 65.
+[8
 
 
 
@@ -1686,18 +1688,18 @@ Package rerunfilecheck Info: File `vorlage.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19140 strings out of 483057
- 341841 string characters out of 5962301
+ 19141 strings out of 483057
+ 341847 string characters out of 5962301
  867887 words of memory out of 5000000
  33632 multiletter control sequences out of 15000+600000
  592979 words of font info for 66 fonts, out of 8000000 for 9000
  60 hyphenation exceptions out of 8191
  56i,20n,89p,10155b,860s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on vorlage.pdf (17 pages, 271187 bytes).
+Output written on vorlage.pdf (18 pages, 276368 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 339 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
+ 64 named destinations out of 1000 (max. 500000)
  291 words of extra memory for PDF output out of 10000 (max. 10000000)
 
