@@ -365,6 +365,10 @@ INPUT chapters/ch-einleitung.tex
 OUTPUT chapters/ch-hauptteil.aux
 INPUT chapters/ch-hauptteil.tex
 INPUT chapters/ch-hauptteil.tex
+INPUT fig/ch-hauptteil/Service-Models.png
+INPUT ./fig/ch-hauptteil/Service-Models.png
+INPUT ./fig/ch-hauptteil/Service-Models.png
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx10.tfm
 OUTPUT chapters/ch-schluss.aux
 INPUT chapters/ch-schluss.tex
 INPUT chapters/ch-schluss.tex
@@ -394,6 +398,8 @@ INPUT chapters/ch-zz-anhang.aux
 INPUT ./vorlage.out
 INPUT ./vorlage.out
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmri12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmro12.pfb
