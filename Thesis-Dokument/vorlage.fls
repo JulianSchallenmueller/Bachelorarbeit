@@ -377,6 +377,9 @@ INPUT ./fig/hauptteil/CIS_Q220.jpg
 INPUT fig/hauptteil/Gartner-Magic-Quadrant.png
 INPUT ./fig/hauptteil/Gartner-Magic-Quadrant.png
 INPUT ./fig/hauptteil/Gartner-Magic-Quadrant.png
+INPUT fig/hauptteil/Tabelle_1-2_IaC.png
+INPUT ./fig/hauptteil/Tabelle_1-2_IaC.png
+INPUT ./fig/hauptteil/Tabelle_1-2_IaC.png
 OUTPUT chapters/ch-schluss.aux
 INPUT chapters/ch-schluss.tex
 INPUT chapters/ch-schluss.tex

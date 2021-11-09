@@ -225,7 +225,10 @@ GitOps benötigt dabei drei Hauptkomponenten:\\
 Infrastructure as Code, Merge Requests und CI/CD.
 Organisationen die mit einer ausgereiften Anwendung der DevOps Kultur arbeiten
 können über GitOps hunderte Male pro Tag neuen Code auf den Produktionsservern
-installieren.
+installieren. Im praktischen Teil dieser Arbeit wird GitOps verwendet um
+da es eine einfache Integration mit Github ermöglicht, Github selbst
+wird als Versionskontrollsystem verwendet da es weithin etabliert und breit
+unterstützt ist und von der Novatec Consulting GmbH bevorzugt eingesetzt wird.
 
 \subsection{Überblick über die wichtigsten Public Cloud Service Provider}
 Da der Kern der Arbeit die Infrastructure as Code Unterstützung der
@@ -274,19 +277,73 @@ der Abstand von Google zum nächst größten Anbieter Alibaba Cloud.
 TODO: Irgendwas mit IBM Ability to Execute vs Marktanteil verglichen mit Oracle
 
 
-\section{Was ist Infrastructure as Code?}
+\section{Infrastructure as Code}
 
-\subsection{Warum verwendet man IaC?}
+Infrastructure as Code beschreibt einen Ansatz zur Automatiesierung der
+Bereitstellung von Infrastruktur basierend auf Methoden aus der
+Softwareentwicklung (vgl Kief Morris Infrastructure as Code S.4).\\
+Statt eines manuellen Aufbaus und direkter Konfiguration der einzelnen
+Komponenten werden maschinenlesbare Dateien verfasst welche dann von einem
+IaC Tool eingelesen und verarbeitet werden. Dabei kommen bevorzugt
+deklarative Sprachen zum Einsatz deren höhere Abstraktion mehr Flexibilität
+als ein imperativer Ansatz erlaubt.
+(vgl. https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code)
 
-\subsection{Technische Abgrenzung von IaC}
+\subsection{Technologischer Wandel und das Cloud Age Mindset}
 
-\section{Was ist Terraform?}
+Durch die Technologien der Cloud ist es möglich eine gewünschte
+IT-Infrastruktur sehr viel schneller bereitzustellen als
+zuvor möglich. Statt des Einkaufs, Anschließens und Einrichtens eines
+physischen Servers das, je nach Szenario einen Zeitraum von mindestens
+mehreren Stunden oder Tagen bis zu Wochen gedauert hätte können
+virtuelle Resourcen in der Cloud in wenigen Minuten bereitgestellt werden.
+Der schnellere Ablauf wird durch die Automatisierung von Prozessen wie etwa
+der Bereitstellung der Infrastruktur mithilfe von IaC Tools noch verstärkt,
+nicht nur bei der initialen 
+Mit diesen Veränderungen wird das Management und die Erweiterung der
+bestehenden Systeme jedoch nicht unbedingt einfacher (vgl IaC Kief Morris S.3),
+die Verwendung der alten IT-Governance Modelle (TODO Fußnotenerklärung) die
+sich bisher bewährt haben sind jedoch aufgrund der Veränderungen ungeeignet.
+Kief Morris stellt die fundamentalen Unterschiede des Arbeitens mit
+Cloud-Technologien mithilfe der folgenden Tabelle dar.
 
-\subsection{Warum wird Terraform verwendet?}
+\begin{figure}[H]
+  \includegraphics[width=1.0\textwidth]{fig/hauptteil/Tabelle_1-2_IaC.png}
+  \caption{Iron Age vs Cloud Age}
+  \centering
+\end{figure}
 
-\subsection{Terraform Alternativen und ergänzende Tools}
+Veränderungen in der 'Iron Age' sind aufwändig und teuer und stellen ein
+Risiko dar, es wird versucht diese Risikopunkte zu reduzieren daher werden
+viele Veränderung gebüdelt getestet und eingeführt wodurch lange
+Release-Zyklen entstehen. Die Architekturen die dadurch befördert werden
+sind eher monolytisch die Konfiguration erfolgt eher mithilfe von GUI
+gesteuerten Programmen oder physischen, zum Beispiel wenn ein neuer Server
+in ein Netzwerk eingebunden wird. Veränderungen in der Cloud stellen
+fast genau das Gegenteil dar, daher wird erkennbar dass eine auf die
+'Iron Age' zugeschnittene Arbeitsweise für die Cloud nicht effektiv ist,
+es ist ein neues Cloud Age Mindset das die rechte Spalte der Tabelle
+verinnerlicht erforderlich um die Vorteile der Cloud
+wirklich effektiv nutzen zu können.
 
-\section{Stand der Technik}
+\subsection{Vorteile und Probleme die durch IaC gelöst werden}
+
+Environment drift
+Slow Provisioning -> Hohe Geschwindigkeit und Effizienz
+Workflow Automation -> Management Overhead für einzelne Resourcen
+Reusability -> Consitency
+Unnötig hohe Kosten
+
+\subsection{Argumente gegen IaC/Gründe der Ablehnung}
+
+\subsection{Die Schlüsselmetriken und Kernverfahren zum erfolgreichen Einsatz von IaC}
+
+\subsection{Warum und für was genau wird Terraform hier verwendet?}
+
+- Typen von IaC Tools, Terraform Provisioning tool vs Configuration Management
+https://medium.com/cloudnativeinfra/when-to-use-which-infrastructure-as-code-tool-665af289fbde
+- Alternativen zu Terraform
+- Ergänzende Tools
 
 \chapter{Aufbau und Untersuchung}
 \label{sec:real}
