@@ -193,7 +193,7 @@ auch in der Phase des Übergangs zu Cloud Computing können höhere Kosten
 entstehen als in einem vergleichbaren Zeitraum davor.
 
 
-\subsection{Grundlegende Erklärung von DevOps}
+\subsection{\textbf{Grundlegende Erklärung von DevOps}}
 
 Die exakte Definition und Abgrenzung des Begriffes DevOps ist ein Thema über
 das es keine uniform akzeptierte allein gültige Definition und Abgrenzung gibt.
@@ -216,7 +216,7 @@ Studie ist als Diagramm im Anhang ... zu finden.\\
 Infrastructure as Code spielt als Werkzeug für die automatisierte Bereitstellung
 der benötigten Computerresourcen eine wichtige Rolle im DevOps Prozess.
 
-\subsubsection{\textbf{GitOps als Werkzeug für Continuous Devlivery im Rahmen von DevOps}}
+\subsubsection{\textbf{GitOps als Werkzeug für Continuous Delivery im Rahmen von DevOps}}
 
 GitOps wird von Gitlab als ein betriebliches Rahmenkonzept (operational
 Framework) defniert das DevOps Best Practices in der automatiserten
@@ -326,24 +326,121 @@ es ist ein neues Cloud Age Mindset das die rechte Spalte der Tabelle
 verinnerlicht erforderlich um die Vorteile der Cloud
 wirklich effektiv nutzen zu können.
 
-\subsection{Vorteile und Probleme die durch IaC gelöst werden}
+\subsection{Vorteile von IaC und durch IaC gelöste Probleme des
+manuellen Provisionings}
 
-Environment drift
-Slow Provisioning -> Hohe Geschwindigkeit und Effizienz
-Workflow Automation -> Management Overhead für einzelne Resourcen
-Reusability -> Consitency
-Unnötig hohe Kosten
+\textbf{Kein Configuration Drift durch einheitliche Codebase:}
+Configuration drift bezeichnet eine über die Zeit
+wachsende Abweichung zweier ursprünglich identischer Systeme. Wird ein
+gleiches System, zum Beispiel ein Applikationsserver, in verschiedenen
+Umgebungen eingesetzt stellen diese oftmals auch leicht verschiedene
+Anforderungen auf die dann mit Optimierungen, etwa in Form spezifischer
+Konfigurationsdetails, reagiert werden kann. Wird nun das ursprüngliche
+System geupdated werden individuelle, oft undokumentierte Anpassungen
+nicht berücksichtigt und ein Update kann unbequeme Konsequenze nach
+sich ziehen. Werden alle Veränderungen in einer einheitlichen
+Codebase verwaltet und Updates häufig vorgenommen verhindert man
+starken Configuration Drift der über Zeit stattfindet
+
+\textbf{Wiederverwendbarkeit durch einheitlichen Code:}
+Ein weiterer Vorteil der durch die Verwendung einer einheitlichen
+Codebase entsteht ist die Wiederverwendbarkeit und Repoduzierbarkeit
+eines Systems. Wenn ein identisches System an einer anderen Stelle
+aufgebaut werden soll oder sollte das System aus unvorhergesehen
+Gründen in seiner Gesamtheit verloren gehen kann es schnell und mit
+verhältnismäßig geringem Aufwand reproduziert werden.
+Ein dazu passender Ausdruck in Bezug auf Server ist 'Cattle not Pets'.
+Statt sich individuell und mit großem Aufwand um einzelne Server zu
+kümmern wie man es etwa mit dem eigenen Haustier tut sollten Server
+wie leicht ersetzbares Vieh behandelt werden.
+
+\textbf{Schnelleres Provisioning durch Cloud:} Ein bereits häufig
+angesprochener Vorteil ist die schnelle Bereitstellung, auf tiefere
+Erklärung kann daher hier verzichtet werden.
+
+\textbf{Schnellerer Profit:} Schnellere Bereitstellung der Hardware
+und schnellere Auslieferung von Software die durch DevOps Methoden
+begünstigt werden erzeugen entsprechend auch schneller einen Mehrwert.
+
+\textbf{Einheitliches Tooling in Dev, Ops und mehr:} Verwendung von IaC
+fördert die einheitlicheres Tooling in allen Bereichen die mit einem
+Softwareprodukt in Zusammenhang stehen. Cloud Technologien fördern und
+ermöglichen diese Vereinheitlichung, manuelles Provisioning ohne ein
+Cloud Modell erschwert dies oder macht es sogar unmöglich.
+
+\textbf{Stärkere Automatisierung im Arbeitsablauf:} Automatisierung
+bedeutet immer einen gewissen upfront Overhead, jedoch kann auf
+längere Sicht deutlich von automatisierten Abläufen profitiert weren.
+Ein Beispiel hierfür sind automatisierte und in eine CI/CD Pipeline
+integrierte Tests.
+
+\textbf{Höhere Zuverlässigkeit und Sicherheit durch schnelle Updates:}
+Von eine Struktur die schnelle und häufige Veränderungen fördert
+kann auch die Sicherheit und Zuverlässigkeit eines Systems profitieren.
+Auf Sicherheitsrisiken kann in kurzer Zeit und ohne viel Aufwand
+reagiert werden, eine unsichere Funktion kann etwa schnell durch
+eine sichere Variante ausgetauscht werden, mögliche damit verbundene
+Probleme können dann in automatisierten Tests erkannt werden wodurch
+das System zuverlässig bleibt.
+
+\textbf{Schnellere Fehlersuche und -behebung:}
+
+Fehler die dennoch auftreten können dann durch den Einsatz kleinerer
+Komponenten schneller isoliert, gefunden und behoben werden.
+Monolithische Systeme erschweren dies durch dadurch dass weniger klar
+isolierte Komponenten vorhanden sind die häufig mehr Abhängigkeiten
+aufweisen und daher schwerer als einzelne Einheit getestet werden können.
 
 \subsection{Argumente gegen IaC/Gründe der Ablehnung}
 
+Kief Morris bennent drei häufige Argumente die gegen die Einführung von IaC
+genannt werden, diese sollen Im Kontext der gennanten Vorteile betrachtet
+werden um deren Ursachen und Validität festzustellen. 
+
+- Veränderungen werden nicht oft durchgeführt wodurch sich Automatisierung
+nicht lohnt
+- Zuerst Infrastruktur bauen, Automatisierung erfolgt später
+- Man müsse zwischen Geschwindigkeit der Auslieferung und Qualität wählen
+
 \subsection{Die Schlüsselmetriken und Kernverfahren zum erfolgreichen Einsatz von IaC}
+
+Metriken:
+
+- Delivery Lead time: Zeit für Implementierung,test auslieferung von
+Veränderungen am Produktionssystem
+
+- Deployment Frequency: Wie oft wird deployed
+
+- Change fail percentage: Aka wie gut wird getestet
+
+- Mean time to restore: Wie lang bis System wieder läuft
+
+Kernverfahren:
+
+- Define everything as Code
+
+- Continuously Test and Deliver all work in Progress
+
+- Build small simple pieces
 
 \subsection{Warum und für was genau wird Terraform hier verwendet?}
 
 - Typen von IaC Tools, Terraform Provisioning tool vs Configuration Management
+
+- Terraform wird als Provisioning Tool verwendet da es darauf stark spezialisiert
+- Terraform unterstützt viele Provider
+- Modularität
+
+Limitierungen weil Nischenprodukt
+
+- Konstrukte wie Schleifen oder If else sind unintuitiv oder nicht vorhanden
+- Kein try catch error handling
+- Kein eingebautes rollback
+- Aktuell können keine Skripte aufgrund bestehender Infrastruktur automatisch
+erstellt werden
+
 https://medium.com/cloudnativeinfra/when-to-use-which-infrastructure-as-code-tool-665af289fbde
-- Alternativen zu Terraform
-- Ergänzende Tools
+- Alternativen zu Terraform und Ergänzungen
 
 \chapter{Aufbau und Untersuchung}
 \label{sec:real}

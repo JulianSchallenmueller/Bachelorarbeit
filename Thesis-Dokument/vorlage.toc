@@ -8,31 +8,31 @@
 \contentsline {subsection}{\numberline {2.1.2}Zu erwägende Vor- und Nachteile des Einsatzes von Cloud Computing}{6}{subsection.2.1.2}%
 \contentsline {subsubsection}{\nonumberline \textbf {Vorteile und Treiber der Adoption von Cloud Computing}}{6}{section*.10}%
 \contentsline {subsubsection}{\nonumberline \textbf {Nachteile und Risiken}}{7}{section*.11}%
-\contentsline {subsection}{\numberline {2.1.3}Grundlegende Erklärung von DevOps}{7}{subsection.2.1.3}%
-\contentsline {subsubsection}{\nonumberline \textbf {GitOps als Werkzeug für Continuous Devlivery im Rahmen von DevOps}}{8}{section*.12}%
+\contentsline {subsection}{\numberline {2.1.3}\textbf {Grundlegende Erklärung von DevOps}}{7}{subsection.2.1.3}%
+\contentsline {subsubsection}{\nonumberline \textbf {GitOps als Werkzeug für Continuous Delivery im Rahmen von DevOps}}{8}{section*.12}%
 \contentsline {subsection}{\numberline {2.1.4}Überblick über die wichtigsten Public Cloud Service Provider}{8}{subsection.2.1.4}%
 \contentsline {section}{\numberline {2.2}Infrastructure as Code}{11}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Technologischer Wandel und das Cloud Age Mindset}{11}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Vorteile und Probleme die durch IaC gelöst werden}{12}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Argumente gegen IaC/Gründe der Ablehnung}{12}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Die Schlüsselmetriken und Kernverfahren zum erfolgreichen Einsatz von IaC}{12}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Warum und für was genau wird Terraform hier verwendet?}{12}{subsection.2.2.5}%
-\contentsline {chapter}{\numberline {3}Aufbau und Untersuchung}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}High-level Aufbau der Infrastruktur des Versuchsobjekts}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Zu analysiernde Aspekte und Eigenschaften}{13}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Konkreter Aufbau in Microsoft Azure}{13}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Konkreter Aufbau in Amazon AWS}{13}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Konkreter Aufbau in Google Cloud Platform}{13}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Literaturverweise}{13}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Ergebnisse}{14}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Bewertung Azure}{14}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Bewertung AWS}{14}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Bewertung GCP}{14}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Resultate und Vergleichsmatrix}{14}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Schluss}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{15}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{15}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{15}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{15}{section.5.4}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{16}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{17}{chapter*.16}%
+\contentsline {subsection}{\numberline {2.2.2}Vorteile von IaC und durch IaC gelöste Probleme des manuellen Provisionings}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Argumente gegen IaC/Gründe der Ablehnung}{13}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Die Schlüsselmetriken und Kernverfahren zum erfolgreichen Einsatz von IaC}{13}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Warum und für was genau wird Terraform hier verwendet?}{14}{subsection.2.2.5}%
+\contentsline {chapter}{\numberline {3}Aufbau und Untersuchung}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}High-level Aufbau der Infrastruktur des Versuchsobjekts}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Zu analysiernde Aspekte und Eigenschaften}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Konkreter Aufbau in Microsoft Azure}{15}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Konkreter Aufbau in Amazon AWS}{15}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Konkreter Aufbau in Google Cloud Platform}{15}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Literaturverweise}{15}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Ergebnisse}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Bewertung Azure}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Bewertung AWS}{16}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Bewertung GCP}{16}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Resultate und Vergleichsmatrix}{16}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Schluss}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{17}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{17}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{17}{section.5.4}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{18}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{19}{chapter*.16}%

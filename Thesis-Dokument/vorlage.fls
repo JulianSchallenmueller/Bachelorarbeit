@@ -352,6 +352,7 @@ INPUT chapters/ch-aa-zusfasg.tex
 INPUT chapters/ch-aa-zusfasg.tex
 INPUT vorlage.toc
 INPUT vorlage.toc
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx12.tfm
 OUTPUT vorlage.toc
 INPUT vorlage.lof
 INPUT vorlage.lof
@@ -365,7 +366,6 @@ INPUT chapters/ch-einleitung.tex
 OUTPUT chapters/ch-hauptteil.aux
 INPUT chapters/ch-hauptteil.tex
 INPUT chapters/ch-hauptteil.tex
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT fig/hauptteil/Service-Models.png
 INPUT ./fig/hauptteil/Service-Models.png
 INPUT ./fig/hauptteil/Service-Models.png
