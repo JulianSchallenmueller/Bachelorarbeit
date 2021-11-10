@@ -362,7 +362,8 @@ Erklärung kann daher hier verzichtet werden.
 und schnellere Auslieferung von Software die durch DevOps Methoden
 begünstigt werden erzeugen entsprechend auch schneller einen Mehrwert.
 
-\textbf{Einheitliches Tooling in Dev, Ops und mehr:} Verwendung von IaC
+\textbf{Einheitliches Tooling in Dev, Ops und weiteren Beteiligten Teams:}
+Verwendung von IaC
 fördert die einheitlicheres Tooling in allen Bereichen die mit einem
 Softwareprodukt in Zusammenhang stehen. Cloud Technologien fördern und
 ermöglichen diese Vereinheitlichung, manuelles Provisioning ohne ein
@@ -391,18 +392,50 @@ Monolithische Systeme erschweren dies durch dadurch dass weniger klar
 isolierte Komponenten vorhanden sind die häufig mehr Abhängigkeiten
 aufweisen und daher schwerer als einzelne Einheit getestet werden können.
 
-\subsection{Argumente gegen IaC/Gründe der Ablehnung}
+\subsection{Herausforderungen und Argumente gegen den Einsatz von IaC}
 
-Kief Morris bennent drei häufige Argumente die gegen die Einführung von IaC
-genannt werden, diese sollen Im Kontext der gennanten Vorteile betrachtet
-werden um deren Ursachen und Validität festzustellen. 
+Kief Morris bennent drei Argumente die gegen die Einführung von IaC
+genannt werden, diese sollen hier Im Kontext der gennanten Vorteile betrachtet
+werden.
+
+\textbf{Veränderugen werden nicht oft genug durchgeführt um
+Automatisierung zu rechtfertigen.}
+
+Die Idee dass ein System einmal erstellt und dann "fertig" ist und
+Automatisierung der Veränderungen daher überflüssig ist 
+entspricht sehr selten der tatsächlichen Realität.
+IT-Systeme und damit auch IT-Infrastruktur wird während ihrem gesamten
+Lebenszyklus mehr oder weniger kontinuierlich verändert und erweitert.\\
+Sicherheislücken in alten Versionen von Softwarepackages oder
+Betriebssystemen sind keine Seltenheit und müssen gepatcht werden um
+einen sicheren und Zuverlässig Betrieb zu gewährleisten, neue Features
+in bestehender Software kann neue Infrastruktur, zum Beispiel in Form eines
+neuen Datnbankservers, notwendig machen oder eine veränderte Konfiguration
+ist nötig um die Performance zu steigern. Gerade bei Sicherheitslücken
+ist es wichtig Anpassungen nicht erst nach längerer Zeit sondern so
+schnell wie möglich durchzuführen um Sicherheit und Stabilität nicht
+zu gefährden. Ein weiteres Szenario das die Stabilität eines Systems
+gefährden kann ist ein schneller Zuwachs an Last die das System erfährt,
+daher sollte es möglich schnell und unkompliziert das System zu verändern
+indem mehr Resourcen zur Verfügung gestellt werden.
+
+"A fundamental truth of the Cloud Age is: Stablity comes from making changes."
+(IaC Buch S. 5)
+
+Eine fundamentale Wahrheit des Cloud Zeitalters ist: Stabilität ensteht durch
+Veränderung.
+
+\textbf{Infrastruktur soll zuerst gebaut, danach automatisiert werden.}
+
+
 
 - Veränderungen werden nicht oft durchgeführt wodurch sich Automatisierung
 nicht lohnt
 - Zuerst Infrastruktur bauen, Automatisierung erfolgt später
 - Man müsse zwischen Geschwindigkeit der Auslieferung und Qualität wählen
 
-\subsection{Die Schlüsselmetriken und Kernverfahren zum erfolgreichen Einsatz von IaC}
+\subsection{Die Schlüsselmetriken und Kernverfahren zum erfolgreichen
+Einsatz von IaC}
 
 Metriken:
 
