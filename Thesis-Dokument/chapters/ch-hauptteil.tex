@@ -425,36 +425,99 @@ indem mehr Resourcen zur Verfügung gestellt werden.
 Eine fundamentale Wahrheit des Cloud Zeitalters ist: Stabilität ensteht durch
 Veränderung.
 
-\textbf{Infrastruktur soll zuerst gebaut, danach automatisiert werden.}
+\textbf{Infrastruktur soll zuerst aufgebaut, danach automatisiert werden.}
 
+Die Umsetzung von Infrastructure as Code stellt eine durchaus große
+Herausforderung, das Erlernen eine "steep Curve" (IaC Buch S.6) dar, deren
+Nutzen nicht unbedingt direkt ersichtlich ist. Dadurch kommt es zu
+Situationen in denen es attraktiv erscheint Infrastruktur zuerst aufzubauen
+sich erst später um die Automatisierung zu kümmern. Mit diesem
+Ansatz werden viele der Vorteile von IaC jedoch verwirkt und die Schwierigkeit
+der Umsetzung von IaC fällt deutlich größer aus, verglichen mit einem
+Projekt das von Beginn auf IaC ausgelegt ist da 
+"Automatisierung Teil des Designs und der Implementierungeines Systems ist"
+(IaC Buch S.6).\\
+Automatisierung mit IaC vereinfacht auch die Implementierung autoamtisierter
+Tests eines Systems was es wiederum erlaubt Fehler schneller zu beheben.
+Ist dies bereits von Beginn an Teil des Arbeitsprozesses verbessert dies
+die Qualität der Infrastruktur.\\
 
+TODO: Wenn erfolgreich werden neue Features gefordert, ohne Automatisierung
+gerät Management der wachsenden Infrastruktur schnell außer Kontrolle
+Deliver steady stream of value , build system incrementally
 
-- Veränderungen werden nicht oft durchgeführt wodurch sich Automatisierung
-nicht lohnt
-- Zuerst Infrastruktur bauen, Automatisierung erfolgt später
-- Man müsse zwischen Geschwindigkeit der Auslieferung und Qualität wählen
+\textbf{Es muss zwischen schneller Umsetzung und hoher Qualität
+gewählt werden.}
 
-\subsection{Die Schlüsselmetriken und Kernverfahren zum erfolgreichen
-Einsatz von IaC}
+Die Idee dass der Fokus auf hohe Geschwindigkeit und hohe Qualität
+sich gegenseitig behindert oder ausschließt mag logisch erscheinen,
+in der Praxis ist dies jedoch nicht der Fall.
+Die "Accelerate State of DevOps Report" Studie kam zu dem Schluss
+das Organisationen dazu tendieren entweder gut oder schlecht in beiden
+Kriterien abzuschneiden, wird eines vernachlässigt führt es am Ende
+in der Regel zu einem "fragile Mess" wie die untenstehende Tabelle
+erläutert.
 
-Metriken:
+\begin{figure}[H]
+  \includegraphics[width=1.0\textwidth]{fig/hauptteil/Speed_vs_Quality.png}
+  \caption{Iron Age vs Cloud Age IaC Busch S.6}
+  \centering
+\end{figure}
 
-- Delivery Lead time: Zeit für Implementierung,test auslieferung von
-Veränderungen am Produktionssystem
+Wird Geschwindgkeit über Qualität gestellt (Quadrant links oben) entstehen
+mit der Zeit chaotische und instabiele Systeme an denen Veränderungen mit
+der Zeit nur noch erschwert und deshalb langsam durchgeführt werden können.\\
+Wird Geschwindigkeit zu niedrig priorisiert führt es allerdings auch dazu
+dass letzten Endes durch Druck von Deadlines und schnellen workarounds
+technische Schulden aufgebaut werden die ebenfalls zu einem qualitativ
+schlechten System führen da notwendige Veränderungen nicht schnell genug
+eingearbeitet werden können.
 
-- Deployment Frequency: Wie oft wird deployed
+Aufgrund dieser Probleme ist es wichtig Geschwindgkeit und Qualität
+gleichermaßen zu priorisieren, moderne Entwicklungsansätze DevOps
+haben das Ziel dies zu erreichen, der Erfolg wird von der
+Accelerate Studie belegt.
 
-- Change fail percentage: Aka wie gut wird getestet
+\subsection{Die drei Kernverfahren von IaC}
 
-- Mean time to restore: Wie lang bis System wieder läuft
+Kief Morris identifiziert drei Kernverfahren ("Core Practices")
+zur Implementierung von Infrastructure as Code:
 
-Kernverfahren:
+\begin{itemize} 
+  \item \textbf{Define everything as Code:} Alle Teile eines System
+  in Form von Code zu definieren bringt mehrere Vorteile mit sich.\\
+  Code kann mehrfach ausgeführt werden, daher ist eine als Code
+  definieres System Wiederverwendebar. Es können unkompliziert mehrere
+  identische Instanzen erstellt werden, das Gilt auch für den Fall
+  wenn Fehler auftreten und ein Neuaufbau erforderlich ist.
+  Das Verhalten des Systems ist vohersehbar, fortlaufendes automatisches
+  Testen ist möglich und damit auch zuverlässiger.\\
+  Definition in Code macht auch den Aufbau eines Systems transparenter,
+  da dieser immer dem tatsächlichen Zustand des Systems entspricht und
+  damit auch dokumentiert.
+  
+  \item \textbf{Continuously Test and Deliver All Work in Progress:} 
+  Fortlaufendes, automatisiertes Testen und Integrieren aller Komponenten
+  die sich in Entwicklung befinden dient dem Ziel die Qualität eines
+  Systems nicht nur "einzutesten" sondern von Beginn and und kontnuierlich
+  einzubauen
+  (The idea is to build quality in rather than trying to test quality in.
+  (vgl IaC Buch S.10)). Nach der Accelerate Studie fördert es die Qualität
+  der Arbeit eines Teams wenn jedes Mitglied mindestens einmal am Tag den
+  eigenen Fortschritt integriert.
 
-- Define everything as Code
+  \item \textbf{Build Small, Simple Pieces That You Can Change Independently:} 
+  Systeme die aus mehreren kleineren voneinander unabhängigen Komponenten
+  bestehen sind generell stabieler als große Monolithen. Eine Änderung die
+  einen Fehler verursacht betrifft nur diese Komponente in der die Änderung
+  stattfindet, diese kann dann leichter isoliert und das Problem behoben
+  werden, kleine Komponenten sind in der Regel auch weniger Komplex und
+  dadurch leichter zu verstehen. Ein einzelner Fehler nach einem Update
+  hat auch den Vorteil dass nur diese Komponente und nicht das gesamte
+  restliche System auf eine ältere Version zurückgesetzt werden muss um
+  den Betrieb wieder herzustellen.
 
-- Continuously Test and Deliver all work in Progress
-
-- Build small simple pieces
+\end{itemize}
 
 \subsection{Warum und für was genau wird Terraform hier verwendet?}
 
