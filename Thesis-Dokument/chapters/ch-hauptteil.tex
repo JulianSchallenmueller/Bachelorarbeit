@@ -519,24 +519,103 @@ zur Implementierung von Infrastructure as Code:
 
 \end{itemize}
 
-\subsection{Warum und für was genau wird Terraform hier verwendet?}
+\subsection{Die Rolle von Terraform im IaC Anwendungsprozess}
 
-- Typen von IaC Tools, Terraform Provisioning tool vs Configuration Management
+Während der Anwendung von Infrastructure as Code kann primär zwischen zwei
+wichtigen Phasen unterschieden werden, einer initialen Einrichtungsphase
+und der darauf folgenden Wartungs- und Betriebsphase.\\
+In der Einrichtung wird die Infrastruktur bereitgestellt und konfiguriert,
+genauso wird auch Software intalliert und eingerichtet.\\
+Nachdem das System dann in Betrieb genommen wurde können Anpassung notwendig
+werden, Server werden hinzugefügt und abgebaut, Software wird aktualisiert
+und neu konfiguriert.
 
-- Terraform wird als Provisioning Tool verwendet da es darauf stark spezialisiert
-- Terraform unterstützt viele Provider
-- Modularität
+\subsubsection{Überblick über die wichtigsten Infrastructure as Code Tools}
+
+Infrastructre as Code beinhaltet verschiedene konkrete Anwendungsfälle und
+entsprechend existieren auch Tools die zum Teil ein breiteres Spektrum
+von IaC abdecken, zum Teil aber auch eher spezialisiert sind; Terraform
+ist dabei ein Beispiel für ein spezialisierteres Tool. Die untenstehende
+Abbildung soll einen Überblick über die aktuell relevantesten Tools
+verschaffen, die Einordnungen sind dabei aber nicht unbedingt als absolut
+anzusehen. Es ist zum Beispiel möglich innerhalb eines Terraform-Deployments
+auch Software zu installieren und zu konfigurieren, allerdings wird die
+tatsächliche Installation dann eher per von Terraform aufgerufenen Skripten
+vorgenommen statt von Terraform selbst verwaltet zu werden, daher ist
+Terraform hier ausschließlich als Infrastruktur-Management Tool eingeordnet.
+
+\begin{figure}[H]
+  \includegraphics[width=1.0\textwidth]{fig/hauptteil/IaC_Tools.png}
+  \caption{Überblick IaC Tools https://medium.com/cloudnativeinfra/when-to-use-which-infrastructure-as-code-tool-665af289fbde}
+  \centering
+\end{figure}
+
+\subsubsection{Vorteile und Limiterungen von Terraform}
+
+Da sich diese Arbeit primär mit dem Provisioning von grundlegender Cloud
+Computing Infrastruktur in Form von VM's, Netzwerken, Datenspeicher und
+anderen grundlegenden Komponenten beschäftigen soll bietet sich der Einsatz
+eines darauf spezialisierten Tools an.\\
+Hier gibt es zusätzlich zu Terraform eine weitere prominente Alternative:
+Pulumi.
+
+Pulumi bietet im Vergleich zu Terraform mehrere Vorteile, es gibt allerdings auch
+diverse Nachteile die gegen den Einsatz von Pulumi sprechen.
+Die folgenden Vorteile bietet Pulumi gegenüber Terraform:
+
+\begin{itemize}
+  \item \textbf{Sprache:} Im Gegensatz zu Terraforms Domänen-spezifischer
+  HashiCorp Configuration Language (HCL) setzt Pulumi auf den Einsatz
+  bekannter General-Purpose Programmiersprachen, Python, TypeScript,
+  JavaScript, Go, C\# und F\#, werden aktuell unterstützt.\\
+  Durch den Einsatz dieser Sprachen können Schleifen, Funktionen und
+  weitere bekannte Konstrukte verwendet werden, Terraform bietet diese
+  Möglichkeiten nicht, ähnliche Effekte werden nur mit Workarounds erreicht.
+
+  \item \textbf{Testing:} Um Terraform-code testen zu können werden
+  Third-party Tools benötigt, Terraform selbst bietet kein Test-Framework.
+  Durch den Einsatz bekannter General-Purpose Programmiersprachen in Pulumi
+  ist es auch möglich die dort zum Einsatz kommenden Frameworks zu verwenden,
+  Integrationstest sind allerdings nur in Go unterstützt
+  (https://phoenixnap.com/blog/pulumi-vs-terraform).
+
+  \item \textbf{Provider Support:} TODO
+  
+  \item \textbf{State Management:} TODO
+\end{itemize}
+
+TODO: Pulumi gut, eventuell besser in Hinsicht auf DevOps dennoch Terraform weil:
+
+\begin{itemize}
+  \item \textbf{Modularität:} Terraforms Module erlauben es ein System in mehrere klar
+  definierte Komponenten zu strukturieren, dadurch wird eine Wiederverwendbarkeit dieser
+  ermöglicht. Die daraus resultierenden Vorteile wurden bereits in den vorangegangenen
+  Kapiteln dargelegt, daher soll hier nicht weiter darauf eingegangen werden.
+
+  \item \textbf{Ausgereiftheit:} Terraform hat den Vorteil die ältere 
+  (Fußnote Terraform Release 2014 vs 2017 Pulumi) und auch ausgereiftere Option zu sein.
+  TODO:
+
+  \item \textbf{Weitere Verbreitung und größere Popularität:}
+  -größere Community mehr Resourcen
+
+  \item \textbf{Dokumentation:} Terraform verfügt über eine umfangreiche offizielle
+  Dokumentation
+\end{itemize}
+
+
+- Warum Terraform statt Pulumi
+- Hochwertige Dokumentation, breitere Verwendung, bessere Eignung für größere
+  komplexere Projekte => tendenziell interessanter für große Organisationen
 
 Limitierungen weil Nischenprodukt
 
-- Konstrukte wie Schleifen oder If else sind unintuitiv oder nicht vorhanden
 - Kein try catch error handling
 - Kein eingebautes rollback
 - Aktuell können keine Skripte aufgrund bestehender Infrastruktur automatisch
-erstellt werden
+erstellt werden, zumindest Terraform selbst bietet (noch!) nicht die Option
 
-https://medium.com/cloudnativeinfra/when-to-use-which-infrastructure-as-code-tool-665af289fbde
-- Alternativen zu Terraform und Ergänzungen
+\subsection{Terraform Grundprinzipien}
 
 \chapter{Aufbau und Untersuchung}
 \label{sec:real}
