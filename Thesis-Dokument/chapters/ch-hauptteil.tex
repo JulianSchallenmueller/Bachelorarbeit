@@ -650,8 +650,6 @@ geschrieben werden, Terraform Code ist daher nicht Cloud agnostisch.\\
 
 \subsection{Terraform Funktionsprinzip}
 
-\subsubsection{Terraform Key Features}
-
 Terraform ist ein Infrastructure as Code Tool das es ermöglicht Infrastruktur
 sicher und effizient aufzubauen, zu verändern und zu versionieren.\\
 Terraform verwendet eine High-level DSL die es erlaubt die Infrastruktur in
@@ -669,7 +667,8 @@ Terraform beachtet bestehende Abhängigkeiten und nimmt Veränderungen
 durch Execution Plans schrittweise vor bis der definierte Zustand erreicht
 ist. (Alles obere vgl https://www.terraform.io/intro/index.html)
 
-Die folgende Abbildung stellt dar welche
+Die folgende Abbildung stellt das Funktionsprinzip von Terraform mit den
+wichtigsten beteiligten Komponenten dar.
 
 \begin{figure}[H]
   \includegraphics[keepaspectratio, height=15cm]{fig/hauptteil/Terraform.png}
@@ -677,9 +676,25 @@ Die folgende Abbildung stellt dar welche
   \centering
 \end{figure}
 
+Der Terraform Practitioner schreibt den Infrastruktur Code in HCL. Dabei kann
+er auf vorhandene Module aus der Public Module Registry zurückgreifen um
+typische Strukturen wie Netzwerke aufzubauen. Die Terraform Core-Software
+nutzt dann Plugins, die Terraform Provider, um die jeweiligen Cloud Plattform
+API's anzusprechen die dann die Infrastrktur aufbauen. Die aktuell
+existierenden Resourcen sind dabei in der terraform.tfstate Datei
+festgehalten, gemeinsam mit dem aktuellen State und dem Infrastruktur Code
+ermittelt Terraform welche Änderungen vorgenommen werden müssen um den
+im Code beschriebenen Zustand zu erreichen.
+
 \subsubsection{Hashicorp Configuration Language}
 
+
+
 \subsubsection{Input und Output Variablen}
+
+\subsubsection{Terraform Provider}
+
+\subsubsection{Terraform Module}
 
 \subsubsection{Terraform Workflow}
 
