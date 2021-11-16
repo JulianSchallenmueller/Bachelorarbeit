@@ -559,9 +559,9 @@ eines darauf spezialisierten Tools an.\\
 Hier gibt es zusätzlich zu Terraform eine weitere prominente Alternative:
 Pulumi.
 
-Pulumi bietet im Vergleich zu Terraform mehrere Vorteile, es gibt allerdings auch
-diverse Nachteile die gegen den Einsatz von Pulumi sprechen.
-Die folgenden Vorteile bietet Pulumi gegenüber Terraform:
+Pulumi bietet im Vergleich zu Terraform mehrere Vorteile, es gibt allerdings
+auch diverse Nachteile die, gegen den Einsatz von
+Pulumi sprechen. Die folgenden Vorteile bietet Pulumi gegenüber Terraform:
 
 \begin{itemize}
   \item \textbf{Sprache:} Im Gegensatz zu Terraforms Domänen-spezifischer
@@ -578,44 +578,108 @@ Die folgenden Vorteile bietet Pulumi gegenüber Terraform:
   ist es auch möglich die dort zum Einsatz kommenden Frameworks zu verwenden,
   Integrationstest sind allerdings nur in Go unterstützt
   (https://phoenixnap.com/blog/pulumi-vs-terraform).
-
-  \item \textbf{Provider Support:} TODO
   
-  \item \textbf{State Management:} TODO
+  \item \textbf{Pulumi mit Terraform:} Pulumi kann kann sowohl lokale als auch
+  remote Terraform State Files lesen und verarbeiten. Dies erlaubt es Pulumi
+  und Terraform nebeneinander einzusetzen um verschiedene Teile der
+  Infrastruktur mit dem jeweils anderen Tool zu managen, soll zum Beispiel 
+  einer Umstellung von Terraform auf Pulumi erfolgen ist dies möglich
+  ohne das gesamte System auf einmal auser Betrieb nehmen zu müssen.
+
 \end{itemize}
 
-TODO: Pulumi gut, eventuell besser in Hinsicht auf DevOps dennoch Terraform weil:
+Terraform wiederum bietet die folgenden Vorteile:
 
 \begin{itemize}
-  \item \textbf{Modularität:} Terraforms Module erlauben es ein System in mehrere klar
-  definierte Komponenten zu strukturieren, dadurch wird eine Wiederverwendbarkeit dieser
-  ermöglicht. Die daraus resultierenden Vorteile wurden bereits in den vorangegangenen
+  \item \textbf{Modularität:} Terraform Module erlauben es ein System in
+  mehrere klar definierte Komponenten zu strukturieren, dadurch wird die
+  Wiederverwendbarkeit dieser Komponenten ermöglicht und gefördert.
+  Die daraus resultierenden Vorteile wurden bereits in den vorangegangenen
   Kapiteln dargelegt, daher soll hier nicht weiter darauf eingegangen werden.
+  Pulumi strukturiert Infrastruktur Code entweder in einem großen
+  monolithischen Projekt oder vielen kleinen Mikroprojekten, beide
+  Optionen sind weniger flexibel als die Lösung die Terraform bietet.
 
-  \item \textbf{Ausgereiftheit:} Terraform hat den Vorteil die ältere 
-  (Fußnote Terraform Release 2014 vs 2017 Pulumi) und auch ausgereiftere Option zu sein.
-  TODO:
+  \item \textbf{State Debugging:} Es ist beinahe unvermeidbar
+  dass es während der Arbeit an einem Infrastrukturprojekt über einen
+  längeren Zeitraum irgendwann einmal zu einem Fehler im State kommt.
+  Sowohl Terraform als auch Pulumi bieten hier CLI Befehle die bei der
+  Fehlersuche und -behebung unterstützen, Terraform bietet hier jedoch
+  aktuell noch mehr Optione mit denen Resourcen aus dem aktuellen State
+  gelöscht oder hinzugefügt werden können, dadurch wird weniger händische,
+  und potentiell fehleranfälligere Arbeit direkt im State File notwendig.
 
-  \item \textbf{Weitere Verbreitung und größere Popularität:}
-  -größere Community mehr Resourcen
+  \item \textbf{Weitere Verbreitung und größere Popularität:} Terraform wurde
+  2014, Pulumi 2017 veröffentlicht, entsprechend ist Terraform deutlich weiter
+  verbreitet und verfügt über all die Vorteile die eine größere Community mit
+  sich bringt. Dazu gehören mehr Lernresourcen, mehr Codebeispiele, größere
+  Bekanntheit und mehr Jobs für die Arbeit mit Terraform.
 
-  \item \textbf{Dokumentation:} Terraform verfügt über eine umfangreiche offizielle
-  Dokumentation
+  \item \textbf{Dokumentation:} Einen weiteren Voteil von Terraform stellt
+  dessen umfangreiche und ausgereifte Dokumentation sowie auch die
+  Dokumentation der einzelnen Provider dar. Der genaue Aufbau der einzelnen
+  Resourcen wie etwa einer VM auf Google Cloud Platform
+  (google\_compute\_instance) ist mit einem Beispiel und der zugehörigen
+  Argument Reference versehen aus der direkt ersichtlich wird welche
+  Argumente notwendig (required), was der Zweck jedes einzelnen Arguments ist
+  und wo anstelle eines einfachen Wertes ein Block erwartet wird.
+
 \end{itemize}
 
+-Terraform unterm Strich aktuell interessanter für große Projekte/Unternehmen
+=> daher Wahl für diese Arbeit
 
-- Warum Terraform statt Pulumi
-- Hochwertige Dokumentation, breitere Verwendung, bessere Eignung für größere
-  komplexere Projekte => tendenziell interessanter für große Organisationen
+- Ein wirklich fundierter Vergleich zwischen Terraform und Pulumi benötigt
+deutlich mehr Zeit und Anspruch als im Rahmen dieser Arbeit möglich, für
+die in diesem Fall und zu diesem Zeitpunkt zu treffende Entscheidung soll
+der grobe Vergleich hier ausreichen. Ein umfangreicherer Vergleich zwischen
+Terraform und Pulumi könnte in zwei Jahren ein anderes Ergebnis liefern
+als heute, beide Technologien und insbesondere Pulumi sind noch relativ neu
+und nicht vollständig ausgereift.
 
-Limitierungen weil Nischenprodukt
+\subsubsection{Weitere zu beachtendende Aspekte}
 
-- Kein try catch error handling
-- Kein eingebautes rollback
-- Aktuell können keine Skripte aufgrund bestehender Infrastruktur automatisch
-erstellt werden, zumindest Terraform selbst bietet (noch!) nicht die Option
+Ein Aspekt über Terraform der häufig falsch interpretiert und verbreitet wird
+ist dass Terrafom als Cloud agnostisch beschrieben ist. Dies ist NICHT der
+Fall. Die einzelnen Terraform Provider welche jeweils die Abstraktion der
+Cloud Service Provider tatsächlich vornehmen sind nicht austauschbar das heißt
+der Terraform Code muss für jeden Cloud Service Provider individuell
+geschrieben werden, Terraform Code ist daher nicht Cloud agnostisch.\\
 
-\subsection{Terraform Grundprinzipien}
+(- Secrets Management? Terraform Enterprise?)
+
+\subsection{Terraform Funktionsprinzip}
+
+\subsubsection{Terraform Key Features}
+
+Terraform ist ein Infrastructure as Code Tool das es ermöglicht Infrastruktur
+sicher und effizient aufzubauen, zu verändern und zu versionieren.\\
+Terraform verwendet eine High-level DSL die es erlaubt die Infrastruktur in
+deklarativer und menschenlesbaren Konfigurationsdateien zu beschreiben die
+versioniert, geteilt und wiederverwendet werden können.\\
+Bevor Veränderungen erzeugt Terraform einen Execution Plan der beschreibt
+welche Veränderungen vorgenommen werden und überprüft werden kann bevor
+dieser ausgeführt wird.\\
+Ein Resourcengraph der Abhängigkeiten erfasst erlaubt es voneinander
+unabhängige Resourcen parallel und dadurch effizient zu erzeugen und gibt
+einen besseren Einblick in den Aufbau eines Infrastruktur-Systems.\\
+Automatisierte Änderungen erlauben es komplexe Veränderungen an der
+Infrastruktur mit minimaler menschlicher Interkation durchzuführen.
+Terraform beachtet bestehende Abhängigkeiten und nimmt Veränderungen
+durch Execution Plans schrittweise vor bis der definierte Zusatnd erreicht
+ist.
+
+\begin{figure}[H]
+  \includegraphics[keepaspectratio, height=15cm]{fig/hauptteil/Terraform.png}
+  \caption{Terraform Funktionsprinzip}
+  \centering
+\end{figure}
+
+\subsubsection{Hashicorp Configuration Language}
+
+\subsubsection{Input und Output Variablen}
+
+\subsubsection{Terraform Workflow}
 
 \chapter{Aufbau und Untersuchung}
 \label{sec:real}
@@ -629,9 +693,15 @@ Beispiel Text
 
 \section{Konkreter Aufbau in Microsoft Azure}
 
+\section{Analyse Azure}
+
 \section{Konkreter Aufbau in Amazon AWS}
 
+\section{Analyse AWS}
+
 \section{Konkreter Aufbau in Google Cloud Platform}
+
+\section{Analyse GCP}
 
 \section{Literaturverweise}
 \label{sec:real-literatur}
@@ -641,11 +711,6 @@ Verweise im Text: \cite{doc:stz} und \cite{doc:gun}.
 \chapter{Ergebnisse}
 \label{sec:ergeb}
 
-\section{Bewertung Azure}
-
-\section{Bewertung AWS}
-
-\section{Bewertung GCP}
 
 \section{Resultate und Vergleichsmatrix}
 

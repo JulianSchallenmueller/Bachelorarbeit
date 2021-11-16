@@ -19,23 +19,28 @@
 \contentsline {subsection}{\numberline {2.2.5}Die Rolle von Terraform im IaC Anwendungsprozess}{16}{subsection.2.2.5}%
 \contentsline {subsubsection}{\nonumberline Überblick über die wichtigsten Infrastructure as Code Tools}{16}{section*.17}%
 \contentsline {subsubsection}{\nonumberline Vorteile und Limiterungen von Terraform}{17}{section*.19}%
-\contentsline {subsection}{\numberline {2.2.6}Terraform Grundprinzipien}{18}{subsection.2.2.6}%
-\contentsline {chapter}{\numberline {3}Aufbau und Untersuchung}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}High-level Aufbau der Infrastruktur des Versuchsobjekts}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Zu analysiernde Aspekte und Eigenschaften}{19}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Konkreter Aufbau in Microsoft Azure}{19}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Konkreter Aufbau in Amazon AWS}{19}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Konkreter Aufbau in Google Cloud Platform}{19}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Literaturverweise}{19}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Ergebnisse}{20}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Bewertung Azure}{20}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Bewertung AWS}{20}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Bewertung GCP}{20}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Resultate und Vergleichsmatrix}{20}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Schluss}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{21}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{21}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{21}{section.5.4}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{22}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{23}{chapter*.20}%
+\contentsline {subsubsection}{\nonumberline Weitere zu beachtendende Aspekte}{19}{section*.20}%
+\contentsline {subsection}{\numberline {2.2.6}Terraform Funktionsprinzip}{19}{subsection.2.2.6}%
+\contentsline {subsubsection}{\nonumberline Terraform Key Features}{19}{section*.21}%
+\contentsline {subsubsection}{\nonumberline Hashicorp Configuration Language}{20}{section*.23}%
+\contentsline {subsubsection}{\nonumberline Input und Output Variablen}{20}{section*.24}%
+\contentsline {subsubsection}{\nonumberline Terraform Workflow}{20}{section*.25}%
+\contentsline {chapter}{\numberline {3}Aufbau und Untersuchung}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}High-level Aufbau der Infrastruktur des Versuchsobjekts}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Zu analysiernde Aspekte und Eigenschaften}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Konkreter Aufbau in Microsoft Azure}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Analyse Azure}{21}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Konkreter Aufbau in Amazon AWS}{21}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Analyse AWS}{21}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Konkreter Aufbau in Google Cloud Platform}{21}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Analyse GCP}{21}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Literaturverweise}{21}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Ergebnisse}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Resultate und Vergleichsmatrix}{22}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Schluss}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{23}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{23}{section.5.4}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{24}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{25}{chapter*.26}%

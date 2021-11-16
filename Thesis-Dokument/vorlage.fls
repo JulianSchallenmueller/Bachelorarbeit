@@ -389,6 +389,9 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/ts1-lmr12.tfm
 INPUT fig/hauptteil/IaC_Tools.png
 INPUT ./fig/hauptteil/IaC_Tools.png
 INPUT ./fig/hauptteil/IaC_Tools.png
+INPUT fig/hauptteil/Terraform.png
+INPUT ./fig/hauptteil/Terraform.png
+INPUT ./fig/hauptteil/Terraform.png
 OUTPUT chapters/ch-schluss.aux
 INPUT chapters/ch-schluss.tex
 INPUT chapters/ch-schluss.tex
