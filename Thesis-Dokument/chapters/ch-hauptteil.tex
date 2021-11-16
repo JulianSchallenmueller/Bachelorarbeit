@@ -657,17 +657,19 @@ sicher und effizient aufzubauen, zu verändern und zu versionieren.\\
 Terraform verwendet eine High-level DSL die es erlaubt die Infrastruktur in
 deklarativer und menschenlesbaren Konfigurationsdateien zu beschreiben die
 versioniert, geteilt und wiederverwendet werden können.\\
-Bevor Veränderungen erzeugt Terraform einen Execution Plan der beschreibt
-welche Veränderungen vorgenommen werden und überprüft werden kann bevor
-dieser ausgeführt wird.\\
+Bevor Veränderungen vorgenommen werden erzeugt Terraform einen Execution
+Plan der beschreibt welche Veränderungen durchgeführt werden sollen und
+überprüft werden kann bevor er ausgeführt wird.\\
 Ein Resourcengraph der Abhängigkeiten erfasst erlaubt es voneinander
 unabhängige Resourcen parallel und dadurch effizient zu erzeugen und gibt
-einen besseren Einblick in den Aufbau eines Infrastruktur-Systems.\\
+einen besseren Einblick in den Aufbau des beschriebenen Systems.\\
 Automatisierte Änderungen erlauben es komplexe Veränderungen an der
 Infrastruktur mit minimaler menschlicher Interkation durchzuführen.
 Terraform beachtet bestehende Abhängigkeiten und nimmt Veränderungen
-durch Execution Plans schrittweise vor bis der definierte Zusatnd erreicht
-ist.
+durch Execution Plans schrittweise vor bis der definierte Zustand erreicht
+ist. (Alles obere vgl https://www.terraform.io/intro/index.html)
+
+Die folgende Abbildung stellt dar welche
 
 \begin{figure}[H]
   \includegraphics[keepaspectratio, height=15cm]{fig/hauptteil/Terraform.png}
