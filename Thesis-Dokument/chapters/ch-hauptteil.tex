@@ -676,7 +676,7 @@ wichtigsten beteiligten Komponenten dar.
   \centering
 \end{figure}
 
-Der Terraform Practitioner schreibt den Infrastruktur Code in HCL. Dabei kann
+Der Terraform Anwender schreibt den Infrastruktur Code in HCL. Dabei kann
 er auf vorhandene Module aus der Public Module Registry zurückgreifen um
 typische Strukturen wie Netzwerke aufzubauen. Die Terraform Core-Software
 nutzt dann Plugins, die Terraform Provider, um die jeweiligen Cloud Plattform
@@ -688,15 +688,96 @@ im Code beschriebenen Zustand zu erreichen.
 
 \subsubsection{Hashicorp Configuration Language}
 
+Die von Terraform verwendete Konfigurationssprache wurde mit dem Ziel
+entwickelt einen Kompromiss zwischen Maschinenfreundlichkeit und
+Menschenlesbarkeit zu erzielen. Existierende Serialisierungsformate,
+Konfigurationssprachen und Programmiersprachen konnten die Ziele
+der Terraform-Entwickler nicht erfüllen daher kommt nun bei Terraform
+eine DSL in Form der Hashicorp Configuration Language zum Einsatz.
 
+HCL besteht aus drei grundlegenden Elementen: Blöcken (Blocks), Argumenten
+(Arguments) und Ausdrücken (Expressions).
+
+TODO Codebeispiel
+
+\textbf{Blöcke} stellen für gewöhnlich ein Objekt, im Fall von
+Infrastrkturcode meistens eine Computing Resource, dar.
+Blöcke besitzen einen Typ und Null bis mehrere label. Blöcke beinhalten
+Argumente und weitere verschachtelte Blöcke.\\
+\textbf{Argumente} sind das was in den meisten Programmiersprachen die
+Variablen darstellen: Ein Wert der einem Namen zugewiesen wird.\\
+\textbf{Ausdrücke} sind ähnlich wie in anderen Sprachen ein aus anderen
+Ausdrücken und Argumenten berechneter Wert, ein Argument ist in diesem Sinne
+die simpelste For eines Ausdrucks.
 
 \subsubsection{Input und Output Variablen}
 
-\subsubsection{Terraform Provider}
+Input Variables sind nützlich um Parameter außerhalb des eigentlichen
+Terraform Codes anzupassen. Die ID des Projektes stellt einen solchen
+Parameter dar, befindet sich diese außerhalb des Codes muss nur die Datei
+welche die Inputvariablen enthält angepasst werden, alles andere kann ohne
+Veränderungen wiederverwendet werden.
+
+TODO Codebeispiel
+
+Inputvariablen sind einfache Key-Value Paare die einen Standardwert und
+eine optionale Beschreibung besitzen.
+
+Outputvariablen werden in der Regel verwendet um auf spezifische Parameter
+einfachen und schnellen Zugriff zu ermöglichen.
+
+TODO Codebeispiel
+
+Werte wie die IP einer
+Virtuellen Maschine auf einer Public Cloud Plattform sind vor der
+Bereitstellung dieser nicht bekannt, werden aber häufig benötigt weshalb es
+nützlich ist eine Output Variable für diese zu deklarieren.
 
 \subsubsection{Terraform Module}
 
+Module sind Container für mehrere Resourcen die gemeinsam verwendet werden.
+Jedes Terraform Projekt besitzt ein Root Module das weitere Module verwenden
+kann. Die Terraform Registry stellt eine Vielzahl an veröffentlichten
+Modulen zur öfentlichen Verwendung bereit.
+
+\subsubsection{Terraform Provider}
+
+Terraform benötigt Plugins, die Provider, um mit Cloud Providern,
+SaaS Providern und anderen API's interagieren zu können. (vgl https://www.terraform.io/docs/language/providers/index.html)
+Provider ermöglichen es Terraform für gewöhnlich einen bestimmten Provider zu
+konfigurieren, es gibt zum Beispiel einen Provider für Google Cloud
+Platform, es gibt aber auch Provider die eine lokales Utility Tool für die
+Nutzung durch Terraform konfigurieren. Öffentliche Provider werden primär
+auf der Terraform Registry bereitgestellt und dokumentiert.
+
 \subsubsection{Terraform Workflow}
+
+Der grundlegende Terraform Workflow besteht aus vier Schritten:
+
+TODO Code terraform init
+
+Das init Kommando installiert und konfiguriert die notwendigen Provider
+und Module und konfiguriert ein Backend (Fußnote Backend) falls angegeben.
+
+TODO Code terraform plan
+
+Mit terraform plan wird ein Execution Plan erstellt. Dazu gehört den die
+aktuell existierenden Resourcen zu erfassen, Veränderungen zwischen
+diesem Zustand und dem im Code konfigurierten Zustand zu erfassen und
+auf Grundlage dessen einen Plan zu erstellen welche Änderungen vorgenommen
+werden können um den Soll-Zustand zu erreichen.
+
+Todo Code terraform apply
+
+Durch terraform apply wird ein solcher Execution Plan ausgeführt und die darin
+enthaltenen Änderungen an der Infrastruktur vorgenommen.
+
+Todo Code terraform destroy
+
+Um den umkomplizierten Abbau eines mit Terraform definierten und aufgebauten
+Systems bewerkstelligen zu können wird das terraform destroy Kommando
+verwendet. Dies ist besonders nützlich um nicht mehr benötigte Testsysteme
+und andere temporäre Infrastrukturen zu entfernen.
 
 \chapter{Aufbau und Untersuchung}
 \label{sec:real}

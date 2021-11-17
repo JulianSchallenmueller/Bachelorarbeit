@@ -23,25 +23,25 @@
 \contentsline {subsection}{\numberline {2.2.6}Terraform Funktionsprinzip}{19}{subsection.2.2.6}%
 \contentsline {subsubsection}{\nonumberline Hashicorp Configuration Language}{21}{section*.22}%
 \contentsline {subsubsection}{\nonumberline Input und Output Variablen}{21}{section*.23}%
-\contentsline {subsubsection}{\nonumberline Terraform Provider}{21}{section*.24}%
-\contentsline {subsubsection}{\nonumberline Terraform Module}{21}{section*.25}%
-\contentsline {subsubsection}{\nonumberline Terraform Workflow}{21}{section*.26}%
-\contentsline {chapter}{\numberline {3}Aufbau und Untersuchung}{22}{chapter.3}%
-\contentsline {section}{\numberline {3.1}High-level Aufbau der Infrastruktur des Versuchsobjekts}{22}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Zu analysiernde Aspekte und Eigenschaften}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Konkreter Aufbau in Microsoft Azure}{22}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Analyse Azure}{22}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Konkreter Aufbau in Amazon AWS}{22}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Analyse AWS}{22}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Konkreter Aufbau in Google Cloud Platform}{22}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Analyse GCP}{22}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Literaturverweise}{22}{section.3.9}%
-\contentsline {chapter}{\numberline {4}Ergebnisse}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Resultate und Vergleichsmatrix}{23}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Schluss}{24}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{24}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{24}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{24}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{24}{section.5.4}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{25}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{26}{chapter*.27}%
+\contentsline {subsubsection}{\nonumberline Terraform Module}{22}{section*.24}%
+\contentsline {subsubsection}{\nonumberline Terraform Provider}{22}{section*.25}%
+\contentsline {subsubsection}{\nonumberline Terraform Workflow}{22}{section*.26}%
+\contentsline {chapter}{\numberline {3}Aufbau und Untersuchung}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}High-level Aufbau der Infrastruktur des Versuchsobjekts}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Zu analysiernde Aspekte und Eigenschaften}{23}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Konkreter Aufbau in Microsoft Azure}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Analyse Azure}{23}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Konkreter Aufbau in Amazon AWS}{23}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Analyse AWS}{23}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Konkreter Aufbau in Google Cloud Platform}{23}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Analyse GCP}{23}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Literaturverweise}{23}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Ergebnisse}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Resultate und Vergleichsmatrix}{24}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Schluss}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{25}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{25}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{25}{section.5.4}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{26}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{27}{chapter*.27}%
