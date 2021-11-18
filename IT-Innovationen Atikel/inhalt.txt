@@ -1,0 +1,57 @@
+2-4 Abbildungen, 2-4 Zitierte Stellen
+
+
+# Einleitung
+
+Cloud Computing ist heute in vielen Bereichen ein fester Bestandteil des Alltags.
+Neben Cloudstorage Angeboten wie Dropbox und OneDrive findet auch eine wachsende Anzahl an
+cloudbasierten Services in Form von Microsoft Office 365, Netflix und weiteren eine immer
+breitere Verwendung, sowohl im Business als auch privaten Bereich. Das Service Modell
+Software as a Service (SaaS) stellt sowohl den sichtbarsten als auch größten Bereich dar,
+gefolgt von Infrastructure as a Service (IaaS) an zweiter Stelle.
+(Literaturverweis auf Cloud Buch S. 22)
+Befeuert durch die Auswirkungen der Corona-Pandemie erfährt besonders das IaaS
+Segment ein enormes Wachstum,
+(Literaturverweis https://www.gartner.com/en/newsroom/press-releases/2021-08-02-gartner-says-four-trends-are-shaping-the-future-of-public-cloud
+und Cloud Buch S. 22),
+der Aufbau von entsprechenden Kompetenzen und der Einsatz effizienter Arbeitsprozesse, Methoden und
+Tools wird daher immer wichtiger.
+
+# Motivation und Zielsetzung
+
+
+
+# Infrastructre as Code mit Terraform
+
+Der de-facto Industriestandard für Infrastruktur Provisioning ist das Software
+Tool Terraform von Hashicorp. Terraform verwendet eine deklarative
+Domänenspezifische Sprache die sowohl Maschinenfreundlichkeit als
+auch Menschenlesbarkeit vereint. Der grundlegende Terraform Workflow besteht
+aus vier grundlegenden Befehlen: __init__, __plan__, __apply__ und __destroy__.
+Der __terraform init__-Befehl installiert die notwendigen Plugins, die Terraform Provider,
+die zur Interaktion mit der Zielplattform wie zum Beispiel AWS, Azure oder GCP
+benötigt werden und konfiguriert das Terraform Commandlineinterface.
+Mit __terraform plan__ wird ein Execution Plan erzeugt der ermittelt welche
+Abhängigkeiten zwischen den Elementen des Infrastruktur-Systems bestehen und
+unter Berücksichtigung bereits existierender Teile festlegt welche Schritte
+vorgenommen werden müssen um den definierten Soll-Zustand zu erreichen.
+Die Ausführung eines Execution Plans wird dann durch __terraform apply__
+angestoßen. Ein nicht mehr benötigtes System kann durch __terraform destroy__
+wieder vollständig abgebaut werden.
+
+text Abb. Terraform Workflow oder Terraform Komponenten und Funktionsprinzip
+
+# Aufbau des zu vergleichenden Systems
+
+text Abb. Aufbau des Systems
+VM's, Netzwerke, Storage...
+
+# Auswahl der Vorgehensweise und Verlgeichskriterien
+
+ISO 25040 als Orientierung für Prozess, Kriterien aus ISO 25010
+
+# Ausblick
+
+Es ist zu erwarten dass AWS, Azure und GCP für den verlgeichbar sind
+Weitere Cloud Anbieter wie Alibaba, Oracle, IBM, Tencent
+Vergleich Terraform als De-facto Standard mit Pulumi als aufstrebende Alternative

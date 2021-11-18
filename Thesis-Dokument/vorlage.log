@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  17 NOV 2021 11:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  18 NOV 2021 11:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1806,75 +1806,75 @@ Package hyperref Info: bookmark on input line 790:
 (hyperref)             reference {section.3.2}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.3.3' on input line 792.
-Package hyperref Info: bookmark on input line 792:
+Package hyperref Info: Anchor `section.3.3' on input line 794.
+Package hyperref Info: bookmark on input line 794:
 (hyperref)             thecounter {3.3}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.3.3}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.3.4' on input line 794.
-Package hyperref Info: bookmark on input line 794:
+Package hyperref Info: Anchor `section.3.4' on input line 796.
+Package hyperref Info: bookmark on input line 796:
 (hyperref)             thecounter {3.4}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.3.4}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.3.5' on input line 796.
-Package hyperref Info: bookmark on input line 796:
+Package hyperref Info: Anchor `section.3.5' on input line 798.
+Package hyperref Info: bookmark on input line 798:
 (hyperref)             thecounter {3.5}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.3.5}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.3.6' on input line 798.
-Package hyperref Info: bookmark on input line 798:
+Package hyperref Info: Anchor `section.3.6' on input line 800.
+Package hyperref Info: bookmark on input line 800:
 (hyperref)             thecounter {3.6}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.3.6}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.3.7' on input line 800.
-Package hyperref Info: bookmark on input line 800:
+Package hyperref Info: Anchor `section.3.7' on input line 802.
+Package hyperref Info: bookmark on input line 802:
 (hyperref)             thecounter {3.7}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.3.7}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.3.8' on input line 802.
-Package hyperref Info: bookmark on input line 802:
+Package hyperref Info: Anchor `section.3.8' on input line 804.
+Package hyperref Info: bookmark on input line 804:
 (hyperref)             thecounter {3.8}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.3.8}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.3.9' on input line 804.
-Package hyperref Info: bookmark on input line 804:
+Package hyperref Info: Anchor `section.3.9' on input line 806.
+Package hyperref Info: bookmark on input line 806:
 (hyperref)             thecounter {3.9}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.3.9}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.doc:stz' on input line 807.
-Package hyperref Info: Reference (cite) `cite.doc:gun' on input line 807.
-Package hyperref Info: Anchor `page.23' on input line 809.
+Package hyperref Info: Reference (cite) `cite.doc:stz' on input line 809.
+Package hyperref Info: Reference (cite) `cite.doc:gun' on input line 809.
+Package hyperref Info: Anchor `page.23' on input line 811.
 [23
 
 
-Package `hyperref' Info: End of reference (cite) `cite.doc:stz', line 807.
-Package `hyperref' Info: End of reference (cite) `cite.doc:gun', line 807.
+Package `hyperref' Info: End of reference (cite) `cite.doc:stz', line 809.
+Package `hyperref' Info: End of reference (cite) `cite.doc:gun', line 809.
 ]
-Package hyperref Info: Anchor `chapter.4' on input line 809.
+Package hyperref Info: Anchor `chapter.4' on input line 811.
 
 chapter 4.
-Package hyperref Info: bookmark on input line 809:
+Package hyperref Info: bookmark on input line 811:
 (hyperref)             thecounter {4}
 (hyperref)             text {\protect \numberline {\csname thechapter\endcsname }\@currenttocentry }
 (hyperref)             reference {chapter.4}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.4.1' on input line 813.
-Package hyperref Info: bookmark on input line 813:
+Package hyperref Info: Anchor `section.4.1' on input line 815.
+Package hyperref Info: bookmark on input line 815:
 (hyperref)             thecounter {4.1}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.4.1}
@@ -1998,7 +1998,7 @@ Here is how much of TeX's memory you used:
  60 hyphenation exceptions out of 8191
  56i,21n,89p,10155b,860s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on vorlage.pdf (37 pages, 973700 bytes).
+Output written on vorlage.pdf (37 pages, 973481 bytes).
 PDF statistics:
  482 PDF objects out of 1000 (max. 8388607)
  410 compressed objects within 5 object streams
