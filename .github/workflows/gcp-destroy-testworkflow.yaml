@@ -4,7 +4,7 @@ on:
 
 jobs:
   destroy:
-    name: 'Terraform Destroy'
+    name: 'Destroy Google Infrastructure'
     runs-on: ubuntu-latest
 
     defaults:
