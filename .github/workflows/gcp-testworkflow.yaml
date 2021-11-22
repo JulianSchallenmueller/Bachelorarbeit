@@ -22,6 +22,7 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
+      working-directory: ./playground/gcp
       run: terraform init
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
