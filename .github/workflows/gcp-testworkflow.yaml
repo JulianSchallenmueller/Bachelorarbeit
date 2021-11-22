@@ -2,6 +2,8 @@ name: 'Terraform CI'
 
 on:
   push:
+    paths:
+      - 'playground/**'
     branches:
       - master
   pull_request:
@@ -17,27 +19,26 @@ jobs:
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
-      working-directory: ./playground/gcp
 
     - name: Terraform Init
       run: terraform init
+        working-directory: playground/gcp
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-      working-directory: ./playground/gcp
 
     - name: Terraform Format
       run: terraform fmt -check
-      working-directory: ./playground/gcp
+        working-directory: playground/gcp
 
     - name: Terraform Plan
       run: terraform plan
+        working-directory: playground/gcp
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-      working-directory: ./playground/gcp
 
     - name: Terraform Apply
       if : github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: terraform apply - auto-approve
+        working-directory: playground/gcp
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-      working-directory: ./playground/gcp
