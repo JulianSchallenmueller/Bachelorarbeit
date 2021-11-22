@@ -2,7 +2,8 @@ name: 'Terraform CI'
 
 on:
   push:
-    - master
+    branches:
+      - master
   pull-request:
 
 jobs:
