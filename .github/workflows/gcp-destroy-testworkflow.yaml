@@ -8,14 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-      env:
-        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
       run:
         shell: bash
     
     steps:
     - name: 'Google State Copy'
       run: gsutil cp gs://jsa-tf-state/default.tfstate .
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: Destroy
       run: terraform destroy
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
