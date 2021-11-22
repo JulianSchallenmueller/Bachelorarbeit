@@ -21,24 +21,24 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
+      working-directory: ./playground/gcp
       run: terraform init
-        working-directory: playground/gcp
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: Terraform Format
+      working-directory: ./playground/gcp
       run: terraform fmt -check
-        working-directory: playground/gcp
 
     - name: Terraform Plan
+      working-directory: ./playground/gcp
       run: terraform plan
-        working-directory: playground/gcp
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: Terraform Apply
+      working-directory: ./playground/gcp
       if : github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: terraform apply - auto-approve
-        working-directory: playground/gcp
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
