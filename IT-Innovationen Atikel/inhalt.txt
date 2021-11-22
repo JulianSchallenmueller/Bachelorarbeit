@@ -1,12 +1,11 @@
 2-4 Abbildungen, 2-4 Zitierte Stellen
 
-
 # Einleitung
 
 Cloud Computing ist heute in vielen Bereichen ein fester Bestandteil des Alltags.
-Neben Cloudstorage Angeboten wie Dropbox und OneDrive findet auch eine wachsende Anzahl an
-cloudbasierten Services in Form von Microsoft Office 365, Netflix und weiteren eine immer
-breitere Verwendung, sowohl im Business als auch privaten Bereich. Das Service Modell
+Neben bekannten Cloudstorage Angeboten wie Dropbox und OneDrive findet auch eine wachsende Anzahl an
+cloudbasierten Services in Form von Microsoft Office 365, Netflix und weiteren gelichermaßen im
+Business wie auch im privaten Bereich eine immer breitere Verwendung. Das Service Modell
 Software as a Service (SaaS) stellt sowohl den sichtbarsten als auch größten Bereich dar,
 gefolgt von Infrastructure as a Service (IaaS) an zweiter Stelle.
 (Literaturverweis auf Cloud Buch S. 22)
@@ -19,39 +18,73 @@ Tools wird daher immer wichtiger.
 
 # Motivation und Zielsetzung
 
-
+Wenn eine Organisation sich dazu entscheidet bestehende oder zukünftige Infrastruktur in die Cloud
+zu migrieren ist es entscheidend auch passende Methoden anzuwenden, Arbeitsprozesse die sich bisher
+bewährt haben sind oftmals ineffektiv und verhindern das Ausnutzen des vollen Potentials der Cloud
+(Literaturverweis IaC Buch S. 3).
+Wird dementsprechend die Entscheidung getroffen das Infrastruktur Provisioning und Management nach
+Infrastructure as Code (IaC) Prinzipien vorzunehmen ist Terraform wahrscheinlich für die meisten
+Organisationen das Tool der Wahl, es ist in diesem Bereich aktuell das am weitesten verbreitete Tool.
+Zu dem Zeitpunkt zu dem entschieden wird Terraform einzusetzen hat eine Organisation in der Regel
+bereits existierende Systeme und Services die auf einer Cloud Plattform gehostet werden.
+Die drei größten Plattformen für Cloud Computing sind Amazon AWS, Microsoft Azure und Google
+Cloud Platform, daher ist das Ziel dieser Arbeit die Unterstützung von Terraform dieser drei
+Anbieter zu betrachten und zu vergleichen. Die Entscheidung ob die aktuell verwendete Plattform
+für die Implementierung von IaC gut geeignet ist oder ob ein Wechsel sinnvoll ist soll durch die
+Ergebnisse der Arbeit unterstützt werden.
 
 # Infrastructre as Code mit Terraform
 
-Der de-facto Industriestandard für Infrastruktur Provisioning ist das Software
-Tool Terraform von Hashicorp. Terraform verwendet eine deklarative
+Terraform verwendet eine deklarative
 Domänenspezifische Sprache die sowohl Maschinenfreundlichkeit als
 auch Menschenlesbarkeit vereint. Der grundlegende Terraform Workflow besteht
-aus vier grundlegenden Befehlen: __init__, __plan__, __apply__ und __destroy__.
+aus vier  Befehlen: __init__, __plan__, __apply__ und __destroy__.
 Der __terraform init__-Befehl installiert die notwendigen Plugins, die Terraform Provider,
 die zur Interaktion mit der Zielplattform wie zum Beispiel AWS, Azure oder GCP
-benötigt werden und konfiguriert das Terraform Commandlineinterface.
+benötigt werden und konfiguriert das Terraform Commandline-Interface.
 Mit __terraform plan__ wird ein Execution Plan erzeugt der ermittelt welche
 Abhängigkeiten zwischen den Elementen des Infrastruktur-Systems bestehen und
 unter Berücksichtigung bereits existierender Teile festlegt welche Schritte
-vorgenommen werden müssen um den definierten Soll-Zustand zu erreichen.
+vorgenommen werden müssen um den im Code definierten Soll-Zustand zu erreichen.
 Die Ausführung eines Execution Plans wird dann durch __terraform apply__
 angestoßen. Ein nicht mehr benötigtes System kann durch __terraform destroy__
 wieder vollständig abgebaut werden.
+Ein Vorteil den Terraform bietet ist das Strukturieren des Infrastruktur Codes
+in Module die in der Regel eine zusammengehörige Gruppe von Resourcen umfassen,
+zum Beispiel alle Resourcen die für ein Netzwerk in Microsoft Azure benötigt werden.
+Solche Module werden von der Community in einer öffentlichen Public Module Registry
+zur freien Verwendendung bereitgestellt, grob vergleichbar mit der npm Registry für Nodejs.
 
 text Abb. Terraform Workflow oder Terraform Komponenten und Funktionsprinzip
+https://www.terraform.io/
 
 # Aufbau des zu vergleichenden Systems
 
-text Abb. Aufbau des Systems
-VM's, Netzwerke, Storage...
+Das System das unterucht werden soll besteht aus typischen Computing Resourcen
+die in vielen System zum Einsatz kommen. Dazu gehören virtuelle Maschinen,
+Netzwerk, Datenbanken, Storage und ein Kubernetes-Cluster.
+
+TODO: Abb. Aufbau des Systems
 
 # Auswahl der Vorgehensweise und Verlgeichskriterien
 
-ISO 25040 als Orientierung für Prozess, Kriterien aus ISO 25010
+Um einen möglichst gut strukturierten und objektiven Vergleich erreichen zu können
+soll nach dem in der ISO/IEC 25040 beschriebenen Prozess vorgegangen werden.
+Dieser besteht aus fünf Schritten: Im ersten Schritt werden die Anforderungen 
+an den Vergleich festgestellt. Im zweiten Schritt werden die Kriterien spezifiert.
+Der dritte Schritt befasst sich mit der Planung der Evaluierung die dann im
+vierten Schritt durchgeführt wird. Die letzte Phase ist die Auswertung und
+Bewertung der Ergebnisse. Als Grundlage der Vergleichskriterien soll das 
+Software Qualitätsmodell der ISO/IEC 25010 dienen.
 
 # Ausblick
 
-Es ist zu erwarten dass AWS, Azure und GCP für den verlgeichbar sind
-Weitere Cloud Anbieter wie Alibaba, Oracle, IBM, Tencent
-Vergleich Terraform als De-facto Standard mit Pulumi als aufstrebende Alternative
+Im Vorfeld ist zu erwarten dass die drei untersuchten Cloud Service Provider
+AWS, Azure und Google Cloud Platform sich in etwa gleichermaßen für den Einsatz
+in einem gewöhlichen Szenario eignen. Es wäre daher interessant den Vergleich
+in Zukunft auf weitere Anbieter zu erweitern, Alibaba, Oracle, IBM und Tencent
+bieten die nächstgrößten Plattformen für Cloud Computing an. Ein ebenfalls
+relevantes Thema ist der verlgleich von Terraform mit anderen IaC
+Tools. Besonders von Interesse wäre ein Vergleich zwischen Terraform und
+Pulumi, einem Tool das in etwa die selbe Funktion wie Terraform erfüllt,
+jedoch deutlich jünger und daher noch weniger stark verbreitet ist.
