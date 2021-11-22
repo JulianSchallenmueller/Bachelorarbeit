@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = "tf-state"
+    bucket = "jsa-tf-state"
     prefix = "terraform/state"
   }
 }
