@@ -1,9 +1,6 @@
 name: 'Terraform Destroy'
 on:
   workflow_dispatch:
-    inputs:
-      env:
-        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
 jobs:
   destroy:
@@ -11,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
       run:
         shell: bash
     
