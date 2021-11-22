@@ -39,6 +39,6 @@ jobs:
     - name: Terraform Apply
       working-directory: ./playground/gcp
       if : github.ref == 'refs/heads/master' && github.event_name == 'push'
-      run: terraform apply - auto-approve
+      run: terraform apply -auto-approve
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
