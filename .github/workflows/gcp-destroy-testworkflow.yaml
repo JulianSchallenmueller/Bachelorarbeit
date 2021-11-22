@@ -18,6 +18,5 @@ jobs:
     - name: 'Google State Copy'
       run: gsutil cp gs://jsa-tf-state/default.tfstate .
 
-    steps:
     - name: Destroy
       run: terraform destroy
