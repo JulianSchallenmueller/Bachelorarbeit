@@ -1,0 +1,23 @@
+name: 'Terraform Destroy'
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}S }}
+
+jobs:
+  destroy:
+    name: 'Terraform Destroy'
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+    
+    steps:
+    - name: 'Google State Copy'
+      run: gsutil cp gs://jsa-tf-state/default.tfstate .
+
+    steps:
+    - name: Destroy
+      run: terraform destroy
