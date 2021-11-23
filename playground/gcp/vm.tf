@@ -8,7 +8,8 @@ terraform {
 
   backend "gcs" {
     bucket = "jsa-tf-state"
-    prefix = "dev/gcp-test.tfstate"
+    prefix = "dev"
+    name = "gcp-test.tfstate"
   }
 }
 
