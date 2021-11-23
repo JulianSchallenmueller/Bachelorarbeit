@@ -25,6 +25,8 @@ jobs:
 
     - name: 'Terraform Init'
       run: cd playground/gcp && terraform init
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}use given 
 
     - name: 'Terraform Destroy'
       run: terraform destroy -auto-approve
