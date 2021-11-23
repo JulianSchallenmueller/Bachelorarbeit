@@ -26,7 +26,7 @@ jobs:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: 'Debug'
-      run: ls
+      run: cd ./playground/gcp/ && ls
 
     - name: 'Terraform Destroy'
       run: terraform destroy -auto-approve
