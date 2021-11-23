@@ -24,5 +24,6 @@ jobs:
       run: terraform init -backend-config="path=default.tfstate"
 
     - name: 'Terraform Destroy'
-      run: terraform destroy -auto-approveenv:
+      run: terraform destroy -auto-approve
+      env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}use given 
