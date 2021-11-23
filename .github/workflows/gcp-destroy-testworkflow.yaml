@@ -21,14 +21,13 @@ jobs:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - name: 'Terraform Init'
-      run: cd ./playground/gcp/ && terraform init
+      working-directory: ./playground/gcp
+      run: terraform init
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
-    - name: 'Debug'
-      run: cd ./playground/gcp/ && ls
-
     - name: 'Terraform Destroy'
+      working-directory: ./playground/gcp
       run: terraform destroy -auto-approve
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
