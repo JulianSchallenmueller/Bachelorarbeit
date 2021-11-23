@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-      run:
+      run: echo ${{ GOOGLE_STORAGE_SA }}
         shell: bash
     
     steps:
