@@ -23,8 +23,8 @@ jobs:
     - name: 'Init Backend'
       run: terraform init -backend-config="path=default.tfstate"
 
-    - name: 'Show'
-      run: cat default.tfstate
+    - name: 'Debug'
+      run: terraform show
 
     - name: 'Terraform Destroy'
       run: terraform destroy -auto-approve
