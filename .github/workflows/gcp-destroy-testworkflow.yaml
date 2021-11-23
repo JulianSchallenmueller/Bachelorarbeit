@@ -18,10 +18,10 @@ jobs:
         GCS_SA: ${{ secrets.GOOGLE_STORAGE_SA }}
 
     - name: 'Google State Copy'
-      run: gsutil cp gs://jsa-tf-state/default.tfstate .
+      run: gsutil cp gs://jsa-tf-state/default.tfstate terraform.tfstate
 
     - name: 'Init Backend'
-      run: terraform init -backend-config="path=./default.tfstate"
+      run: terraform init
 
     - name: 'Debug'
       run: terraform show
