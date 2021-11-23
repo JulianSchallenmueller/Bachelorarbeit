@@ -24,7 +24,8 @@ jobs:
       run: terraform init
 
     - name: 'Debug'
-      run: ls ./playground/gcp
+      uses: actions/checkout@v2
+      run: ls
 
     - name: 'Terraform Destroy'
       run: terraform destroy -auto-approve
