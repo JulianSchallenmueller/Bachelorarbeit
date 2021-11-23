@@ -13,7 +13,7 @@ jobs:
     
     steps:
     - name: 'Authenticate with service account'
-      run: gsutil -help
+      run: gcloud auth list
 
     - name: 'Google State Copy'
       run: gsutil cp gs://jsa-tf-state/default.tfstate .
