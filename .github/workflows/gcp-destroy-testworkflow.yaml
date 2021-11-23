@@ -13,7 +13,7 @@ jobs:
     
     steps:
     - name: 'Authenticate with service account'
-      run: echo $GCS_SA
+      run: echo $GCS_SA >> "key.json" && gcloud auth activate-service-account --key-file key.json
       env:
         GCS_SA: ${{ secrets.GOOGLE_STORAGE_SA }}
 
