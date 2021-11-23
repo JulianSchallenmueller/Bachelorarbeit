@@ -10,21 +10,17 @@ jobs:
     defaults:
       run:
         shell: bash
-    
-    steps:
-    - name: 'Authenticate with service account'
-      run: echo $GCS_SA >> "key.json" && gcloud auth activate-service-account --key-file key.json
-      env:
-        GCS_SA: ${{ secrets.GOOGLE_STORAGE_SA }}
-
-    - name: 'Google State Copy'
-      run: gsutil cp gs://jsa-tf-state/default.tfstate terraform.tfstate
 
     - name: 'Checkout'
       uses: actions/checkout@v2
 
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+
     - name: 'Terraform Init'
-      run: cd playground/gcp && terraform init
+      run: cd playground/gcp && terraform ini
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}use given 
 
