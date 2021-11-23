@@ -18,7 +18,7 @@ jobs:
         GCS_SA: ${{ secrets.GOOGLE_STORAGE_SA }}
 
     - name: 'Google State Copy'
-      run: gsutil cp gs://jsa-tf-state/dev/gcp-test.tfstate
+      run: gsutil cp gs://jsa-tf-state/dev/gcp-test.tfstate .
 
     - name: 'Terraform Destroy'
       run: terraform destroy - auto-approve
