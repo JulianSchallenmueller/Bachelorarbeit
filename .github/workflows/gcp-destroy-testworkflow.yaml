@@ -20,14 +20,11 @@ jobs:
     - name: 'Google State Copy'
       run: gsutil cp gs://jsa-tf-state/default.tfstate terraform.tfstate
 
-    - name: 'Init Backend'
-      run: terraform init
-
-    - name: 'Debug'
+    - name: 'Checkout'
       uses: actions/checkout@v2
 
-    - name: 'Debug 2'
-      run: ls
+    - name: 'Terraform Init'
+      run: cd playground/gcp && terraform init
 
     - name: 'Terraform Destroy'
       run: terraform destroy -auto-approve
