@@ -25,6 +25,9 @@ jobs:
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
+    - name: 'Debug'
+      run: ls
+
     - name: 'Terraform Destroy'
       run: terraform destroy -auto-approve
       env:
