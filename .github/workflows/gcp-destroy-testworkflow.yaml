@@ -21,7 +21,7 @@ jobs:
       run: gsutil cp gs://jsa-tf-state/default.tfstate .
 
     - name: 'Init Backend'
-      run: terraform init -backend-config="path=default.tfstate"
+      run: terraform init -backend-config="path=./default.tfstate"
 
     - name: 'Debug'
       run: terraform show
