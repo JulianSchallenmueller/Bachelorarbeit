@@ -25,6 +25,8 @@ jobs:
 
     - name: 'Debug'
       uses: actions/checkout@v2
+
+    - name: 'Debug 2'
       run: ls
 
     - name: 'Terraform Destroy'
