@@ -21,4 +21,4 @@ jobs:
       run: gsutil cp gs://jsa-tf-state/default.tfstate .
 
     - name: 'Terraform Destroy'
-      run: terraform destroy - auto-approve
+      run: terraform destroy -auto-approve
