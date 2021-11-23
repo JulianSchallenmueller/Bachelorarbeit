@@ -1,4 +1,4 @@
-name: 'Playground Google Terraform CI'
+name: 'Playground GCP CI'
 
 on:
   push:
