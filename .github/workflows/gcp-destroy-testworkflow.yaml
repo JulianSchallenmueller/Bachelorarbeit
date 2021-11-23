@@ -8,12 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-      run: echo ${{ GOOGLE_STORAGE_SA }}
+      run:
         shell: bash
     
     steps:
     - name: 'Authenticate with service account'
-      run: gcloud auth list
+      run: echo $GCS_SA
+      env:
+        GCS_SA = ${{ secrets.GOOGLE_STORAGE_SA }}
 
     - name: 'Google State Copy'
       run: gsutil cp gs://jsa-tf-state/default.tfstate .
