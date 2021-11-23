@@ -23,6 +23,9 @@ jobs:
     - name: 'Init Backend'
       run: terraform init -backend-config="path=default.tfstate"
 
+    - name: 'Show'
+      run: echo default.tfstate
+
     - name: 'Terraform Destroy'
       run: terraform destroy -auto-approve
       env:
