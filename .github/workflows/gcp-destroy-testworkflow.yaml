@@ -12,12 +12,8 @@ jobs:
         shell: bash
     
     steps:
+    - name: 'Authenticate with service account'
+      run: gsutil -help
+
     - name: 'Google State Copy'
       run: gsutil cp gs://jsa-tf-state/default.tfstate .
-      env:
-        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-
-    - name: Destroy
-      run: terraform destroy
-      env:
-        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
