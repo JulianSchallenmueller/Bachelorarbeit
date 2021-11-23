@@ -1,4 +1,4 @@
-name: 'Google Terraform Destroy'
+name: 'Playground Google Terraform Destroy'
 on:
   workflow_dispatch:
 
