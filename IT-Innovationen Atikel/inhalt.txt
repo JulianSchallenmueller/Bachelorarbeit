@@ -1,18 +1,13 @@
-2-4 Abbildungen, 2-4 Zitierte Stellen
-
 # Einleitung
 
 Cloud Computing ist heute in vielen Bereichen ein fester Bestandteil des Alltags.
-Neben bekannten Cloudstorage Angeboten wie Dropbox und OneDrive findet auch eine wachsende Anzahl an
-cloudbasierten Services in Form von Microsoft Office 365, Netflix und weiteren gelichermaßen im
+Neben bekannten Cloud Storage Angeboten wie Dropbox und OneDrive findet auch eine wachsende Anzahl an
+cloudbasierten Services in Form von Microsoft Office 365, Netflix und weiteren gleichermaßen im
 Business wie auch im privaten Bereich eine immer breitere Verwendung. Das Service Modell
-Software as a Service (SaaS) stellt sowohl den sichtbarsten als auch größten Bereich dar,
-gefolgt von Infrastructure as a Service (IaaS) an zweiter Stelle.
-(Literaturverweis auf Cloud Buch S. 22)
-Befeuert durch die Auswirkungen der Corona-Pandemie erfährt besonders das IaaS
-Segment ein enormes Wachstum,
-(Literaturverweis https://www.gartner.com/en/newsroom/press-releases/2021-08-02-gartner-says-four-trends-are-shaping-the-future-of-public-cloud
-und Cloud Buch S. 22),
+Software as a Service (SaaS) stellt sowohl den am stärksten sichtbaren als auch größten Bereich dar,
+gefolgt von Infrastructure as a Service (IaaS) an zweiter Stelle [*Cloud_Buch].
+Befeuert durch die Auswirkungen der COVID-19-Pandemie erfährt besonders das IaaS
+Segment ein enormes Wachstum, [*Gartner_Cloud_Trends][*Cloud_Buch]
 der Aufbau von entsprechenden Kompetenzen und der Einsatz effizienter Arbeitsprozesse, Methoden und
 Tools wird daher immer wichtiger.
 
@@ -21,7 +16,7 @@ Tools wird daher immer wichtiger.
 Wenn eine Organisation sich dazu entscheidet bestehende oder zukünftige Infrastruktur in die Cloud
 zu migrieren ist es entscheidend auch passende Methoden anzuwenden, Arbeitsprozesse die sich bisher
 bewährt haben sind oftmals ineffektiv und verhindern das Ausnutzen des vollen Potentials der Cloud
-(Literaturverweis IaC Buch S. 3).
+[*IaC_Buch].
 Wird dementsprechend die Entscheidung getroffen das Infrastruktur Provisioning und Management nach
 Infrastructure as Code (IaC) Prinzipien vorzunehmen ist Terraform wahrscheinlich für die meisten
 Organisationen das Tool der Wahl, es ist in diesem Bereich aktuell das am weitesten verbreitete Tool.
@@ -50,28 +45,31 @@ Die Ausführung eines Execution Plans wird dann durch __terraform apply__
 angestoßen. Ein nicht mehr benötigtes System kann durch __terraform destroy__
 wieder vollständig abgebaut werden.
 Ein Vorteil den Terraform bietet ist das Strukturieren des Infrastruktur Codes
-in Module die in der Regel eine zusammengehörige Gruppe von Resourcen umfassen,
-zum Beispiel alle Resourcen die für ein Netzwerk in Microsoft Azure benötigt werden.
+in Module die in der Regel eine zusammengehörige Gruppe von Ressourcen umfassen,
+zum Beispiel alle Ressourcen die für ein Netzwerk in Microsoft Azure benötigt werden.
 Solche Module werden von der Community in einer öffentlichen Public Module Registry
-zur freien Verwendendung bereitgestellt, grob vergleichbar mit der npm Registry für Nodejs.
+zur freien Verwendung bereitgestellt, grob vergleichbar mit der npm Registry für Nodejs.
 
-text Abb. Terraform Workflow oder Terraform Komponenten und Funktionsprinzip
-https://www.terraform.io/
+## Terraform_Funktionsprinzip[1](80)
 
 # Aufbau des zu vergleichenden Systems
 
-Das System das unterucht werden soll besteht aus typischen Computing Resourcen
+Das System das untersucht werden soll besteht aus typischen Computer Ressourcen
 die in vielen System zum Einsatz kommen. Dazu gehören virtuelle Maschinen,
 Netzwerk, Datenbanken, Storage und ein Kubernetes-Cluster.
 
-TODO: Abb. Aufbau des Systems
+## Aufbau_System[1](80)
 
-# Auswahl der Vorgehensweise und Verlgeichskriterien
+Die konkrete Implementierung unterscheidet sich im Detail von der Darstellung, diese soll primär dazu dienen
+eine Orientierung zu bieten wie die Implementierung ausgeführt werden könnte. Was jedoch beibehalten wird ist
+die Strukturierung der Module.
+
+# Auswahl der Vorgehensweise und Vergleichskriterien
 
 Um einen möglichst gut strukturierten und objektiven Vergleich erreichen zu können
-soll nach dem in der ISO/IEC 25040 beschriebenen Prozess vorgegangen werden.
+soll nach dem in der ISO/IEC 25040 beschriebenen Prozess werden.
 Dieser besteht aus fünf Schritten: Im ersten Schritt werden die Anforderungen 
-an den Vergleich festgestellt. Im zweiten Schritt werden die Kriterien spezifiert.
+an den Vergleich festgestellt. Im zweiten Schritt werden die Kriterien spezifiziert.
 Der dritte Schritt befasst sich mit der Planung der Evaluierung die dann im
 vierten Schritt durchgeführt wird. Die letzte Phase ist die Auswertung und
 Bewertung der Ergebnisse. Als Grundlage der Vergleichskriterien soll das 
@@ -81,10 +79,10 @@ Software Qualitätsmodell der ISO/IEC 25010 dienen.
 
 Im Vorfeld ist zu erwarten dass die drei untersuchten Cloud Service Provider
 AWS, Azure und Google Cloud Platform sich in etwa gleichermaßen für den Einsatz
-in einem gewöhlichen Szenario eignen. Es wäre daher interessant den Vergleich
+in einem gewöhnlichen Szenario eignen. Es wäre daher interessant den Vergleich
 in Zukunft auf weitere Anbieter zu erweitern, Alibaba, Oracle, IBM und Tencent
-bieten die nächstgrößten Plattformen für Cloud Computing an. Ein ebenfalls
-relevantes Thema ist der verlgleich von Terraform mit anderen IaC
+bieten die nächst größten Plattformen für Cloud Computing an. Ein ebenfalls
+relevantes Thema ist der Verlgleich von Terraform mit anderen IaC
 Tools. Besonders von Interesse wäre ein Vergleich zwischen Terraform und
 Pulumi, einem Tool das in etwa die selbe Funktion wie Terraform erfüllt,
 jedoch deutlich jünger und daher noch weniger stark verbreitet ist.
