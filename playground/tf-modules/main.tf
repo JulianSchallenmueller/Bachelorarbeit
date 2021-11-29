@@ -27,6 +27,30 @@ module "network" {
   ]
 }
 
+resource "google_compute_firewall" "jsa_vm_firewall" {
+  name = "jsa-terraform-firewall"
+
+  network = module.network.network_name
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+}
+
+variable "vm_name" {}
+
+module "some_module" {
+  source = "./some_module"
+
+  vm_name = var.vm_name
+  network = module.network.subnets_self_links[0]
+}
+
+output "some_module_output" {
+  value = module.some_module.vm_ip_addr
+}
+
 resource "google_compute_instance" "vm" {
   name         = "vm-instance"
   machine_type = "f1-micro"
