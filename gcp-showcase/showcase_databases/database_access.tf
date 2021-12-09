@@ -7,14 +7,14 @@ resource "random_string" "dbPasswordGen" {
 }
 
 resource "google_sql_user" "admin_user" {
-  name = "dbadmin"
+  name     = "dbadmin"
   password = random_string.dbPasswordGen.result
-  instance = google_sql_database_instance.pgdatabaseserver.name
+  instance = google_sql_database_instance.pgdatabaseserver1.name
 }
 
 resource "google_sql_ssl_cert" "admin_client_cert" {
   common_name = google_sql_user.admin_user.name
-  instance    = google_sql_database_instance.pgdatabaseserver.name
+  instance    = google_sql_database_instance.pgdatabaseserver1.name
 }
 
 resource "google_secret_manager_secret" "pg-database-password-secret" {

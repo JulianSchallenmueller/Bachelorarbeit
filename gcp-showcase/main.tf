@@ -46,3 +46,12 @@ module "showcase_databases" {
   region             = var.region
   database_admin_pwd = var.database_admin_pwd
 }
+
+module "showcase_kubernetes" {
+  source = "./showcase_kubernetes"
+
+  project   = var.project
+  network   = google_compute_network.jsa-vpc_network.name
+  zone      = var.zone
+  num_nodes = 2
+}

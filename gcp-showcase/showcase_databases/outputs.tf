@@ -1,9 +1,9 @@
 output "postgres_server_ipv4" {
-  value = google_sql_database_instance.pgdatabaseserver.ip_address.0.ip_address
+  value = google_sql_database_instance.pgdatabaseserver1.ip_address.0.ip_address
 }
 
 output "admin_private_key" {
-  value = google_sql_ssl_cert.admin_client_cert.private_key
+  value     = google_sql_ssl_cert.admin_client_cert.private_key
   sensitive = true
 }
 
