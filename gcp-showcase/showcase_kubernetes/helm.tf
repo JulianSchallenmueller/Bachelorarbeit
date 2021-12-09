@@ -9,6 +9,11 @@ provider "helm" {
   }
 }
 
+resource "google_compute_address" "kubernetes_cluster_primary_ingress_ip" {
+  name         = "showcase-primary-ingress-ip"
+  address_type = "EXTERNAL"
+}
+
 resource "kubernetes_namespace" "nginxNamespace" {
   metadata {
     name = "nginx-ingress"
@@ -24,7 +29,7 @@ resource "helm_release" "nginxIngressController" {
 
   set {
     name  = "controller.service.loadBalancerIP"
-    value = google_container_cluster.jsa_showcase_gke.endpoint
+    value = google_compute_address.kubernetes_cluster_primary_ingress_ip.self_link
   }
 
   depends_on = [kubernetes_namespace.nginxNamespace]
