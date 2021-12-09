@@ -1,88 +1,47 @@
-# Einleitung
+# Einleitung und Motivation
 
 Cloud Computing ist heute in vielen Bereichen ein fester Bestandteil des Alltags.
-Neben bekannten Cloud Storage Angeboten wie Dropbox und OneDrive findet auch eine wachsende Anzahl an
-cloudbasierten Services in Form von Microsoft Office 365, Netflix und weiteren gleichermaßen im
-Business wie auch im privaten Bereich eine immer breitere Verwendung. Das Service Modell
-Software as a Service (SaaS) stellt sowohl den am stärksten sichtbaren als auch größten Bereich dar,
-gefolgt von Infrastructure as a Service (IaaS) an zweiter Stelle [*Cloud_Buch].
-Befeuert durch die Auswirkungen der COVID-19-Pandemie erfährt besonders das IaaS
-Segment ein enormes Wachstum, [*Gartner_Cloud_Trends][*Cloud_Buch]
-der Aufbau von entsprechenden Kompetenzen und der Einsatz effizienter Arbeitsprozesse, Methoden und
-Tools wird daher immer wichtiger.
+Beim Begriff "Cloud" kommen bei vielen Menschen wohl als erstes diverse Cloud Storage Angebote in den Sinn: Dropbox, OneDrive und ähnliche Software finden sowohl privat als auch geschäftlich breite Verwendung. Neben den allgemein bekannten Cloud Storage Services sind auch die Streaming Plattform Netflix oder Microsoft Office 365 rein Cloud basierte Dienste.
+Alle der oben genannten Produkte gehören dem Service Modell __Software as a Service__ (SaaS) an. SaaS stellt den umsatzstärksten Bereich dar, gefolgt von __Infrastructure as a Service__ (IaaS) an zweiter Stelle (vgl. [*Cloud_Buch] S. 22).
+Durch die Auswirkungen der COVID-19-Pandemie erfährt besonders das IaaS
+Segment ein enormes Wachstum (vgl. [*Gartner_Cloud_Trends],[*Cloud_Buch] S. 22), da Homeoffice und der diesbezügliche Ausbau von IT-Infrastruktur im letzten Jahr von vielen Firmen besonders stark vorangetrieben wurde.
+Dieser technologische Wandel forciert eine Anpassung der Arbeitsprozesse, Methoden und Tools. Die Umsetzung dessen stellt aktuell für viele Unternehmen eine große Herausforderung dar.
+Das erfolgreiche Meistern dieser Herausforderung setzt ein einen grundlegendes Ändern und Evaluieren der Arbeitsmethodik voraus. In der Vergangenheit bewährte Arbeitsprozesse sind im allgemeinen mit der Entwicklung Cloudbasierter Systeme nicht kompatibel, da diese eine iterative Arbeitsweise mit kontinuierlichen Anpassungen erfordert. Insbesondere lineare Modelle wie das Wasserfallmodell stehen in starkem Kontrast zu den heutigen Anforderungen. Das volle Potential von Cloud-Technologien kann daher nur durch den Einsatz entsprechend moderner Arbeitsmethoden ausgeschöpft werden (vgl. [*IaC_Buch] S. 3).
 
-# Motivation und Zielsetzung
+# Zielsetzung
 
-Wenn eine Organisation sich dazu entscheidet bestehende oder zukünftige Infrastruktur in die Cloud
-zu migrieren ist es entscheidend auch passende Methoden anzuwenden, Arbeitsprozesse die sich bisher
-bewährt haben sind oftmals ineffektiv und verhindern das Ausnutzen des vollen Potentials der Cloud
-[*IaC_Buch].
-Wird dementsprechend die Entscheidung getroffen das Infrastruktur Provisioning und Management nach
-Infrastructure as Code (IaC) Prinzipien vorzunehmen ist Terraform wahrscheinlich für die meisten
-Organisationen das Tool der Wahl, es ist in diesem Bereich aktuell das am weitesten verbreitete Tool.
-Zu dem Zeitpunkt zu dem entschieden wird Terraform einzusetzen hat eine Organisation in der Regel
-bereits existierende Systeme und Services die auf einer Cloud Plattform gehostet werden.
-Die drei größten Plattformen für Cloud Computing sind Amazon AWS, Microsoft Azure und Google
-Cloud Platform, daher ist das Ziel dieser Arbeit die Unterstützung von Terraform dieser drei
-Anbieter zu betrachten und zu vergleichen. Die Entscheidung ob die aktuell verwendete Plattform
-für die Implementierung von IaC gut geeignet ist oder ob ein Wechsel sinnvoll ist soll durch die
-Ergebnisse der Arbeit unterstützt werden.
+Die für die Industrie wichtigsten Plattformen für Cloud Computing sind Amazon AWS, Microsoft Azure und Google Cloud Platform. Viele Unternehmen besitzen bereits Infrastruktur-Systemen auf diesen Plattformen die manuell erstellt und konfiguriert wurden. Mit wachsender Größe und Komplexität wird das Management dieser Systeme immer komplizierter und fehleranfälliger. Aus diesem Grund wird eine effektivere Arbeitsmethode durch den Einsatz von __Infrastructure as Code__ Prinzipien (IaC) und den dazugehörigen Tools angestrebt. IaC umfasst die folgenden Aufgaben: Infrastruktur Templating, Bereitstellung und Management von Infrastruktur, die initiale Installation und Konfiguration von Anwendungen sowie das Anpassen der installierten Software im weiteren Betrieb. Das Tool Terraform kommt im zweiten der genannten Bereiche zum Einsatz (Abb. 1). Die Unterschiede die beim Einsatz von Terraform mit den drei genannten Cloud Computing Plattformen festgestellt werden können sind der zentrale Untersuchungsgegenstand dieser Arbeit.
+
+## IaC_Tools[2](80)
 
 # Infrastructre as Code mit Terraform
 
-Terraform verwendet eine deklarative
-Domänenspezifische Sprache die sowohl Maschinenfreundlichkeit als
+Terraform verwendet eine deklarative domänenspezifische Sprache die sowohl Maschinenfreundlichkeit als
 auch Menschenlesbarkeit vereint. Der grundlegende Terraform Workflow besteht
-aus vier  Befehlen: __init__, __plan__, __apply__ und __destroy__.
-Der __terraform init__-Befehl installiert die notwendigen Plugins, die Terraform Provider,
-die zur Interaktion mit der Zielplattform wie zum Beispiel AWS, Azure oder GCP
-benötigt werden und konfiguriert das Terraform Commandline-Interface.
-Mit __terraform plan__ wird ein Execution Plan erzeugt der ermittelt welche
-Abhängigkeiten zwischen den Elementen des Infrastruktur-Systems bestehen und
-unter Berücksichtigung bereits existierender Teile festlegt welche Schritte
-vorgenommen werden müssen um den im Code definierten Soll-Zustand zu erreichen.
+aus vier  Befehlen: __init__, __plan__, __apply__ und __destroy__ (Abb. 2).
+Der __terraform init__ Befehl konfiguriert die Terraform CLI und installiert die benötigten Terraform Provider. Diese Provider sind im Kern Plug-Ins welche Terraform ermöglichen mit den verschiedenen Plattformen zu interagieren, es gibt für gewöhnlich einen Provider für jede Plattform. Mit __terraform plan__ wird erfasst welche Elemente des Systems bereits existieren, welche Teile neu im Code definiert wurden und ermittelt dann die Abhängigkeiten die zwischen diesen bestehen. Daraus wird ein Execution Plan erstellt der die Schritte definiert mit welchen der gewünschte Zustand erreicht werden soll.
 Die Ausführung eines Execution Plans wird dann durch __terraform apply__
 angestoßen. Ein nicht mehr benötigtes System kann durch __terraform destroy__
-wieder vollständig abgebaut werden.
-Ein Vorteil den Terraform bietet ist das Strukturieren des Infrastruktur Codes
-in Module die in der Regel eine zusammengehörige Gruppe von Ressourcen umfassen,
-zum Beispiel alle Ressourcen die für ein Netzwerk in Microsoft Azure benötigt werden.
-Solche Module werden von der Community in einer öffentlichen Public Module Registry
-zur freien Verwendung bereitgestellt, grob vergleichbar mit der npm Registry für Nodejs.
+wieder vollständig abgebaut werden. Terraform erlaubt es große und komplexe Systeme in kleineren, voneinander unabhängigen Modulen zu beschreiben. Diese beinhalten in der Regel alle Resourcen die für eine bestimmte Komponente benötigt werden, es gibt zum Beispiel das __eks__ Modul für AWS das es vereinfacht einen Kubernetes-Cluster in AWS bereitzustellen. Solche Module werden von der Community in einer öffentlichen Public Module Registry
+zur freien Verwendung veröffentlicht, grob vergleichbar mit der npm Registry für Nodejs.
 
-## Terraform_Funktionsprinzip[1](80)
+## Terraform_Funktionsprinzip[1](100)
 
 # Aufbau des zu vergleichenden Systems
 
-Das System das untersucht werden soll besteht aus typischen Computer Ressourcen
-die in vielen System zum Einsatz kommen. Dazu gehören virtuelle Maschinen,
-Netzwerk, Datenbanken, Storage und ein Kubernetes-Cluster.
-
-## Aufbau_System[1](80)
-
-Die konkrete Implementierung unterscheidet sich im Detail von der Darstellung, diese soll primär dazu dienen
-eine Orientierung zu bieten wie die Implementierung ausgeführt werden könnte. Was jedoch beibehalten wird ist
-die Strukturierung der Module.
+Der exakte Aufbau des zu untersuchenden Systems wird im Verlauf der Arbeit noch konkretisiert. Es soll in jedem Fall aus einer Reihe von typischen Computer Ressourcen zusammengesetzt sein: Netzwerk, Virtuelle Maschinen, Datenbanken, Storage und ein Kubernetes-Cluster. Je nach Plattform werden sich die Systeme leicht unterscheiden, die High-Level Struktur die mithilfe von Modulen definiert werden soll wird dabei beibehalten.
 
 # Auswahl der Vorgehensweise und Vergleichskriterien
 
-Um einen möglichst gut strukturierten und objektiven Vergleich erreichen zu können
-soll nach dem in der ISO/IEC 25040 beschriebenen Prozess werden.
-Dieser besteht aus fünf Schritten: Im ersten Schritt werden die Anforderungen 
-an den Vergleich festgestellt. Im zweiten Schritt werden die Kriterien spezifiziert.
-Der dritte Schritt befasst sich mit der Planung der Evaluierung die dann im
-vierten Schritt durchgeführt wird. Die letzte Phase ist die Auswertung und
-Bewertung der Ergebnisse. Als Grundlage der Vergleichskriterien soll das 
-Software Qualitätsmodell der ISO/IEC 25010 dienen.
+Um einen möglichst gut strukturierten und objektiven Vergleich zu gewähren soll nach dem in der ISO/IEC 25040 beschriebenen Prozess zur Evaluierung von Software vorgegangen werden. Als Grundlage der Vergleichskriterien soll die ISO/IEC 25010
+__System und Software-Engineering - Qualitätskriterien und Bewertung von System- und Softwareprodukten (SQuaRE) - Bewertungsprozess__ dienen.
 
 # Ausblick
 
-Im Vorfeld ist zu erwarten dass die drei untersuchten Cloud Service Provider
+Im Vorfeld ist zu erwarten, dass die drei untersuchten Cloud Service Provider 
 AWS, Azure und Google Cloud Platform sich in etwa gleichermaßen für den Einsatz
-in einem gewöhnlichen Szenario eignen. Es wäre daher interessant den Vergleich
-in Zukunft auf weitere Anbieter zu erweitern, Alibaba, Oracle, IBM und Tencent
+in einem gewöhnlichen Szenario eignen. Es wäre daher interessant, den Vergleich
+in Zukunft auf weitere Anbieter zu erweitern. Alibaba, Oracle, IBM und Tencent
 bieten die nächst größten Plattformen für Cloud Computing an. Ein ebenfalls
 relevantes Thema ist der Verlgleich von Terraform mit anderen IaC
-Tools. Besonders von Interesse wäre ein Vergleich zwischen Terraform und
-Pulumi, einem Tool das in etwa die selbe Funktion wie Terraform erfüllt,
-jedoch deutlich jünger und daher noch weniger stark verbreitet ist.
+Tools. Das Tool Pulumi erfüllt die gleiche Aufgabe wie Terraform, ist jedoch jünger und hat daher noch nicht die selbe Verbreitung wie Terraform erreicht. Der auffälligste Unterschied besteht im Einsatz von bekannten imperativen Programmiersprachen welche weitere Möglichkeiten eröffnen könnten.
