@@ -1,0 +1,61 @@
+--------------Functional Suitability---------------
+functional completeness: Wird überall gegeben sein, trotzdem relevant
+
+functional correctness: ?
+
+functional appropiateness: Wird überall gegeben sein, trotzdem relevant
+
+---------------Performance efficiency ------------
+time behaviour: Sehr interessant, Gesamtsystem und einzelne Komponenten vergleichbar
+
+resource utilization: ?
+
+capacity: ?
+
+------------Compatibility--------
+Co-existence: ?
+
+Interoperability: Könnte ich image von andrer Registry ziehen?
+
+---------------Usability---------------
+Appropriateness recognizability: Könnte etwas ausgearbeitet werden
+
+Learnability: ? Zu großes Thema?
+
+Operability: " ?
+
+User error protection: Könnte etwas ausgearbeitet werden
+
+User interface aesthetics: Selbe CLI daher eher irrelevant
+
+Accessibility: ?
+
+--------------Reliability-----------------------
+Maturity: Beta features, deprecated stuff; hallo google container/artifact registry
+
+Availability: Irrelevant
+
+Fault tolerance: ?
+
+Recoverability: Was wenn internet unterbrochen wird? Gibt es Unterschiede? Reproduzierbare Unterschiede?
+
+------------Security---------------
+Gesamtes Thema zu groß und komplex
+
+----------------Maintainability-------------------
+Modularity: Terraform-gegebene Modularität, Unteschiede bei Dingen wie Key Vaults, Secrets Storage, registries
+
+Reusability: ? Ja?
+
+Analysability: Terraform plan, show, graph etc
+
+Modifiability: Was kann verändert werden ohne neu erstellt werden zu müssen?
+
+Testability: Zu großes Thema um effektiv behandelt werden zu können, sollte aber Terraform-weit uniform sein
+
+--------------Portability-----------------
+Adaptability: ?
+
+Installability: ? Provider wird mit Terraform init installiert
+
+Replaceability: Terraform Provider kann durch Pulumi ausgetauscht werden, Andere IaC Tools können anstelle von Terraform eingesetzt werden.
