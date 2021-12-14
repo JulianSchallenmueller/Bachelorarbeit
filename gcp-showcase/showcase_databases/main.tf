@@ -36,7 +36,7 @@ resource "google_sql_database_instance" "pgdatabaseserver1" {
     }
   }
 
-  deletion_protection = "true"
+  deletion_protection = "false"
 }
 
 resource "google_sql_database" "orderdomain_db" {

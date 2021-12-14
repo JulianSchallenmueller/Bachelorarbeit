@@ -8,29 +8,29 @@ provider "kubernetes" {
   client_key             = base64decode(google_container_cluster.jsa_showcase_gke.master_auth[0].client_key)
 }
 
-resource "kubernetes_namespace" "orderdomainNamespace" {
-  metadata {
-    name = "orderdomain"
-  }
-}
+# resource "kubernetes_namespace" "orderdomainNamespace" {
+#   metadata {
+#     name = "orderdomain"
+#   }
+# }
 
-resource "kubernetes_namespace" "supplierdomainNamespace" {
-  metadata {
-    name = "supplierdomain"
-  }
-}
+# resource "kubernetes_namespace" "supplierdomainNamespace" {
+#   metadata {
+#     name = "supplierdomain"
+#   }
+# }
 
-resource "kubernetes_namespace" "manufacturedomainNamespace" {
-  metadata {
-    name = "manufacturedomain"
-  }
-}
+# resource "kubernetes_namespace" "manufacturedomainNamespace" {
+#   metadata {
+#     name = "manufacturedomain"
+#   }
+# }
 
-resource "kubernetes_namespace" "integrationdomainNamespace" {
-  metadata {
-    name = "integrationdomain"
-  }
-}
+# resource "kubernetes_namespace" "integrationdomainNamespace" {
+#   metadata {
+#     name = "integrationdomain"
+#   }
+# }
 
 data "google_client_config" "default" {}
 
