@@ -1,0 +1,50 @@
+1. Worum geht es bei Infrastructure as Code?
+
+1.1 Wichtige Cloud Computing Eigenschaft:
+	Schnelles Bereitstellen und Löschen von Computing Resourcen wie VM's, Database Server...
+	
+	Demonstration in Google Cloud Console?
+	Nachträgliches Editieren demonstrieren -> configuration drift
+	
+1.2 Probleme die entstehen
+	Configuration Drift
+	Dokumentation
+	Aufwändige manuelle Änderungen
+	Fehlende Übersicht über große Systeme
+	Schwierige Reproduzierbarkeit
+	
+1.3 Wie löst IaC diese Probleme?
+	Versionierter Infrastrukture Code verhindert configuration drift, jede Änderung wird im Code gemacht und versioniert
+	Code stellt bereits eine sehr basic Dokumentation dar
+	Änderungen werden automatisiert deployt
+	Strukturierter und Modularisierter Code hilft übersicht
+	Code kann mehrfach deplot werden, einlene module wiederverwendet
+	
+2. Wie funktioniert Terraform?
+	Terraform Core + Terraform provider die die Apis ansprechen + Statefile und .tf Files
+	Workflow mit init, plan, apply, destroy
+	
+	Demonstration.
+	
+3. Ziel: Vergleich zwischen Google, Azure und AWS
+	Wie gut unterstützen die drei Provider IaC mit Terraform?
+	
+4. Wie sieht das Versuchsobjekt-System aus?
+	Unterschiede der spezifischen implementierungen
+	Wie sieht es in der Cloud Oberfläche aus?
+	Im Code?
+	Dependency Graph in Terraform?
+	Terraform-Graph-Beautifier?
+	
+5. Welche Kriterien werden untersucht?
+	ISO 25010 als grobe Vorlage soweit applicable
+	
+6. Weitere interessante Themen
+	Erweiterung andere CSP die wahrscheinlich weniger weit sind wie die drei großen
+	Terraform vs Pulumi, Vergleich andere IaC Tools, spezifische Eignung der Tools
+	Terraform Testing
+	Thema Cloud-agnostic: Wie weit kann durch modularisierung Cloud-agnostischer Code geschrieben werden?
+
+
+	
+

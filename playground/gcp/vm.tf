@@ -22,6 +22,20 @@ resource "google_compute_network" "vpc_network" {
   auto_create_subnetworks = true
 }
 
+
+resource "google_compute_firewall" "vm_firewall" {
+  name = "vm-firewall"
+
+  network = google_compute_network.vpc_network.name
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+}
+
 resource "google_compute_instance" "vm" {
   name         = "vm-instance"
   machine_type = "f1-micro"
