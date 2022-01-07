@@ -781,37 +781,81 @@ und andere temporäre Infrastrukturen zu entfernen.
 
 \chapter{Aufbau und Untersuchung}
 \label{sec:real}
-Beschreibung der HW- und SW-Realisierung
+
+\section{Evaluierungsanforderungen}
+
+\subsection{Ziel der Evaluierung}
+
+Das Ziel der Evaluierung ist es einen Vergleich zwischen den Terraform
+Providern von Amazon AWS, Google Cloud Platform und Microsoft Azure zu
+erstellen.
+
+\subsection{Qualitätsanforderungen}
+
+\subsection{Zu untersuchende Komponenten der Terraform Provider}
+
+\subsection{Grenzen und Limitierungen der Evaluierung}
+
+\section{Spezifizierug des Vergleichs}
+
+\subsection{Zu untersuchende Aspekte und Eigenschaften}
+
+\subsection{Entscheidungskriterien für die Evaluierung}
+
+\subsection{Konkreter Aufbau in Microsoft Azure}
+
+\subsection{Analyse Azure}
+
+\subsection{Konkreter Aufbau in Amazon AWS}
+
+\subsection{Analyse AWS}
+
+\subsection{Konkreter Aufbau in Google Cloud Platform}
+
+\subsection{Analyse GCP}
+
+
+
+Das Ziel der Arbeit ist es einen Vergleich der Terraform Provider unter
+möglichst gleichen Bedingugen zu erreichen. Da die durch die
+verschiedenen Cloud Provider bereitgestellten Computing Ressourcen jedoch
+nicht immer identisch sind ist ein perfekter Vergleich nicht möglich.
+Stellen die Cloud Provider nur Virtuelle Maschinen mit unterschiedlicher
+Leistungsfähigkeit bereit wird jedoch darauf geachtet möglichst ähnliche
+Konfigurationen zu verwenden um den Vergleich so identisch wie möglich zu
+gestalten. Das selbe gilt für die Größen von Festplatten und allen anderen
+vergleichbaren Objekten. Stehen nur sehr teure identische Maschinen bereit
+werden aus Kostengründen ebenfalls günstigere aber möglichst ähnliche
+Konfigurationen gewählt. Die genauen Daten der verglichenen
+Infrastrukturobjekte werden jeweils bei den Vergleichswerten aufgelistet.
 
 \section{High-level Aufbau der Infrastruktur des Versuchsobjekts}
 \label{sec:real-unter}
-Beispiel Text
 
-\section{Zu analysiernde Aspekte und Eigenschaften}
+Als Testobjekt dient ein Infrastruktursystem das typische Anwendungsfälle
+repräsentieren soll. Es besteht aus Netzwerk, mehreren Datenbanken und 
+einem Kubernetes Cluster mit mehreren Worker Nodes. Das System ist eine
+leicht veränderte Variante des öffentlich einsehbaren
+Infrastruktur-Showcase der Novatec. Ergänzend zu diesem System sollen 
+zusätzlich einige Tests mit einzelnen Ressourcen wie zum Beispiel
+Virtuellen Maschinen durchgeführt werden.\\
+Weiterhin existiert ein bereits manuell erstellter Object Storage mithilfe
+dessen auf einer ebenfalls manuell erstellten Container Registry das
+Dockerimage für den Kubernetes Cluster bereitgestellt wird. Dieses Image
+bzw. die Registry wird dann im Terraform Projekt als Data Source erfasst.
 
-Zur Bewertung der Terraform Provider von AWS, Azure und Google soll die 
-
-\section{Konkreter Aufbau in Microsoft Azure}
-
-\section{Analyse Azure}
-
-\section{Konkreter Aufbau in Amazon AWS}
-
-\section{Analyse AWS}
-
-\section{Konkreter Aufbau in Google Cloud Platform}
-
-\section{Analyse GCP}
-
-\section{Literaturverweise}
-\label{sec:real-literatur}
-
-Verweise im Text: \cite{doc:stz} und \cite{doc:gun}.
+Der originale Infrastrktur-Showcase besteht aufgrund der verhältnismäßig
+geringen Größe und Komplexität aus einem einzelnen Terraform Modul
+"Platform" das die gesamte Infrastruktur enthält. Für diese Arbeit wurden
+die Kubernetes- und Datenbank-Komponenten zu Demonstrationszwecken in
+jeweils eigene Module ausgelagert. Diese Module könnten in
+eine öffentliche oder auch private Terraform Module Registry
+hochgeladen werden um später in weiteren Projekten verwendet werden zu
+können.
 
 \chapter{Ergebnisse}
 \label{sec:ergeb}
 
+\section{Gemessene Werte und Erkenntnisse}
 
-\section{Resultate und Vergleichsmatrix}
-
-\enquote{Neuigkeiten} Messergebnisse
+\section{Auswertung der Ergenisse}

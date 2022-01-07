@@ -27,21 +27,28 @@
 \contentsline {subsubsection}{\nonumberline Terraform Provider}{22}{section*.25}%
 \contentsline {subsubsection}{\nonumberline Terraform Workflow}{22}{section*.26}%
 \contentsline {chapter}{\numberline {3}Aufbau und Untersuchung}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}High-level Aufbau der Infrastruktur des Versuchsobjekts}{23}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Zu analysiernde Aspekte und Eigenschaften}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Konkreter Aufbau in Microsoft Azure}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Analyse Azure}{23}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Konkreter Aufbau in Amazon AWS}{23}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Analyse AWS}{23}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Konkreter Aufbau in Google Cloud Platform}{23}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Analyse GCP}{23}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Literaturverweise}{23}{section.3.9}%
-\contentsline {chapter}{\numberline {4}Ergebnisse}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Resultate und Vergleichsmatrix}{24}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Schluss}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{25}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{25}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{25}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{25}{section.5.4}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{26}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{27}{chapter*.27}%
+\contentsline {section}{\numberline {3.1}Evaluierungsanforderungen}{23}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Ziel der Evaluierung}{23}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Qualitätsanforderungen}{24}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Zu untersuchende Komponenten der Terraform Provider}{24}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Grenzen und Limitierungen der Evaluierung}{24}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Spezifizierug des Vergleichs}{24}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Zu untersuchende Aspekte und Eigenschaften}{24}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Entscheidungskriterien für die Evaluierung}{24}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Konkreter Aufbau in Microsoft Azure}{24}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Analyse Azure}{24}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Konkreter Aufbau in Amazon AWS}{24}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Analyse AWS}{24}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Konkreter Aufbau in Google Cloud Platform}{24}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Analyse GCP}{24}{subsection.3.2.8}%
+\contentsline {section}{\numberline {3.3}High-level Aufbau der Infrastruktur des Versuchsobjekts}{25}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Ergebnisse}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Gemessene Werte und Erkenntnisse}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Auswertung der Ergenisse}{26}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Schluss}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{27}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{27}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{27}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{27}{section.5.4}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{28}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{29}{chapter*.27}%
