@@ -788,37 +788,37 @@ und andere temporäre Infrastrukturen zu entfernen.
 
 Das Ziel der Evaluierung ist es einen Vergleich zwischen den Terraform
 Providern von Amazon AWS, Google Cloud Platform und Microsoft Azure zu
-erstellen.
-
-\subsection{Qualitätsanforderungen}
+erstellen. Der Hintergrund dazu ist es als erstes zu ermitteln ob alle
+drei der großen Cloud Plattformen Infrastructure as Code mit Terraform
+für ein gegebenes Szenario unterstützen. Weiter sollen mehrere
+Kriterien verglichen werden um zu ermitteln ob alle Plattformen
+vergleichbare Ergebnisse liefern, oder ob eine Plattform durch besonders
+gute oder schwache Ergebnisse heraussticht. Funktionieren bestimmte
+Aspekte (wie zum Beispiel die Containerimage-Registry) unterschiedliche
+soll dies ebenfalls erfasst und bewertet werden.\\
+Die Untersuchung soll auch dazu dienen die Effektivität von
+Infrastructure as Code mit Terraform zu demonstrieren. Zusätzlich soll
+dargestellt werden dass die Technologie einsatzreif für Verwendung in
+Produktionssystemen ist.
 
 \subsection{Zu untersuchende Komponenten der Terraform Provider}
 
+Die Komponenten der Terraform Provider die Untersucht werden sollen
+hängen von dem System ab das als Untersuchungsobjekt genutzt werden soll.
+Dieses setzt sich aus einem Netzwerk, einer Container-Registry, einem
+Kubernetes-Cluster und einem Datenbankserver mit mehreren Datenbanken
+sowie den dazugehörenden Firewalls zusammen. Zusätzlich sollen
+einfache virtuelle Maschinen betrachtet werden um ein vollständigeres Bild
+zu erhalten.
+
 \subsection{Grenzen und Limitierungen der Evaluierung}
 
-\section{Spezifizierug des Vergleichs}
-
-\subsection{Zu untersuchende Aspekte und Eigenschaften}
-
-\subsection{Entscheidungskriterien für die Evaluierung}
-
-\subsection{Konkreter Aufbau in Microsoft Azure}
-
-\subsection{Analyse Azure}
-
-\subsection{Konkreter Aufbau in Amazon AWS}
-
-\subsection{Analyse AWS}
-
-\subsection{Konkreter Aufbau in Google Cloud Platform}
-
-\subsection{Analyse GCP}
-
-
-
-Das Ziel der Arbeit ist es einen Vergleich der Terraform Provider unter
-möglichst gleichen Bedingugen zu erreichen. Da die durch die
-verschiedenen Cloud Provider bereitgestellten Computing Ressourcen jedoch
+Die Terraform Provider können weitaus mehr Computing Ressourcen erzeugen
+als in dieser Arbeit untersucht werden. Aufgrund des Umfangs können
+nicht alle Ressourcen verglichen werden, die hier verwendeten wurden
+ausgewählt um die grundlegendsten Szenarien zu untersuchen. Da die durch
+die verschiedenen Cloud Provider bereitgestellten Computing Ressourcen
+jedoch
 nicht immer identisch sind ist ein perfekter Vergleich nicht möglich.
 Stellen die Cloud Provider nur Virtuelle Maschinen mit unterschiedlicher
 Leistungsfähigkeit bereit wird jedoch darauf geachtet möglichst ähnliche
@@ -829,8 +829,9 @@ werden aus Kostengründen ebenfalls günstigere aber möglichst ähnliche
 Konfigurationen gewählt. Die genauen Daten der verglichenen
 Infrastrukturobjekte werden jeweils bei den Vergleichswerten aufgelistet.
 
-\section{High-level Aufbau der Infrastruktur des Versuchsobjekts}
-\label{sec:real-unter}
+\section{Spezifizierug des Vergleichs}
+
+\subsection{High-level Aufbau der Infrastruktur des Versuchsobjekts}
 
 Als Testobjekt dient ein Infrastruktursystem das typische Anwendungsfälle
 repräsentieren soll. Es besteht aus Netzwerk, mehreren Datenbanken und 
@@ -852,6 +853,176 @@ jeweils eigene Module ausgelagert. Diese Module könnten in
 eine öffentliche oder auch private Terraform Module Registry
 hochgeladen werden um später in weiteren Projekten verwendet werden zu
 können.
+
+TODO: Abbildung erstellen und einfügen.
+
+\subsection{Auswahl der zu untersuchenden Aspekte und Eigenschaften}
+
+Das Softwarequalitätsmodell der ISO 25010 wird als ein Grundstein für die
+Evaluierung von Software beschrieben (Vergleich https://iso25000.com/index.php/en/iso-25000-standards/iso-25010)
+Da die Terraform Provider statt einer ganzheitliche Software nur Plu-Ins
+und damit eine kleinere Komponente von Terraform darstellen kann nicht
+jeder der in der ISO 25010 aufgelistet Punkte sinnvoll angwendet werden.
+Einige Bereiche, zum Beispiel der Bereich Security mit all seinen
+untergeordneten Themen, benötigen eine deutlich genauere Betrachtung als
+es im Rahmen dieser Arbeit möglich ist um ein sinnvolles und vollständiges
+Ergebnis gewährleisten zu können.\\
+Aus diesem Grund sollen nur ein kleinerer Teil der aufgeführten Merkmale
+betrachtet werden, interessant sind vor allem solche die eine schnelle
+Einführung von Terraform in den Entwicklungsprozess beeinflussen.
+Ebenfalls interessant sind die Flexibilität und Wartbarkeit da
+insbesondere letztere einen der großen Vorteile darstellt die man durch
+den Einsatz von Infrastructure as Code Tools- und Prinzipen erzielen kann.
+
+\begin{figure}[H]
+  \includegraphics[keepaspectratio, height=4.5cm]{fig/hauptteil/ISO25010.png}
+  \caption{Überblick ISO 25010}
+  \centering
+\end{figure}
+
+Im Folgenden sollen die einzelnen Merkmale der ISO 25010 kurz
+zusammengefasst werden und erläutert werden ob diese in der Evaluierung
+der Terraform Provider sinnvoll betrachtet werden können und ob eine
+Betrachtung im Rahmen dieser Arbeit vorgenommen werden kann.
+
+\subsubsection{Functional Suitability}
+
+\begin{itemize}
+  \item \textbf{Functional completeness}: Die Vollständigkeit mit welcher
+  die Aufgaben und Ziele die vom Nutzer an die Software gestellt werden
+  erfüllt werden können.
+
+  Anwendbarkeit: Eine zufriendenstellende Functional Completeness ist die
+  grundlegende Vorraussetzung für den Einsatz jeder Software, dies gilt
+  auch für den Einsatz von Terraform und die zu untersuchenden Provider.
+
+  \item \textbf{Functional correctness}: Grad zu welchem die Software
+  korrekte Ergebnisse mit einer ausreichenden Genauigkeit liefert.
+
+  Anwendbarkeit: Da im Falle der Bereitstellung von Infrastruktur durch
+  deklarativen Code wenig Spielraum zulässt und im Fall der hier
+  untersuchten Systeme lediglich ein \enquote{richtig} oder
+  \enquote{falsch} zulässt spielt dieser Punkt keine Rolle.
+
+  \item \textbf{Functional appropriateness}: Grad zu welchem die
+  Funktionalitäten der Software die Erfüllung der Aufgaben ermöglichen
+  und unterstützen.
+
+  Anwendbarkeit: Da die Terraform Provider im Prinzip nur eine
+  Schnittstelle zu den jeweiligen Plattformen darstellen ist dieser Aspekt
+  hier wenig relevant. Bei einer allgemeinen Betrachtung der
+  Funktionalität von Terraform wäre dieser Punkt jedoch sehr interessant.
+\end{itemize}
+
+\subsubsection{Performance Efficiency}
+
+\begin{itemize}
+  \item \textbf{Time behaviour}: Grad zu welchem die Anforderungen an
+  Bearbeitungszeit und Durchsatz erfüllt werden.
+
+  Anwendbarkeit: Die Dauer in welcher ein System von der Plattform durch
+  den jeweiligen Terraform Provider bereitgestellt werden kann ist ein
+  relevanter Aspekt der sehr gut untersucht und verglichen werden kann.
+
+  \item \textbf{Resource utilization}: Beschreibt Umfang und Typ der
+  Ressourcen die von der Software während des Betriebs benötigt werden.
+
+  Anwendbarkeit: Da die Terraform Provider selbst nur die
+  Schnittstelle darstellen ist dieser Aspekt nicht sinnvoll anwendbar.
+  Bei einem
+  Vergleich verschiedener Softwaretools wäre dieser Aspekt von größerer
+  Bedeutung.
+
+  \item \textbf{Capacity}: Grad zu welchem die maximalen Limits der
+  Software die Anforderungen erfüllen.
+
+  Anwendbarkeit: Auch dieser Aspekt ist nicht relevant, es trifft die
+  die selbe Argumentation wie beim vorhergehenden Punkt zu.
+\end{itemize}
+
+\subsubsection{Compatibility}
+
+\begin{itemize}
+  \item \textbf{Co-existence}: Grad zu welchem die Software ihre Funktion
+  erfüllen kann während sie sich eine Umgebung mit anderen Programmen
+  teilt ohne deren Funktionalität zu beeinträchtigen.
+
+  Anwendbarkeit: Da die Terraform Provider Anforderungen an ihre Umgebung
+  stellen um ihre Funktionalität erfüllen zu können kann dieser Aspekt
+  durchaus sinnvoll betrachtet werden.
+
+  \item \textbf{Interoperability}: Grad zu welchem die Software mit
+  anderen Produkten Informationen austauschen und verarbeiten kann.
+
+  Anwendbarkeit: Dieser Aspekt könnte im Hinblick auf Terraform mit
+  Sicherheit untersucht werden und interessante Ergebnisse liefern.
+  Im Falle der einzelnen Terraform Provider kann dieser Aspekt jedoch
+  nur begrenzt sinnvoll betrachtet werden.
+\end{itemize}
+
+\subsubsection{Usability}
+
+\begin{itemize}
+  \item \textbf{Appropriateness recognizability}: Beschreibt wie einfach
+  ein Nutzer erkennen kann ob die Software eine angemessene Lösung für
+  dessen Anwendungsfall darstellt.
+
+  Anwendbarkeit: Dieser Aspekt kann zu einem gewissen Grad betrachtet
+  und bewertet werden. Die Bezeichnungen der verschiedenen Computing 
+  Ressourcen können zum Beispiel ihre Funktion gut oder auch weniger
+  genau beschreiben.
+
+  \item \textbf{Learnability}: Grad zu welchem ein bestimmter User
+  bestimmte Lernziele in einem definierten Kontext erreichen kann.
+
+  Anwendbarkeit: Eine Untersuchung der Erlernbarkeit eines Terraform 
+  Providers könnte durchaus vorgenommen werden. Um ein aussagekräftiges
+  Ergebnis erzielen zu können wären jedoch umfangreichere Untersuchungen
+  mit mehreren Usern notwendig weshalb im Rahmen dieser Arbeit dieses
+  Kriterium nicht betrachtet werden soll.
+
+  \item \textbf{Operability}: Beschreibt Attribute die ein System besitzt
+  das dessen Bedienung vereinfacht.
+
+  Anwendbarkeit: Bei einer Betrachtung von Terraform als ganzes könnte
+  dieser Punkt sinnvoll untersucht werden, die einzelnen Provider
+  unterscheiden sich hier jedoch nicht.
+
+  \item \textbf{User error protection}: Grad zu dem die Software den
+  Nutzer gegen eigene Fehler (z.Bsp. während der Eingabe) schützt.
+
+  Anwendbarkeit: Hier liegt die selbe Lage wie beim vorhergehenden
+  Punkt vor, wird daher nicht betrachtet.
+
+  \item \textbf{User interface aesthetics}: Beschreibt wie ansprechend
+  und zufriedenstellend das Userinterface bewertet werden kann.
+  
+  Anwendbarkeit: Dieser Aspekt ist irrelevant da die Terraform Provider
+  nicht direkt verwendet werden und kein User interface besitzen.
+  Terraform selbst wird aus der Kommandozeile heraus bedient.
+
+  \item \textbf{Accessibility}: Grad zu welchem die Software von
+  verschiedenen Nutzern mit verschiedenen Fähigkeiten und Charakteristiken
+  verwendet werden kann.
+
+  Anwendbarkeit: Für den Vergleich der Provider nicht anwendbar. Die 
+  selbe Argumentation wie bei Operability und User error protection
+  treffen auch hier zu. 
+\end{itemize}
+
+\subsection{Entscheidungskriterien für die Evaluierung}
+
+\subsection{Konkreter Aufbau in Microsoft Azure}
+
+\subsection{Analyse Azure}
+
+\subsection{Konkreter Aufbau in Amazon AWS}
+
+\subsection{Analyse AWS}
+
+\subsection{Konkreter Aufbau in Google Cloud Platform}
+
+\subsection{Analyse GCP}
 
 \chapter{Ergebnisse}
 \label{sec:ergeb}

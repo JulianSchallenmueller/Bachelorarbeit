@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  5 JAN 2022 12:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  7 JAN 2022 16:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1259,20 +1259,19 @@ Package hyperref Info: Reference (link) `section.3.1' on input line 30.
 Package hyperref Info: Reference (link) `subsection.3.1.1' on input line 31.
 Package hyperref Info: Reference (link) `subsection.3.1.2' on input line 32.
 Package hyperref Info: Reference (link) `subsection.3.1.3' on input line 33.
-Package hyperref Info: Reference (link) `subsection.3.1.4' on input line 34.
-Package hyperref Info: Reference (link) `section.3.2' on input line 35.
-Package hyperref Info: Reference (link) `subsection.3.2.1' on input line 36.
-Package hyperref Info: Reference (link) `subsection.3.2.2' on input line 37.
-Package hyperref Info: Reference (link) `subsection.3.2.3' on input line 38.
-Package hyperref Info: Reference (link) `subsection.3.2.4' on input line 39.
-Package hyperref Info: Reference (link) `subsection.3.2.5' on input line 40.
-Package hyperref Info: Reference (link) `subsection.3.2.6' on input line 41.
-Package hyperref Info: Reference (link) `subsection.3.2.7' on input line 42.
-Package hyperref Info: Reference (link) `subsection.3.2.8' on input line 43.
-Package hyperref Info: Reference (link) `section.3.3' on input line 44.
-Package hyperref Info: Reference (link) `chapter.4' on input line 45.
-Package hyperref Info: Reference (link) `section.4.1' on input line 46.
-Package hyperref Info: Anchor `page.vii' on input line 47.
+Package hyperref Info: Reference (link) `section.3.2' on input line 34.
+Package hyperref Info: Reference (link) `subsection.3.2.1' on input line 35.
+Package hyperref Info: Reference (link) `subsection.3.2.2' on input line 36.
+Package hyperref Info: Reference (link) `subsection.3.2.3' on input line 41.
+Package hyperref Info: Reference (link) `subsection.3.2.4' on input line 42.
+Package hyperref Info: Reference (link) `subsection.3.2.5' on input line 43.
+Package hyperref Info: Reference (link) `subsection.3.2.6' on input line 44.
+Package hyperref Info: Reference (link) `subsection.3.2.7' on input line 45.
+Package hyperref Info: Reference (link) `subsection.3.2.8' on input line 46.
+Package hyperref Info: Reference (link) `subsection.3.2.9' on input line 47.
+Package hyperref Info: Reference (link) `chapter.4' on input line 48.
+Package hyperref Info: Reference (link) `section.4.1' on input line 49.
+Package hyperref Info: Anchor `page.vii' on input line 50.
 [7
 
 
@@ -1298,42 +1297,41 @@ Package `hyperref' Info: End of reference (link) `section.3.1', line 30.
 Package `hyperref' Info: End of reference (link) `subsection.3.1.1', line 31.
 Package `hyperref' Info: End of reference (link) `subsection.3.1.2', line 32.
 Package `hyperref' Info: End of reference (link) `subsection.3.1.3', line 33.
-Package `hyperref' Info: End of reference (link) `subsection.3.1.4', line 34.
-Package `hyperref' Info: End of reference (link) `section.3.2', line 35.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.1', line 36.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.2', line 37.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.3', line 38.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.4', line 39.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.5', line 40.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.6', line 41.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.7', line 42.
-Package `hyperref' Info: End of reference (link) `subsection.3.2.8', line 43.
-Package `hyperref' Info: End of reference (link) `section.3.3', line 44.
+Package `hyperref' Info: End of reference (link) `section.3.2', line 34.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.1', line 35.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.2', line 36.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.3', line 41.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.4', line 42.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.5', line 43.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.6', line 44.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.7', line 45.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.8', line 46.
+Package `hyperref' Info: End of reference (link) `subsection.3.2.9', line 47.
 ]
-Package hyperref Info: Reference (link) `section.4.2' on input line 47.
-Package hyperref Info: Reference (link) `chapter.5' on input line 48.
-Package hyperref Info: Reference (link) `section.5.1' on input line 49.
-Package hyperref Info: Reference (link) `section.5.2' on input line 50.
-Package hyperref Info: Reference (link) `section.5.3' on input line 51.
-Package hyperref Info: Reference (link) `section.5.4' on input line 52.
-Package hyperref Info: Reference (link) `appendix.A' on input line 53.
-Package hyperref Info: Reference (link) `chapter*.27' on input line 54.
+Package hyperref Info: Reference (link) `section.4.2' on input line 50.
+Package hyperref Info: Reference (link) `chapter.5' on input line 51.
+Package hyperref Info: Reference (link) `section.5.1' on input line 52.
+Package hyperref Info: Reference (link) `section.5.2' on input line 53.
+Package hyperref Info: Reference (link) `section.5.3' on input line 54.
+Package hyperref Info: Reference (link) `section.5.4' on input line 55.
+Package hyperref Info: Reference (link) `appendix.A' on input line 56.
+Package hyperref Info: Reference (link) `chapter*.32' on input line 57.
 )
 \tf@toc=\write4
 \openout4 = `vorlage.toc'.
 
 Package hyperref Info: Anchor `page.viii' on input line 43.
  [8
-Package `hyperref' Info: End of reference (link) `chapter.4', line 45.
-Package `hyperref' Info: End of reference (link) `section.4.1', line 46.
-Package `hyperref' Info: End of reference (link) `section.4.2', line 47.
-Package `hyperref' Info: End of reference (link) `chapter.5', line 48.
-Package `hyperref' Info: End of reference (link) `section.5.1', line 49.
-Package `hyperref' Info: End of reference (link) `section.5.2', line 50.
-Package `hyperref' Info: End of reference (link) `section.5.3', line 51.
-Package `hyperref' Info: End of reference (link) `section.5.4', line 52.
-Package `hyperref' Info: End of reference (link) `appendix.A', line 53.
-Package `hyperref' Info: End of reference (link) `chapter*.27', line 54.
+Package `hyperref' Info: End of reference (link) `chapter.4', line 48.
+Package `hyperref' Info: End of reference (link) `section.4.1', line 49.
+Package `hyperref' Info: End of reference (link) `section.4.2', line 50.
+Package `hyperref' Info: End of reference (link) `chapter.5', line 51.
+Package `hyperref' Info: End of reference (link) `section.5.1', line 52.
+Package `hyperref' Info: End of reference (link) `section.5.2', line 53.
+Package `hyperref' Info: End of reference (link) `section.5.3', line 54.
+Package `hyperref' Info: End of reference (link) `section.5.4', line 55.
+Package `hyperref' Info: End of reference (link) `appendix.A', line 56.
+Package `hyperref' Info: End of reference (link) `chapter*.32', line 57.
 ]
 Package hyperref Info: Anchor `chapter*.7' on input line 43.
  (/home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lof
@@ -1349,6 +1347,7 @@ Overfull \hbox (19.92299pt too wide) in paragraph at lines 9--9
  []
 
 Package hyperref Info: Reference (link) `figure.caption.21' on input line 10.
+Package hyperref Info: Reference (link) `figure.caption.27' on input line 12.
 )
 \tf@lof=\write5
 \openout5 = `vorlage.lof'.
@@ -1364,6 +1363,7 @@ Package `hyperref' Info: End of reference (link) `figure.caption.15', line 7.
 Package `hyperref' Info: End of reference (link) `figure.caption.16', line 8.
 Package `hyperref' Info: End of reference (link) `figure.caption.18', line 9.
 Package `hyperref' Info: End of reference (link) `figure.caption.21', line 10.
+Package `hyperref' Info: End of reference (link) `figure.caption.27', line 12.
 ]
 Package hyperref Info: Anchor `chapter*.8' on input line 44.
  (/home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lot)
@@ -1820,88 +1820,18 @@ Package hyperref Info: bookmark on input line 787:
 (hyperref)             reference {subsection.3.1.1}
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.1.2' on input line 793.
-Package hyperref Info: bookmark on input line 793:
+Package hyperref Info: Anchor `subsection.3.1.2' on input line 804.
+Package hyperref Info: bookmark on input line 804:
 (hyperref)             thecounter {3.1.2}
 (hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
 (hyperref)             reference {subsection.3.1.2}
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.1.3' on input line 795.
-Package hyperref Info: bookmark on input line 795:
+Package hyperref Info: Anchor `subsection.3.1.3' on input line 814.
+Package hyperref Info: bookmark on input line 814:
 (hyperref)             thecounter {3.1.3}
 (hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
 (hyperref)             reference {subsection.3.1.3}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.1.4' on input line 797.
-Package hyperref Info: bookmark on input line 797:
-(hyperref)             thecounter {3.1.4}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.1.4}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.3.2' on input line 799.
-Package hyperref Info: bookmark on input line 799:
-(hyperref)             thecounter {3.2}
-(hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
-(hyperref)             reference {section.3.2}
-(hyperref)             toclevel {1}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.2.1' on input line 801.
-Package hyperref Info: bookmark on input line 801:
-(hyperref)             thecounter {3.2.1}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.2.1}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.2.2' on input line 803.
-Package hyperref Info: bookmark on input line 803:
-(hyperref)             thecounter {3.2.2}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.2.2}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.2.3' on input line 805.
-Package hyperref Info: bookmark on input line 805:
-(hyperref)             thecounter {3.2.3}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.2.3}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.2.4' on input line 807.
-Package hyperref Info: bookmark on input line 807:
-(hyperref)             thecounter {3.2.4}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.2.4}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.2.5' on input line 809.
-Package hyperref Info: bookmark on input line 809:
-(hyperref)             thecounter {3.2.5}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.2.5}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.2.6' on input line 811.
-Package hyperref Info: bookmark on input line 811:
-(hyperref)             thecounter {3.2.6}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.2.6}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.2.7' on input line 813.
-Package hyperref Info: bookmark on input line 813:
-(hyperref)             thecounter {3.2.7}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.2.7}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `subsection.3.2.8' on input line 815.
-Package hyperref Info: bookmark on input line 815:
-(hyperref)             thecounter {3.2.8}
-(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
-(hyperref)             reference {subsection.3.2.8}
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.23' on input line 831.
@@ -1909,43 +1839,156 @@ Package hyperref Info: Anchor `page.23' on input line 831.
 
 
 ]
-Package hyperref Info: Anchor `section.3.3' on input line 832.
+Package hyperref Info: Anchor `section.3.2' on input line 832.
 Package hyperref Info: bookmark on input line 832:
-(hyperref)             thecounter {3.3}
+(hyperref)             thecounter {3.2}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
-(hyperref)             reference {section.3.3}
+(hyperref)             reference {section.3.2}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `page.24' on input line 846.
+Package hyperref Info: Anchor `subsection.3.2.1' on input line 834.
+Package hyperref Info: bookmark on input line 834:
+(hyperref)             thecounter {3.2.1}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.1}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.3.2.2' on input line 859.
+Package hyperref Info: bookmark on input line 859:
+(hyperref)             thecounter {3.2.2}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.2}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `page.24' on input line 876.
  [24]
-Package hyperref Info: Anchor `page.25' on input line 856.
- [25]
-Package hyperref Info: Anchor `chapter.4' on input line 856.
+Package hyperref Info: Anchor `figure.caption.27' on input line 877.
+<fig/hauptteil/ISO25010.png, id=301, 732.8178pt x 207.174pt>
+File: fig/hauptteil/ISO25010.png Graphic file (type png)
+<use fig/hauptteil/ISO25010.png>
+Package pdftex.def Info: fig/hauptteil/ISO25010.png  used on input line 878.
+(pdftex.def)             Requested size: 452.8887pt x 128.0374pt.
+Package hyperref Info: bookmark on input line 879:
+(hyperref)             thecounter {3.1}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Ãœberblick ISO 25010\relax }}
+(hyperref)             reference {figure.caption.27}
+(hyperref)             toclevel {1}
+(hyperref)             type {lof}.
+Package hyperref Info: Anchor `section*.28' on input line 888.
+Package hyperref Info: bookmark on input line 888:
+(hyperref)             thecounter {3.2.2.0}
+(hyperref)             text {\protect \nonumberline \@currenttocentry }
+(hyperref)             reference {section*.28}
+(hyperref)             toclevel {3}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `section*.29' on input line 917.
+Package hyperref Info: bookmark on input line 917:
+(hyperref)             thecounter {3.2.2.0}
+(hyperref)             text {\protect \nonumberline \@currenttocentry }
+(hyperref)             reference {section*.29}
+(hyperref)             toclevel {3}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `page.25' on input line 923.
+ [25 </home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/ISO25010.png>]
+Package hyperref Info: Anchor `section*.30' on input line 943.
+Package hyperref Info: bookmark on input line 943:
+(hyperref)             thecounter {3.2.2.0}
+(hyperref)             text {\protect \nonumberline \@currenttocentry }
+(hyperref)             reference {section*.30}
+(hyperref)             toclevel {3}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `section*.31' on input line 963.
+Package hyperref Info: bookmark on input line 963:
+(hyperref)             thecounter {3.2.2.0}
+(hyperref)             text {\protect \nonumberline \@currenttocentry }
+(hyperref)             reference {section*.31}
+(hyperref)             toclevel {3}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `page.26' on input line 977.
+ [26]
+Overfull \hbox (3.89485pt too wide) in paragraph at lines 978--983
+[]\T1/lmr/m/n/12 Anwendbarkeit: Ei-ne Un-ter-su-chung der Er-lern-bar-keit ei-nes Ter-ra-form Pro-vi-ders könn-
+ []
+
+Package hyperref Info: Anchor `subsection.3.2.3' on input line 1013.
+Package hyperref Info: bookmark on input line 1013:
+(hyperref)             thecounter {3.2.3}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.3}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.3.2.4' on input line 1015.
+Package hyperref Info: bookmark on input line 1015:
+(hyperref)             thecounter {3.2.4}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.4}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.3.2.5' on input line 1017.
+Package hyperref Info: bookmark on input line 1017:
+(hyperref)             thecounter {3.2.5}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.5}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.3.2.6' on input line 1019.
+Package hyperref Info: bookmark on input line 1019:
+(hyperref)             thecounter {3.2.6}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.6}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.3.2.7' on input line 1021.
+Package hyperref Info: bookmark on input line 1021:
+(hyperref)             thecounter {3.2.7}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.7}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.3.2.8' on input line 1023.
+Package hyperref Info: bookmark on input line 1023:
+(hyperref)             thecounter {3.2.8}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.8}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.3.2.9' on input line 1025.
+Package hyperref Info: bookmark on input line 1025:
+(hyperref)             thecounter {3.2.9}
+(hyperref)             text {\protect \numberline {\csname thesubsection\endcsname }\@currenttocentry }
+(hyperref)             reference {subsection.3.2.9}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `page.27' on input line 1027.
+[27]
+Package hyperref Info: Anchor `page.28' on input line 1027.
+ [28]
+Package hyperref Info: Anchor `chapter.4' on input line 1027.
 
 chapter 4.
-Package hyperref Info: bookmark on input line 856:
+Package hyperref Info: bookmark on input line 1027:
 (hyperref)             thecounter {4}
 (hyperref)             text {\protect \numberline {\csname thechapter\endcsname }\@currenttocentry }
 (hyperref)             reference {chapter.4}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.4.1' on input line 859.
-Package hyperref Info: bookmark on input line 859:
+Package hyperref Info: Anchor `section.4.1' on input line 1030.
+Package hyperref Info: bookmark on input line 1030:
 (hyperref)             thecounter {4.1}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.4.1}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.4.2' on input line 861.
-Package hyperref Info: bookmark on input line 861:
+Package hyperref Info: Anchor `section.4.2' on input line 1032.
+Package hyperref Info: bookmark on input line 1032:
 (hyperref)             thecounter {4.2}
 (hyperref)             text {\protect \numberline {\csname thesection\endcsname }\@currenttocentry }
 (hyperref)             reference {section.4.2}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 )
-Package hyperref Info: Anchor `page.26' on input line 51.
- [26
+Package hyperref Info: Anchor `page.29' on input line 51.
+ [29
 
 
 ]
@@ -1990,8 +2033,8 @@ Package hyperref Info: bookmark on input line 11:
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
 )
-Package hyperref Info: Anchor `page.27' on input line 52.
- [27
+Package hyperref Info: Anchor `page.30' on input line 52.
+ [30
 
 
 
@@ -2010,19 +2053,19 @@ Package hyperref Info: bookmark on input line 1:
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 )
-Package hyperref Info: Anchor `page.28' on input line 56.
- [28
+Package hyperref Info: Anchor `page.31' on input line 56.
+ [31
 
 
 
 
 ] (/home/julian/Projects/Bachelorarbeit/Thesis-Dokument/chapters/ch-zz-bibEinfach.tex
 chapter without number
-Package hyperref Info: Anchor `chapter*.27' on input line 1.
+Package hyperref Info: Anchor `chapter*.32' on input line 1.
 Package hyperref Info: bookmark on input line 1:
 (hyperref)             thecounter {A}
 (hyperref)             text {\protect \nonumberline \@currenttocentry }
-(hyperref)             reference {chapter*.27}
+(hyperref)             reference {chapter*.32}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `cite.doc:stz' on input line 2.
@@ -2037,8 +2080,8 @@ Package caption Warning: Unused \captionsetup[subfloat] on input line 375.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
-Package hyperref Info: Anchor `page.29' on input line 65.
-[29
+Package hyperref Info: Anchor `page.32' on input line 65.
+[32
 
 
 
@@ -2053,18 +2096,18 @@ Package rerunfilecheck Info: File `vorlage.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19306 strings out of 483057
- 349367 string characters out of 5962301
+ 19317 strings out of 483057
+ 349577 string characters out of 5962301
  867939 words of memory out of 5000000
- 33733 multiletter control sequences out of 15000+600000
+ 33736 multiletter control sequences out of 15000+600000
  602115 words of font info for 70 fonts, out of 8000000 for 9000
  60 hyphenation exceptions out of 8191
  56i,21n,89p,10155b,860s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.pdf (39 pages, 977081 bytes).
+Output written on /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.pdf (42 pages, 1090082 bytes).
 PDF statistics:
- 526 PDF objects out of 1000 (max. 8388607)
- 452 compressed objects within 5 object streams
- 110 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 542 PDF objects out of 1000 (max. 8388607)
+ 463 compressed objects within 5 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 379 words of extra memory for PDF output out of 10000 (max. 10000000)
 
