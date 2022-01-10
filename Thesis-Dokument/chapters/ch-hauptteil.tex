@@ -831,31 +831,6 @@ Infrastrukturobjekte werden jeweils bei den Vergleichswerten aufgelistet.
 
 \section{Spezifizierug des Vergleichs}
 
-\subsection{High-level Aufbau der Infrastruktur des Versuchsobjekts}
-
-Als Testobjekt dient ein Infrastruktursystem das typische Anwendungsfälle
-repräsentieren soll. Es besteht aus Netzwerk, mehreren Datenbanken und 
-einem Kubernetes Cluster mit mehreren Worker Nodes. Das System ist eine
-leicht veränderte Variante des öffentlich einsehbaren
-Infrastruktur-Showcase der Novatec. Ergänzend zu diesem System sollen 
-zusätzlich einige Tests mit einzelnen Ressourcen wie zum Beispiel
-Virtuellen Maschinen durchgeführt werden.\\
-Weiterhin existiert ein bereits manuell erstellter Object Storage mithilfe
-dessen auf einer ebenfalls manuell erstellten Container Registry das
-Dockerimage für den Kubernetes Cluster bereitgestellt wird. Dieses Image
-bzw. die Registry wird dann im Terraform Projekt als Data Source erfasst.
-
-Der originale Infrastrktur-Showcase besteht aufgrund der verhältnismäßig
-geringen Größe und Komplexität aus einem einzelnen Terraform Modul
-"Platform" das die gesamte Infrastruktur enthält. Für diese Arbeit wurden
-die Kubernetes- und Datenbank-Komponenten zu Demonstrationszwecken in
-jeweils eigene Module ausgelagert. Diese Module könnten in
-eine öffentliche oder auch private Terraform Module Registry
-hochgeladen werden um später in weiteren Projekten verwendet werden zu
-können.
-
-TODO: Abbildung erstellen und einfügen.
-
 \subsection{Auswahl der zu untersuchenden Aspekte und Eigenschaften}
 
 Das Softwarequalitätsmodell der ISO 25010 wird als ein Grundstein für die
@@ -1010,23 +985,259 @@ Betrachtung im Rahmen dieser Arbeit vorgenommen werden kann.
   treffen auch hier zu. 
 \end{itemize}
 
+\subsubsection{Reliability}
+
+\begin{itemize}
+  \item \textbf{Maturity}: Beschreibt wie zuverlässig die Software unter
+  normalen Bedingungen arbeitet.
+
+  Anwendbarkeit: Durch den begrenzten Umfang der in dieser Thesis
+  durchgeführten Arbeiten kann dieser Aspekt nur begrenzt betrachtet
+  werden. Sollten Auffälligkeiten in diesem Bereich auftreten werden
+  diese jedoch erfasst und dokumentiert.
+
+  \item \textbf{Availability}: Beschreibt ob die Software betriebsbereit
+  und verfügbar ist.
+
+  Anwendbarkeit: Da die Terraform Provider nur ein Plug-In darstellen
+  hängt dieser Aspekt sowohl von Terraform und den Cloud Plattformen ab,
+  nicht von den Providern selbst.
+
+  \item \textbf{Fault tolerance}: Grad zu welchem die Software trotz
+  Hard- und Softwarefehlern ihre Funktion erfüllen kann.
+
+  Anwendbarkeit: Auch dieses Kriterium ist beim Vergleich zwischen den
+  Providern nicht von Bedeutung da die Funktionalität nicht von diesen
+  abhängt.
+
+  \item \textbf{Recoverability}: Grad zu welchem die Software bei einger
+  Unterbrechung oder einem Fehler betroffene Daten widerherstellen und
+  die Funktionalität widerherstellen kann.
+
+  Anwendbarkeit: Hier kann untersucht werden ob Terraform bei
+  den veschiedenen Providern unterschiedlich auf einen Abbruch der 
+  Internetverbindung oder bei einer fehlerhaften Eingabe reagiert.
+
+\end{itemize}
+
+\subsubsection{Security}
+
+Das Thema Security beinhaltet die Merkmale Confidentiality, Integrity,
+Non-repudiation, Accountability und Authenticity. Auf die
+Sicherheit von Terraform und den jeweiligen Coud Plattformen soll
+aufgrund des Umfangs und der Komplexität des Themas im Rahmen dieser
+Arbeit nicht eingegangen werden. Für einen Vergleich der Terraform
+Provider selbst ist das Thema ohnehin weniger von Interesse da die
+Sicherheit stärker von Terraform selbst und den einzelnen Cloud
+Plattformen abhängt als von den individuellen Providern. 
+
+\subsubsection{Maintainability}
+
+\begin{itemize}
+  \item \textbf{Modularity}: Beschreibt den Grad zu welchem ein System 
+  voneinander unabhängigen Komponenten aufgebaut ist.
+
+  Anwendbarkeit: Dieser Aspekt wird von Terraform selbst implementiert
+  und spielt bei der Betrachtung verschiedener Provider keine Rolle.
+  Interessant wäre jedoch ein Vergleich zwischen Terraform und anderen
+  IaC Tools welcher im Rahmen dieser Arbeit jedoch nicht vorgenommen wird.
+
+  \item \textbf{Reusability}: Beschreibt wie gut sich Komponenten in
+  anderen Systemen und Komponenten wiederverwenden lassen.
+
+  Anwendbarkeit: Auch dieser Aspekt ist für den Vergleich nicht
+  relevant, die Argumentation ist die selbe wie für das Thema Modularity.
+  Für einen Vergleich mit anderen Tools wäre dies ein sehr relevantes
+  Thema da Terraform sehr gute Optionen besitzt um das Schreiben
+  modularen Codes zu fördern. 
+
+  \item \textbf{Analysability}: Grad der Effektivität und Effizienz mit
+  der der Einfluss auf das System ermittelt werden kann der durch eine
+  Veränderung verursacht wird. Dazu gehört auch das Ermitteln von 
+  Komponenten die verändert werden sollen sowie das diagnostizieren von
+  Fehlern und Schwächen des Produkts.
+  
+  Anwendbarkeit: Analysability ist ein Aspekt der sowohl
+  von Terraform selbst als auch von der Cloud Plattform abhängt. Dieses
+  Thema soll im Rahmen dieses Vergleichs nicht betrachtet werden da
+  es zu großen Teilen nicht vom Provider abhängt.
+  
+  \item \textbf{Modifiability}: Beschreibt wie gut ein System verändert
+  werden kann ohne Fehler aufzuwerfen oder die Qualität zu verschlechtern.
+
+  Anwendbarkeit: Hier kann untersucht werden ob es im Fall der
+  Modifizierung von einzelnen Ressourcen Unterschiede gibt. Es kann
+  untersucht werden ob bei den Plattformen Ressourcen bei einer
+  vergleichbaren Modifikation gelöscht und neu erstellt werden oder
+  ob ein stoppen, verändern und neu starten ausreicht bzw. die
+  Eigenschaft im laufenden Betrieb mit minimaler Unterbrechung des
+  Services verändert werden kann. 
+  
+  \item \textbf{Testability}: Effektivität und Effizienz mit der
+  Testkriterien etabliert werden und entsprechende Tests durchgeführt
+  werden können.
+
+  Anwendbarkeit: Im Vergleich der Provider ist das Thema Testen
+  weitgehend irrelevant. Sehr interessant wäre jedoch wieder der Vergleich
+  mit anderen vergleichbaren Tools, Terraform selbst beinhaltet
+  wenig bis keine Möglichkeiten für Test und setzt mehr auf zusätzliche
+  Tools und Frameworks.
+\end{itemize}
+
+\subsubsection{Portability}
+
+Portability fasst die Aspekte Adaptability Installability und
+Replaceability zusammen. Bei einem Vergleich der Terraform Provider
+können diese Aspekte nicht sinnvoll miteinander verglichen werden da
+diese von Terraform selbst und nicht von den Providern abhängen.
+
+
+\subsubsection{Zusammenfassung der für den Vergleich ausgewählten Aspekte}
+
+Für den im Rahmen dieser Arbeit durchgeführten Vergleich werden nur
+einige der in der ISO 25010 definierten Qualitätsmerkmale betrachtet.
+Da die Terraform Provider nur einen Teil der gesamten Software ausmachen
+sind zahlreiche Aspekte kaum oder gar nicht von den Terraform Providern
+abhängig und werden aus diesem Grund nicht betrachtet, andere Themen
+sind zu umfangreich und/oder komplex um hier zufriedenstellend
+bewertet werden zu können.\\
+Kurz zusammengefasst werden die folgenden Merkmale betrachtet:
+
+\begin{itemize}
+  \item \textbf{Functional completeness}
+  \item \textbf{Time behaviour}
+  \item \textbf{Co-existence}
+  \item \textbf{Maturity}
+  \item \textbf{Recoverability}
+  \item \textbf{Modifiability}
+\end{itemize}
+
 \subsection{Entscheidungskriterien für die Evaluierung}
 
-\subsection{Konkreter Aufbau in Microsoft Azure}
+Da im Falle dieser Arbeit ein Vergleich ohne bestimmte quantitative
+Ziele vorgenommen wird werden hier keine spezifischen
+Entscheidungskriterien wie in der ISO 25040 beschrieben. Stattdessen
+soll betrachtet werden wie die drei Provider in Relation zueinander
+abschneiden. Dadurch kann ermittelt werden ob ein Provider den anderen
+in bestimmtem Bereichen überlegen ist, ob sich zum Beispiel das
+zeitliche Verhalten wesentlich unterscheidet oder ob ein Provider
+grundlegende Bedingungen wie die funktionale Vollständigkeit nicht
+aufweist.\\
+Die gemessenen Werte und andere auffallende Merkmale sollen jeweils
+tabellarisch dargestellt werden um die Übersichtlichkeit zu fördern
+und Unterschiede der Provider leicht einsehbar zu machen.
 
-\subsection{Analyse Azure}
+\section{Umsetzung}
 
-\subsection{Konkreter Aufbau in Amazon AWS}
+\subsection{Eingesetzte Software und Tools}
 
-\subsection{Analyse AWS}
+In diesem Abschnitt sollen die Tools die bei der Umsetzung zum Einsatz
+kommen knapp zusammengefasst werden.
 
-\subsection{Konkreter Aufbau in Google Cloud Platform}
+Als Source-code Editor kommt Visual Studio Code zum Einsatz.\\
+Die Versionierung des Source-codes erfolgt durch ein privates
+Git-Repository auf Github.\\
+Github Actions wird eingesetzt um Änderungen
+am Infrastruktursystem automatisch durchzuführen. Um das automatische
+Deployment der Infrastruktur zu ermöglichen werden die dafür notwendigen
+Secrets als Github Actions Secrets direkt im Repository gespeichert.\\
+Zeitmessungen werden mit dem Bash Kommando \textbf{time <command>}
+durchgeführt und das Ergebnis der Zeile \textbf{real} verwendet.\\
+Terraform und Terraform Provider kommen in den jeweils im Source-code
+definierten Versionen zum Einsatz.
 
-\subsection{Analyse GCP}
+\subsection{High-level Aufbau der Infrastruktur des Versuchsobjekts}
+
+Als primäres Testobjekt dient ein Infrastruktursystem das typische Anwendungsfälle
+repräsentieren soll. Es besteht aus Netzwerk, mehreren Datenbanken und 
+einem Kubernetes Cluster mit mehreren Worker Nodes. Das System ist eine
+leicht veränderte Variante des öffentlich einsehbaren
+Infrastruktur-Showcase der Novatec.\\
+Weiterhin existiert ein bereits manuell erstellter Object Storage mithilfe
+dessen auf einer ebenfalls manuell erstellten Container Registry das
+Dockerimage für den Kubernetes Cluster bereitgestellt wird. Dieses Image
+bzw. die Registry wird dann im Terraform Projekt als Data Source erfasst.\\
+Ergänzend zu diesem System sollen 
+zusätzlich einige Tests mit einzelnen Ressourcen wie zum Beispiel
+Virtuellen Maschinen durchgeführt werden.
+
+Der originale Infrastrktur-Showcase besteht aufgrund der verhältnismäßig
+geringen Größe und Komplexität aus einem einzelnen Terraform Modul
+"Platform" das die gesamte Infrastruktur enthält. Für diese Arbeit wurden
+die Kubernetes- und Datenbank-Komponenten zu Demonstrationszwecken in
+jeweils eigene Module ausgelagert. Diese Module könnten in
+eine öffentliche oder auch private Terraform Module Registry
+hochgeladen werden um später in weiteren Projekten verwendet werden zu
+können.
+
+\begin{figure}[H]
+  \includegraphics[keepaspectratio, height=10cm]{fig/hauptteil/IaC_Showcase_Structure_High-level.png}
+  \caption{Infrastructure Showcase High-level Struktur}
+  \centering
+\end{figure}
+
+In der Abbildung der High-level Struktur wird auf eine detaillierte
+Darstellung der Ressourcen verzichtet da je nach Plattform verschiedene
+Funktionalitäten in unterschiedlichen Ressourcen zusammengefasst werden
+können. Stattdessen wird durch .tf-Dateien dargestellt welche
+Funktionalität in in welchem Modul vorhanden sein soll und wie der Code
+des Systems in Hinsicht auf Dateien aufgeteilt werden soll.
+
+\subsection{Konkreter Aufbau der Versuchssysteme}
+
+Im folgenden Unterkapitel werden die konkreten Aufbauten der Systeme
+dargestellt. Die Diagramme beinhalten alle Terraform Ressourcen, auf
+die Darstellung der Variablen und Outputs soll jedoch aus Gründen der
+besseren Übersicht verzichtet werden. Als Vorlage für die Diagramme
+dienen automatisch generierte Abhängigkeits-Graphen die mithilfe
+des in Terraform integrierten \textit{terraform graph} Kommandos
+erstellt und mit dem externen Tool \textbf{Terraform Graph Beautifier}
+aufbereitet werden. Da in diesen auch jeweils alle Variablen und
+Outputs dargestellt sind, werden die Diagramme der implementierten
+Systeme von Hand erstellt.
+
+TODO: Eigene Abbildungen
+
+\begin{figure}[H]
+  \includegraphics[keepaspectratio, height=7.5cm]{fig/hauptteil/terraform-graph.png}
+  \caption{Beispiel Terraform Graph}
+  \centering
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[keepaspectratio, height=6.5cm]{fig/hauptteil/terraform-graph-beautifier.png}
+  \caption{Beispiel Terraform Graph Beautifier}
+  \centering
+\end{figure}
+
+Die auf den Abbildungen dargestellten Systeme sind im Umfang sehr klein und aus
+diesem Grund auch noch sehr übersichtlich. Allerdings ist bereits das Verssuchsystem
+aus dieser Arbeit bereits so groß dass die mithilfe dieser Tools ersellten
+Diagramme nicht mehr klein genug sind um sinnvoll in diesem Dokument dargestellt
+werden zu können. Für die praktische Arbeit an einem System könne diese jedoch
+sehr gut eingesetzt werden. Insbesondere \textbf{Terraform Graph Beautifier}
+eignet sich da die Diagramme in HTML erstellt werden
+und ein Interaktives Verschieben der Elemente per drag and drop erlauben.
+Im Anhang der Arbeit befinden sich jeweils ein Beispiel für ein größeres
+System das mithilfe beider Tools visualisiert wurde.
+
+\subsubsection{Konkreter Aufbau in Microsoft Azure}
+
+\subsubsection{Konkreter Aufbau in Amazon AWS}
+
+\subsubsection{Konkreter Aufbau in Google Cloud Platform}
+
+\begin{figure}[H]
+  \includegraphics[keepaspectratio, height=10cm]{fig/hauptteil/gcp-terraform-graph-beautifier.png}
+  \caption{Beispiel Terraform Graph Beautifier}
+  \centering
+\end{figure}
+
+\subsection{Durchgeführte Messungen und Analysen}
 
 \chapter{Ergebnisse}
 \label{sec:ergeb}
 
-\section{Gemessene Werte und Erkenntnisse}
+\section{Gemessene Werte und zusätzliche Erkenntnisse}
 
 \section{Auswertung der Ergenisse}
