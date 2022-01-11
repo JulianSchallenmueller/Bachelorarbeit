@@ -1186,17 +1186,12 @@ des Systems in Hinsicht auf Dateien aufgeteilt werden soll.
 \subsection{Konkreter Aufbau der Versuchssysteme}
 
 Im folgenden Unterkapitel werden die konkreten Aufbauten der Systeme
-dargestellt. Die Diagramme beinhalten alle Terraform Ressourcen, auf
-die Darstellung der Variablen und Outputs soll jedoch aus Gründen der
-besseren Übersicht verzichtet werden. Als Vorlage für die Diagramme
-dienen automatisch generierte Abhängigkeits-Graphen die mithilfe
-des in Terraform integrierten \textit{terraform graph} Kommandos
-erstellt und mit dem externen Tool \textbf{Terraform Graph Beautifier}
-aufbereitet werden. Da in diesen auch jeweils alle Variablen und
-Outputs dargestellt sind, werden die Diagramme der implementierten
-Systeme von Hand erstellt.
-
-TODO: Eigene Abbildungen
+dargestellt. Die Diagramme der Systeme wurden mithilfe des in
+terraform integrierten \textbf{terraform graph} erstellt und im
+Anschluss dem externen Tool \textbf{Terraform Graph Beautifier}
+visuell aufbereitet. In den Diagrammen sind jeweils alle Ressourcen
+der Systeme sowie alle Variablen, Outputs und deren Abhängigkeiten
+dargestellt.
 
 \begin{figure}[H]
   \includegraphics[keepaspectratio, height=7.5cm]{fig/hauptteil/terraform-graph.png}
@@ -1204,40 +1199,60 @@ TODO: Eigene Abbildungen
   \centering
 \end{figure}
 
-\begin{figure}[H]
-  \includegraphics[keepaspectratio, height=6.5cm]{fig/hauptteil/terraform-graph-beautifier.png}
-  \caption{Beispiel Terraform Graph Beautifier}
-  \centering
-\end{figure}
-
-Die auf den Abbildungen dargestellten Systeme sind im Umfang sehr klein und aus
-diesem Grund auch noch sehr übersichtlich. Allerdings ist bereits das Verssuchsystem
-aus dieser Arbeit bereits so groß dass die mithilfe dieser Tools ersellten
-Diagramme nicht mehr klein genug sind um sinnvoll in diesem Dokument dargestellt
-werden zu können. Für die praktische Arbeit an einem System könne diese jedoch
-sehr gut eingesetzt werden. Insbesondere \textbf{Terraform Graph Beautifier}
-eignet sich da die Diagramme in HTML erstellt werden
-und ein Interaktives Verschieben der Elemente per drag and drop erlauben.
-Im Anhang der Arbeit befinden sich jeweils ein Beispiel für ein größeres
-System das mithilfe beider Tools visualisiert wurde.
+Das obenstehende Abbild zeigt einen \enquote{rohen} Graphen der direkt
+von Terraform mithilfe des entsprechenden Befehls erstellt wurde.
+Bereits dieses sehr kleine System wirkt schon leicht unübersichtlich,
+mit wachsender Größe wird es zunehmend schwierig einen Überblick
+über die einzelnen Komponenten und vor allem die Module eines Systems
+zu behalten. In den unten stehenden Abbildungen, die von Terraform Graph
+erstellt wurden, werden die Module farblich hervorgehoben.
 
 \subsubsection{Konkreter Aufbau in Microsoft Azure}
 
 \subsubsection{Konkreter Aufbau in Amazon AWS}
 
+\newpage
+\begin{landscape}
 \subsubsection{Konkreter Aufbau in Google Cloud Platform}
-
 \begin{figure}[H]
-  \includegraphics[keepaspectratio, height=10cm]{fig/hauptteil/gcp-terraform-graph-beautifier.png}
-  \caption{Beispiel Terraform Graph Beautifier}
+  \includegraphics[keepaspectratio, height=13cm]{fig/hauptteil/gcp-terraform-graph-beautifier.png}
+  \caption{Testsystem in Google Cloud Platform}
   \centering
 \end{figure}
+\end{landscape}
 
-\subsection{Durchgeführte Messungen und Analysen}
+Eine Auffälligkeit in Google Cloud im Vergleich mit Microsoft Azure
+ist der Secrets Storage der nur einmal projektweit existiert.
+Zusätzlich war das anlegen der Container Registry nicht vollständig
+ausgereift. Es existieren zwei Optionen: Die aktuelle Artifact
+Registry deren Benutzung von Google empfohlen wird und die legacy
+Container Registry. Die Artifact Registry war zum aktuellen Zeitpunkt
+jedoch noch nicht vollständig im Terraform Provider implementiert,
+es existierte keine Möglichkeit eine existierende Artifact Registry
+als Data Source zu erfassen. Die Container Registry war daher die
+einzige Option einen Speicherort für das Image im Vorfeld anzulegen
+und in Terraform als Data Source einzubinden.\\
+Weiterhin war es notwendig einen Serviceaccount anzulegen um das
+Image aus der Registry zu laden und in den Nodes des Kubernetes
+Clusters zu installieren.\\
+Die weiteren Ressourcen konnten ohne weiteren Aufwand in einer
+einfachen Weise implementiert und verwendet werden.
+
+\subsection{Durchzuführende Messungen und Analysen}
+
+\subsubsection{Functional completeness}
+
+
+
+\subsubsection{Time behaviour}
+\subsubsection{Co-existence}
+\subsubsection{Maturity}
+\subsubsection{Recoverability}
+\subsubsection{Modifiability}
 
 \chapter{Ergebnisse}
 \label{sec:ergeb}
 
-\section{Gemessene Werte und zusätzliche Erkenntnisse}
+\section{Erkenntnisse und gemessene Werte}
 
 \section{Auswertung der Ergenisse}

@@ -47,17 +47,23 @@
 \contentsline {subsection}{\numberline {3.3.1}Eingesetzte Software und Tools}{30}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}High-level Aufbau der Infrastruktur des Versuchsobjekts}{30}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Konkreter Aufbau der Versuchssysteme}{31}{subsection.3.3.3}%
-\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Microsoft Azure}{33}{section*.40}%
-\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Amazon AWS}{33}{section*.41}%
-\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Google Cloud Platform}{33}{section*.42}%
-\contentsline {subsection}{\numberline {3.3.4}Durchgeführte Messungen und Analysen}{33}{subsection.3.3.4}%
-\contentsline {chapter}{\numberline {4}Ergebnisse}{34}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Gemessene Werte und zusätzliche Erkenntnisse}{34}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Auswertung der Ergenisse}{34}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Schluss}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{35}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{35}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{35}{section.5.4}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{36}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{37}{chapter*.44}%
+\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Microsoft Azure}{32}{section*.39}%
+\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Amazon AWS}{32}{section*.40}%
+\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Google Cloud Platform}{33}{section*.41}%
+\contentsline {subsection}{\numberline {3.3.4}Durchzuführende Messungen und Analysen}{34}{subsection.3.3.4}%
+\contentsline {subsubsection}{\nonumberline Functional completeness}{34}{section*.43}%
+\contentsline {subsubsection}{\nonumberline Time behaviour}{34}{section*.44}%
+\contentsline {subsubsection}{\nonumberline Co-existence}{34}{section*.45}%
+\contentsline {subsubsection}{\nonumberline Maturity}{34}{section*.46}%
+\contentsline {subsubsection}{\nonumberline Recoverability}{34}{section*.47}%
+\contentsline {subsubsection}{\nonumberline Modifiability}{34}{section*.48}%
+\contentsline {chapter}{\numberline {4}Ergebnisse}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Erkenntnisse und gemessene Werte}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Auswertung der Ergenisse}{35}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Schluss}{36}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{36}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{36}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{36}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{36}{section.5.4}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{37}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{38}{chapter*.49}%

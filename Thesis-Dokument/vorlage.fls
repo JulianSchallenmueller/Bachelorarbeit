@@ -225,6 +225,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrtime.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrtime.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/preamble/pre-newcommands.tex
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/preamble/pre-newcommands.tex
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/preamble/pre-tablecommands.tex
@@ -252,10 +256,6 @@ INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/chapters/ch-zz-anhang
 OUTPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-INPUT /usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -401,9 +401,6 @@ INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/IaC_Sho
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/terraform-graph.png
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/terraform-graph.png
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/terraform-graph.png
-INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/terraform-graph-beautifier.png
-INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/terraform-graph-beautifier.png
-INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/terraform-graph-beautifier.png
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/gcp-terraform-graph-beautifier.png
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/gcp-terraform-graph-beautifier.png
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/fig/hauptteil/gcp-terraform-graph-beautifier.png
