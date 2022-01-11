@@ -52,18 +52,17 @@
 \contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Google Cloud Platform}{33}{section*.41}%
 \contentsline {subsection}{\numberline {3.3.4}Durchzuführende Messungen und Analysen}{34}{subsection.3.3.4}%
 \contentsline {subsubsection}{\nonumberline Functional completeness}{34}{section*.43}%
-\contentsline {subsubsection}{\nonumberline Time behaviour}{34}{section*.44}%
-\contentsline {subsubsection}{\nonumberline Co-existence}{34}{section*.45}%
-\contentsline {subsubsection}{\nonumberline Maturity}{34}{section*.46}%
-\contentsline {subsubsection}{\nonumberline Recoverability}{34}{section*.47}%
-\contentsline {subsubsection}{\nonumberline Modifiability}{34}{section*.48}%
-\contentsline {chapter}{\numberline {4}Ergebnisse}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Erkenntnisse und gemessene Werte}{35}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Auswertung der Ergenisse}{35}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Schluss}{36}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{36}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{36}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{36}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{36}{section.5.4}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{37}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{38}{chapter*.49}%
+\contentsline {subsubsection}{\nonumberline Time behaviour}{35}{section*.44}%
+\contentsline {subsubsection}{\nonumberline Co-existence}{35}{section*.45}%
+\contentsline {subsubsection}{\nonumberline Recoverability}{35}{section*.46}%
+\contentsline {subsubsection}{\nonumberline Modifiability}{36}{section*.47}%
+\contentsline {chapter}{\numberline {4}Ergebnisse}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Erkenntnisse und gemessene Werte}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Auswertung der Ergenisse}{37}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Schluss}{38}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Gewonnenen Erkenntnisse}{38}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Zusammenfassung der Arbeit}{38}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mögliche weitere untersuchenswerte Aspekte}{38}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Aktuelle und zukünftige Entwicklungen}{38}{section.5.4}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{39}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{40}{chapter*.48}%

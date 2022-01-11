@@ -1107,7 +1107,6 @@ Kurz zusammengefasst werden die folgenden Merkmale betrachtet:
   \item \textbf{Functional completeness}
   \item \textbf{Time behaviour}
   \item \textbf{Co-existence}
-  \item \textbf{Maturity}
   \item \textbf{Recoverability}
   \item \textbf{Modifiability}
 \end{itemize}
@@ -1242,17 +1241,127 @@ einfachen Weise implementiert und verwendet werden.
 
 \subsubsection{Functional completeness}
 
+Eine essentielle Vorraussetzung für den Einsatz von Terraform ist die
+Vollständigkeit der Funktionalitäten die für ein gegebenes
+Infrastruktursystem erforderlich sind. Daher wird bei der
+Implementierung des Testsystems als erstes analysiert ob alle
+erforderlichen Ressourcen und Funktionalitäten in einer nutzbaren
+Form vorhanden sind.
 
+Betrachtet werden sollen die folgenden Ressourcen und
+Funktionalitäten:
+
+\begin{itemize}
+  \item Anlegen virtueller Maschinen mit dem Betriebssystem Ubuntu 20.04.
+  \item Anlegen eines PostgreSQL-Datenbankservers
+  \item Anlegen mehrerer Datenbanken mit Charset UTF-8
+  und \enquote{Collation English\_United States.1252}
+  \item Anlegen eines Secret Storage
+  \item Anlegen eines Kubernetes Cluster
+  \item Anlegen eines Node Pool für den Kubernetes Cluster
+  \item Erfassen einer Container Image Registry als Data Source
+  \item Installieren des Container Image im Node Pool des Kubernetes
+  Cluster
+\end{itemize}
+
+Zu beachten gilt dass das Referenzsystem in Microsoft Azure
+implementiert ist weshalb alle Funktionalitäten dort entsprechend
+garantiert sind.
 
 \subsubsection{Time behaviour}
+
+Eine weiterer kritischer Aspekt ist das das zeitliche Verhalten
+von Terraform in Verbindung mit dem Terraform Provider und der
+Cloud Plattform. Besonders in der Enwicklungsphase eines
+Infrastruktursystems wird dieses oft ab- und wiederaufgebaut,
+daher ist der zeitliche Aufwand der dafür benötigt wird von großer
+Bedeutung.
+
+Untersucht werden soll das zeitliche Verhalten der aufgelisteten
+Systeme:
+
+\begin{itemize}
+  \item Das gesamte Versuchssystems
+  \item Virtuelles Netzwerk
+  \item Virtuelle Maschine mit dem Betriebssystem Ubuntu 20.04.
+  \item PostgreSQL-Datenbankserver
+  \item Datenbank unter Standardeinstellungen
+  \item Kubernetes Clusters ohne Node Pool
+  \item Node Pool mit zwei Nodes
+\end{itemize}
+
+Es werden sowohl die Dauer für den Auf- als auch Abbau gemessen.
+Jeder Test wird zehn mal wiederholt und der Mittelwert der
+gemessenen Werte bewertet. Die Messungen werden nur durchgeführt
+sofern die Plattform den Status der betroffenen Dienste als Normal/OK
+oder ähnliches führt.
+
 \subsubsection{Co-existence}
-\subsubsection{Maturity}
+
+Hier wird betrachtet wie viele Umgebungsvariablen gesetzt werden
+müssen und wie allgemein oder spezifisch deren Namensgebung ausfällt.
+Eine allgemeinere Namensgebung wie etwa
+\textbf{\$CLOUD\_PLATFORM\_ACCOUNT} könnte eher zu unvorhergesehenen
+Problemen führen als eine Namensgebung die ihren Zweck genau
+spezifiziert.
+
 \subsubsection{Recoverability}
+
+Für diesen Test wird zunächst der Aufbau des Systems angestoßen
+durch das gewohnte \textit{terraform apply} angestoßen. Nach 
+Ablauf von ca. der Hälfte der zum vollständigen Aufbau benötigten
+Zeit wird die Internetverbindung im Betriebssystem manuell
+unterbrochen.\\
+Im Anschluss an diese Unterbrechung wird \textit{terraform apply}
+erneut ausgeführt und überprüft ob die Ressourcen anschließend
+zur Verfügung stehen. Sollte dies fehlschlagen wird der aufgetretene
+Fehler dokumentiert.
+
+Die untersuchten Szenarien entsprechen denen unter dem Punkt Time
+behaviour:
+
+\begin{itemize}
+  \item Das gesamte Versuchssystems
+  \item Virtuelles Netzwerk
+  \item Virtuelle Maschine mit dem Betriebssystem Ubuntu 20.04.
+  \item PostgreSQL-Datenbankserver
+  \item Datenbank unter Standardeinstellungen
+  \item Kubernetes Clusters ohne Node Pool
+  \item Node Pool mit zwei Nodes
+\end{itemize}
+
 \subsubsection{Modifiability}
+
+Hier wird untersucht wie unterschiedliche Ressourcen auf eine
+Modifikation reagieren. Mithilfe der jeweiligen Browserbasierten
+GUI der Cloud Plattformen wird der Effekt beobachtet und dokumentiert.
+
+Folgende Szenarien werden untersucht:
+
+\begin{itemize}
+  \item Änderung des Betriebssystems einer Virtuellen Maschine
+  \item Vergrößerung der Festplatte einer Virtuellen Maschine
+  \item Veränderung der statischen IP einer Virtuellen Maschine
+  \item Veränderung des Project/Resourcegroup/...
+  einer Virtuellen Maschine
+  \item Vergrößerung der Festplattengröße eines Datenbankservers
+  \item Vergrößerung eines Node Pools von 2 auf 3 Nodes
+  \item Änderung des Charset einer Datenbank in einem PostgreSQL-Server
+\end{itemize}
 
 \chapter{Ergebnisse}
 \label{sec:ergeb}
 
 \section{Erkenntnisse und gemessene Werte}
+
+subsection{Functional completeness}
+
+subsection{Time behaviour}
+
+subsection{Co-existence}
+
+subsection{ecoverability}
+
+subsection{Modifiability}
 
 \section{Auswertung der Ergenisse}
