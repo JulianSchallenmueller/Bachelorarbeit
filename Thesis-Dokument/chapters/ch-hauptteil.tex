@@ -1,5 +1,7 @@
 % Bsp. eines Hauptteils
 
+\begin{spacing}{1.2}
+
 \chapter{Grundlagen}
 \label{sec:grundl}
 
@@ -922,17 +924,16 @@ Betrachtung im Rahmen dieser Arbeit vorgenommen werden kann.
   erfüllen kann während sie sich eine Umgebung mit anderen Programmen
   teilt ohne deren Funktionalität zu beeinträchtigen.
 
-  Anwendbarkeit: Da die Terraform Provider Anforderungen an ihre Umgebung
-  stellen um ihre Funktionalität erfüllen zu können kann dieser Aspekt
-  durchaus sinnvoll betrachtet werden.
+  Anwendbarkeit: Da in diesem Bereich im Rahmen der Arbeit mit wenigen
+  Providern keine Probleme zu erwarten sind wird dieses Thema nicht
+  explizit betrachtet.
 
   \item \textbf{Interoperability}: Grad zu welchem die Software mit
   anderen Produkten Informationen austauschen und verarbeiten kann.
 
-  Anwendbarkeit: Dieser Aspekt könnte im Hinblick auf Terraform mit
-  Sicherheit untersucht werden und interessante Ergebnisse liefern.
-  Im Falle der einzelnen Terraform Provider kann dieser Aspekt jedoch
-  nur begrenzt sinnvoll betrachtet werden.
+  Anwendbarkeit: Im Rahmen der Arbeit wird die Interaktion zwischen
+  den Providern von Google Coud Platform und Microsoft Azure mit
+  Kubernetes und Helm betrachtet.
 \end{itemize}
 
 \subsubsection{Usability}
@@ -1106,7 +1107,6 @@ Kurz zusammengefasst werden die folgenden Merkmale betrachtet:
 \begin{itemize}
   \item \textbf{Functional completeness}
   \item \textbf{Time behaviour}
-  \item \textbf{Co-existence}
   \item \textbf{Recoverability}
   \item \textbf{Modifiability}
 \end{itemize}
@@ -1208,8 +1208,6 @@ erstellt wurden, werden die Module farblich hervorgehoben.
 
 \subsubsection{Konkreter Aufbau in Microsoft Azure}
 
-\subsubsection{Konkreter Aufbau in Amazon AWS}
-
 \newpage
 \begin{landscape}
 \subsubsection{Konkreter Aufbau in Google Cloud Platform}
@@ -1255,13 +1253,10 @@ Funktionalitäten:
   \item Anlegen virtueller Maschinen mit dem Betriebssystem Ubuntu 20.04.
   \item Anlegen eines PostgreSQL-Datenbankservers
   \item Anlegen mehrerer Datenbanken mit Charset UTF-8
-  und \enquote{Collation English\_United States.1252}
+  und Collation English\_United States.1252
   \item Anlegen eines Secret Storage
   \item Anlegen eines Kubernetes Cluster
-  \item Anlegen eines Node Pool für den Kubernetes Cluster
   \item Erfassen einer Container Image Registry als Data Source
-  \item Installieren des Container Image im Node Pool des Kubernetes
-  Cluster
 \end{itemize}
 
 Zu beachten gilt dass das Referenzsystem in Microsoft Azure
@@ -1282,28 +1277,16 @@ Systeme:
 
 \begin{itemize}
   \item Das gesamte Versuchssystems
-  \item Virtuelles Netzwerk
   \item Virtuelle Maschine mit dem Betriebssystem Ubuntu 20.04.
   \item PostgreSQL-Datenbankserver
-  \item Datenbank unter Standardeinstellungen
-  \item Kubernetes Clusters ohne Node Pool
-  \item Node Pool mit zwei Nodes
+  \item Kubernetes Cluster mit default Node Pool
 \end{itemize}
 
 Es werden sowohl die Dauer für den Auf- als auch Abbau gemessen.
-Jeder Test wird zehn mal wiederholt und der Mittelwert der
+Jeder Test wird drei mal wiederholt und der Mittelwert der
 gemessenen Werte bewertet. Die Messungen werden nur durchgeführt
 sofern die Plattform den Status der betroffenen Dienste als Normal/OK
-oder ähnliches führt.
-
-\subsubsection{Co-existence}
-
-Hier wird betrachtet wie viele Umgebungsvariablen gesetzt werden
-müssen und wie allgemein oder spezifisch deren Namensgebung ausfällt.
-Eine allgemeinere Namensgebung wie etwa
-\textbf{\$CLOUD\_PLATFORM\_ACCOUNT} könnte eher zu unvorhergesehenen
-Problemen führen als eine Namensgebung die ihren Zweck genau
-spezifiziert.
+führt. 
 
 \subsubsection{Recoverability}
 
@@ -1317,17 +1300,13 @@ erneut ausgeführt und überprüft ob die Ressourcen anschließend
 zur Verfügung stehen. Sollte dies fehlschlagen wird der aufgetretene
 Fehler dokumentiert.
 
-Die untersuchten Szenarien entsprechen denen unter dem Punkt Time
-behaviour:
+Folgende Szenarien werden untersucht:
 
 \begin{itemize}
-  \item Das gesamte Versuchssystems
-  \item Virtuelles Netzwerk
-  \item Virtuelle Maschine mit dem Betriebssystem Ubuntu 20.04.
+  \item Virtuelle Maschine.
   \item PostgreSQL-Datenbankserver
   \item Datenbank unter Standardeinstellungen
-  \item Kubernetes Clusters ohne Node Pool
-  \item Node Pool mit zwei Nodes
+  \item Kubernetes Cluster mit default Node Pool
 \end{itemize}
 
 \subsubsection{Modifiability}
@@ -1341,12 +1320,11 @@ Folgende Szenarien werden untersucht:
 \begin{itemize}
   \item Änderung des Betriebssystems einer Virtuellen Maschine
   \item Vergrößerung der Festplatte einer Virtuellen Maschine
-  \item Veränderung der statischen IP einer Virtuellen Maschine
-  \item Veränderung des Project/Resourcegroup/...
+  \item Wechsel des Netzwerks
   einer Virtuellen Maschine
   \item Vergrößerung der Festplattengröße eines Datenbankservers
-  \item Vergrößerung eines Node Pools von 2 auf 3 Nodes
   \item Änderung des Charset einer Datenbank in einem PostgreSQL-Server
+  \item Vergrößerung eines Node Pools von 2 auf 3 Nodes
 \end{itemize}
 
 \chapter{Ergebnisse}
@@ -1354,14 +1332,159 @@ Folgende Szenarien werden untersucht:
 
 \section{Erkenntnisse und gemessene Werte}
 
-subsection{Functional completeness}
+\subsection{Evaluierung der Functional completeness}
 
-subsection{Time behaviour}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|p{0.22\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+    \hline
+    & Google Cloud Platform & Microsoft Azure\\
+    \hline
+    VM Ubuntu 20.04 & 
+    Funktionalität wird durch Ressource 
+    google\_compute\_instance erfüllt. & 
+    Funktionalität wird
+    durch Ressource  azurerm\_virtual\_machine erfüllt.\\
+    \hline
+    PostgreSQL Datenbankserver & 
+    Funktionalität wird durch Ressource google\_sql\_database\_instance
+    erfüllt. &Other stuff
+    Funktionalität wird durch Ressource
+    azurerm\_postgresql\_server erfüllt. \\
+    \hline
+    Anlegen von Datenbanken mit Charset UTF-8 und Collation
+    English\_United States.1252 
+    & Funktionalität wird durch Ressource google\_sql\_database teilweise
+    erfüllt. Collation kann bei Erstellung nicht wie erwünscht
+    definiert werden. Default ist en\_US.UTF8. &
+    Funktionalität wird durch Ressource 
+    azurerm\_postgresql\_database erfüllt. Charset und Collation werden
+    bei  Erstellung definiert\\
+    \hline
+    Secret Storage & Funktionalität wird durch Ressource
+    google\_secret\_manager\_secret erfüllt.
+    Es existiert ein Secret Storage je Google Project. & 
+    Funktionalität wird durch Ressource azurerm\_key\_vault\_secret
+    erfüllt. Mehrere secret storages in Resource Group möglich.\\
+    \hline
+    Kubernetes Cluster &  Funktionalität wird durch Ressource
+    google\_container\_cluster erfüllt.
+    & Funktionalität wird durch Ressource
+    azurerm\_kubernetes\_cluster erfüllt.\\
+    \hline
+    Einbindung von Container Registry als Data Source & 
+    Funktionalität wird durch Data Source 
+    google\_storage\_bucket erfüllt werden.
+    & Funktionalität wird duch Data Source
+    azurerm\_container\_registry erfüllt.\\
+    \hline
+  \end{tabular}
+  \caption{Functional Completeness von GCP und Azure}
+\end{table}
 
-subsection{Co-existence}
+\newpage
+Die grundlegenden Computing Ressourcen werden durch beide Terraform
+Provider erwartungsgemäß bereitgestellt, im Detail liegen jedoch
+einige Unterschiede vor.\\
+Beim Anlegen der Datenbanken in GCP können die Funktionalitäten von
+Azure nicht vollständig abgebildet werden, Anpassung an Charset und
+Collation sind zum Zeitpunk des Erstellens nicht möglich.
+Das Charset entspricht dem gewünschten Wert, die Collation jedoch
+nicht.\\
+Der Secret Storage wir auf GCP einmal für ein GCP Project angelegt,
+Azure hingegen bietet die Möglichkeit mehrere Key Vaults innerhalb
+einer Resource Group anzulegen.\\
+Die Container Registry wird in Google Cloud in Form eines normalen
+Googe Storage Buckets angelegt. Die bevorzugte Methode zur Speicherung
+eines Container Image in GCP stellt die Artifact Registry dar,
+diese ist jedoch zum aktuellen Zeitpunkt noch nicht vollständig im
+Terraform Provider implementiert. Es ist möglich eine Artifact
+Registry als Terraform Ressource zu erstellen, die Nutzung einer
+bereits bestehenden Artifact Registry als Data Source ist jedoch
+noch nicht möglich.
 
-subsection{ecoverability}
+\subsection{Time behaviour Tests}
 
-subsection{Modifiability}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|p{0.22\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+    \hline
+    & Google Cloud Platform & Microsoft Azure\\
+    \hline
+    Aufbau Vollständiges Testsystem & 
+    Aufbau 1: 15m48s Abbau 1: 7m54s
+    Aufbau 2: 17:37 Abbau 2: 8m11s
+    Aufbau 3: 15m12s Abbau 3: 6m52 &
+    Aufbau 1: 7m7s Abbau 1: 6m5s
+    Aufbau 2: 7m59s Abbau 2: 7m44s
+    Aufbau 3: 6m54s Abbau 3: 6m6s \\
+    \hline
+    Virtuelle Maschine mit Ubuntu 18.04, 30GB SSD, 2 vCPU und 4 GB RAM. &
+    Aufbau 1: 0m30s Abbau 1: 1m3s
+    Aufbau 2: 0m23s Abbau 2: 1m4s
+    Aufbau 3: 0m25s Abbau 3: 1m4s &
+    Aufbau 1: 1m12s Abbau 1: 1m36s
+    Aufbau 2: 1m11s Abbau 2: 1m37s
+    Aufbau 3: 1m11s Abbau 3: 1m40s \\
+    \hline
+    PostgreSQL-Datenbankserver &&\\
+    \hline
+    Datenbank &&\\
+    \hline
+    Kubernetes Cluster mit default Node Pool &&\\
+    \hline
+    Node Pool mit 2 Nodes &&\\
+    \hline
+    Terraform plan für Testsystem &&\\
+    \hline
+  \end{tabular}
+  \caption{Time behaviour von GCP und Azure in verschiedenen Szenarien}
+\end{table}
 
-\section{Auswertung der Ergenisse}
+\subsection{Recoverability Tests}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|p{0.22\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+    \hline
+    & Google Cloud Platform & Microsoft Azure\\
+    \hline
+    Längere Unterbrechung des Internets, State in Remote Backend 
+    &State korrumpiert, erneutes terraform apply führt zu Fehler, manuelles Entfernen der Ressource notwendig.
+    &State korrumpiert, erneutes terraform apply führt zu Fehler, zusätzlich zur VM-Ressource muss die Festplatte
+    ebenfalls separat manuell gelöscht werden.\\
+    \hline
+    Temporäre Unterbrechung des Internets, lokaler State
+    &Terraform state wird auch lokal korrumpiert, manuelles löschen der
+    VM-Ressource notwendig.
+    &\\
+    \hline
+    \enquote{Soft Cancel} von Terraform Apply &&\\
+    \hline
+    \enquote{Hard Cancel} von Terraform Apply &&\\
+    \hline
+  \end{tabular}
+  \caption{Recoverability von GCP und Azure in Bezug auf individuelle Ressourcen}
+\end{table}
+
+\subsection{Modifiability Tests}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|p{0.22\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+    \hline
+    & Google Cloud Platform & Microsoft Azure\\
+    \hline
+    Änderung des Betriebssystems einer Virtuellen Maschine &&\\
+    \hline
+    Vergrößerung der Festplatte einer Virtuellen Maschine &&\\
+    \hline
+    Vergrößerung der Festplattengröße eines Datenbankservers &&\\
+    \hline
+    Vergrößerung eines Node Pools von 1 auf 2 Nodes &&\\
+    \hline
+  \end{tabular}
+  \caption{Modifiability von GCP und Azure in Bezug auf individuelle Ressourcen}
+\end{table}
+
+\end{spacing}

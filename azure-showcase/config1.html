@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Terraform configuration graph">
+    <meta name="author" content="https://github.com/pcasteran/terraform-graph-beautifier">
+
+    <title>azure-showcase</title>
+
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/layout-base/layout-base.js"></script>
+    <script src="https://unpkg.com/cose-base/cose-base.js"></script>
+    <script src="https://unpkg.com/cytoscape-fcose/cytoscape-fcose.js"></script>
+    <script src="https://unpkg.com/cytoscape-expand-collapse/cytoscape-expand-collapse.js"></script>
+
+</head>
+<style>
+    #cy {
+        width: 100%;
+        height: 95%;
+        position: absolute;
+        top: 40px;
+        left: 0px;
+    }
+</style>
+<body>
+<p>
+    <b id="collapseAll" style="cursor: pointer;color: darkred">Collapse all</b>
+    /
+    <b id="expandAll" style="cursor: pointer; color: darkslateblue">Expand all</b>
+    -
+    <b id="runLayout" style="cursor: pointer; color: #598b3d">Run layout</b>
+</p>
+<div id="cy"></div>
+<script>
+    // Helper function used to retrieve the scratchpad data of an element.
+    const getScratchPad = function (element) {
+        let scratchPad = element.scratch('_tf-graph-beautifier');
+        if (!scratchPad) {
+            scratchPad = element.scratch('_tf-graph-beautifier', {});
+        }
+        return scratchPad;
+    }
+
+    // Color palette used for the modules background.
+    //
+    // This is the "8-class Pastel2" palette from ColorBrewer v2.0 (https://colorbrewer2.org/?type=qualitative&scheme=Pastel2&n=8).
+    //
+    // This palette is covered by a licence, hence here is the related acknowledgments:
+    // This product includes color specifications and designs developed by Cynthia Brewer (http://colorbrewer.org/).
+    // Please see license at http://colorbrewer.org/export/LICENSE.txt
+    const moduleBgColorPalette = ['#b3e2cd', '#fdcdac', '#cbd5e8', '#f4cae4', '#e6f5c9', '#fff2ae', '#f1e2cc', '#cccccc'];
+
+    // Returns the color index in the `moduleBgColorPalette` for an element.
+    const getColorIndex = function (element) {
+        let scratchPad = getScratchPad(element);
+        let colorIndex = scratchPad["module-bg-color-index"];
+        if (colorIndex === undefined) {
+            // Get the color index of the parent (if any).
+            let parentId = element.data("parentModuleID");
+            if (parentId) {
+                let parent = element.cy().getElementById(parentId);
+                let parentColorIndex = getColorIndex(parent);
+                colorIndex = (parentColorIndex + 1) % moduleBgColorPalette.length;
+            } else {
+                colorIndex = 0;
+            }
+
+            scratchPad["module-bg-color-index"] = colorIndex;
+        }
+
+        return colorIndex
+    }
+
+    // Layout options.
+    const layoutOptions = {
+        name: 'fcose',
+        // 'draft', 'default' or 'proof'
+        // - "draft" only applies spectral layout
+        // - "default" improves the quality with incremental layout (fast cooling rate)
+        // - "proof" improves the quality with incremental layout (slow cooling rate)
+        quality: "proof",
+        // Use random node positions at beginning of layout
+        // if this is set to false, then quality option must be "proof"
+        randomize: false,
+        // Whether or not to animate the layout
+        animate: "end",
+        // Duration of animation in ms, if enabled
+        animationDuration: 500,
+        // Easing of animation, if enabled
+        animationEasing: undefined,
+        // Fit the viewport to the repositioned nodes
+        fit: true,
+        // Padding around layout
+        padding: 45,
+        // Whether to include labels in node dimensions. Valid in "proof" quality
+        nodeDimensionsIncludeLabels: true,
+        // Whether or not simple nodes (non-compound nodes) are of uniform dimensions
+        uniformNodeDimensions: false,
+        // Whether to pack disconnected components - valid only if randomize: true
+        packComponents: true,
+
+        /* spectral layout options */
+
+        // False for random, true for greedy sampling
+        samplingType: true,
+        // Sample size to construct distance matrix
+        sampleSize: 25,
+        // Separation amount between nodes
+        nodeSeparation: 75,
+        // Power iteration tolerance
+        piTol: 0.0000001,
+
+        /* incremental layout options */
+
+        // Node repulsion (non overlapping) multiplier
+        nodeRepulsion: 4500,
+        // Ideal edge (non nested) length
+        idealEdgeLength: 50,
+        // Divisor to compute edge forces
+        edgeElasticity: 0.45,
+        // Nesting factor (multiplier) to compute ideal edge length for nested edges
+        nestingFactor: 0.1,
+        // Maximum number of iterations to perform
+        numIter: 2500,
+        // For enabling tiling
+        tile: true,
+        // Represents the amount of the vertical space to put between the zero degree members during the tiling operation(can also be a function)
+        tilingPaddingVertical: 10,
+        // Represents the amount of the horizontal space to put between the zero degree members during the tiling operation(can also be a function)
+        tilingPaddingHorizontal: 10,
+        // Gravity force (constant)
+        gravity: 0.25,
+        // Gravity range (constant) for compounds
+        gravityRangeCompound: 1.5,
+        // Gravity force (constant) for compounds
+        gravityCompound: 1.0,
+        // Gravity range (constant)
+        gravityRange: 3.8,
+        // Initial cooling factor for incremental layout
+        initialEnergyOnIncremental: 0.3,
+    };
+
+    // Create the DOM element used to draw the graph.
+    let initialLayoutOptions = Object.assign({}, layoutOptions);
+    initialLayoutOptions["randomize"] = true;
+    const cy = cytoscape({
+        container: document.getElementById('cy'),
+        layout: initialLayoutOptions,
+        style: [
+            {
+                selector: 'node',
+                style: {
+                    'label': 'data(label)',
+                    'shape': 'rectangle',
+                    'width': 'label',
+                    'height': 'label',
+                    'padding': '10px',
+                    'text-valign': 'center',
+                    'text-halign': 'center',
+                    'background-color': '#EEEEEE',
+                    'border-style': 'solid',
+                    'border-width': 1,
+                    'border-color': '#000000',
+                }
+            },
+            {
+                selector: 'node.resource',
+                style: {
+                    'shape': 'round-rectangle',
+                },
+            },
+            {
+                selector: 'node.var',
+                style: {
+                    'shape': 'ellipse',
+                },
+            },
+            {
+                selector: 'node.local',
+                style: {
+                    'shape': 'ellipse',
+                },
+            },
+            {
+                selector: 'node.output',
+                style: {
+                    'shape': 'cut-rectangle',
+                },
+            },
+            {
+                selector: 'node.module',
+                style: {
+                    'font-weight': 'bold',
+                    'text-valign': 'top',
+                    'text-halign': 'center',
+                    'background-color': function (ele) {
+                        let colorIndex = getColorIndex(ele);
+                        return moduleBgColorPalette[colorIndex];
+                    }
+                }
+            },
+            {
+                selector: 'node.provider',
+                style: {
+                    'shape': 'diamond',
+                    'padding': '25px',
+                },
+            },
+            {
+                selector: "node.cy-expand-collapse-collapsed-node",
+                style: {
+                    'border-style': 'dashed'
+                }
+            },
+            {
+                selector: ':selected',
+                style: {
+                    "border-width": 2
+                }
+            },
+            {
+                selector: 'edge',
+                style: {
+                    'line-style': 'solid',
+                    'width': 1,
+                    'line-color': '#000000',
+                    'source-arrow-color': '#000000',
+                    'target-arrow-color': '#000000',
+                    'target-arrow-shape': 'triangle',
+                    'curve-style': 'bezier',
+                }
+            },
+            {
+                selector: 'edge[targetType = "var"], edge[targetType = "local"]',
+                style: {
+                    'line-style': 'dotted',
+                }
+            },
+            {
+                selector: 'edge[targetType = "output"]',
+                style: {
+                    'line-style': 'dashed',
+                }
+            },
+            {
+                selector: 'edge[sourceType = "module"][targetType = "module"]',
+                style: {
+                    'width': 2,
+                    'source-arrow-shape': 'diamond',
+                    'curve-style': 'straight',
+                }
+            },
+            {
+                selector: 'edge.cy-expand-collapse-meta-edge',
+                style: {
+                    'visibility': 'hidden'
+                }
+            },
+        ],
+        elements: {"nodes":[{"data":{"id":"module.root","label":"module.root","type":"module"},"classes":["module"]},{"data":{"id":"module.root.output.postgres_server_fqdn","parent":"module.root","label":"output.postgres_server_fqdn","type":"output"},"classes":["output"]},{"data":{"id":"module.root.var.environment","parent":"module.root","label":"var.environment","type":"var"},"classes":["var"]},{"data":{"id":"module.root.var.location","parent":"module.root","label":"var.location","type":"var"},"classes":["var"]},{"data":{"id":"module.root.var.num_nodes","parent":"module.root","label":"var.num_nodes","type":"var"},"classes":["var"]},{"data":{"id":"module.root.azurerm_resource_group.resourceGroup","parent":"module.root","label":"azurerm_resource_group.resourceGroup","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.azurerm_virtual_network.vnet","parent":"module.root","label":"azurerm_virtual_network.vnet","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases","parent":"module.root","label":"module.showcase_databases","type":"module","parentModuleID":"module.root"},"classes":["module"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault","parent":"module.root.module.showcase_databases","label":"azurerm_key_vault.jsa_vault","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_user","parent":"module.root.module.showcase_databases","label":"azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_user","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_database.manufacturedomain_db","parent":"module.root.module.showcase_databases","label":"azurerm_postgresql_database.manufacturedomain_db","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_database.orderdomain_db","parent":"module.root.module.showcase_databases","label":"azurerm_postgresql_database.orderdomain_db","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","parent":"module.root.module.showcase_databases","label":"azurerm_postgresql_server.pgdatabaseserver","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.output.postgres_server_fqdn","parent":"module.root.module.showcase_databases","label":"output.postgres_server_fqdn","type":"output"},"classes":["output"]},{"data":{"id":"module.root.module.showcase_databases.random_string.dbPasswordGen","parent":"module.root.module.showcase_databases","label":"random_string.dbPasswordGen","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.var.resource_group_name","parent":"module.root.module.showcase_databases","label":"var.resource_group_name","type":"var"},"classes":["var"]},{"data":{"id":"module.root.module.showcase_databases.var.network","parent":"module.root.module.showcase_databases","label":"var.network","type":"var"},"classes":["var"]},{"data":{"id":"module.root.module.showcase_databases.var.location","parent":"module.root.module.showcase_databases","label":"var.location","type":"var"},"classes":["var"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_password","parent":"module.root.module.showcase_databases","label":"azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_password","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_database.supplierdomain_db","parent":"module.root.module.showcase_databases","label":"azurerm_postgresql_database.supplierdomain_db","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_firewall_rule.pgdatabaseserverfirewallallow","parent":"module.root.module.showcase_databases","label":"azurerm_postgresql_firewall_rule.pgdatabaseserverfirewallallow","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_databases.data.azurerm_client_config.current","parent":"module.root.module.showcase_databases","label":"data.azurerm_client_config.current","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_kubernetes","parent":"module.root","label":"module.showcase_kubernetes","type":"module","parentModuleID":"module.root"},"classes":["module"]},{"data":{"id":"module.root.module.showcase_kubernetes.var.location","parent":"module.root.module.showcase_kubernetes","label":"var.location","type":"var"},"classes":["var"]},{"data":{"id":"module.root.module.showcase_kubernetes.data.azurerm_container_registry.containerregistry","parent":"module.root.module.showcase_kubernetes","label":"data.azurerm_container_registry.containerregistry","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.kubernetes_service.jsa_testapp_lb","parent":"module.root.module.showcase_kubernetes","label":"kubernetes_service.jsa_testapp_lb","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.azurerm_role_assignment.jsa_acrpull_role","parent":"module.root.module.showcase_kubernetes","label":"azurerm_role_assignment.jsa_acrpull_role","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.helm_release.nginxIngressController","parent":"module.root.module.showcase_kubernetes","label":"helm_release.nginxIngressController","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.kubernetes_deployment.jsa_testapp","parent":"module.root.module.showcase_kubernetes","label":"kubernetes_deployment.jsa_testapp","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.var.resource_group_name","parent":"module.root.module.showcase_kubernetes","label":"var.resource_group_name","type":"var"},"classes":["var"]},{"data":{"id":"module.root.module.showcase_kubernetes.var.network","parent":"module.root.module.showcase_kubernetes","label":"var.network","type":"var"},"classes":["var"]},{"data":{"id":"module.root.module.showcase_kubernetes.var.num_nodes","parent":"module.root.module.showcase_kubernetes","label":"var.num_nodes","type":"var"},"classes":["var"]},{"data":{"id":"module.root.module.showcase_kubernetes.azurerm_kubernetes_cluster.jsa_k8s","parent":"module.root.module.showcase_kubernetes","label":"azurerm_kubernetes_cluster.jsa_k8s","type":"resource"},"classes":["resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.azurerm_public_ip.jsa_k8s_ingress_ip","parent":"module.root.module.showcase_kubernetes","label":"azurerm_public_ip.jsa_k8s_ingress_ip","type":"resource"},"classes":["resource"]}],"edges":[{"data":{"id":"module.root.azurerm_resource_group.resourceGroup-module.root.var.location","source":"module.root.azurerm_resource_group.resourceGroup","target":"module.root.var.location","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.azurerm_virtual_network.vnet-module.root.azurerm_resource_group.resourceGroup","source":"module.root.azurerm_virtual_network.vnet","target":"module.root.azurerm_resource_group.resourceGroup","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.azurerm_virtual_network.vnet-module.root.var.environment","source":"module.root.azurerm_virtual_network.vnet","target":"module.root.var.environment","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault-module.root.module.showcase_databases.data.azurerm_client_config.current","source":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault","target":"module.root.module.showcase_databases.data.azurerm_client_config.current","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault-module.root.module.showcase_databases.var.location","source":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault","target":"module.root.module.showcase_databases.var.location","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault-module.root.module.showcase_databases.var.resource_group_name","source":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault","target":"module.root.module.showcase_databases.var.resource_group_name","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_password-module.root.module.showcase_databases.azurerm_key_vault.jsa_vault","source":"module.root.module.showcase_databases.azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_password","target":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_password-module.root.module.showcase_databases.random_string.dbPasswordGen","source":"module.root.module.showcase_databases.azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_password","target":"module.root.module.showcase_databases.random_string.dbPasswordGen","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_user-module.root.module.showcase_databases.azurerm_key_vault.jsa_vault","source":"module.root.module.showcase_databases.azurerm_key_vault_secret.azurekeyvaultpgdatabasepw_user","target":"module.root.module.showcase_databases.azurerm_key_vault.jsa_vault","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_database.manufacturedomain_db-module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","source":"module.root.module.showcase_databases.azurerm_postgresql_database.manufacturedomain_db","target":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_database.orderdomain_db-module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","source":"module.root.module.showcase_databases.azurerm_postgresql_database.orderdomain_db","target":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_database.supplierdomain_db-module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","source":"module.root.module.showcase_databases.azurerm_postgresql_database.supplierdomain_db","target":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_firewall_rule.pgdatabaseserverfirewallallow-module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","source":"module.root.module.showcase_databases.azurerm_postgresql_firewall_rule.pgdatabaseserverfirewallallow","target":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver-module.root.module.showcase_databases.random_string.dbPasswordGen","source":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","target":"module.root.module.showcase_databases.random_string.dbPasswordGen","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver-module.root.module.showcase_databases.var.location","source":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","target":"module.root.module.showcase_databases.var.location","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver-module.root.module.showcase_databases.var.resource_group_name","source":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","target":"module.root.module.showcase_databases.var.resource_group_name","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.module.showcase_databases.output.postgres_server_fqdn-module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","source":"module.root.module.showcase_databases.output.postgres_server_fqdn","target":"module.root.module.showcase_databases.azurerm_postgresql_server.pgdatabaseserver","sourceType":"output","targetType":"resource"},"classes":["output-resource"]},{"data":{"id":"module.root.module.showcase_databases.var.location-module.root.var.location","source":"module.root.module.showcase_databases.var.location","target":"module.root.var.location","sourceType":"var","targetType":"var"},"classes":["var-var"]},{"data":{"id":"module.root.module.showcase_databases.var.network-module.root.azurerm_virtual_network.vnet","source":"module.root.module.showcase_databases.var.network","target":"module.root.azurerm_virtual_network.vnet","sourceType":"var","targetType":"resource"},"classes":["var-resource"]},{"data":{"id":"module.root.module.showcase_databases.var.resource_group_name-module.root.azurerm_resource_group.resourceGroup","source":"module.root.module.showcase_databases.var.resource_group_name","target":"module.root.azurerm_resource_group.resourceGroup","sourceType":"var","targetType":"resource"},"classes":["var-resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.azurerm_kubernetes_cluster.jsa_k8s-module.root.module.showcase_kubernetes.var.resource_group_name","source":"module.root.module.showcase_kubernetes.azurerm_kubernetes_cluster.jsa_k8s","target":"module.root.module.showcase_kubernetes.var.resource_group_name","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.module.showcase_kubernetes.azurerm_public_ip.jsa_k8s_ingress_ip-module.root.module.showcase_kubernetes.var.location","source":"module.root.module.showcase_kubernetes.azurerm_public_ip.jsa_k8s_ingress_ip","target":"module.root.module.showcase_kubernetes.var.location","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.module.showcase_kubernetes.azurerm_public_ip.jsa_k8s_ingress_ip-module.root.module.showcase_kubernetes.var.resource_group_name","source":"module.root.module.showcase_kubernetes.azurerm_public_ip.jsa_k8s_ingress_ip","target":"module.root.module.showcase_kubernetes.var.resource_group_name","sourceType":"resource","targetType":"var"},"classes":["resource-var"]},{"data":{"id":"module.root.module.showcase_kubernetes.azurerm_role_assignment.jsa_acrpull_role-module.root.module.showcase_kubernetes.azurerm_kubernetes_cluster.jsa_k8s","source":"module.root.module.showcase_kubernetes.azurerm_role_assignment.jsa_acrpull_role","target":"module.root.module.showcase_kubernetes.azurerm_kubernetes_cluster.jsa_k8s","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.azurerm_role_assignment.jsa_acrpull_role-module.root.module.showcase_kubernetes.data.azurerm_container_registry.containerregistry","source":"module.root.module.showcase_kubernetes.azurerm_role_assignment.jsa_acrpull_role","target":"module.root.module.showcase_kubernetes.data.azurerm_container_registry.containerregistry","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.helm_release.nginxIngressController-module.root.module.showcase_kubernetes.azurerm_public_ip.jsa_k8s_ingress_ip","source":"module.root.module.showcase_kubernetes.helm_release.nginxIngressController","target":"module.root.module.showcase_kubernetes.azurerm_public_ip.jsa_k8s_ingress_ip","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.kubernetes_service.jsa_testapp_lb-module.root.module.showcase_kubernetes.kubernetes_deployment.jsa_testapp","source":"module.root.module.showcase_kubernetes.kubernetes_service.jsa_testapp_lb","target":"module.root.module.showcase_kubernetes.kubernetes_deployment.jsa_testapp","sourceType":"resource","targetType":"resource"},"classes":["resource-resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.var.location-module.root.var.location","source":"module.root.module.showcase_kubernetes.var.location","target":"module.root.var.location","sourceType":"var","targetType":"var"},"classes":["var-var"]},{"data":{"id":"module.root.module.showcase_kubernetes.var.network-module.root.azurerm_virtual_network.vnet","source":"module.root.module.showcase_kubernetes.var.network","target":"module.root.azurerm_virtual_network.vnet","sourceType":"var","targetType":"resource"},"classes":["var-resource"]},{"data":{"id":"module.root.module.showcase_kubernetes.var.num_nodes-module.root.var.num_nodes","source":"module.root.module.showcase_kubernetes.var.num_nodes","target":"module.root.var.num_nodes","sourceType":"var","targetType":"var"},"classes":["var-var"]},{"data":{"id":"module.root.module.showcase_kubernetes.var.resource_group_name-module.root.azurerm_resource_group.resourceGroup","source":"module.root.module.showcase_kubernetes.var.resource_group_name","target":"module.root.azurerm_resource_group.resourceGroup","sourceType":"var","targetType":"resource"},"classes":["var-resource"]},{"data":{"id":"module.root.output.postgres_server_fqdn-module.root.module.showcase_databases.output.postgres_server_fqdn","source":"module.root.output.postgres_server_fqdn","target":"module.root.module.showcase_databases.output.postgres_server_fqdn","sourceType":"output","targetType":"output"},"classes":["output-output"]}]}
+
+    });
+
+    const expandCollapseApi = cy.expandCollapse({
+        layoutBy: layoutOptions,
+        fisheye: true,
+        animate: false,
+        undoable: false
+    });
+
+    document.getElementById("collapseAll").addEventListener("click", function () {
+        expandCollapseApi.collapseAll();
+    });
+
+    document.getElementById("expandAll").addEventListener("click", function () {
+        expandCollapseApi.expandAll();
+    });
+
+    document.getElementById("runLayout").addEventListener("click", function () {
+        const layout = cy.layout(layoutOptions);
+        layout.run();
+    });
+</script>
+</body>
+</html>

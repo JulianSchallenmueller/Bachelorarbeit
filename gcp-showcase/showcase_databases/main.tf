@@ -3,7 +3,7 @@ locals {
 }
 
 resource "google_sql_database_instance" "pgdatabaseserver1" {
-  name             = "jsa-${var.environment}-psql1"
+  name             = "jsa-${var.environment}-psql10"
   region           = var.region
   database_version = "POSTGRES_13"
   settings {

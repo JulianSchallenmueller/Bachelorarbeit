@@ -38,11 +38,13 @@ resource "google_compute_firewall" "vm_firewall" {
 
 resource "google_compute_instance" "vm" {
   name         = "vm-instance"
-  machine_type = "f1-micro"
+  machine_type = "e2-medium"
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-minimal-2004-lts"
+      image = "ubuntu-os-cloud/ubuntu-1804-lts"
+      type = "pd-ssd"
+      size = 30
     }
   }
 

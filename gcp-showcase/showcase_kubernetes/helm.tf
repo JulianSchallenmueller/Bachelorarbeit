@@ -14,23 +14,23 @@ resource "google_compute_address" "kubernetes_cluster_primary_ingress_ip" {
   address_type = "EXTERNAL"
 }
 
-resource "kubernetes_namespace" "nginxNamespace" {
-  metadata {
-    name = "nginx-ingress"
-  }
-}
+# resource "kubernetes_namespace" "nginxNamespace" {
+#   metadata {
+#     name = "nginx-ingress"
+#   }
+# }
 
 resource "helm_release" "nginxIngressController" {
   name       = "ingress"
   repository = "https://helm.nginx.com/stable"
   chart      = "nginx-ingress"
   wait       = false
-  namespace  = "nginx-ingress"
+  # namespace  = "nginx-ingress"
 
   set {
     name  = "controller.service.loadBalancerIP"
     value = google_compute_address.kubernetes_cluster_primary_ingress_ip.self_link
   }
 
-  depends_on = [kubernetes_namespace.nginxNamespace]
+  # depends_on = [kubernetes_namespace.nginxNamespace]
 }

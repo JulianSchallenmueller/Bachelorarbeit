@@ -44,7 +44,6 @@ module "showcase_databases" {
 
   environment        = var.environment
   region             = var.region
-  database_admin_pwd = var.database_admin_pwd
 }
 
 module "showcase_kubernetes" {
