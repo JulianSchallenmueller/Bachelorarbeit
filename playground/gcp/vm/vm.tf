@@ -6,9 +6,9 @@ terraform {
     }
   }
 
-  backend "gcs" {
-    bucket = "jsa-tf-state"
-  }
+  # backend "gcs" {
+  #   bucket = "jsa-tf-state"
+  # }
 }
 
 provider "google" {
@@ -38,13 +38,15 @@ resource "google_compute_firewall" "vm_firewall" {
 
 resource "google_compute_instance" "vm" {
   name         = "vm-instance"
-  machine_type = "e2-medium"
+  machine_type = "e2-micro"
+
+  allow_stopping_for_update = true
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-1804-lts"
+      image = "ubuntu-os-cloud/ubuntu-2004-lts"
       type = "pd-ssd"
-      size = 30
+      size = 40
     }
   }
 

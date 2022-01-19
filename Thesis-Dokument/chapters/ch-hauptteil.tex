@@ -1327,12 +1327,10 @@ Folgende Szenarien werden untersucht:
   \item Vergrößerung eines Node Pools von 2 auf 3 Nodes
 \end{itemize}
 
-\chapter{Ergebnisse}
+\chapter{Ergebnisse und Bewertung}
 \label{sec:ergeb}
 
-\section{Erkenntnisse und gemessene Werte}
-
-\subsection{Evaluierung der Functional completeness}
+\section{Evaluierung der Functional completeness}
 
 \begin{table}[H]
   \centering
@@ -1348,7 +1346,7 @@ Folgende Szenarien werden untersucht:
     \hline
     PostgreSQL Datenbankserver & 
     Funktionalität wird durch Ressource google\_sql\_database\_instance
-    erfüllt. &Other stuff
+    erfüllt. &
     Funktionalität wird durch Ressource
     azurerm\_postgresql\_server erfüllt. \\
     \hline
@@ -1383,6 +1381,8 @@ Folgende Szenarien werden untersucht:
 \end{table}
 
 \newpage
+
+\subsubsection{Bewertung}
 Die grundlegenden Computing Ressourcen werden durch beide Terraform
 Provider erwartungsgemäß bereitgestellt, im Detail liegen jedoch
 einige Unterschiede vor.\\
@@ -1393,17 +1393,23 @@ Das Charset entspricht dem gewünschten Wert, die Collation jedoch
 nicht.\\
 Der Secret Storage wir auf GCP einmal für ein GCP Project angelegt,
 Azure hingegen bietet die Möglichkeit mehrere Key Vaults innerhalb
-einer Resource Group anzulegen.\\
+einer Resource Group anzulegen. Die Speicherung des tatsächlichen Secret
+in der Ressource google\_secret\_manager\_seceret\_version anstelle
+des zuvor anzulegenden google\_secret\_manager\_seceret fällt
+etwas unintuitiv aus\\
 Die Container Registry wird in Google Cloud in Form eines normalen
 Googe Storage Buckets angelegt. Die bevorzugte Methode zur Speicherung
 eines Container Image in GCP stellt die Artifact Registry dar,
 diese ist jedoch zum aktuellen Zeitpunkt noch nicht vollständig im
 Terraform Provider implementiert. Es ist möglich eine Artifact
-Registry als Terraform Ressource zu erstellen, die Nutzung einer
+Registry als Terraform Ressource zu erstellen, die Einbindung einer
 bereits bestehenden Artifact Registry als Data Source ist jedoch
-noch nicht möglich.
+noch nicht möglich. Der Aufwand beim Erstellen der Container Registry
+über den Storage Bucket fällt höher aus als in Azure, hier wird beim
+Anlegen der Container Registry die Storage-Infrastruktur automatisch
+erstellt und gemanaged.
 
-\subsection{Time behaviour Tests}
+\section{Time behaviour Tests}
 
 \begin{table}[H]
   \centering
@@ -1411,7 +1417,7 @@ noch nicht möglich.
     \hline
     & Google Cloud Platform & Microsoft Azure\\
     \hline
-    Aufbau Vollständiges Testsystem & 
+    Aufbau/Abbau Testsystem & 
     Aufbau 1: 15m48s Abbau 1: 7m54s
     Aufbau 2: 17:37 Abbau 2: 8m11s
     Aufbau 3: 15m12s Abbau 3: 6m52 &
@@ -1419,7 +1425,7 @@ noch nicht möglich.
     Aufbau 2: 7m59s Abbau 2: 7m44s
     Aufbau 3: 6m54s Abbau 3: 6m6s \\
     \hline
-    Virtuelle Maschine mit Ubuntu 18.04, 30GB SSD, 2 vCPU und 4 GB RAM. &
+    Aufbau/Abbau VM &
     Aufbau 1: 0m30s Abbau 1: 1m3s
     Aufbau 2: 0m23s Abbau 2: 1m4s
     Aufbau 3: 0m25s Abbau 3: 1m4s &
@@ -1427,21 +1433,53 @@ noch nicht möglich.
     Aufbau 2: 1m11s Abbau 2: 1m37s
     Aufbau 3: 1m11s Abbau 3: 1m40s \\
     \hline
-    PostgreSQL-Datenbankserver &&\\
+    Aufbau/Abbau PostgreSQL-Datenbankserver &
+    Aufbau 1: 3m49s Abbau 1: 1m3s
+    Aufbau 2: 3m58s Abbau 2: 0m52s
+    Aufbau 3: 3m57s Abbau 3: 0m52s &
+    Aufbau 1: 2m28s Abbau 1: 0m42s
+    Aufbau 2: 2m32s Abbau 2: 0m43s
+    Aufbau 3: 2m28s Abbau 3: 0m40s \\
     \hline
-    Datenbank &&\\
+    Aufbau/Abbau Kubernetes-Cluster mit default Node Pool &
+    Aufbau 1: 3m59s Abbau 1: 2m52s
+    Aufbau 2: 3m39s Abbau 2: 3m3s
+    Aufbau 3: 3m31s Abbau 3: 2m53s &
+    Aufbau 1: 4m36s Abbau 1: 5m33s
+    Aufbau 2: 6m05s Abbau 2: 5m32s
+    Aufbau 3: 5m13s Abbau 3: 5m29s \\
     \hline
-    Kubernetes Cluster mit default Node Pool &&\\
+    Terraform plan für Testsystem &
+    Plan 1: 1.2s
+    Plan 2: 1.2s
+    Plan 3: 1.6s &
+    Plan 1: 14.6s
+    Plan 2: 15.2s
+    Plan 3: 14.9s \\
     \hline
-    Node Pool mit 2 Nodes &&\\
+    Terraform plan für Datenbankserver &
+    Plan 1: 0.9s
+    Plan 2: 1.0s
+    Plan 3: 1.0s &
+    Plan 1: 22.2s
+    Plan 2: 23.2s
+    Plan 3: 23.3s \\
     \hline
-    Terraform plan für Testsystem &&\\
+    Terraform plan für Kubernetes-Cluster mit default Node Pool &
+    Plan 1: 0.8s
+    Plan 2: 0.9s
+    Plan 3: 0.9s &
+    Plan 1: 13.5s
+    Plan 2: 13.3s
+    Plan 3: 12.3s \\
     \hline
   \end{tabular}
   \caption{Time behaviour von GCP und Azure in verschiedenen Szenarien}
 \end{table}
 
-\subsection{Recoverability Tests}
+\subsubsection{Bewertung}
+
+\section{Recoverability Tests}
 
 \begin{table}[H]
   \centering
@@ -1459,15 +1497,21 @@ noch nicht möglich.
     VM-Ressource notwendig.
     &\\
     \hline
-    \enquote{Soft Cancel} von Terraform Apply &&\\
+    \enquote{Soft Cancel} von Terraform Apply &
+    State korrumpiert&
+    Shutdown sofort, State korrumpiert\\
     \hline
-    \enquote{Hard Cancel} von Terraform Apply &&\\
+    \enquote{Hard Cancel} von Terraform Apply &
+    State korrumpiert&
+    Nicht durchgeführt\\
     \hline
   \end{tabular}
   \caption{Recoverability von GCP und Azure in Bezug auf individuelle Ressourcen}
 \end{table}
 
-\subsection{Modifiability Tests}
+\subsubsection{Bewertung}
+
+\section{Modifiability Tests}
 
 \begin{table}[H]
   \centering
@@ -1475,16 +1519,26 @@ noch nicht möglich.
     \hline
     & Google Cloud Platform & Microsoft Azure\\
     \hline
-    Änderung des Betriebssystems einer Virtuellen Maschine &&\\
+    Änderung des Betriebssystems einer Virtuellen Maschine &
+    Ressource wird zerstört und neu erstellt. &
+    Ressource wird zerstört und neu erstellt.\\
     \hline
-    Vergrößerung der Festplatte einer Virtuellen Maschine &&\\
+    Vergrößerung der Festplatte einer Virtuellen Maschine &
+    Ressource wird zerstört und neu erstellt.&
+    Führt zu Error.\\
     \hline
-    Vergrößerung der Festplattengröße eines Datenbankservers &&\\
+    Veränderung des Machine-Type einer Virtuellen Maschine &
+    Ressource wird modifiziert. &
+    Ressource wird modifiziert.\\
     \hline
-    Vergrößerung eines Node Pools von 1 auf 2 Nodes &&\\
+    Vergrößerung des default Node Pools von 1 auf 2 Nodes &
+    Ressource wird zerstört und neu erstellt. &
+    Ressource wird modifiziert. \\
     \hline
   \end{tabular}
   \caption{Modifiability von GCP und Azure in Bezug auf individuelle Ressourcen}
 \end{table}
+
+\subsubsection{Bewertung}
 
 \end{spacing}

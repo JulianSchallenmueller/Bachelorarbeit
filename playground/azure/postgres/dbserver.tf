@@ -1,10 +1,10 @@
 terraform {
-  # backend "azurerm" {
-  #   resource_group_name  = "backend-storage"
-  #   storage_account_name = "jsastorage"
-  #   container_name       = "tfstate"
-  #   key                  = "playground.terraform.tfstate"
-  # }
+#   backend "azurerm" {
+#     resource_group_name  = "backend-storage"
+#     storage_account_name = "jsastorage"
+#     container_name       = "tfstate"
+#     key                  = "playground.terraform.tfstate"
+#   }
 
   required_providers {
     azurerm = {
@@ -49,37 +49,21 @@ resource "azurerm_network_interface" "jsa_playground" {
   }
 }
 
-resource "azurerm_virtual_machine" "jsa_playground" {
-  name                  = "vm"
-  location              = azurerm_resource_group.jsa_playground.location
-  resource_group_name   = azurerm_resource_group.jsa_playground.name
-  vm_size               = "Standard_B2s"
+resource "azurerm_postgresql_server" "pgdatabaseserver" {
+  name                = "jsa-playground"
+  location            = "westeurope"
+  resource_group_name = azurerm_resource_group.jsa_playground.name
 
-  delete_os_disk_on_termination = true
+  # 2 vCores, 10.4 GB RAM
+  sku_name = "GP_Gen5_2"
 
-  delete_data_disks_on_termination = true
-
-  network_interface_ids = [azurerm_network_interface.jsa_playground.id]
-
-  storage_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "16.04-LTS"
-    version   = "latest"
-  }
-  storage_os_disk {
-    name              = "myosdisk1"
-    caching           = "ReadWrite"
-    create_option     = "FromImage"
-    managed_disk_type = "StandardSSD_LRS"
-    disk_size_gb = 30
-  }
-  os_profile {
-    computer_name  = "hostname"
-    admin_username = "testadmin"
-    admin_password = "Password1234!"
-  }
-  os_profile_linux_config {
-    disable_password_authentication = false
-  }
+  storage_mb                    = 10240
+  backup_retention_days         = 7
+  geo_redundant_backup_enabled  = false
+  auto_grow_enabled             = false
+  public_network_access_enabled = true
+  administrator_login           = "testadm"
+  administrator_login_password  = "test1234#"
+  version                       = "11"
+  ssl_enforcement_enabled       = true
 }
