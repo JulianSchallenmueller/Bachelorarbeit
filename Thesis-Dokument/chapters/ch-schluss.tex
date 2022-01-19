@@ -2,11 +2,69 @@
 
 \chapter{Schluss}
 \label{sec:schluss}
-Ergebnis-Bewertung, Zusammenfassung und Ausblick
 
 \section{Zusammenfassung der Arbeit}
 
+Im Rahmen dieser Arbeit wurde ein Vergleich der Public Cloud Service
+Provider Google Cloud Platform und Microsoft Azure in Bezug auf die
+Unterstützung von Infrastructure as Code mit Terraform durchgeführt.
+Um den Kontext, die technischen Grundlagen und die Motivation der Arbeit
+darzustellen werden im ersten Abschnitt Funktionsprinzip, Vorteile und
+Herausforderungen des modernen Cloud Computings sowie die Grundlagen
+von Infrastructure as Code und Terraform zusammengefasst.
+Grundlage für die Erklärung des Funktionsprinzip von Cloud Computing
+stellt hierbei die weithin akzeptierte Definition des National
+Institude of Standards and Technology der USA dar.
+Dazu werden verschiedene Vorteile und Herausforderungen moderner Cloud
+Technologien kurz zusammengefasst und erläutert sowie ein
+Überblick über die wichtigsten Cloud Service Provider im aktuellen
+Markt hergestellt.
+
+Die Grundlagen zu Infrastructure as Code werden durch den
+technologischen Wandel und eine Erklärung des Cloud Age Mindset
+eingeleitet. Die Notwendigkeit für den Einsatz von IaC wird durch
+die bestehenden Probleme welche durch IaC gelöst werden dargestellt,
+und drei Kernverfahren im Einsatz von IaC erläutert.
+Zum Abschluss der Grundlagen wird das IaC Tool Terraform vorgestellt.
+Es wird das Einsatzfeld von Terraform im Rahmen von IaC dargestellt
+sowie die Funktionsweise von Terraform und die von Terraform
+verwendete Sprache erläutert.
+
+Der Hauptteil der Arbeit beschäftigt sich mit der Auswahl der 
+Evaluierungskriterien, dem Aufbau des primären Testsystems und
+der Definition und Durchführung von zusätzlichen ergänzenden Tests.\\
+Die Evaluierungskriterien werden aus dem Qualitätsmodell der ISO
+25010 ausgewählt, die individuellen Qualitätsaspekte werden hinsichtlich
+ihrere Anwendbarkeit beurteilt und geeignete Aspekte zur Untersuchung
+ausgewählt.
+
+Der nächste Teil besteht aus der Vorstellung des primären Testsystems.
+Dieses besteht aus drei Terraform-Modulen; dem Root-Modul sowie
+zwei nach ihrer Funktionlität getrennten Modulen für einen 
+Datenbankserver und einem Kubernetes Cluster.
+
+Dieses System sowie die zusätzlichen Tests werden hinsichtlich der zuvor
+ausgewählten Qualitätsmerkmale verglichen und bewertet.
+
+Der letzte Abschnitt der Arbeit umfasst eine Zusammenfassung, 
+das abschließende Fazit sowie einen Ausblick auf weitere
+untersuchenswerte Themen im Zusammen mit Infrastructure as Code
+und Terraform. 
+
 \section{Fazit}
+
+Abschließend lässt sich die Aussage treffen dass sowohl Google Cloud
+Plattform als auch Microsoft Azure gut für den Einsatz von Infrastructure
+as Code mit Terraform eignen. Beide Terraform Provider befinden sich
+in einem ausgereiften Zustand, grundlegend fehlende Funktionalitäten
+wurden im Rahmen dieser Evaluierung nicht festgestellt.
+Betrachtet man die Details macht Microsoft Azure insgesamt eine
+leicht bessere Figur. Die Deployment Zeiten sind im Durchschnitt
+etwas schneller, es existieren einige Funktionalitäten die von
+Google Cloud Platform aktuell noch nicht vollständig abgedeckt sind.
+Die Dokumentation der Terraform Provider beider Cloud Plattformen
+fällt sehr gut und umfangreich aus, inklusive einiger Beispiele wie
+die individuellen Ressourcen konfiguriert werden können bzw. müssen.
 
 \section{Weitere untersuchenswerte Aspekte und aktuelle Entwicklungen}
 

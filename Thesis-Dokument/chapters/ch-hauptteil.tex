@@ -1479,6 +1479,56 @@ erstellt und gemanaged.
 
 \subsubsection{Bewertung}
 
+Bei der ersten Betrachtung der am Testsystem gemessenen Werte fällt
+ein starker Unterschied zwischen den für den Aufbau benötigten Zeiten
+des Testsystems auf, Google Cloud Platform benötigt hier beinahe die
+doppelte Zeit gegenüber Azure. Bei den zusätzlichen Tests die den
+Aufbau von Datenbankserver und Kubernetes Cluster analysieren liegt
+der Vorteil weiterhin bei Azure, jedoch nicht ansatzweise in der selben
+Ausprägung. Interessant ist ebenfalls der starke Kontrast zwischen den
+Zeiten die für die Erstellung des Execution Plan benötigt werden,
+hier liegen die Zeiten des Google Providers extrem unter denen des
+Azure Providers.\\
+Die Betrachtung der Detailunterschiede im Aufbau des Testsystems und der
+individuellen Tests offenbart eine wahrscheinliche Ursache für die
+stark unterschiedlichen Zeiten des Testsystems: Der jeweils zum
+Einsatz kommende Maschinen-Typ.\\
+Die Wahl für praktisch alle Teile des
+GCP-Systems fiel auf den Typ \enquote{f1-micro}. Dieser zeichnet sich
+durch besonders niedrige Kosten, aber dementsprechend auch geringe
+Leistung aus. Für die initiale Phase der Infrastruktur-Entwicklung
+während der noch praktisch keine Belastung der Komponenten stattfindet
+kann dies eine attraktive Option darstellen.\\
+Die Implementierung des Systems in Azure verwendet im Gegensatz dazu
+häufig die jeweilig empfohlene Option bzw. den in der Dokumentation als
+Beispiel verwendeten Typ.\\
+Die individuellen Tests werden mit Maschinen-Typen durchgeführt die
+eine möglichst vergleichbare Leistungsfähigkeit besitzen, konkret wurde
+dabei die Anzahl der zur verfügung stehenden CPU Cores, die Größe des
+Arbeitsspeichers sowie Typ und Größe der Festplatte angepasst.\\
+Die individuellen Tests offenbaren hierbei dass die Wahl des Maschinen-
+und Festplattentyps nicht nur bei der Leistungsfähigkeit sondern auch
+bei der für die Bereitstellung benötigten Zeit eine wichtige Rolle
+spielen. Ein Testsystem das ganz oder auch nur teilweise zu Test- und
+Entwicklungszwecken häufig zerstört und neu aufgebaut werden muss
+könnte von der Verwendung besserer Hardware deutlich profitieren.
+
+Eine weitere mögliche Ursache für die Zeit Differenz beim Aufbau
+der Infrastruktur stellt die verwendete Availability-Region/Zone dar.
+Alle Tests wurden uniform in der Zone \enquote{europe-west3-b} für
+Google Cloud Platform und der Location \enquote{westeurope} für Azure
+durchgeführt. Es ist in jedem Falle denkbar dass es lokale Unterschiede
+bei der Verfügbarkeit gibt, die verfügaberen Maschinentypen variieren
+zum Teil ebenfalls.
+
+Die Unterschiede bei der Erstellung des Execution Plan werfen ebenfalls
+Fragen nach den Ursachen auf, im Rahmen dieser Arbeit kann darauf
+aber nicht weiter eingegangen werden. Eine mögliche Ursache
+könnte in der Überprüfung zur Verfügung stehender Ressourcen
+durch den Terraform Provider liegen,
+eine fundierte Beantwortung dieser Frage erfordert jeoch weitere
+Recherche und Tests.
+
 \section{Recoverability Tests}
 
 \begin{table}[H]
@@ -1511,6 +1561,30 @@ erstellt und gemanaged.
 
 \subsubsection{Bewertung}
 
+Die Tests zur Recoverability durchgeführt werden vermitteln ein relativ
+gleichmäßiges Bild: Das Ergebnis jedes Szenarios ist die Korrumpierung
+des Terraform State. Dementsprechend konnte die Infrastruktur durch
+ein einfaches erneutes Ausführen des Execution Plan nicht erfolgreich
+deployed werden und ein manuelles Löschen der bereits teilweise
+konfigurierten Cloud Ressource war notwendig.
+
+Aus diesem Ergebnis lässt sich ableiten dass keiner der Provider
+zusätzliche Mechanismen zur Fehlerprävention bei beim Deployment
+individueller Ressourcen implementiert. Komplexere Szenarien sollten
+ein erweitertes und vollständigeres Bild bieten können, mögliche
+Unterschiede könnten zum Beispiel bei Operationen die Datenspeicherung
+betreffen zu Tage treten.
+
+Der größte Unterschied der bei die Durchführung betreffend auffiel ist
+die standardmäßige Timeout-Zeit für das Erstellen der Ressourcen.
+Google Cloud Platform bricht das Deployment im Falle eines
+Verbindungsverlusts innerhalb weniger Minuten ab, Azure wartet
+in diesem Fall bedeutend länger bevor die Operation fehlschlägt.\\
+Die Lösung von Google verspricht schnelleres Feedback im Fall von
+Problemen, der Ansatz von Azure erlaubt es auch bei einem etwas
+längeren Ausfall des Internets das aktuelle Deployment ohne weitere
+manuelle Interaktion vollständig durchzuführen.
+
 \section{Modifiability Tests}
 
 \begin{table}[H]
@@ -1540,5 +1614,26 @@ erstellt und gemanaged.
 \end{table}
 
 \subsubsection{Bewertung}
+
+Die durchgeführten Tests zum Aspekt der Modifizierbarkeit offenbaren
+einige Unterschiede zwischen den getesteten Cloud Plattformen.
+Die Fähigekeit von Azure einen Node Pool erweitern zu können ohne
+diesen dabei neu anzulegen erlaubt es die gewünschte Änderung sehr
+viel schneller durchzuführen. Die zur Modifikation des bestehenden
+Node Pools benötigte Zeit entspricht etwa der Zeit des Erstellens
+ohne zuvor die alte Ressource zu zerstören. Im Falle von GCP ist
+dies der Fall, die alte Ressource muss zuerst vollständig zerstört
+sein bevor der neue und vergrößerte Node Pool angelegt wird.
+
+Ein schwerwiegenderes Problem auf Seiten von Azure offenbart sich
+beim Erweitern der Festplattenkapazität einer VM. Während dies im Fall
+von GCP über das Zerstören und neu Erstellen der Ressource möglich
+ist führt dies im Falle von Azure zu einer Fehlermeldung.
+Diese Fehlermeldung tritt auf da die Festplatte als eigene
+Ressource angelegt wird. Die verwendete azurerm\_virtual\_machine
+Ressource bietet zwar die Option die Festplatte gemeinsam mit der
+Maschine zu löschen, in dem hier getesteten Szenario ist dies
+allerdings nicht möglich. Augrund dessen wird eine manuelle
+Interaktion notwendig um zum gewünschten Endzustand zu gelangen.
 
 \end{spacing}
