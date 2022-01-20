@@ -55,17 +55,45 @@ und Terraform.
 
 Abschließend lässt sich die Aussage treffen dass sowohl Google Cloud
 Plattform als auch Microsoft Azure gut für den Einsatz von Infrastructure
-as Code mit Terraform eignen. Beide Terraform Provider befinden sich
-in einem ausgereiften Zustand, grundlegend fehlende Funktionalitäten
-wurden im Rahmen dieser Evaluierung nicht festgestellt.
+as Code mit Terraform geeignet sind. Beide Terraform Provider befinden
+sich in einem ausgereiften Zustand, grundlegend fehlende
+Funktionalitäten wurden im Rahmen dieser Evaluierung nicht festgestellt.
 Betrachtet man die Details macht Microsoft Azure insgesamt eine
 leicht bessere Figur. Die Deployment Zeiten sind im Durchschnitt
-etwas schneller, es existieren einige Funktionalitäten die von
+etwas schneller und es existieren einige Funktionalitäten die von
 Google Cloud Platform aktuell noch nicht vollständig abgedeckt sind.
 Die Dokumentation der Terraform Provider beider Cloud Plattformen
 fällt sehr gut und umfangreich aus, inklusive einiger Beispiele wie
 die individuellen Ressourcen konfiguriert werden können bzw. müssen.
 
 \section{Weitere untersuchenswerte Aspekte und aktuelle Entwicklungen}
+
+Im Verlauf dieser Arbeit wurden eine Vielzahl von Themen angeschnitten
+oder erwähnt die für die Umsetzung eines kundenorientierten Projekts
+mitunter große Relevanz besitzen, aufgrund des inhaltlichen und
+zeitlichen Rahmens jedoch nicht adäquat behandelt werden konnten.\\
+Das vielleicht wichtigste dieser Themen ist das Testen von Infrastruktur
+Code. Interessant wäre hier nicht nur die Untersuchung der existierenden
+Möglichkeiten von Terraform sondern auch der Vergleich mit anderen
+Tools wie Pulumi. Allgemein wäre nicht nur der Vergleich der
+Testmöglichkeiten interessant, eine grundsätzliche Evaluierung beider
+Tools könnte interessante Erkentnisse über die Eignung dieser
+in verschiedenen Szenarien liefern und verschiedene Aspekte beider Tools
+genauer betrachten.\\
+Ein weiteres interessantes Thema ist die Cloud Agnostizität von
+Terraform. Das Erfassen des Unterschieds zwischen Erwartung und Realität
+sowie das Erforschen der bestehenden Möglichkeiten zum Erreichen einer
+\enquote{echten} Cloud Agnostizität in Form einer fundierten Arbeit
+wäre mit Sicherheit eine wertvolle Referenz für Neueinsteiger in das
+Thema IaC mit Terraform.\\
+Im Grundlagenkapitel dieser Arbeit wurde dargestellt warum die
+Automatisierung von Infrastruktur von Beginn an essentiell ist um
+den vollen Umfang der Vorteile ausschöpfen zu können. Ein Großteil
+der aktuell existierenden Projekte ist jedoch aufgrund der
+verhältnismäßigen Neuheit von IaC und Terraform mit hoher
+Wahrscheinlichkeit noch nicht in dieser Form umgesetzt worden.
+Eine Erforschung von Best Practices und Tools zur Automatisierung
+bestehender Systeme hätte zum aktuellen Zeitpunkt und auch in
+kommenden Jahren einen hohen Wert.\\
 
 \end{spacing}

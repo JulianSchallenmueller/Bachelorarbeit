@@ -67,5 +67,5 @@
 \contentsline {section}{\numberline {5.1}Zusammenfassung der Arbeit}{47}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Fazit}{48}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Weitere untersuchenswerte Aspekte und aktuelle Entwicklungen}{48}{section.5.3}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{49}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{50}{chapter*.54}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{50}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{51}{chapter*.54}%
