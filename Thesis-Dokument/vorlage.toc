@@ -1,7 +1,6 @@
 \babel@toc {ngerman}{}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Einleitung}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Motivation und Ziele der Arbeit}{1}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Grundlagen}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Funktionsprinzip, Vorteile und Herausforderungen des modernen Cloud Computings}{3}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Definition und Funktionsweise}{3}{subsection.2.1.1}%

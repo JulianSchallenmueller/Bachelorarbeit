@@ -1,0 +1,56 @@
+% ------------------------------------------------------------------------
+% LaTeX - Preambel ******************************************************
+% ------------------------------------------------------------------------
+% pre-work
+% ========================================================================
+% % ToDo kennzeichnen
+\newcommand{\workTodo}[1]{\textcolor{red}{todo: #1}}
+
+% % Für Datum und Zeit in Fusszeile
+% % !!!Inhalt bei Fertigstellung der Arbeit löschen
+\newcommand{\workMarkDateTime}{}
+
+% % Alle Namen werden im Titel und im hyperref-Paket eingetragen
+% % !!! Ueberall für <Wert> das Entsprechende eintragen
+
+ % <Typ> Studienarbeit, Dipolmarbeit, Studienarbeit oder Bachlor-Abschlussarbeit
+\newcommand{\workTyp}{Bachelorarbeit\xspace}
+
+ % <Titel> der Arbeit
+\newcommand{\workTitel}{Cloud Service Provider Evaluierung\\ auf Basis von\\ Infrastructure as Code Unterstützung}
+
+ % <Studiengang> z.B. Kommunikationstechnik
+\newcommand{\workStudiengang}{Softwaretechnik und Medieninformatik\xspace}
+
+% <Semester> mit Jahr z.B. Sommersemester 2008  
+\newcommand{\workSemester}{Wintersemester 2021/22\xspace}
+
+% <Name> des Studenten
+\newcommand{\workNameStudent}{Julian Schallenmüller\xspace}
+
+% <Pruefer> Name des prüfenden (betreuenden) Professor an der Hochschule
+\newcommand{\workPruefer}{Prof. Dr.-Ing. Kai Warendorf\xspace} 
+
+
+% %%% Nur bei Abschluss-Arbeiten
+
+% <Datum> der Abgabe der Arbeit (Eidesstatliche Erklärung)
+\newcommand{\workDatum}{\today\xspace}
+
+% <Zweitprüfer>
+\newcommand{\workZweitPruefer}{Prof. Dr. Rer. Nat. Mirko Sonntag\xspace}
+
+% <Zeitraum>
+\newcommand{\workZeitraum}{15.10.2021-31.01.2022\xspace}
+
+
+% %%% Nur bei Industrie-Arbeiten:
+
+% <Firma>
+\newcommand{\workFirma}{Novatec Consulting GmbH\xspace}
+
+% <Betreuer in der Firma>
+\newcommand{\workBetreuer}{Dipl.-Ing (BA) Matthias Häussler\xspace}
+
+% Firmenlogo Name hier anpassen, Größe (wenn möglich) nicht ändern
+\newcommand{\workFirmenLogo}{\includegraphics[width=5cm]{fig/aa-titel/novatec-logo.eps}} 
