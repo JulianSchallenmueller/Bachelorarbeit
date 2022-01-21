@@ -31,7 +31,7 @@
 \contentsline {section}{\numberline {4.2}Ergebnisse und Bewertung der Time Behaviour Tests}{5}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Ergebnisse und Bewertung der Recoverability Tests}{5}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Ergebnisse und Bewertung der Modifiability Tests}{5}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Evaluierung der Einheitlichkeit der Testsysteme f\"ur Azure und Google Cloud Platform}{5}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Evaluierung der Einheitlichkeit der Testsysteme f\"ur Azure und Google Cloud Platform}{5}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Schluss}{6}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Fazit}{6}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Ausblick}{6}{section.5.2}%
