@@ -122,6 +122,47 @@ Veränderungen im \enquote{Iron Age} sind aufwändig und teuer und stellen einRis
 
 \subsection{Vorteile von Infrastructure as Code im Vergleich zu manuellem Infrastruktur-Provisioning}
 
+\textbf{Kein Configuration Drift durch einheitliche Codebase}: Configuration Drift bezeichnet eine über die Zeitwachsende Abweichung zweier ursprünglich identischer Systeme. Wird eingleiches System, zum Beispiel ein Applikationsserver, in verschiedenenUmgebungen eingesetzt stellen diese Umgebungen oftmals auch leicht verschiedeneAnforderungen an diesen Server. Auf diese kann dann mit Optimierungen, etwa in Form spezifischerKonfigurationsdetails, reagiert werden. Wird nun das ursprünglicheBasis-System geupdated werden individuelle und oft undokumentierte Anpassungennicht berücksichtigt wodurch ein Update unbequeme Konsequenzen nachsich ziehen kann. Werden alle Veränderungen in einer einheitlichenCodebase verwaltet und Updates häufig vorgenommen verhindert manstarken Configuration Drift der ansonsten oftmals stattfindet\cite{conf-drift}.
+
+\textbf{Wiederverwendbarkeit durch einheitlichen Code}:Ein weiterer Vorteil der durch die Verwendung einer einheitlichenCodebase entsteht ist die Wiederverwendbarkeit und Reproduzierbarkeiteines Systems. Wenn ein identisches System an einer anderen Stelleaufgebaut werden soll oder geht ein System aus unvorhergesehenenGründen in seiner Gesamtheit verloren kann es schnell und mitverhältnismäßig geringem Aufwand reproduziert werden.Ein dazu passender Ausdruck in Bezug auf Server ist \enquote{Cattle not Pets}. Statt sich individuell und mit großem Aufwand um einzelne Server zukümmern, wie man es etwa mit dem eigenen Haustier tut, sollten Serverwie leicht ersetzbares Vieh behandelt werden\cite{cattle-pets}.
+
+\textbf{Schnelleres Provisioning durch Cloud}: Ein bereits häufig
+angesprochener Vorteil ist die schnelle Bereitstellung, auf tiefere
+Erklärung kann daher hier verzichtet werden.
+
+\textbf{Schnellerer Profit}: Schnellere Bereitstellung der Hardware
+und schnellere Auslieferung von Software die durch DevOps Methoden
+begünstigt werden erzeugen entsprechend auch schneller einen Mehrwert.
+
+\textbf{Einheitliches Tooling in Dev, Ops und weiteren Beteiligten Teams}:
+Verwendung von IaC
+fördert die einheitlicheres Tooling in allen Bereichen die mit einem
+Softwareprodukt in Zusammenhang stehen. Cloud Technologien fördern und
+ermöglichen diese Vereinheitlichung, manuelles Provisioning ohne ein
+Cloud Modell erschwert dies oder macht es sogar unmöglich.
+
+\textbf{Stärkere Automatisierung im Arbeitsablauf}: Automatisierung
+bedeutet immer einen gewissen upfront Overhead, jedoch kann auf
+längere Sicht deutlich von automatisierten Abläufen profitiert weren.
+Ein Beispiel hierfür sind automatisierte und in eine CI/CD Pipeline
+integrierte Tests.
+
+\textbf{Höhere Zuverlässigkeit und Sicherheit durch schnelle Updates}:
+Von eine Struktur die schnelle und häufige Veränderungen fördert
+kann auch die Sicherheit und Zuverlässigkeit eines Systems profitieren.
+Auf Sicherheitsrisiken kann in kurzer Zeit und ohne viel Aufwand
+reagiert werden, eine unsichere Funktion kann etwa schnell durch
+eine sichere Variante ausgetauscht werden, mögliche damit verbundene
+Probleme können dann in automatisierten Tests erkannt werden wodurch
+das System zuverlässig bleibt.
+
+\textbf{Schnellere Fehlersuche und -behebung}:
+
+Fehler die dennoch auftreten können dann durch den Einsatz kleinerer
+Komponenten schneller isoliert, gefunden und behoben werden.
+Monolithische Systeme erschweren dies durch dadurch dass weniger klar
+isolierte Komponenten vorhanden sind die häufig mehr Abhängigkeiten
+aufweisen und daher schwerer als einzelne Einheit getestet werden können.
 
 
 \subsection{Herausforderungen im Einsatz von Infrastructure as Code}
