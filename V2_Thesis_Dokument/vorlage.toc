@@ -9,31 +9,31 @@
 \contentsline {subsection}{\numberline {2.1.3}\"Uberblick \"uber die wichtigsten Cloud Service Provider}{8}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2}Infrastructure as Code}{10}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Technologischer Wandel und das Cloud Age Mindset}{11}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Vorteile von Infrastructure as Code im Vergleich zu manuellem Infrastruktur-Provisioning}{11}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Herausforderungen im Einsatz von Infrastructure as Code}{11}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Die drei Kernverfahren von Infrastructure as Code}{11}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Funktionsprinzip und Rolle von Terraform im IaC-Anwendungsprozess}{11}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Funktionsweise von Terraform}{11}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Einf\"uhrung in die Hashicorp Configuration Language}{11}{subsection.2.3.2}%
-\contentsline {chapter}{\numberline {3}Evaluierungsanforderungen und Umsetzung}{12}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Evaluierungsanforderungen}{12}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Ziel der Evaluierung}{12}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Untersuchte Komponenten der Terraform Provider}{12}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Auswahl der Evaluierungskriterien}{12}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Umsetzung des Testsystems}{12}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Eingesetzte Software und Tools}{12}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}High-Level Aufbau des Testsystems}{12}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Konkreter Aufbau auf Google Cloud Platform}{12}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Konkreter Aufbau auf Azure}{12}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Aufbau der erg\"anzenden Versuche}{12}{subsection.3.2.5}%
-\contentsline {chapter}{\numberline {4}Ergebnisse und Bewertung}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Evaluierung der Functional Completeness}{13}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Ergebnisse und Bewertung der Time Behaviour Tests}{13}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Ergebnisse und Bewertung der Recoverability Tests}{13}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Ergebnisse und Bewertung der Modifiability Tests}{13}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Evaluierung der Einheitlichkeit der Testsysteme f\"ur Azure und Google Cloud Platform}{13}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Schluss}{14}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Fazit}{14}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Ausblick}{14}{section.5.2}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{15}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{16}{chapter*.14}%
+\contentsline {subsection}{\numberline {2.2.2}Vorteile von Infrastructure as Code im Vergleich zu manuellem Infrastruktur-Provisioning}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Herausforderungen im Einsatz von Infrastructure as Code}{12}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Die drei Kernverfahren von Infrastructure as Code}{12}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Funktionsprinzip und Rolle von Terraform im IaC-Anwendungsprozess}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Funktionsweise von Terraform}{12}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Einf\"uhrung in die Hashicorp Configuration Language}{12}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Evaluierungsanforderungen und Umsetzung}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Evaluierungsanforderungen}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Ziel der Evaluierung}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Untersuchte Komponenten der Terraform Provider}{13}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Auswahl der Evaluierungskriterien}{13}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Umsetzung des Testsystems}{13}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Eingesetzte Software und Tools}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}High-Level Aufbau des Testsystems}{13}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Konkreter Aufbau auf Google Cloud Platform}{13}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Konkreter Aufbau auf Azure}{13}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Aufbau der erg\"anzenden Versuche}{13}{subsection.3.2.5}%
+\contentsline {chapter}{\numberline {4}Ergebnisse und Bewertung}{14}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Evaluierung der Functional Completeness}{14}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Ergebnisse und Bewertung der Time Behaviour Tests}{14}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ergebnisse und Bewertung der Recoverability Tests}{14}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Ergebnisse und Bewertung der Modifiability Tests}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Evaluierung der Einheitlichkeit der Testsysteme f\"ur Azure und Google Cloud Platform}{14}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Schluss}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Fazit}{15}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Ausblick}{15}{section.5.2}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{16}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{17}{chapter*.15}%

@@ -101,19 +101,28 @@ Der Gartner Magic Quadrant für Cloud Service Provider bietet einen grobenÜberbl
 
 \section{Infrastructure as Code}
 
-Infrastructure as Code beschreibt einen Ansatz zur Automatisierung des Infrastruktur-Provisionings basierend auf Methoden aus derSoftwareentwicklung\cite{def-iac}.
+Automatisierung spielt in der modernen Softwareentwicklung eine wichtige Rolle. Automatisierte Unit- und Integration-Tests gehören inzwischen schon lange zum Standardrepertoire eines Softwareentwicklers. Die Verbreitung der DevOps-Kultur förderte in den letzten Jahren auch die Automatisierung des Build- und Deployment-Prozesses und mit der steigenden Verbreitung Cloud-basierter Software erweitert sich diese Automatisierung nun auch auf das Provisioning der Infrastruktur.
 
-Moderne Software
-Statt eines manuellen Aufbaus und direkter Konfiguration der einzelnen
-Komponenten werden maschinenlesbare Dateien verfasst welche dann von einem
-IaC Tool eingelesen und verarbeitet werden. Dabei kommen bevorzugt
-deklarative Sprachen zum Einsatz deren höhere Abstraktion mehr Flexibilität
-als ein imperativer Ansatz erlaubt.
-(vgl. https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code)
+Infrastructure as Code beschreibt im allgemeinen einen Ansatz zur Automatisierung des Infrastruktur-Provisionings basierend auf Methoden aus derSoftwareentwicklung\cite{def-iac}.
+
+Statt eines manuellen Aufbaus und händischer Konfiguration der einzelnenKomponenten werden maschinenlesbare Dateien verfasst welche dann von einemIaC Tool eingelesen und verarbeitet werden. Dabei kommen bevorzugtdeklarative Sprachen zum Einsatz deren höhere Abstraktion mehr Flexibilitätals ein imperativer Ansatz erlaubt\cite{dec-imp-iac}.
 
 \subsection{Technologischer Wandel und das Cloud Age Mindset}
 
+Durch die Technologien der Cloud ist es heute möglich eine gewünschteIT-Infrastruktur sehr viel schneller bereitzustellen alszuvor. Statt Einkauf, Anschließen und Einrichten einesphysischen Servers das, je nach Szenario einen Zeitraum von mindestensmehreren Stunden oder Tagen bis hin zu Wochen dauern kann, könnenvirtuelle Ressourcen in der Cloud in wenigen Minuten verfügbar gemacht werden.Der schnellere Ablauf wird durch die Automatisierung von Prozessen wie der Bereitstellung der Infrastruktur mithilfe von IaC Tools noch verstärkt. Mit diesen Veränderungen wird das Management und die Erweiterung derbestehenden Systeme jedoch nicht unbedingt einfacher\cite{iac-schneller}, die Anwendung vonArbeitsprozesse die sich bisher bewährt haben sind oftmals ineffektiv und verhindern das Ausnutzen des vollen Potentials der Cloud.Kief Morris, Autor von \textit{Infrastructure as Code - Dynamic Systems for the Cloud Age}, stellt die fundamentalen Unterschiede des Arbeitens mitCloud-Technologien mithilfe der folgenden Tabelle (Tab. 2.1) dar.
+
+\begin{table}[H]
+	\includegraphics[width=0.9\textwidth]{fig/aa-hauptteil/iron_vs_cloud.png}
+	\centering
+	\caption{\enquote{Iron vs Cloud Age}\cite{dec-imp-iac}}
+	\centering	
+\end{table}
+
+Veränderungen im \enquote{Iron Age} sind aufwändig und teuer und stellen einRisiko dar, es wird versucht diese Risikopunkte zu reduzieren, daher werdenviele Veränderung gebündelt getestet und eingeführt wodurch langeRelease-Zyklen entstehen. Die Architekturen die dadurch befördert werdensind monolytisch, die Konfiguration erfolgt eher mithilfe von GUI-gesteuerten Programmen oder direkter physischer Interaktion, zum Beispiel wenn ein neuer Serverin ein Netzwerk eingebunden wird. Veränderungen in der Cloud stellenfast genau das Gegenteil dar, daher wird erkennbar dass eine auf das \enquote{Iron Age} zugeschnittene Arbeitsweise für die Cloud nicht effektiv ist.Ein neues \enquote{Cloud Age Mindset} das die rechte Spalte der Tabelleverinnerlicht ist erforderlich um die Vorteile der Cloudwirklich effektiv und in vollem Umfang nutzen zu können.
+
 \subsection{Vorteile von Infrastructure as Code im Vergleich zu manuellem Infrastruktur-Provisioning}
+
+
 
 \subsection{Herausforderungen im Einsatz von Infrastructure as Code}
 
