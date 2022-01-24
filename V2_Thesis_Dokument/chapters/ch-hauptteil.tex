@@ -78,15 +78,38 @@ Die technischen Möglichkeiten und besonders auch die Wahrnehmung des ThemasSich
 
 \textbf{Kosten}: Auch wenn die Nutzung von Cloud Computing mit dem Vorteilgeringerer Kosten beworben wird, ist dies nicht zwingend garantiert. Werden dievorhandenen Systeme ungünstig verwendet, bleiben zum Beispiel viele gebuchteCPUs und IP-Adressen sowie weitere Ressourcen ungenutzt, können unnötig hohe Kosten entstehen. Auch während der Migrationsphase, in der möglicherweise beide Systeme parallel betrieben werden müssen, können höhere Kostenentstehen als in einem vergleichbaren Zeitraum davor. Nicht zuletzt stellt die Migration komplexer Systeme häufig eine große technische und dadurch auch finanzielle Herausforderung dar\cite{migration-cost}.
 
-\subsection{Überblick über die wichtigsten Public Cloud Service Provider}
+\subsection{Überblick über die wichtigsten Cloud Service Provider}
 
-In diesem Abschnitt soll ein knapper Überblick über die wichtigsten Public Cloud Service Provider gegeben werden.
+In diesem Abschnitt soll ein knapper Überblick über die wichtigsten Public Cloud Service Provider gegeben werden. Abbildung 2.2 stellt den Marktanteil der aktuell umsatz-stärksten Cloud Service Provider sowie das globale Umsatzwachstum insgesamt dar. Zu beachten ist dass in dieser Abbildung das Service Modell SaaS nicht beinhaltet ist.
 
-\section{Stand der Technik}
+\begin{figure}[H]
+	\includegraphics[width=1.0\textwidth]{fig/aa-hauptteil/CSP-share.png}
+	\caption{CSP Market Share Q2 2021 nach Umsatz\cite{csp-share}}
+	\centering
+\end{figure}
 
-\subsection{Eingesetzte Technik zur Realisierung eines Konzepts als Cloud-basierte Software}
+Aus Abb. 2.2 wir ersichtlich dass Amazon, Microsoft und Google gemeinsam mehr als die Hälfte des Marktes beherrschen, Amazon allein stellt etwa ein Drittel aller Infrastruktur Services bereit.
+
+\begin{figure}[H]
+	\includegraphics[width=0.75\textwidth]{fig/aa-hauptteil/Gartner.png}
+	\centering
+	\caption{CSP Gartner Magic Quadrant Juli 2021\cite{gartner-mag}}
+	\centering
+\end{figure}
+
+Der Gartner Magic Quadrant für Cloud Service Provider bietet einen grobenÜberblick über den Umfang der Angebote (Completeness of Vision) unddie Ausgereiftheit einer Plattform (Ability to Execute). Deutlich erkennbarist hier die Vormachtstellung von Amazon gegenüber Microsoft und Google, auffällig ist auch die Stellung von IBM die auf ein mögliches Problem in der Ausgereiftheit der IBM Cloud hinweisen könnte.
 
 \section{Infrastructure as Code}
+
+Infrastructure as Code beschreibt einen Ansatz zur Automatisierung des Infrastruktur-Provisionings basierend auf Methoden aus derSoftwareentwicklung\cite{def-iac}.
+
+Moderne Software
+Statt eines manuellen Aufbaus und direkter Konfiguration der einzelnen
+Komponenten werden maschinenlesbare Dateien verfasst welche dann von einem
+IaC Tool eingelesen und verarbeitet werden. Dabei kommen bevorzugt
+deklarative Sprachen zum Einsatz deren höhere Abstraktion mehr Flexibilität
+als ein imperativer Ansatz erlaubt.
+(vgl. https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code)
 
 \subsection{Technologischer Wandel und das Cloud Age Mindset}
 
@@ -100,7 +123,7 @@ In diesem Abschnitt soll ein knapper Überblick über die wichtigsten Public Cloud
 
 \subsection{Funktionsweise von Terraform}
 
-\subsection{Überblick über die Hashicorp Configuration Language}
+\subsection{Einführung in die Hashicorp Configuration Language}
 
 
 
