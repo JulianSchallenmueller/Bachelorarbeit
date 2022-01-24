@@ -3,7 +3,7 @@
 \contentsline {chapter}{\numberline {2}Grundlagen}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Funktionsprinzip, Vorteile und Herausforderungen}{3}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Definition und Funktionsweise}{3}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Vor- und Nachteile im Einsatz von Cloud Computing}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.2}Vor- und Nachteile des Einsatzes von Cloud Computing}{6}{subsection.2.1.2}%
 \contentsline {subsubsection}{\nonumberline Vorteile und Treiber der Adoption von Cloud Computing}{6}{section*.10}%
 \contentsline {subsubsection}{\nonumberline Herausforderungen und Risiken}{8}{section*.11}%
 \contentsline {subsection}{\numberline {2.1.3}\"Uberblick \"uber die wichtigsten Public Cloud Service Provider}{8}{subsection.2.1.3}%
