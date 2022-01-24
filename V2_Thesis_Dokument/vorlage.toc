@@ -5,8 +5,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Definition und Funktionsweise}{3}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Vor- und Nachteile im Einsatz von Cloud Computing}{6}{subsection.2.1.2}%
 \contentsline {subsubsection}{\nonumberline Vorteile und Treiber der Adoption von Cloud Computing}{6}{section*.10}%
-\contentsline {subsubsection}{\nonumberline Nachteile und Risiken}{8}{section*.11}%
-\contentsline {subsubsection}{\nonumberline \textbf {Nachteile und Risiken}}{8}{section*.12}%
+\contentsline {subsubsection}{\nonumberline Herausforderungen und Risiken}{8}{section*.11}%
 \contentsline {subsection}{\numberline {2.1.3}\"Uberblick \"uber die wichtigsten Public Cloud Service Provider}{8}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2}Stand der Technik}{9}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Eingesetzte Technik zur Realisierung eines Konzepts als Cloud-basierte Software}{9}{subsection.2.2.1}%
@@ -39,4 +38,4 @@
 \contentsline {section}{\numberline {5.1}Fazit}{12}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Ausblick}{12}{section.5.2}%
 \contentsline {chapter}{\numberline {A}Kapitel im Anhang}{13}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{14}{chapter*.13}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{14}{chapter*.12}%
