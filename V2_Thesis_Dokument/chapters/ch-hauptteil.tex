@@ -304,40 +304,92 @@ wie leicht ersetzbares Vieh behandelt werden\cite{cattle-pets}.
 
 \subsection{Herausforderungen und Argumente gegen den Einsatz von Infrastructure as Code}
 
-Kief Morris benennt drei Argumente die gegen die Einführung von IaCgenannt werden, diese sollen hier Im Kontext der zuvor genannten Vorteile betrachtetwerden.
+Kief Morris benennt drei Argumente die gegen die Einführung von IaC
+genannt werden, diese sollen hier Im Kontext der zuvor genannten Vorteile betrachtet
+werden.
 
-\textbf{1. \enquote{Veränderugen werden nicht oft genug durchgeführt umAutomatisierung zu rechtfertigen.}}
+\textbf{1. \enquote{Veränderugen werden nicht oft genug durchgeführt um
+Automatisierung zu rechtfertigen.}}
 
-Die Idee dass ein System einmal erstellt und dann \enquote{fertig} ist wodurch eineAutomatisierung der Veränderungen überflüssig wird entspricht sehr selten der tatsächlichen Realität.IT-Systeme und damit auch IT-Infrastruktur wird während ihres gesamtenLebenszyklus mehr oder weniger kontinuierlich verändert und erweitert.\\Sicherheitslücken in alten Versionen von Softwarepackages oderBetriebssystemen sind keine Seltenheit und müssen gepatcht werden umeinen sicheren und Zuverlässig Betrieb zu gewährleisten. Neue Features in bestehender Software kann neue Infrastruktur, zum Beispiel in Form einer zusätzlichen Datenbank, notwendig machen oder eine veränderte Konfigurationerfordern. Gerade bei Sicherheitslückenist es wichtig Anpassungen nicht erst nach längerer Zeit sondern soschnell wie möglich durchzuführen um Sicherheit und Stabilität nichtzu gefährden. Ein weiteres Szenario das die Stabilität eines Systemsgefährden kann ist ein schneller Zuwachs an Last die ein System erfährt,können die Kapazitäten automatisiert erweitert werden wird ein Zusammenbruch des Services auf einfache Art verhindert\cite{opt-change}.
+Die Idee dass ein System einmal erstellt und dann \enquote{fertig} ist wodurch eine
+Automatisierung der Veränderungen überflüssig wird entspricht sehr selten der tatsächlichen Realität.
+IT-Systeme und damit auch IT-Infrastruktur wird während ihres gesamten
+Lebenszyklus mehr oder weniger kontinuierlich verändert und erweitert.\\Sicherheitslücken in alten Versionen von Softwarepackages oder
+Betriebssystemen sind keine Seltenheit und müssen gepatcht werden um
+einen sicheren und Zuverlässig Betrieb zu gewährleisten. Neue Features in bestehender Software kann neue Infrastruktur, zum Beispiel in Form einer zusätzlichen Datenbank, notwendig machen oder eine veränderte Konfiguration
+erfordern. Gerade bei Sicherheitslücken
+ist es wichtig Anpassungen nicht erst nach längerer Zeit sondern so
+schnell wie möglich durchzuführen um Sicherheit und Stabilität nicht
+zu gefährden. Ein weiteres Szenario das die Stabilität eines Systems
+gefährden kann ist ein schneller Zuwachs an Last die ein System erfährt,
+können die Kapazitäten automatisiert erweitert werden wird ein Zusammenbruch des Services auf einfache Art verhindert\cite{opt-change}.
 
 \enquote{A fundamental truth of the Cloud Age is: Stablity comes from making changes.}\cite{stab-cloud}
 
-Eine fundamentale Wahrheit des Cloud Zeitalters ist: Stabilität entsteht durchVeränderung.
+Eine fundamentale Wahrheit des Cloud Zeitalters ist: Stabilität entsteht durch
+Veränderung.
 
 \textbf{2. \enquote{Infrastruktur soll zuerst aufgebaut, danach automatisiert werden.}}
 
-Die Umsetzung von Infrastructure as Code stellt eine durchaus eine große Herausforderung dar, umso mehr wenn die entsprechenden Kompetenzen noch aufgebaut werden müssen. Der Nutzen wird deshalb nicht unbedingt direkt ersichtlich wodurch es zu Situationen kommt in denen es attraktiv erscheint Infrastruktur zuerst aufzubauen und sich erst später um die Automatisierung zu kümmern. Mit diesemAnsatz werden viele der Vorteile von IaC jedoch verwirkt. Ein bestehendes, komplexes Infrastruktur-System zu automatisieren ist eine deutlich größere Herausforderung als ein System von Grund auf mit dem Gedanken an Automatisierung aufzubauen\cite{build-auto}.
+Die Umsetzung von Infrastructure as Code stellt eine durchaus eine große Herausforderung dar, umso mehr wenn die entsprechenden Kompetenzen noch aufgebaut werden müssen. Der Nutzen wird deshalb nicht unbedingt direkt ersichtlich wodurch es zu Situationen kommt in denen es attraktiv erscheint Infrastruktur zuerst aufzubauen und sich erst später um die Automatisierung zu kümmern. Mit diesem
+Ansatz werden viele der Vorteile von IaC jedoch verwirkt. Ein bestehendes, komplexes Infrastruktur-System zu automatisieren ist eine deutlich größere Herausforderung als ein System von Grund auf mit dem Gedanken an Automatisierung aufzubauen\cite{build-auto}.
 
-\textbf{3. \enquote{Es muss zwischen schneller Umsetzung und hoher Qualitätgewählt werden.}}
+\textbf{3. \enquote{Es muss zwischen schneller Umsetzung und hoher Qualität
+gewählt werden.}}
 
-Die Idee dass der Fokus auf hohe Geschwindigkeit und hohe Qualitätsich gegenseitig behindert oder ausschließt mag logisch erscheinen,in der Praxis ist dies jedoch nicht der Fall.Ein unausgeglichener Fokus auf eines der beiden Kriterien führt im Lauf der Zeit zu einem \enquote{Fragile Mess} (Abb. 2.4).
+Die Idee dass der Fokus auf hohe Geschwindigkeit und hohe Qualität
+sich gegenseitig behindert oder ausschließt mag logisch erscheinen,
+in der Praxis ist dies jedoch nicht der Fall.
+Ein unausgeglichener Fokus auf eines der beiden Kriterien führt im Lauf der Zeit zu einem \enquote{Fragile Mess} (Abb. 2.4).
 
-\begin{figure}[H]
-	\includegraphics[width=1.0\textwidth]{fig/aa-hauptteil/Speed_vs_Quality.png}
-	\caption{Verhältnis von Geschwindigkeit und Qualität\cite{speed-quality}}
-	\centering
-\end{figure}
+\begin{figure}[H]
 
-Wird Geschwindigkeit über Qualität gestellt (Quadrant links oben) entstehenmit der Zeit chaotische und instabile Systeme an denen Veränderungen mitder Zeit nur noch erschwert und deshalb langsam durchgeführt werden können.\\Wird Geschwindigkeit zu niedrig priorisiert (Quadrant rechts unten) führt es allerdings auch dazudass letzten Endes durch Druck von Deadlines und schnellen Workaroundstechnische Schulden aufgebaut werden die ebenfalls zu einem qualitativschlechten System führen.\\ Aufgrund dieser Probleme ist es wichtig Geschwindigkeit und Qualitätgleichermaßen zu priorisieren.
+	\includegraphics[width=1.0\textwidth]{fig/aa-hauptteil/Speed_vs_Quality.png}
+
+	\caption{Verhältnis von Geschwindigkeit und Qualität\cite{speed-quality}}
+
+	\centering
+
+\end{figure}
+
+
+Wird Geschwindigkeit über Qualität gestellt (Quadrant links oben) entstehen
+mit der Zeit chaotische und instabile Systeme an denen Veränderungen mit
+der Zeit nur noch erschwert und deshalb langsam durchgeführt werden können.\\Wird Geschwindigkeit zu niedrig priorisiert (Quadrant rechts unten) führt es allerdings auch dazu
+dass letzten Endes durch Druck von Deadlines und schnellen Workarounds
+technische Schulden aufgebaut werden die ebenfalls zu einem qualitativ
+schlechten System führen.\\ Aufgrund dieser Probleme ist es wichtig Geschwindigkeit und Qualität
+gleichermaßen zu priorisieren.
 
 \subsection{Die drei Kernverfahren von Infrastructure as Code}
 
-\begin{itemize} 
-	\item \textbf{Define everything as Code}: Alle Teile eines Systemin Form von Code zu definieren bringt mehrere Vorteile mit sich. Der Konfigurations-Code kann mehrfach ausgeführt werden, daher ist ein als Code definiertes System wiederverwendbar. Es können unkompliziert mehrereidentische Instanzen erstellt werden, das gilt auch für den Fallwenn Fehler auftreten und ein Neuaufbau erforderlich ist.Das Verhalten des Systems ist vorhersehbarer, fortlaufendes automatischesTesten ist möglich und damit auch zuverlässiger.Definition in Code macht auch den Aufbau eines Systems transparenter,da dieser immer dem tatsächlichen Zustand entspricht unddiesen damit auch dokumentiert\cite{coreprinc-1}.
+\begin{itemize} 
+
+	\item \textbf{Define everything as Code}: Alle Teile eines System
+in Form von Code zu definieren bringt mehrere Vorteile mit sich. Der Konfigurations-Code kann mehrfach ausgeführt werden, daher ist ein als Code definiertes System wiederverwendbar. Es können unkompliziert mehrere
+identische Instanzen erstellt werden, das gilt auch für den Fall
+wenn Fehler auftreten und ein Neuaufbau erforderlich ist.
+Das Verhalten des Systems ist vorhersehbarer, fortlaufendes automatisches
+Testen ist möglich und damit auch zuverlässiger.
+Definition in Code macht auch den Aufbau eines Systems transparenter,
+da dieser immer dem tatsächlichen Zustand entspricht und
+diesen damit auch dokumentiert\cite{coreprinc-1}.
 	
-	\item \textbf{Continuously Test and Deliver All Work in Progress}: Fortlaufendes, automatisiertes Testen und Integrieren aller Komponentendie sich in Entwicklung befinden dient dem Ziel die Qualität einesSystems nicht nur \enquote{einzutesten} sondern von Beginn an und kontinuierlicheinzubauen\cite{coreprinc-1}.
+	\item \textbf{Continuously Test and Deliver All Work in Progress}: 
+Fortlaufendes, automatisiertes Testen und Integrieren aller Komponenten
+die sich in Entwicklung befinden dient dem Ziel die Qualität eines
+Systems nicht nur \enquote{einzutesten} sondern von Beginn an und kontinuierlich
+einzubauen\cite{coreprinc-1}.
 	
-	\item \textbf{Build Small, Simple Pieces That You Can Change Independently}: Systeme die aus mehreren kleineren voneinander unabhängigen Komponentenbestehen sind generell stabiler als große Monolithen. Eine Änderung dieeinen Fehler verursacht betrifft nur die Komponente in der die Änderungstattfindet, diese kann dann leichter isoliert und das Problem behobenwerden. Kleine Komponenten sind in der Regel auch weniger Komplex unddadurch leichter zu verstehen. Ein einzelner Fehler nach einem Updatehat auch den Vorteil dass nur diese Komponente und nicht das gesamte System auf eine ältere Version zurückgesetzt werden muss umden Betrieb wieder herzustellen\cite{coreprinc-2}.
+	\item \textbf{Build Small, Simple Pieces That You Can Change Independently}: Systeme die aus mehreren kleineren voneinander unabhängigen Komponenten
+bestehen sind generell stabiler als große Monolithen. Eine Änderung die
+einen Fehler verursacht betrifft nur die Komponente in der die Änderung
+stattfindet, diese kann dann leichter isoliert und das Problem behoben
+werden. Kleine Komponenten sind in der Regel auch weniger Komplex und
+dadurch leichter zu verstehen. Ein einzelner Fehler nach einem Update
+hat auch den Vorteil dass nur diese Komponente und nicht das gesamte System auf eine ältere Version zurückgesetzt werden muss um
+den Betrieb wieder herzustellen\cite{coreprinc-2}.
+
 \end{itemize}
 
 \section{Funktionsprinzip und Rolle von Terraform im IaC-Anwendungsprozess}
@@ -346,63 +398,152 @@ Während der Anwendung von Infrastructure as Code kann primär zwischen zwei wicht
 
 \subsection{Überblick über Infrastructure as Code Tools}
 
-Infrastructre as Code beinhaltet verschiedene konkrete Anwendungsfälle undentsprechend existieren auch Tools die zum Teil ein breiteres Spektrumvon IaC abdecken, zum Teil aber auch eher spezialisiert sind; Terraformist dabei eher ein Beispiel eines spezialisierten Tools. Die unten stehendeAbbildung 2.5 soll einen Überblick über verschiedene IaC Tools und deren Aufgabengebieteverschaffen, die Einordnungen sind dabei aber nicht unbedingt als absolutanzusehen. Es ist zum Beispiel möglich innerhalb eines Terraform-Deploymentsauch Software zu installieren und zu konfigurieren, allerdings wird dietatsächliche Installation dann eher per von Terraform aufgerufenen Skriptenvorgenommen statt von Terraform selbst verwaltet zu werden, daher istTerraform hier ausschließlich als Infrastruktur-Management Tool eingeordnet.
+Infrastructre as Code beinhaltet verschiedene konkrete Anwendungsfälle und
+entsprechend existieren auch Tools die zum Teil ein breiteres Spektrum
+von IaC abdecken, zum Teil aber auch eher spezialisiert sind; Terraform
+ist dabei eher ein Beispiel eines spezialisierten Tools. Die unten stehende
+Abbildung 2.5 soll einen Überblick über verschiedene IaC Tools und deren Aufgabengebiete
+verschaffen, die Einordnungen sind dabei aber nicht unbedingt als absolut
+anzusehen. Es ist zum Beispiel möglich innerhalb eines Terraform-Deployments
+auch Software zu installieren und zu konfigurieren, allerdings wird die
+tatsächliche Installation dann eher per von Terraform aufgerufenen Skripten
+vorgenommen statt von Terraform selbst verwaltet zu werden, daher ist
+Terraform hier ausschließlich als Infrastruktur-Management Tool eingeordnet.
 
-\begin{figure}[H]
-	\includegraphics[width=1.0\textwidth]{fig/aa-hauptteil/IaC_Tools.png}
+
+\begin{figure}[H]
+
+	\includegraphics[width=1.0\textwidth]{fig/aa-hauptteil/IaC_Tools.png}
+
 	\caption{Überblick IaC Tools\cite{iac-tools}}
-	\centering
+	\centering
+
 \end{figure}
 
 \subsubsection{Vorteile und Limiterungen von Terraform}
 
-Da sich diese Arbeit primär mit dem Provisioning von grundlegender CloudComputing Infrastruktur in Form von VM's, Netzwerken, Datenspeicher undanderen grundlegenden Komponenten beschäftigen soll bietet sich der Einsatzeines darauf spezialisierten Tools an. Neben Terraform existiert in diesem Bereich auch das Tool Pulumi, in dieser Arbeit wird Terraform jedoch aus den folgenden Gründen verwendet:
+Da sich diese Arbeit primär mit dem Provisioning von grundlegender Cloud
+Computing Infrastruktur in Form von VM's, Netzwerken, Datenspeicher und
+anderen grundlegenden Komponenten beschäftigen soll bietet sich der Einsatz
+eines darauf spezialisierten Tools an. Neben Terraform existiert in diesem Bereich auch das Tool Pulumi, in dieser Arbeit wird Terraform jedoch aus den folgenden Gründen verwendet:
 
-\begin{itemize}
-	\item \textbf{Modularität}: Terraform Module erlauben es ein System inmehrere klar definierte Komponenten zu strukturieren. Dadurch wird dieWiederverwendbarkeit dieser ermöglicht und gefördert, die daraus resultierenden Vorteile wurden bereits in den vorangegangenenKapiteln angesprochen.\\Pulumi strukturiert Infrastruktur Code entweder in einem großenmonolithischen Projekt oder vielen kleinen Mikroprojekten, beideOptionen sind weniger flexibel und umständlicher als die von Terraform implementierte Lösung.
+\begin{itemize}
+
+	\item \textbf{Modularität}: Terraform Module erlauben es ein System in
+mehrere klar definierte Komponenten zu strukturieren. Dadurch wird die
+Wiederverwendbarkeit dieser ermöglicht und gefördert, die daraus resultierenden Vorteile wurden bereits in den vorangegangenen
+Kapiteln angesprochen.\\Pulumi strukturiert Infrastruktur Code entweder in einem großen
+monolithischen Projekt oder vielen kleinen Mikroprojekten, beide
+Optionen sind weniger flexibel und umständlicher als die von Terraform implementierte Lösung.
 	
-	\item \textbf{Weitere Verbreitung und größere Popularität}: Terraform wurde2014, Pulumi 2017 veröffentlicht, entsprechend ist Terraform deutlich weiterverbreitet und verfügt über all die Vorteile die eine größere Community mitsich bringt. Dazu gehören mehr Lernressourcen, mehr Codebeispiele, größereBekanntheit und mehr Jobs für die Arbeit mit Terraform.
+	\item \textbf{Weitere Verbreitung und größere Popularität}: Terraform wurde
+2014, Pulumi 2017 veröffentlicht, entsprechend ist Terraform deutlich weiter
+verbreitet und verfügt über all die Vorteile die eine größere Community mit
+sich bringt. Dazu gehören mehr Lernressourcen, mehr Codebeispiele, größere
+Bekanntheit und mehr Jobs für die Arbeit mit Terraform.
 	
-	\item \textbf{Dokumentation}: Einen weiteren Voteil von Terraform stelltdessen umfangreiche und ausgereifte Dokumentation sowie auch dieDokumentation der einzelnen Provider dar. Der genaue Aufbau der einzelnenRessourcen wie etwa einer VM auf Google Cloud Platform(google\_compute\_instance) ist mit einem Beispiel und der zugehörigenArgument Reference versehen aus der direkt ersichtlich wird welcheArgumente notwendig (required), was der Zweck jedes einzelnen Arguments istund wo anstelle eines einfachen Wertes ein Block oder eine Liste erwartet wird.
+	\item \textbf{Dokumentation}: Einen weiteren Voteil von Terraform stellt
+dessen umfangreiche und ausgereifte Dokumentation sowie auch die
+Dokumentation der einzelnen Provider dar. Der genaue Aufbau der einzelnen
+Ressourcen wie etwa einer VM auf Google Cloud Platform
+(google\_compute\_instance) ist mit einem Beispiel und der zugehörigen
+Argument Reference versehen aus der direkt ersichtlich wird welche
+Argumente notwendig (required), was der Zweck jedes einzelnen Arguments ist
+und wo anstelle eines einfachen Wertes ein Block oder eine Liste erwartet wird.
+
 \end{itemize}
 
 \subsection{Funktionsweise von Terraform}
 
-Terraform ist ein Infrastructure as Code Tool das es ermöglicht Infrastruktursicher und effizient aufzubauen, zu verändern und zu versionieren. Die Funktionsweise von Terraform wird in Abbildung 2.6 dargestellt.
+Terraform ist ein Infrastructure as Code Tool das es ermöglicht Infrastruktur
+sicher und effizient aufzubauen, zu verändern und zu versionieren. Die Funktionsweise von Terraform wird in Abbildung 2.6 dargestellt.
 
-\begin{figure}[H]
-	\includegraphics[keepaspectratio, height=15cm]{fig/aa-hauptteil/Terraform.png}
-	\caption{Terraform Funktionsprinzip\cite{tf-princ}}
-	\centering
-\end{figure}
+\begin{figure}[H]
 
-Terraform verwendet eine deklarative Domänenspezifische Sprache (DSL) die es erlaubt Infrastruktur in Konfigurationsdateien zu beschreiben dieversioniert, geteilt und wiederverwendet werden können. Terraform Module können auf einer Public Module Registry \footnote{Vergleichbar mit der npm-Registry von Nodejs} zur allgemeinen Verfügung bereitgestellt und von der breiteren Terraform-Community wiederverwendet werden. Terraform unterstützt über Plug-Ins, die Terraform Provider, ein große Anzahl an Plattformen.
+	\includegraphics[keepaspectratio, height=15cm]{fig/aa-hauptteil/Terraform.png}
+
+	\caption{Terraform Funktionsprinzip\cite{tf-princ}}
+
+	\centering
+
+\end{figure}
+
+
+Terraform verwendet eine deklarative Domänenspezifische Sprache (DSL) die es erlaubt Infrastruktur in Konfigurationsdateien zu beschreiben die
+versioniert, geteilt und wiederverwendet werden können. Terraform Module können auf einer Public Module Registry \footnote{Vergleichbar mit der npm-Registry von Nodejs} zur allgemeinen Verfügung bereitgestellt und von der breiteren Terraform-Community wiederverwendet werden. Terraform unterstützt über Plug-Ins, die Terraform Provider, ein große Anzahl an Plattformen.
+
+\subsubsection{Terraform State}
+
+Das Terraform State-File ist die wichtigste Datei in einem Terraform-Projekt. Sie enthält die Informationen der aktuell existierenden und von Terraform verwalteten Ressourcen und stellt ein Mapping zwischen den Konfigurationsdateien und der realen Welt dar\cite{tf-state}. Zusätzlich befinden sich essentielle Metadaten und Informationen über die Abhängigkeiten der verschiedenen Ressourcen im Terraform State.
+
+Der Terraform State kann entweder lokal oder in einem Remote Backend, zum Beispiel der Terraform Cloud, gespeichert werden. Lokaler State ist ausreichend für ein kleineres Forschungsprojekt eines einzelnen Entwicklers, für wichtige Projekte und die Kollaboration in einem Team sollte jedoch ein Remote Backend gewählt werden. Sollten zwei Entwickler gleichzeitig Änderungen an der Infrastruktur vornehmen wollen muss ausgeschlossen werden dass der State korrumpiert und inkonsistent wird. Sobald der erste Anpassungsvorgang begonnen wird, wird der Zugriff auf den State gesperrt und erst am Ende wieder freigegeben, auf diese Weise bleibt der State konsistent.
+
+\subsubsection{Terraform Workflow}
+
+Der grundlegende Terraform Workflow wird in Abbildung 2.7 dargestellt. Er besteht primär aus vier Befehlen: einem Init-Befehl zur Initialisierung des Projekts, der Erstellung des Execution Plan, Durchführung des Execution Plan und einem Destroy-Befehl zur Freigabe/Abbau aller von Terraform verwalteten Ressourcen.
+
+\begin{figure}[H]	
+	\includegraphics[keepaspectratio, width=\textwidth/2]{fig/aa-hauptteil/init-plan-apply-destroy.png}
+	\centering
+	\caption{Terraform Workflow\cite{tf-workflow}}	
+	\centering	
+\end{figure}
+
+Mit \textbf{\texttt{terraform init}} wird das Arbeitsverzeichnis initialisiert, die Provider und Module installiert sowie das Backend für den Terraform State konfiguriert.
+
+Durch \textbf{\texttt{terraform plan}} wird der Execution Plan erstellt. Der Execution Plan definiert alle Schritte die von Terraform durchgeführt werden um vom aktuellen Zustand, gespeichert im Terraform State, zum in den Konfigurationsdateien mit Terraform Code beschriebenen Zustand zu gelangen. Dieser Execution Plan kann ausgegeben und manuell reviewt werden bevor die tatsächliche Ausführung dessen vorgenommen wird. Durch die Erstellung dieses Plans werden Abhängigkeiten betrachtet die die Reihenfolge der Ressourcen-Erstellung bestimmen, voneinander unabhängige Ressourcen können zum Beispiel parallel erstellt werden.
+
+Die Ausführung des Execution Plan wird durch \textbf{\texttt{terraform apply}} ausgeführt. Es gibt zwei Modi: Der \textbf{Automatic Plan Mode} erstellt automatisch einen neuen Execution Plan, der \textbf{Saved Plan Mode} verwendet einen in einer Datei gespeicherten Execution Plan.
+
+Und zuletzt dient \textbf{\texttt{terraform destroy}} dazu alle in Terraform verwalteten Ressourcen zu \enquote{zerstören} und damit wieder freizugeben. Dies wird in einem Produktionssystem selten Anwendung finden, während der Entwicklung und für Testprojekte ist dies jedoch extrem nützlich.
 
 \subsection{Einführung in die Hashicorp Configuration Language}
 
-Die von Terraform verwendete Konfigurationssprache wurde mit dem Zielentwickelt einen Kompromiss zwischen Maschinenfreundlichkeit undMenschenlesbarkeit zu erzielen\cite{hcl}. Existierende Serialisierungsformate,Konfigurationssprachen und Programmiersprachen konnten die Zieleder Terraform-Entwickler nicht erfüllen daher kommt nun bei Terraformeine DSL in Form der Hashicorp Configuration Language (HCL) zum Einsatz.
+Die von Terraform verwendete Konfigurationssprache wurde mit dem Ziel
+entwickelt einen Kompromiss zwischen Maschinenfreundlichkeit und
+Menschenlesbarkeit zu erzielen\cite{hcl}. Existierende Serialisierungsformate,
+Konfigurationssprachen und Programmiersprachen konnten die Ziele
+der Terraform-Entwickler nicht erfüllen daher kommt nun bei Terraform
+eine DSL in Form der Hashicorp Configuration Language (HCL) zum Einsatz.
 
-HCL besteht aus drei grundlegenden Elementen: Blöcken (Blocks), Argumenten(Arguments) und Ausdrücken (Expressions).
+\subsubsection{Grundlegende Elemente}
+
+HCL besteht aus drei grundlegenden Elementen: Blöcken (Blocks), Argumenten
+(Arguments) und Ausdrücken (Expressions).
+
 
 \begin{lstlisting}[caption={Grundlegende Elemente von HCL},captionpos=b]
-Typ "label1" "label2" {
+blockType "label1" "label2" {
 	...
 	/*This is a block*/
 	...
 	
-	Argument = 5
+	argument = 5
 	
-	Arguments + Can + Build = Expressions
+	arguments + can + build = expressions
 }
 \end{lstlisting}
 
-\textbf{Blöcke} stellen für gewöhnlich ein Objekt, im Fall vonInfrastrkturcode meistens eine Computing Ressource, dar.Blöcke besitzen einen Typ und Null bis mehrere Label. Blöcke beinhaltenArgumente und weitere verschachtelte Blöcke.\\
-\textbf{Argumente} sind das was in den meisten Programmiersprachen dieVariablen darstellen: Ein Wert der einem Namen zugewiesen wird.\\
-\textbf{Ausdrücke} sind ähnlich wie in anderen Sprachen ein aus anderenAusdrücken und Argumenten berechneter Wert, ein Argument ist in diesem Sinnedie simpelste Form eines Ausdrucks.
+\textbf{Blöcke} stellen für gewöhnlich ein Objekt, im Fall von
+Infrastruktur-Code meistens eine Computing Ressource, dar.
+Blöcke besitzen einen Typ und Null bis mehrere Label. Blöcke beinhalten
+Argumente und weitere verschachtelte Blöcke.\\
+\textbf{Argumente} sind das was in den meisten Programmiersprachen die
+Variablen darstellen: Ein Wert der einem Namen zugewiesen wird.\\
+\textbf{Ausdrücke} sind ähnlich wie in anderen Sprachen ein aus anderen
+Ausdrücken und Argumenten berechneter Wert, ein Argument ist in diesem Sinne
+die simpelste Form eines Ausdrucks.
 
-\subsubsection{Input und Output-Variablen}
 
-Input-Variablen sind nützlich um Parameter außerhalb des eigentlichenTerraform Codes anzupassen. Die ID des Projektes stellt einen solchenParameter dar, befindet sich diese außerhalb des Codes muss nur die Dateiwelche die Input-Variablen enthält angepasst werden, alles andere kann ohneVeränderungen wiederverwendet werden.
+\subsubsection{Input und Output-Variablen}
+
+
+Input-Variablen sind nützlich um Parameter außerhalb des eigentlichen
+Terraform Codes anzupassen. Die ID des Projektes stellt einen solchen
+Parameter dar, befindet sich diese außerhalb des Codes muss nur die Datei
+welche die Input-Variablen enthält angepasst werden, alles andere kann ohne
+Veränderungen wiederverwendet werden.
+
 
 \begin{lstlisting}[caption={Beispiel Input-Variable},captionpos=b]
 variable "project" {
@@ -413,52 +554,52 @@ variable "project" {
 
 Input-Variablen können entweder während der Ausführung über die Kommandozeile oder über eine Datei mit einfachen Key-Value Paaren befüllt werden.
 
-Output-Variablen werden in der Regel verwendet um nach dem Aufbau des Systems auf spezifische Parametereinfachen und schnellen Zugriff zu ermöglichen.
+Output-Variablen werden in der Regel verwendet um nach dem Aufbau des Systems auf spezifische Parameter einfachen und schnellen Zugriff zu ermöglichen.
 
 \begin{lstlisting}[caption={Beispiel Output-Variable},captionpos=b]
 output "something_important" {
-	value = some.nested.value
+	value = resource-group.vm-name.ip-address
 }
-\end{lstlisting}
+\end{lstlisting}
 
-Werte wie die IP einerVirtuellen Maschine auf einer Public Cloud Plattform sind vor derBereitstellung dieser nicht bekannt, werden aber häufig benötigt weshalb esnützlich ist eine Output Variable für diese zu deklarieren.
+Werte wie die IP einer Virtuellen Maschine auf einer Public Cloud sind oft vor der Bereitstellung dieser nicht bekannt und können erst danach ausgegeben werden. Terraform kann Output-Variablen mithilfe eines Kommandos schnell und übersichtlich ausgeben.
 
-\subsubsection{Terraform Module}
 
-Module sind Container für mehrere Ressourcen die gemeinsam verwendet werden.Jedes Terraform Projekt besitzt ein Root Modul das weitere Module verwendenkann. Die Terraform Registry stellt eine Vielzahl an veröffentlichtenModulen zur öffentlichen Verwendung bereit.
+\subsubsection{Terraform Module}
 
-\subsubsection{Terraform Provider}
+Die Verwendung von Modulen gestaltet sich ebenfalls relativ einfach. Es wird immer eine Quelle benötigt aus der das Modul bezogen wird, diese kann ein lokales Verzeichnis oder eine Module Registry sein. Zusätzlich benötigen die meisten Module eine Reihe von Input-Variablen wie im folgenden Listing 2.4 dargestellt.
 
-Terraform benötigt Plugins, die Provider, um mit Cloud Providern,SaaS Providern und anderen API's interagieren zu können \cite{tf-provider}. Neben den Providern für Plattformen gibt es auch Utility-Provider die Funktionalitäten wie zum Beispiel einen String-Generator bereitstellen.
+\begin{lstlisting}[caption={Beispiel Terraform Module},captionpos=b]
+module "showcase_kubernetes" {
+	source = "./showcase_kubernetes"
+	
+	project   = var.project
+	network   = google_compute_network.jsa-vpc_network.name
+	zone      = var.zone
+	num_nodes = 2
+}
+\end{lstlisting}
 
-\subsubsection{Terraform Workflow}
+\subsubsection{Terraform Provider Konfiguration}
 
-Der grundlegende Terraform Workflow besteht aus vier B:
+Terraform Provider benötigen ähnlich wie Module eine Quelle und eine optionale zusätzliche Konfiguration. In Listing 2.6 wird beispielhaft der Google Cloud Platform Provider eingebunden und für ein spezifisches Projekt konfiguriert.
 
-TODO Code terraform init
-
-Das init Kommando installiert und konfiguriert die notwendigen Provider
-und Module und konfiguriert ein Backend (Fußnote Backend) falls angegeben.
-
-TODO Code terraform plan
-
-Mit terraform plan wird ein Execution Plan erstellt. Dazu gehört den die
-aktuell existierenden Resourcen zu erfassen, Veränderungen zwischen
-diesem Zustand und dem im Code konfigurierten Zustand zu erfassen und
-auf Grundlage dessen einen Plan zu erstellen welche Änderungen vorgenommen
-werden können um den Soll-Zustand zu erreichen.
-
-Todo Code terraform apply
-
-Durch terraform apply wird ein solcher Execution Plan ausgeführt und die darin
-enthaltenen Änderungen an der Infrastruktur vorgenommen.
-
-Todo Code terraform destroy
-
-Um den umkomplizierten Abbau eines mit Terraform definierten und aufgebauten
-Systems bewerkstelligen zu können wird das terraform destroy Kommando
-verwendet. Dies ist besonders nützlich um nicht mehr benötigte Testsysteme
-und andere temporäre Infrastrukturen zu entfernen.
+\begin{lstlisting}[caption={Beispiel Terraform Provider Konfiguration},captionpos=b]
+terraform {
+	required_providers {
+		google = {
+			source  = "hashicorp/google"
+			version = "4.1.0"
+		}
+	}
+	
+	provider "google" {^
+		project = "active-woodland-324808"
+		region  = "europe-west3"
+		zone    = "europe-west3-b"
+	}
+}
+\end{lstlisting}
 
 \chapter{Evaluierungsanforderungen und Umsetzung}
 \label{sec:ergeb}

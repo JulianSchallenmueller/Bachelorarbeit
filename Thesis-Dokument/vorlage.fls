@@ -360,6 +360,9 @@ OUTPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lof
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lot
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lot
 OUTPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lot
+INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lol
+INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lol
+OUTPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/vorlage.lol
 OUTPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/chapters/ch-einleitung.aux
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/chapters/ch-einleitung.tex
 INPUT /home/julian/Projects/Bachelorarbeit/Thesis-Dokument/chapters/ch-einleitung.tex

@@ -5,10 +5,10 @@
 \contentsline {section}{\numberline {2.1}Funktionsprinzip, Vorteile und Herausforderungen des modernen Cloud Computings}{3}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Definition und Funktionsweise}{3}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Zu erwägende Vor- und Nachteile des Einsatzes von Cloud Computing}{6}{subsection.2.1.2}%
-\contentsline {subsubsection}{\nonumberline \textbf {Vorteile und Treiber der Adoption von Cloud Computing}}{6}{section*.10}%
-\contentsline {subsubsection}{\nonumberline \textbf {Nachteile und Risiken}}{7}{section*.11}%
+\contentsline {subsubsection}{\nonumberline \textbf {Vorteile und Treiber der Adoption von Cloud Computing}}{6}{section*.11}%
+\contentsline {subsubsection}{\nonumberline \textbf {Nachteile und Risiken}}{7}{section*.12}%
 \contentsline {subsection}{\numberline {2.1.3}\textbf {Grundlegende Erklärung von DevOps}}{8}{subsection.2.1.3}%
-\contentsline {subsubsection}{\nonumberline \textbf {GitOps als Werkzeug für Continuous Delivery im Rahmen von DevOps}}{9}{section*.12}%
+\contentsline {subsubsection}{\nonumberline \textbf {GitOps als Werkzeug für Continuous Delivery im Rahmen von DevOps}}{9}{section*.13}%
 \contentsline {subsection}{\numberline {2.1.4}Überblick über die wichtigsten Public Cloud Service Provider}{9}{subsection.2.1.4}%
 \contentsline {section}{\numberline {2.2}Infrastructure as Code}{12}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Technologischer Wandel und das Cloud Age Mindset}{12}{subsection.2.2.1}%
@@ -16,15 +16,15 @@
 \contentsline {subsection}{\numberline {2.2.3}Herausforderungen und Argumente gegen den Einsatz von IaC}{14}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Die drei Kernverfahren von IaC}{16}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Die Rolle von Terraform im IaC Anwendungsprozess}{17}{subsection.2.2.5}%
-\contentsline {subsubsection}{\nonumberline Überblick über die wichtigsten Infrastructure as Code Tools}{18}{section*.17}%
-\contentsline {subsubsection}{\nonumberline Vorteile und Limiterungen von Terraform}{19}{section*.19}%
-\contentsline {subsubsection}{\nonumberline Weitere zu beachtendende Aspekte}{20}{section*.20}%
+\contentsline {subsubsection}{\nonumberline Überblick über die wichtigsten Infrastructure as Code Tools}{18}{section*.18}%
+\contentsline {subsubsection}{\nonumberline Vorteile und Limiterungen von Terraform}{19}{section*.20}%
+\contentsline {subsubsection}{\nonumberline Weitere zu beachtendende Aspekte}{20}{section*.21}%
 \contentsline {subsection}{\numberline {2.2.6}Terraform Funktionsprinzip}{21}{subsection.2.2.6}%
-\contentsline {subsubsection}{\nonumberline Hashicorp Configuration Language}{23}{section*.22}%
-\contentsline {subsubsection}{\nonumberline Input und Output Variablen}{23}{section*.23}%
-\contentsline {subsubsection}{\nonumberline Terraform Module}{24}{section*.24}%
-\contentsline {subsubsection}{\nonumberline Terraform Provider}{24}{section*.25}%
-\contentsline {subsubsection}{\nonumberline Terraform Workflow}{24}{section*.26}%
+\contentsline {subsubsection}{\nonumberline Hashicorp Configuration Language}{23}{section*.23}%
+\contentsline {subsubsection}{\nonumberline Input und Output Variablen}{23}{section*.24}%
+\contentsline {subsubsection}{\nonumberline Terraform Module}{24}{section*.25}%
+\contentsline {subsubsection}{\nonumberline Terraform Provider}{24}{section*.26}%
+\contentsline {subsubsection}{\nonumberline Terraform Workflow}{24}{section*.27}%
 \contentsline {chapter}{\numberline {3}Aufbau und Untersuchung}{26}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Evaluierungsanforderungen}{26}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Ziel der Evaluierung}{26}{subsection.3.1.1}%
@@ -32,39 +32,39 @@
 \contentsline {subsection}{\numberline {3.1.3}Grenzen und Limitierungen der Evaluierung}{27}{subsection.3.1.3}%
 \contentsline {section}{\numberline {3.2}Spezifizierug des Vergleichs}{27}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Auswahl der zu untersuchenden Aspekte und Eigenschaften}{27}{subsection.3.2.1}%
-\contentsline {subsubsection}{\nonumberline Functional Suitability}{28}{section*.28}%
-\contentsline {subsubsection}{\nonumberline Performance Efficiency}{29}{section*.29}%
-\contentsline {subsubsection}{\nonumberline Compatibility}{29}{section*.30}%
-\contentsline {subsubsection}{\nonumberline Usability}{30}{section*.31}%
-\contentsline {subsubsection}{\nonumberline Reliability}{31}{section*.32}%
-\contentsline {subsubsection}{\nonumberline Security}{31}{section*.33}%
-\contentsline {subsubsection}{\nonumberline Maintainability}{32}{section*.34}%
-\contentsline {subsubsection}{\nonumberline Portability}{33}{section*.35}%
-\contentsline {subsubsection}{\nonumberline Zusammenfassung der für den Vergleich ausgewählten Aspekte}{33}{section*.36}%
+\contentsline {subsubsection}{\nonumberline Functional Suitability}{28}{section*.29}%
+\contentsline {subsubsection}{\nonumberline Performance Efficiency}{29}{section*.30}%
+\contentsline {subsubsection}{\nonumberline Compatibility}{29}{section*.31}%
+\contentsline {subsubsection}{\nonumberline Usability}{30}{section*.32}%
+\contentsline {subsubsection}{\nonumberline Reliability}{31}{section*.33}%
+\contentsline {subsubsection}{\nonumberline Security}{31}{section*.34}%
+\contentsline {subsubsection}{\nonumberline Maintainability}{32}{section*.35}%
+\contentsline {subsubsection}{\nonumberline Portability}{33}{section*.36}%
+\contentsline {subsubsection}{\nonumberline Zusammenfassung der für den Vergleich ausgewählten Aspekte}{33}{section*.37}%
 \contentsline {subsection}{\numberline {3.2.2}Entscheidungskriterien für die Evaluierung}{33}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Umsetzung}{34}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Eingesetzte Software und Tools}{34}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}High-level Aufbau der Infrastruktur des Versuchsobjekts}{34}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Konkreter Aufbau der Versuchssysteme}{35}{subsection.3.3.3}%
-\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Microsoft Azure}{36}{section*.39}%
-\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Google Cloud Platform}{37}{section*.40}%
+\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Microsoft Azure}{36}{section*.40}%
+\contentsline {subsubsection}{\nonumberline Konkreter Aufbau in Google Cloud Platform}{37}{section*.41}%
 \contentsline {subsection}{\numberline {3.3.4}Durchzuführende Messungen und Analysen}{38}{subsection.3.3.4}%
-\contentsline {subsubsection}{\nonumberline Functional completeness}{38}{section*.42}%
-\contentsline {subsubsection}{\nonumberline Time behaviour}{39}{section*.43}%
-\contentsline {subsubsection}{\nonumberline Recoverability}{39}{section*.44}%
-\contentsline {subsubsection}{\nonumberline Modifiability}{40}{section*.45}%
+\contentsline {subsubsection}{\nonumberline Functional completeness}{38}{section*.43}%
+\contentsline {subsubsection}{\nonumberline Time behaviour}{39}{section*.44}%
+\contentsline {subsubsection}{\nonumberline Recoverability}{39}{section*.45}%
+\contentsline {subsubsection}{\nonumberline Modifiability}{40}{section*.46}%
 \contentsline {chapter}{\numberline {4}Ergebnisse und Bewertung}{41}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Evaluierung der Functional completeness}{41}{section.4.1}%
-\contentsline {subsubsection}{\nonumberline Bewertung}{42}{section*.47}%
+\contentsline {subsubsection}{\nonumberline Bewertung}{42}{section*.48}%
 \contentsline {section}{\numberline {4.2}Time behaviour Tests}{43}{section.4.2}%
-\contentsline {subsubsection}{\nonumberline Bewertung}{43}{section*.49}%
+\contentsline {subsubsection}{\nonumberline Bewertung}{43}{section*.50}%
 \contentsline {section}{\numberline {4.3}Recoverability Tests}{45}{section.4.3}%
-\contentsline {subsubsection}{\nonumberline Bewertung}{45}{section*.51}%
+\contentsline {subsubsection}{\nonumberline Bewertung}{45}{section*.52}%
 \contentsline {section}{\numberline {4.4}Modifiability Tests}{46}{section.4.4}%
-\contentsline {subsubsection}{\nonumberline Bewertung}{46}{section*.53}%
+\contentsline {subsubsection}{\nonumberline Bewertung}{46}{section*.54}%
 \contentsline {chapter}{\numberline {5}Schluss}{47}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Zusammenfassung der Arbeit}{47}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Fazit}{48}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Weitere untersuchenswerte Aspekte und aktuelle Entwicklungen}{48}{section.5.3}%
 \contentsline {chapter}{\numberline {A}Kapitel im Anhang}{50}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{51}{chapter*.54}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{51}{chapter*.55}%
