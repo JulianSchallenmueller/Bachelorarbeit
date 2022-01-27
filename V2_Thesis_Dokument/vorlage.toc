@@ -42,24 +42,24 @@
 \contentsline {subsection}{\numberline {3.2.1}Eingesetzte Software und Tools}{32}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}High-Level Aufbau des Testsystems}{33}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Konkreter Aufbau in Google Cloud Platform}{35}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Konkreter Aufbau in Azure}{36}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Durchzuf\"uhrende Messungen und Analysen}{36}{subsection.3.2.5}%
-\contentsline {subsubsection}{\nonumberline Functional completeness}{36}{section*.39}%
-\contentsline {subsubsection}{\nonumberline Time behaviour}{37}{section*.40}%
-\contentsline {subsubsection}{\nonumberline Recoverability}{37}{section*.41}%
-\contentsline {subsubsection}{\nonumberline Modifiability}{38}{section*.42}%
-\contentsline {chapter}{\numberline {4}Ergebnisse und Bewertung}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Evaluierung der Functional Completeness}{40}{section.4.1}%
-\contentsline {subsubsection}{\nonumberline Bewertung}{41}{section*.44}%
-\contentsline {section}{\numberline {4.2}Ergebnisse und Bewertung der Time Behaviour Tests}{42}{section.4.2}%
-\contentsline {subsubsection}{\nonumberline Bewertung}{42}{section*.47}%
-\contentsline {section}{\numberline {4.3}Ergebnisse und Bewertung der Recoverability Tests}{44}{section.4.3}%
-\contentsline {subsubsection}{\nonumberline Bewertung}{44}{section*.49}%
-\contentsline {section}{\numberline {4.4}Ergebnisse und Bewertung der Modifiability Tests}{45}{section.4.4}%
-\contentsline {subsubsection}{\nonumberline Bewertung}{45}{section*.51}%
-\contentsline {section}{\numberline {4.5}Evaluierung der Einheitlichkeit der Testsysteme f\"ur Azure und Google Cloud Platform}{46}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Schluss}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Fazit}{47}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Ausblick}{47}{section.5.2}%
-\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{49}{appendix.A}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{50}{chapter*.52}%
+\contentsline {subsection}{\numberline {3.2.4}Konkreter Aufbau in Azure}{37}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Durchzuf\"uhrende Messungen und Analysen}{38}{subsection.3.2.5}%
+\contentsline {subsubsection}{\nonumberline Functional Completeness}{38}{section*.40}%
+\contentsline {subsubsection}{\nonumberline Time behaviour}{38}{section*.41}%
+\contentsline {subsubsection}{\nonumberline Recoverability}{39}{section*.42}%
+\contentsline {subsubsection}{\nonumberline Modifiability}{39}{section*.43}%
+\contentsline {chapter}{\numberline {4}Ergebnisse und Bewertung}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Evaluierung der Einheitlichkeit}{41}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Evaluierung der Functional Completeness}{42}{section.4.2}%
+\contentsline {subsubsection}{\nonumberline Bewertung}{43}{section*.45}%
+\contentsline {section}{\numberline {4.3}Ergebnisse und Bewertung der Time Behaviour Tests}{44}{section.4.3}%
+\contentsline {subsubsection}{\nonumberline Bewertung}{44}{section*.48}%
+\contentsline {section}{\numberline {4.4}Ergebnisse und Bewertung der Recoverability Tests}{46}{section.4.4}%
+\contentsline {subsubsection}{\nonumberline Bewertung}{46}{section*.50}%
+\contentsline {section}{\numberline {4.5}Ergebnisse und Bewertung der Modifiability Tests}{47}{section.4.5}%
+\contentsline {subsubsection}{\nonumberline Bewertung}{47}{section*.52}%
+\contentsline {chapter}{\numberline {5}Schluss}{48}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Fazit}{48}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Ausblick}{48}{section.5.2}%
+\contentsline {chapter}{\numberline {A}Kapitel im Anhang}{50}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{51}{chapter*.53}%
