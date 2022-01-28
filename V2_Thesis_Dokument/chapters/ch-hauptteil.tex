@@ -248,7 +248,7 @@ Cloud-Technologien mithilfe der folgenden Tabelle (Tab. 2.1) dar.
 \begin{table}[H]
 	\includegraphics[width=0.9\textwidth]{fig/aa-hauptteil/iron_vs_cloud.png}
 	\centering
-	\caption{\enquote{Iron vs Cloud Age}\cite{dec-imp-iac}}
+	\caption{\enquote{Iron vs Cloud Age}\cite[S.3]{morris-iac}}
 	\centering
 	
 \end{table}
@@ -470,7 +470,7 @@ sicher und effizient aufzubauen, zu verändern und zu versionieren. Die Funktions
 
 
 Terraform verwendet eine deklarative Domänenspezifische Sprache (DSL) die es erlaubt Infrastruktur in Konfigurationsdateien zu beschreiben die
-versioniert, geteilt und wiederverwendet werden können. Terraform Module können auf einer Public Module Registry \footnote{Vergleichbar mit der npm-Registry von Nodejs} zur allgemeinen Verfügung bereitgestellt und von der breiteren Terraform-Community wiederverwendet werden. Terraform unterstützt über Plug-Ins, die Terraform Provider, ein große Anzahl an Plattformen.
+versioniert, geteilt und wiederverwendet werden können. Terraform Module können auf einer Public Module Registry \footnote{Vergleichbar mit der npm-Registry von Node.js} zur allgemeinen Verfügung bereitgestellt und von der breiteren Terraform-Community wiederverwendet werden. Terraform unterstützt über Plug-Ins, die Terraform Provider, ein große Anzahl an Plattformen.
 
 \subsubsection{Terraform State}
 
@@ -615,7 +615,7 @@ Die Struktur, primär bestehend aus Datenbankserver und Kubernetes Cluster, ist e
 
 \subsection{Limitierungen der Untersuchung}
 
-Primär soll damit die grundlegende Eignung der Plattform für dieses Szenario untersucht werden. Spezialisiertere Szeanrien werden durch diesen Vergleich nicht repräsentiert, ebenso wird die Security des Infrastruktur-Systems nur in einer minimal erforderlichen Weise umgesetzt da sich Anforderungen an diese je nach Organisation und Anwendung stark unterscheiden können.\\
+Primär soll damit die grundlegende Eignung der Plattform für dieses Szenario untersucht werden. Spezialisiertere Szenarien sind daher durch diesen Vergleich nicht repräsentiert, ebenso wird die Security des Infrastruktur-Systems nur in einer minimal erforderlichen Weise umgesetzt da sich Anforderungen an diese je nach Organisation und Anwendung stark unterscheiden können.\\
 Weiterhin findet das Deployment des Beispielszenarios nur in einer einzelnen Availability Zone der jeweiligen Plattformen statt. Im Fall von GCP ist dies die Zone \enquote{europe-west3-b} und bei Microsoft \enquote{westeurope}.
 
 \subsection{Auswahl der Evaluierungskriterien}
@@ -672,15 +672,10 @@ korrekte Ergebnisse mit einer ausreichenden Genauigkeit liefert.
 	
 	Anwendbarkeit: Da im Falle der Bereitstellung von Infrastruktur durch
 deklarativen Code wenig Spielraum zulässt und im Fall der hier
-untersuchten Systeme lediglich ein \enquote{richtig} oder
-
-	\enquote{falsch} zulässt spielt dieser Punkt keine Rolle.
+untersuchten Systeme lediglich ein \enquote{richtig} oder \enquote{falsch} zulässt spielt dieser Punkt keine Rolle.
 
 	
-	\item \textbf{Functional Appropriateness}: Grad zu welchem die
-
-	Funktionalitäten der Software die Erfüllung der Aufgaben ermöglichen
-und unterstützen.
+	\item \textbf{Functional Appropriateness}: Grad zu welchem die Funktionalitäten der Software die Erfüllung der Aufgaben ermöglichen und unterstützen.
 
 	
 	Anwendbarkeit: Da die Terraform Provider im Prinzip nur eine
@@ -934,7 +929,7 @@ werden können.
 	Anwendbarkeit: Im Vergleich der Provider ist das Thema Testen
 weitgehend irrelevant. Sehr interessant wäre jedoch wieder der Vergleich
 mit anderen vergleichbaren Tools, Terraform selbst beinhaltet
-wenig bis keine Möglichkeiten für Test und setzt mehr auf zusätzliche
+wenig bis keine Möglichkeiten für Testing und setzt mehr auf zusätzliche
 Tools und Frameworks.
 
 \end{itemize}
@@ -1035,6 +1030,8 @@ können. Stattdessen wird durch .tf-Dateien dargestellt welche
 Funktionalität in welchem Modul vorhanden sein soll und wie der Code
 des Systems in Hinsicht auf Dateien aufgeteilt werden soll.
 
+Zusätzlich wird hier die Möglichkeit eines Automatisierten Deployments berücksichtigt, Voraussetzung für dieses ist das Speichern der Authentifizierungsdaten der jeweiligen Cloud Plattform im Github Repository des Terraform Codes, mithilfe von Github Actions kann dann der Terraform Workflow automatisiert werden. Da sich dieses Thema jedoch nicht im Rahmen der Forschungsfragen dieser Arbeit befindet wurde nur ein minimales Beispiel-Deployment automatisiert, das zugehörige Listing A.1 befindet sich im Anhang dieser Arbeit und könnte mit einfachen Modifikationen auch für das Deployment der Test-Systeme verwendet werden.
+
 \newpage
 \begin{landscape}
 	\subsection{Konkreter Aufbau in Azure}
@@ -1050,7 +1047,15 @@ des Systems in Hinsicht auf Dateien aufgeteilt werden soll.
 	
 \end{landscape}
 
+Die beiden Module für den Kubernetes Cluster (\texttt{azurerm\_kubernetes\_cluster.jsa\_k8s}) und den Datenbankserver (\texttt{azurerm\_postgresql\_server.pgdatabaseserver}) sowie das Root-Modul werden in Abb. 3.3 mit allen Terraform Ressourcen und deren Abhängigkeiten sowie allen Variablen und Outputs dargestellt.
 
+Die erste Auffälligkeit dabei ist dass nicht alle Ressourcen direkt voneinander abhängig sind. Das Kubernetes Deployment, bestehend aus der Applikation\\(\texttt{kubernetes\_deployment.jsa\_testapp})\footnote{Die Testapp ist ein trivialer Node.js Server} und einem Loadbalancer\\ (\texttt{kubernetes\_service.jsa\_testapp\_lb}), ist als Terraform Ressource zum Beispiel nicht direkt vom Kubernetes Cluster abhängig, stattdessen wird der Kubernetes Terraform Provider mit der Adresse des Clusters als Deployment-Ziel konfiguriert.
+
+Weiterhin ist erkennbar dass so gut wie alle Ressourcen von der \texttt{azurerm\_resource\_group} abhängig sind, Google Cloud Platform verwendet hier ein anderes Konzept, näheres wird dazu im nächsten Unterkapitel beschrieben. Gleiches gilt für den Secret Storage, dieser wird hier mit der Ressource \texttt{azurerm\_key\_vault.jsa\_vault} erstellt.
+
+Direkter Zugriff auf den Datenbankserver ist durch dessen Fully Qualified Domain Name (\texttt{output.postgres\_server\_fqdn}) möglich, User und Passwort werden im Secret Storage gespeichert.
+
+Die Container Registry wird in Form der Data Source\\ \texttt{data.azurerm\_container\_registry.containerregistry eingebunden}, Berechtigungen die notwendig sind um das Kubernetes-Deployment durchzuführen werden durch das\\ \texttt{azurerm\_role\_assignment.jsa\_acrpull\_role} vergeben.
 
 \newpage
 \begin{landscape}
@@ -1069,22 +1074,13 @@ des Systems in Hinsicht auf Dateien aufgeteilt werden soll.
 
 \end{landscape}
 
-Eine Auffälligkeit in Google Cloud im Vergleich mit Microsoft Azure
-ist der Secret Storage der nur einmal projekt-weit existiert.
-Zusätzlich war das anlegen der Container Registry nicht vollständig
-ausgereift. Es existieren zwei Optionen: Die aktuelle Artifact
-Registry deren Benutzung von Google empfohlen wird und die legacy
-Container Registry. Die Artifact Registry war zum aktuellen Zeitpunkt
-jedoch noch nicht vollständig im Terraform Provider implementiert,
-es existierte keine Möglichkeit eine existierende Artifact Registry
-als Data Source zu erfassen. Die Container Registry war daher die
-einzige Option einen Speicherort für das Image im Vorfeld anzulegen
-und in Terraform als Data Source einzubinden.\\
-Weiterhin war es notwendig einen Serviceaccount anzulegen um das
-Image aus der Registry zu laden und in den Nodes des Kubernetes
-Clusters zu installieren.\\
-Die weiteren Ressourcen konnten ohne weiteren Aufwand in einer
-einfachen Weise implementiert und verwendet werden.
+Die beiden zentralen Elemente der Module sind äquivalent zu Azure der Kubernetes Cluster \texttt{google\_container\_cluster.jsa\_showcase\_gke} und der Datenbankserver\\ \texttt{google\_sql\_database\_server.pgdatabaseserver1}. Anders als bei Azure existiert keine dedizierte Ressource für eine PostgreSQL-Server, die \enquote{generische} Ressource wird per Attribut entsprechend konfiguriert.
+
+Wie bereits im vorangegangen Unterkapitel angesprochen existiert in diesem Aufbau für Google Cloud Platform keine zur Resourcegroup äquivalente Terraform Ressource. Stattdessen muss ein Google Cloud Platform Project mit einer einzigartige Id angelegt werden, im Anschluss wird der Google Terraform Provider für diesen Projekt konfiguriert. Gleiches gilt für den Secret Storage dieser existiert projekt-weit und es muss lediglich der entsprechende Service im Projekt aktiviert werden.
+
+Direkter Zugriff auf den Datenbankserver wird hier per Ip-Adresse ermöglicht\\ (\texttt{output\_postgres\_server\_ipv4}), anders als in Azure ist auch der Zugriff auf den Endpoint des Kubernetes Cluster sehr simpel identifizierbar.
+
+Die Container Registry ist nicht unbedingt auf den ersten Blick als diese erkennbar. Ein einfacher Storage Bucket in Form der Data Source\\ \texttt{data.google\_storage\_bucket.container\_registry\_storage\_bucket} wird hier als Container Registry verwendet, warum dies der Fall ist wird in der Bewertung der Functional Completeness (Kapitel 4.2) genauer erläutert.
 
 \subsection{Durchzuführende Messungen und Analysen}
 
@@ -1099,7 +1095,6 @@ Form vorhanden sind.
 
 Betrachtet werden sollen die folgenden Ressourcen und
 Funktionalitäten:
-
 
 \begin{itemize}
 
@@ -1323,7 +1318,7 @@ Der Secret Storage wir auf GCP einmal für ein GCP Projekt angelegt,
 Azure hingegen bietet die Möglichkeit mehrere Key Vaults innerhalb
 einer Resource Group anzulegen. Die Speicherung des tatsächlichen Secret
 in der Ressource\\ \texttt{google\_secret\_manager\_seceret\_version} anstelle
-des zuvor anzulegenden\\ \texttt{google\_secret\_manager\_seceret} fällt ´dadurch intuitiv aus.\\
+des zuvor anzulegenden\\ \texttt{google\_secret\_manager\_seceret} fällt dadurch wenig intuitiv aus.\\
 Die Container Registry wird in Google Cloud in Form eines normalen
 Google Storage Buckets angelegt. Die bevorzugte Methode zur Speicherung
 eines Container Image in GCP stellt die Artifact Registry dar,
