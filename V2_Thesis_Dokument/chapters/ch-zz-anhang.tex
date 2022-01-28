@@ -1,3 +1,57 @@
 \chapter{Kapitel im Anhang}
 \label{sec:a-kapitel}
 
+\section{Github Action Terraform}
+
+\begin{lstlisting}[caption={Github Action für Automatisiertes Terraform Deployment},captionpos=b]
+	name: 'Playground GCP CI'
+	
+	on:
+		push:
+			paths:
+				- 'playground/**'
+			branches:
+				- master
+		pull_request:
+	
+	jobs:
+		terraform:
+			name: 'Terraform'
+			runs-on: ubuntu-latest
+	
+			defaults:
+				run:
+					shell: bash
+	
+			steps:
+				- name: Checkout
+			      uses: actions/checkout@v2
+	
+				- name: Setup Terraform
+				  uses: hashicorp/setup-terraform@v1
+				  env:
+						GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+	
+				- name: Terraform Init
+				  working-directory: ./playground/gcp
+				  run: terraform init
+				  env:
+						GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+	
+				- name: Terraform Format
+				  working-directory: ./playground/gcp
+				  run: terraform fmt -check
+	
+				- name: Terraform Plan
+				  working-directory: ./playground/gcp
+				  run: terraform plan
+				  env:
+						GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+	
+				- name: Terraform Apply
+				  working-directory: ./playground/gcp
+				  if : github.ref == 'refs/heads/master' && github.event_name == 'push'
+				  run: terraform apply -auto-approve
+				  env:
+						GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+\end{lstlisting}

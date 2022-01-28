@@ -537,13 +537,11 @@ die simpelste Form eines Ausdrucks.
 
 \subsubsection{Input und Output-Variablen}
 
-
 Input-Variablen sind nützlich um Parameter außerhalb des eigentlichen
 Terraform Codes anzupassen. Die ID des Projektes stellt einen solchen
 Parameter dar, befindet sich diese außerhalb des Codes muss nur die Datei
 welche die Input-Variablen enthält angepasst werden, alles andere kann ohne
 Veränderungen wiederverwendet werden.
-
 
 \begin{lstlisting}[caption={Beispiel Input-Variable},captionpos=b]
 variable "project" {
@@ -608,12 +606,12 @@ terraform {
 
 \subsection{Ziel der Evaluierung}
 
-Das Ziel dieser Evaluierung ist es einen Vergleich zwischen den beiden Cloud Plattformen Google Cloud Platform un Microsoft Azure auf Basis von deren Unterstützung von Infrastructure as Code mit Terraform durchzuführen. Anhand der Ergebnisse sollen auch die Vorteile von Infrastructure as Code gegenüber manuellem Provisioning deutlich werden.
+Das Ziel dieser Evaluierung ist es einen Vergleich zwischen den beiden Cloud Plattformen Google Cloud Platform und Microsoft Azure auf Basis von deren Unterstützung von Infrastructure as Code mit Terraform durchzuführen. Anhand der Ergebnisse sollen auch die Vorteile von Infrastructure as Code gegenüber manuellem Provisioning deutlich werden.
 
 \subsection{Untersuchte Komponenten der Terraform Provider}
 
-Zu diesem Zweck wird ein Beispielszenario, bestehend aus einem Kubernetes Cluster und einem Datenbankserver, für beide Plattformen in Terraform Code implementiert und auf den entsprechenden deployed. Zusätzlich wird im Vorfeld manuell eine Container Registry auf den beiden Plattformen erstellt und ein Image auf dieser bereitgestellt. Diese Container Registry soll dann als Terraform Data Source im Projekt eingebunden und das darauf liegende Image via Terraform auf dem Kubernetes Cluster deployed werden.\\
-Die Struktur, bestehend aus Datenbankserver und Kubernetes Cluster, ist eine einfache Repräsentation einer Infrastruktur die für den Betrieb moderner Cloud basierter Anwendungen notwendig ist.
+Zu diesem Zweck wird ein Beispielszenario, bestehend aus einem Kubernetes Cluster und einem Datenbankserver, für beide Plattformen in Terraform Code implementiert und auf diesen deployed. Zusätzlich wird im Vorfeld manuell eine Container Registry auf den beiden Plattformen erstellt und ein Image auf dieser bereitgestellt. Diese Container Registry soll dann als Terraform Data Source im Projekt eingebunden und das darauf liegende Image via Terraform auf dem Kubernetes Cluster deployed werden.\\
+Die Struktur, primär bestehend aus Datenbankserver und Kubernetes Cluster, ist eine einfache Repräsentation einer Infrastruktur die für den Betrieb moderner Cloud basierter Anwendungen notwendig ist.
 
 \subsection{Limitierungen der Untersuchung}
 
@@ -1038,7 +1036,23 @@ Funktionalität in welchem Modul vorhanden sein soll und wie der Code
 des Systems in Hinsicht auf Dateien aufgeteilt werden soll.
 
 \newpage
+\begin{landscape}
+	\subsection{Konkreter Aufbau in Azure}
+	\begin{figure}[H]
+		
+		\includegraphics[keepaspectratio, height=8cm]{fig/aa-hauptteil/azure_aufbau.png}
+		
+		\caption{Testsystem in Microsoft Azure[Eigene Abbildung]}
+		
+		\centering
+		
+	\end{figure}
+	
+\end{landscape}
 
+
+
+\newpage
 \begin{landscape}
 
 	\subsection{Konkreter Aufbau in Google Cloud Platform}
@@ -1054,7 +1068,6 @@ des Systems in Hinsicht auf Dateien aufgeteilt werden soll.
 	\end{figure}
 
 \end{landscape}
-
 
 Eine Auffälligkeit in Google Cloud im Vergleich mit Microsoft Azure
 ist der Secret Storage der nur einmal projekt-weit existiert.
@@ -1072,22 +1085,6 @@ Image aus der Registry zu laden und in den Nodes des Kubernetes
 Clusters zu installieren.\\
 Die weiteren Ressourcen konnten ohne weiteren Aufwand in einer
 einfachen Weise implementiert und verwendet werden.
-
-\newpage
-
-\begin{landscape}
-	\subsection{Konkreter Aufbau in Azure}
-	\begin{figure}[H]
-		
-		\includegraphics[keepaspectratio, height=8cm]{fig/aa-hauptteil/azure_aufbau.png}
-		
-		\caption{Testsystem in Microsoft Azure[Eigene Abbildung]}
-		
-		\centering
-		
-	\end{figure}
-	
-\end{landscape}
 
 \subsection{Durchzuführende Messungen und Analysen}
 
