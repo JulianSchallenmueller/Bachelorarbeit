@@ -606,11 +606,11 @@ terraform {
 
 \subsection{Ziel der Evaluierung}
 
-Das Ziel dieser Evaluierung ist es einen Vergleich zwischen den beiden Cloud Plattformen Google Cloud Platform und Microsoft Azure auf Basis von deren Unterstützung von Infrastructure as Code mit Terraform durchzuführen. Anhand der Ergebnisse sollen auch die Vorteile von Infrastructure as Code gegenüber manuellem Provisioning deutlich werden.
+Das Ziel dieser Evaluierung ist es einen Vergleich zwischen den beiden Cloud Plattformen Google Cloud Platform und Microsoft Azure auf Basis von deren Unterstützung von Infrastructure as Code mit Terraform zu erstellen. Anhand der Ergebnisse sollen auch die Vorteile von Infrastructure as Code gegenüber manuellem Provisioning deutlich werden.
 
 \subsection{Untersuchte Komponenten der Terraform Provider}
 
-Zu diesem Zweck wird ein Beispielszenario, bestehend aus einem Kubernetes Cluster und einem Datenbankserver, für beide Plattformen in Terraform Code implementiert und auf diesen deployed. Zusätzlich wird im Vorfeld manuell eine Container Registry auf den beiden Plattformen erstellt und ein Image auf dieser bereitgestellt. Diese Container Registry soll dann als Terraform Data Source im Projekt eingebunden und das darauf liegende Image via Terraform auf dem Kubernetes Cluster deployed werden.\\
+Zu diesem Zweck wird ein Beispielszenario, bestehend aus einem Kubernetes Cluster und einem Datenbankserver, für beide Plattformen in Terraform Code implementiert und auf diesen deployed. Zusätzlich wird im Vorfeld manuell eine Container Registry auf den beiden Plattformen erstellt und ein Docker Image auf dieser bereitgestellt. Diese Container Registry soll dann als Terraform Data Source im Projekt eingebunden und das darauf liegende Image via Terraform auf dem Kubernetes Cluster deployed werden.\\
 Die Struktur, primär bestehend aus Datenbankserver und Kubernetes Cluster, ist eine einfache Repräsentation einer Infrastruktur die für den Betrieb moderner Cloud basierter Anwendungen notwendig ist.
 
 \subsection{Limitierungen der Untersuchung}
@@ -623,7 +623,7 @@ Weiterhin findet das Deployment des Beispielszenarios nur in einer einzelnen Ava
 Das Softwarequalitätsmodell der ISO 25010 wird als ein Grundstein für die
 Evaluierung von Software beschrieben\cite{iso-25010}. Da die Terraform Provider statt einer ganzheitliche Software nur Plug-Ins
 und damit eine kleinere Komponente von Terraform darstellen kann nicht
-jeder der in der ISO 25010 aufgelistet Punkte sinnvoll angewendet werden.
+jeder der in der ISO 25010 aufgelisteten Punkte sinnvoll angewandt werden.
 Einige Bereiche, zum Beispiel der Bereich Security mit all seinen
 untergeordneten Themen, benötigen eine deutlich genauere Betrachtung als
 es im Rahmen dieser Arbeit möglich ist um ein sinnvolles und vollständiges
@@ -656,7 +656,7 @@ der Terraform Provider von Azure und Google Cloud Platform sinnvoll betrachtet w
 
 \begin{itemize}
 
-	\item \textbf{Functional Completeness}: Die Vollständigkeit mit welcher
+	\item \textbf{Functional Completeness}: Grad der Vollständigkeit mit welcher
 die Aufgaben und Ziele die vom Nutzer an die Software gestellt werden
 erfüllt werden können.
 
@@ -773,8 +773,7 @@ mit mehreren Usern notwendig weshalb im Rahmen dieser Arbeit dieses
 Kriterium nicht betrachtet werden soll.
 
 	
-	\item \textbf{Operability}: Beschreibt Attribute die ein System besitzt
-das dessen Bedienung vereinfacht.
+	\item \textbf{Operability}: Beschreibt Attribute die ein System besitzt deren Zweck es ist die Bedienung zu vereinfachen.
 
 	
 	Anwendbarkeit: Bei einer Betrachtung von Terraform als ganzes könnte
@@ -783,7 +782,7 @@ unterscheiden sich hier jedoch nicht.
 
 	
 	\item \textbf{User Error Protection}: Grad zu dem die Software den
-Nutzer gegen eigene Fehler (z.Bsp. während der Eingabe) schützt.
+Nutzer gegen eigene Fehler (z.B. während der Eingabe) schützt.
 
 	
 	Anwendbarkeit: Hier liegt die selbe Lage wie beim vorhergehenden
@@ -821,8 +820,7 @@ normalen Bedingungen arbeitet.
 
 	
 	Anwendbarkeit: Durch den begrenzten Umfang der in dieser Thesis
-durchgeführten Arbeiten kann dieser Aspekt nur begrenzt betrachtet
-werden. Sollten Auffälligkeiten in diesem Bereich auftreten werden
+durchgeführten Arbeiten soll dieser Aspekt nicht gezielt betrachtet werden. Sollten Auffälligkeiten in diesem Bereich auftreten werden
 diese jedoch erfasst und dokumentiert.
 
 	
@@ -898,7 +896,7 @@ modularen Codes zu fördern.
 	\item \textbf{Analysability}: Grad der Effektivität und Effizienz mit
 der der Einfluss auf das System ermittelt werden kann der durch eine
 Veränderung verursacht wird. Dazu gehört auch das Ermitteln von 
-Komponenten die verändert werden sollen sowie das diagnostizieren von
+Komponenten die verändert werden sollen sowie die Diagnose von
 Fehlern und Schwächen des Produkts.
 
 	
@@ -928,7 +926,7 @@ werden können.
 	
 	Anwendbarkeit: Im Vergleich der Provider ist das Thema Testen
 weitgehend irrelevant. Sehr interessant wäre jedoch wieder der Vergleich
-mit anderen vergleichbaren Tools, Terraform selbst beinhaltet
+mit anderen vergleichbaren Tools. Terraform selbst beinhaltet
 wenig bis keine Möglichkeiten für Testing und setzt mehr auf zusätzliche
 Tools und Frameworks.
 
@@ -979,16 +977,42 @@ Kurz zusammengefasst werden die folgenden Merkmale betrachtet:
 In diesem Abschnitt sollen die Tools die bei der Umsetzung zum Einsatz
 kommen knapp zusammengefasst werden.
 
-
-Als Source-Code Editor kommt Visual Studio Code zum Einsatz.\\
+Als Sourcecode Editor kommt Visual Studio Code zum Einsatz.\\
 Die Versionierung des Sourcecodes erfolgt durch ein privates
 Git-Repository auf Github.\\
+Terraform Kommandos werden in der Bash ausgeführt.
 Zeitmessungen werden mit dem Bash Kommando \texttt{time <command>} durchgeführt und das Ergebnis der Zeile \texttt{real} verwendet.\\
+Die Abhängigkeitsgraphen der jeweiligen Systeme in Kapitel 3.2.3 und 3.2.4 werden mit dem in Terraform integrierten Kommando \texttt{terraform graph} erstellt und mithilfe des Tools \textbf{Terraform Graph Beautifier} visuell aufbereitet. Abb. 3.2 bzw. 3.3 stellen jeweils ein Beispiel für einen \enquote{rohen} und den zugehörigen aufbereiteten Graphen dar.
 
+\begin{figure}[H]
+	
+	\includegraphics[keepaspectratio, height=3cm]{fig/aa-hauptteil/tf-graph.png}
+	\centering
+	
+	\caption{Output Terraform Graph[Eigene Abbildung]}
+	
+	\centering
+	
+\end{figure}
+
+In der Darstellung von \texttt{terraform graph} werden sämtliche Abhängigkeiten und Elemente inklusive der Module und Provider dargestellt.
+
+\begin{figure}[H]
+	
+	\includegraphics[keepaspectratio, height=6cm]{fig/aa-hauptteil/tf-graph-beautified.png}
+	\centering
+	
+	\caption{Output Terraform Graph Beautifier[Eigene Abbildung]}
+	
+	\centering
+	
+\end{figure}
+
+Terraform Graph Beautifier versteckt einige Elemente wie die Provider um eine gesamtheitlich bessere Übersicht verschaffen zu können. Module werden als farblich hinterlegte Rechtecke dargestellt innerhalb derer sich die zugehörigen Ressourcen befinden. Die generierte Datei ist dabei eine HTML-Datei die es erlaubt alle Elemente durch Drag-and-Drop zu verschieben um die Darstellung individuell anpassen zu können. Der Nachteil dabei ist das dies auch erforderlich ist; Die standardmäßige Ausgabe achtet nicht auf eine sinnvolle Anordnung der Elemente.
 
 \subsection{High-Level Aufbau des Testsystems}
 
-Als primäres Testobjekt dient ein Infrastruktursystem das typische Anwendungsfälle
+Als primäres Testobjekt dient ein Infrastruktur-System das typische Anwendungsfälle
 repräsentieren soll. Es besteht aus Netzwerk, mehreren Datenbanken und 
 einem Kubernetes Cluster mit mehreren Worker Nodes. Das System ist eine
 leicht veränderte Variante des öffentlich einsehbaren
@@ -1004,7 +1028,7 @@ Virtuellen Maschinen durchgeführt werden.
 
 Der originale Infrastruktur-Showcase besteht aufgrund der verhältnismäßig
 geringen Größe und Komplexität aus einem einzelnen Terraform Modul
-"Platform" das die gesamte Infrastruktur enthält. Für diese Arbeit wurden
+\texttt{Platform} das die gesamte Infrastruktur enthält. Für diese Arbeit wurden
 die Kubernetes- und Datenbank-Komponenten zu Demonstrationszwecken in
 jeweils eigene Module ausgelagert. Diese Module könnten in
 eine öffentliche oder auch private Terraform Module Registry
@@ -1047,7 +1071,7 @@ Zusätzlich wird hier die Möglichkeit eines Automatisierten Deployments berücksic
 	
 \end{landscape}
 
-Die beiden Module für den Kubernetes Cluster (\texttt{azurerm\_kubernetes\_cluster.jsa\_k8s}) und den Datenbankserver (\texttt{azurerm\_postgresql\_server.pgdatabaseserver}) sowie das Root-Modul werden in Abb. 3.3 mit allen Terraform Ressourcen und deren Abhängigkeiten sowie allen Variablen und Outputs dargestellt.
+Die beiden Module für den Kubernetes Cluster (\texttt{azurerm\_kubernetes\_cluster.jsa\_k8s}) und den Datenbankserver (\texttt{azurerm\_postgresql\_server.pgdatabaseserver}) sowie das Root-Modul werden in Abb. 3.5 mit allen Terraform Ressourcen und deren Abhängigkeiten sowie allen Variablen und Outputs dargestellt.
 
 Die erste Auffälligkeit dabei ist dass nicht alle Ressourcen direkt voneinander abhängig sind. Das Kubernetes Deployment, bestehend aus der Applikation\\(\texttt{kubernetes\_deployment.jsa\_testapp})\footnote{Die Testapp ist ein trivialer Node.js Server} und einem Loadbalancer\\ (\texttt{kubernetes\_service.jsa\_testapp\_lb}), ist als Terraform Ressource zum Beispiel nicht direkt vom Kubernetes Cluster abhängig, stattdessen wird der Kubernetes Terraform Provider mit der Adresse des Clusters als Deployment-Ziel konfiguriert.
 
@@ -1137,9 +1161,9 @@ Systeme:
 
 \begin{itemize}
 
-	\item Das gesamte Versuchssystems
+	\item Das Test-Infrastruktur-System
 
-	\item Virtuelle Maschine mit dem Betriebssystem Ubuntu 20.04.
+	\item Virtuelle Maschine mit dem Betriebssystem Ubuntu 20.04
 
 	\item PostgreSQL-Datenbankserver
 
@@ -1149,17 +1173,14 @@ Systeme:
 
 
 Es werden sowohl die Dauer für den Auf- als auch Abbau gemessen.
-Jeder Test wird drei mal wiederholt und der Mittelwert der
-gemessenen Werte bewertet. Die Messungen werden nur durchgeführt
+Jeder Test wird drei mal wiederholt. Die Messungen werden nur durchgeführt
 sofern die Plattform den Status der betroffenen Dienste als Normal/OK
 führt. 
 
-
 \subsubsection{Recoverability}
 
-
-Für diesen Test wird zunächst der Aufbau des Systems angestoßen
-durch das gewohnte \texttt{terraform apply} angestoßen. Nach 
+Für diesen Test wird zunächst der Aufbau des Systems
+durch das gewohnte \texttt{terraform apply} gestartet. Nach 
 Ablauf von ca. der Hälfte der zum vollständigen Aufbau benötigten
 Zeit wird die Internetverbindung im Betriebssystem manuell
 unterbrochen.\\
@@ -1168,13 +1189,11 @@ erneut ausgeführt und überprüft ob die Ressourcen anschließend
 zur Verfügung stehen. Sollte dies fehlschlagen wird der aufgetretene
 Fehler dokumentiert.
 
-
 Folgende Szenarien werden untersucht:
-
 
 \begin{itemize}
 
-	\item Virtuelle Maschine.
+	\item Virtuelle Maschine
 
 	\item PostgreSQL-Datenbankserver
 
@@ -1213,8 +1232,7 @@ Folgende Szenarien werden untersucht:
 \section[Evaluierung der Einheitlichkeit]{Evaluierung der Einheitlichkeit der Testsysteme für Azure und Google Cloud Platform}
 
 Terraform bietet ein einheitliches Tooling und eine einheitliche Bedienung für alle von Terraform unterstützten Plattformen. Die Arbeitsprozesse und der generelle Workflow werden dadurch relativ Plattform-unabhängig, Verbesserungen in den Arbeitsabläufen können universell in allen Terraform-Projekten umgesetzt werden.\\
-Beim Schreiben des Codes, der eigentlichen Kerntätigkeit, endet die Einheitlichkeit jedoch zum größten Teil. Der Aufbau und die Bezeichnungen aller Ressourcen hängen ausschließlich von der Implementierung des Terraform Providers und damit von der Plattform ab, die Gemeinsamkeiten liegen primär in Semantik und Syntax welche durch die Sprache bestimmt werden.\\
-Eine Möglichkeit zur Vereinheitlichung wird durch die Verwendung von Modulen eröffnet: Werden die Interfaces von funktional deckungsgleichen Modulen verschiedener Plattformen einheitlich über die Verwendung identischer Input-Variablen definiert.
+Beim Schreiben des Codes, der eigentlichen Kerntätigkeit, endet die Einheitlichkeit jedoch zum größten Teil. Der Aufbau und die Bezeichnungen aller Ressourcen hängen ausschließlich von der Implementierung des Terraform Providers und damit von der Plattform ab, die Gemeinsamkeiten liegen primär in Semantik und Syntax welche durch die Sprache bestimmt werden.
 
 Die wichtigste Erkenntnis ist diese: Um verschiedene Cloud Plattformen in Kombination mit Terraform einsetzen zu können ist es weiterhin erforderlich im Umgang mit der jeweiligen Plattform geschult zu sein. Das Beherrschen von Terraform kann das Wissen über individuelle Plattformen in keiner Weise ersetzen, Terraform-Kompetenzen dienen primär dazu die Umsetzung von Infrastructure as Code zu ermöglichen.
 
@@ -1238,52 +1256,52 @@ Die wichtigste Erkenntnis ist diese: Um verschiedene Cloud Plattformen in Kombin
 			&
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch Ressource \\ 
 				\texttt{google\_compute\_instance }
-				erfüllt.\end{tabular}                                               
+				erfüllt\end{tabular}                                               
 			&
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch Ressource \\ 
 				\texttt{azurerm\_virtual\_machine} 
-				erfüllt.\end{tabular}                                               
+				erfüllt\end{tabular}                                               
 			\\
 			\midrule
 			\begin{tabular}[c]{@{}l@{}}PostgreSQL \\ 
 				Datenbankserver\end{tabular}                                        
 			& \begin{tabular}[c]{@{}l@{}}Funktionalität wird 
 				durch Ressource \\ \texttt{google\_sql\_database\_instance} 
-				erfüllt.\end{tabular}                                               
+				erfüllt\end{tabular}                                               
 			& 
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch Ressource\\ 
 				\texttt{azurem\_postgresql\_database} 
-				erfüllt.\end{tabular}                                               
+				erfüllt\end{tabular}                                               
 			\\
 			\midrule
 			\begin{tabular}[c]{@{}l@{}}Anlegen von Datenbanken mit\\ Charset 
 				UTF-8 und Collation\\ English\_Unites States.1252\end{tabular} & 
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch die Ressource 
 				\\ \texttt{google\_sql\_database} teilweise erfüllt. Collation \\ kann bei 
-				Erstellung nich wie erwünscht definiert \\ werden. Default ist 
+				Erstellung nicht wie erwünscht definiert \\ werden. Default ist 
 				en\_US.UTF8\end{tabular} & 
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch die \\ Ressource 
 				\\ \texttt{azurem\_postgresql\_database}\\ erfüllt. Charset und Collation \\
-				werden bei Erstellung definiert.\end{tabular} \\ \midrule
+				werden bei Erstellung definiert\end{tabular} \\ \midrule
 			Secret 
 			Storage                                                             
 			&
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch Ressource \\ 
-				\texttt{google\_secret\_manager\_secret} erfüllt.\\
+				\texttt{google\_secret\_manager\_secret} erfüllt\\
 			\end{tabular}                                               
 			&
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch Ressource \\ 
-				\texttt{azurem\_key\_vault\_secret} erfüllt.\\\end{tabular}          \\ \midrule
+				\texttt{azurem\_key\_vault\_secret} erfüllt\\\end{tabular}          \\ \midrule
 			Kubernetes 
 			Cluster                                                             
 			&
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch Ressource \\ 
 				\texttt{google\_container\_cluster} 
-				erfüllt-\end{tabular}                                               
+				erfüllt\end{tabular}                                               
 			&
 			\begin{tabular}[c]{@{}l@{}}Funktionalität wird durch Ressource\\ 
 				\texttt{azurem\_kubernetes\_cluster} 
-				erfüllt.\end{tabular}                                               
+				erfüllt\end{tabular}                                               
 			\\
 			\midrule
 			\begin{tabular}[c]{@{}l@{}}Einbindung der Container\\ Registry als 
@@ -1311,17 +1329,17 @@ Provider erwartungsgemäß bereitgestellt, im Detail liegen jedoch
 einige Unterschiede vor.\\
 Beim Anlegen der Datenbanken in GCP können die Funktionalitäten von
 Azure nicht vollständig abgebildet werden, Anpassung an Charset und
-Collation sind zum Zeitpunk des Erstellens nicht möglich.
+Collation sind zum Zeitpunkt des Erstellens nicht möglich.
 Das Charset entspricht dem gewünschten Wert, die Collation jedoch
 nicht.\\
-Der Secret Storage wir auf GCP einmal für ein GCP Projekt angelegt,
+Der Secret Storage wird auf GCP einmal für ein GCP Projekt angelegt,
 Azure hingegen bietet die Möglichkeit mehrere Key Vaults innerhalb
-einer Resource Group anzulegen. Die Speicherung des tatsächlichen Secret
+einer Resource Group anzulegen. Die Speicherung des tatsächlichen Secrets
 in der Ressource\\ \texttt{google\_secret\_manager\_seceret\_version} anstelle
 des zuvor anzulegenden\\ \texttt{google\_secret\_manager\_seceret} fällt dadurch wenig intuitiv aus.\\
 Die Container Registry wird in Google Cloud in Form eines normalen
 Google Storage Buckets angelegt. Die bevorzugte Methode zur Speicherung
-eines Container Image in GCP stellt die Artifact Registry dar,
+eines Container Images in GCP stellt die Artifact Registry dar,
 diese ist jedoch zum aktuellen Zeitpunkt noch nicht vollständig im
 Terraform Provider implementiert. Es ist möglich eine Artifact
 Registry als Terraform Ressource zu erstellen, die Einbindung einer
@@ -1329,7 +1347,7 @@ bereits bestehenden Artifact Registry als Data Source ist jedoch
 noch nicht möglich. Der Aufwand beim Erstellen der Container Registry
 über den Storage Bucket fällt höher aus als in Azure, hier wird beim
 Anlegen der Container Registry die Storage-Infrastruktur automatisch
-erstellt und gemanagt.
+erstellt und verwaltet.
 
 \section{Ergebnisse und Bewertung der Time Behaviour Tests}
 
@@ -1355,7 +1373,7 @@ erstellt und gemanagt.
 		\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Aufbau/Abbau\\ 
 				VM\end{tabular}}                                          & 1         & 
 		0m30s                & 1m3s               & 1m12s             & 
-		6m5s            \\
+		1m42s            \\
 		& 2         & 0m23s                & 1m4s               & 
 		1m11s             & 1m37s           \\
 		& 3         & 0m25s                & 1m4s               & 
@@ -1463,7 +1481,7 @@ könnte von der Verwendung besserer Hardware deutlich profitieren.
 Eine weitere mögliche Ursache für die Zeit Differenz beim Aufbau
 der Infrastruktur stellt die verwendete Availability-Region/Zone dar.
 Alle Tests wurden uniform in der Zone \enquote{europe-west3-b} für
-Google Cloud Platform und der Location \enquote{westeurope} für Azure
+Google Cloud Platform und der Azure Location \enquote{westeurope}
 durchgeführt. Es ist in jedem Falle denkbar dass es lokale Unterschiede bei der Verfügbarkeit gibt, die verfügbaren Maschinentypen variieren zum Teil ebenfalls.
 
 
@@ -1494,18 +1512,19 @@ Recherche und Tests die nicht mehr im Rahmen dieser Arbeit liegen.
 				State in \\ Remote Backend\end{tabular} & 
 			\begin{tabular}[c]{@{}l@{}}State korrumpiert, erneutes \\ terraform 
 				apply führt zu \\ Fehler, manuelles entfernen \\ der Ressource 
-				notwendig.\end{tabular} & \begin{tabular}[c]{@{}l@{}}State 
+				notwendig\end{tabular} & \begin{tabular}[c]{@{}l@{}}State 
 				korrumpiert, erneutes \\ terraform apply führt zu Fehler. \\ 
 				Zusätzlich zur VM Ressource muss \\ die Festplatte ebenfalls 
 				separat \\ manuell gelöscht werden.\end{tabular} \\ \hline
 			\begin{tabular}[c]{@{}l@{}}Temporäre Unterbrechung \\ des 
 				Internets, lokaler State\end{tabular}            & 
-			\begin{tabular}[c]{@{}l@{}}Terraform state wird auch lokal \\ 
-				korrumpiert, manuelles löschen \\ der VM-Ressource 
-				notwendig.\end{tabular}                   
-			&                                                                   
-			
-			
+			\begin{tabular}[c]{@{}l@{}}Terraform State 
+				korrumpiert,\\ manuelles Löschen \\ der VM-Ressource 
+				notwendig\end{tabular}                   
+			&
+			\begin{tabular}[c]{@{}l@{}}Terraform State 
+				korrumpiert,\\ manuelles Löschen \\ der VM-Ressource 
+				notwendig\end{tabular}
 			\\
 			\hline
 			\begin{tabular}[c]{@{}l@{}}Soft Cancel von \\ Terraform 
@@ -1536,8 +1555,7 @@ Recherche und Tests die nicht mehr im Rahmen dieser Arbeit liegen.
 \subsubsection{Bewertung}
 
 
-Die Tests zur Recoverability durchgeführt werden vermitteln ein relativ
-gleichmäßiges Bild: Das Ergebnis jedes Szenarios ist die Korrumpierung
+Die Tests zur Recoverability vermitteln ein einheitliches Bild: Das Ergebnis jedes Szenarios ist die Korrumpierung
 des Terraform State. Dementsprechend konnte die Infrastruktur durch
 ein einfaches erneutes Ausführen des Execution Plan nicht erfolgreich
 deployed werden und ein manuelles Löschen der bereits teilweise
@@ -1545,7 +1563,7 @@ konfigurierten Cloud Ressource war notwendig.
 
 
 Aus diesem Ergebnis lässt sich ableiten dass keiner der Provider
-zusätzliche Mechanismen zur Fehlerprävention bei beim Deployment
+zusätzliche Mechanismen zur Fehlerprävention beim Deployment
 individueller Ressourcen implementiert. Komplexere Szenarien sollten
 ein erweitertes und vollständigeres Bild bieten können, mögliche
 Unterschiede könnten zum Beispiel bei Operationen die Datenspeicherung
