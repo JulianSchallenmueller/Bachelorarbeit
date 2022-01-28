@@ -123,15 +123,15 @@ nicht mehr vom Unternehmen selbst eingekauft, eingerichtet und betrieben werden
 muss (Abb. 2.1). Potentiell hohe Kosten die bereits vor der
 Inbetriebnahme eines Systems mit einem höheren Risiko aufgewendet werden müssen
 stellen in Form von individuell geringeren laufenden Beträgen ein deutlich
-reduziertes Risiko dar\cite{capex-opex}.\\
+reduziertes Risiko dar\cite[S.23]{lisdorf-cpbasics}.\\
 Sofern der Einsatz von Cloud Computing in einer sinnvollen und korrekten
 Weise erfolgt können je nach Fall die Gesamtkosten um einen hohen Anteil reduziert
-werden\cite{total-cost}.\\
+werden\cite[S.24]{lisdorf-cpbasics}.\\
 Die Gesamtkostenersparnisse stehen auch im Zusammenhang mit Skaleneffekten\footnote{Zusammenhang zwischen produziertem Ertrag und eingesetzter Ressourcen} die für
 große Cloud Service Provider gelten. Der Betrieb eines einzelnen Servers ist im Verhältnis
 mit bedeutend höheren Kosten verbunden als das hinzufügen eines äquivalenten
 Systems zu einem Rechenzentrum im Betrieb von Mircosoft oder einem vergleichbaren
-Anbieter\cite{econ-scale}.
+Anbieter\cite[S.24-25]{lisdorf-cpbasics}.
 
 \textbf{Skalierbarkeit}: Besonders für schnell wachsende Unternehmen ist die
 Möglichkeit schneller Skalierbarkeit einer der prominentesten Vorteile der Cloud.
@@ -139,7 +139,7 @@ Es kann nicht nur auf vorhersagbare Anstiege (zum Beispiel ausgelöst durch
 eine Verkaufsaktion) sondern auch auf unvorhersehbare Ereignisse reagiert werden.
 Zusätzlich ist es möglich diese Skalierung nicht nur bis zu einem bestimmten Limit,
 sondern nahezu unendlich zu betreiben. Wichtig ist auch dass sowohl auf steigende
-als auch sinkende Nachfrage reagiert werden kann\cite{scale}.
+als auch sinkende Nachfrage reagiert werden kann\cite[S.27]{lisdorf-cpbasics}.
 
 \textbf{Resilienz}: In einem Worst Case-Szenario kann ein ganzes Rechenzentrum
 durch unvorhergesehen Ereignisse wie beispielsweise Brände, Naturkatastrophen
@@ -148,7 +148,7 @@ verfügbar sind ist eine Übertragung der Operationen kein trivialer Ablauf und
 birgt oft nicht außer Acht zu lassende Risiken. Die Flexibilität der Cloud
 erlaubt es die gesamte Infrastruktur mit sehr geringem Aufwand in nicht
 betroffene Regionen zu verlagern und die Kontinuität der Geschäftstätigkeiten
-mit minimaler Unterbrechung aufrecht zu erhalten\cite{resil}.
+mit minimaler Unterbrechung aufrecht zu erhalten\cite[S.28]{lisdorf-cpbasics}.
 
 \textbf{Security}: Sicherheitsaspekte können sowohl einen Vor- als auch Nachteil
 von Cloud Computing darstellen. Hier sollen zuerst Vorteile dargelegt werden,
@@ -158,12 +158,12 @@ Sicherheit in der Cloud unterlagen und unterliegen auch noch immer einem
 deutlichen Wandel. Cloud Anbieter investieren
 viele Ressourcen in Sicherheit und stellen dem Nutzer zum Beispiel bereits sicher
 implementierte Verschlüsselungen zur Verfügung oder bieten einen gewissen
-Schutz vor Denial-of-Service Angriffen durch ihre \enquote{natürliche} Skalierbarkeit\cite{sec-1}.
+Schutz vor Denial-of-Service Angriffen durch ihre \enquote{natürliche} Skalierbarkeit\cite[S.25]{lisdorf-cpbasics}.
 
 \subsubsection{Herausforderungen und Risiken}
 
 \textbf{Netzwerkabhängigkeit}: Da der Zugriff auf Cloud Dienste über das
-Internet erfolgt entsteht dadurch entsprechend auch eine hohe Abhängigkeit. Stabile und schnelle Netzwerkanbindung ist eine kritische Voraussetzung für effektives Arbeiten\cite{net-dep}, bei lokal gehosteten Systemen ist diese Abhängigkeit
+Internet erfolgt entsteht dadurch entsprechend auch eine hohe Abhängigkeit. Stabile und schnelle Netzwerkanbindung ist eine kritische Voraussetzung für effektives Arbeiten\cite[S.737]{net-dep}, bei lokal gehosteten Systemen ist diese Abhängigkeit
 entsprechend geringer.
 
 \textbf{Vendor Lock-in}: Bei der Nutzung eines Cloud Anbieters entsteht die
@@ -174,7 +174,7 @@ bereits so abhängig von diesem Anbieter zu sein dass die Kosten eines Wechsels
 derart hoch ausfallen dass man gezwungen ist die Bedingungen zu akzeptieren\cite{lock-in}.
 
 \textbf{Security und Privacy}: Sicherheitsrisiken sind einer der meistgenannten
-Gründe die gegen Cloud Computing sprechen\cite{sec-2}, besonders im Fall der Nutzung einer
+Gründe die gegen Cloud Computing sprechen\cite[S.737]{net-dep}, besonders im Fall der Nutzung einer
 Public Cloud. Die Gefahr dass Daten in die Hände dritter gelangen kann zum
 beispielsweise nicht vollständig ausgeschlossen werden. Da die Verantwortung über
 die Sicherheit der Daten dem Cloud Anbieter unterliegt kann es auch zu Problemen
@@ -186,7 +186,7 @@ Einverständnis gewährt werden.
 geringerer Kosten beworben wird, ist dies nicht zwingend garantiert. Werden die
 vorhandenen Systeme ungünstig verwendet, bleiben zum Beispiel viele gebuchte
 CPUs und IP-Adressen sowie weitere Ressourcen ungenutzt, können unnötig hohe Kosten entstehen. Auch während der Migrationsphase, in der möglicherweise beide Systeme parallel betrieben werden müssen, können höhere Kosten
-entstehen als in einem vergleichbaren Zeitraum davor. Nicht zuletzt stellt die Migration komplexer Systeme häufig eine große technische und dadurch auch finanzielle Herausforderung dar\cite{migration-cost}.
+entstehen als in einem vergleichbaren Zeitraum davor. Nicht zuletzt stellt die Migration komplexer Systeme häufig eine große technische und dadurch auch finanzielle Herausforderung dar\cite[S.321]{migration-cost}.
 
 \subsection{Überblick über die wichtigsten Cloud Service Provider}
 
@@ -223,7 +223,7 @@ ist hier die Vormachtstellung von Amazon gegenüber Microsoft und Google, auffäll
 Automatisierung spielt in der modernen Softwareentwicklung eine wichtige Rolle. Automatisierte Unit- und Integration-Tests gehören inzwischen schon lange zum Standardrepertoire eines Softwareentwicklers. Die Verbreitung der DevOps-Kultur förderte in den letzten Jahren auch die Automatisierung des Build- und Deployment-Prozesses und mit der steigenden Verbreitung Cloud-basierter Software erweitert sich diese Automatisierung nun auch auf das Provisioning der Infrastruktur.
 
 Infrastructure as Code beschreibt im allgemeinen einen Ansatz zur Automatisierung des Infrastruktur-Provisionings basierend auf Methoden aus der
-Softwareentwicklung\cite{def-iac}.
+Softwareentwicklung\cite[S.4]{morris-iac}.
 
 Statt eines manuellen Aufbaus und händischer Konfiguration der einzelnen
 Komponenten werden maschinenlesbare Dateien verfasst welche dann von einem
@@ -240,7 +240,7 @@ physischen Servers das, je nach Szenario einen Zeitraum von mindestens
 mehreren Stunden oder Tagen bis hin zu Wochen dauern kann, können
 virtuelle Ressourcen in der Cloud in wenigen Minuten verfügbar gemacht werden.
 Der schnellere Ablauf wird durch die Automatisierung von Prozessen wie der Bereitstellung der Infrastruktur mithilfe von IaC Tools noch verstärkt. Mit diesen Veränderungen wird das Management und die Erweiterung der
-bestehenden Systeme jedoch nicht unbedingt einfacher\cite{iac-schneller}, die Anwendung von
+bestehenden Systeme jedoch nicht unbedingt einfacher\cite[S.3]{morris-iac}, die Anwendung von
 Arbeitsprozesse die sich bisher bewährt haben sind oftmals ineffektiv und verhindern das Ausnutzen des vollen Potentials der Cloud.
 Kief Morris, Autor von \textit{Infrastructure as Code - Dynamic Systems for the Cloud Age}, stellt die fundamentalen Unterschiede des Arbeitens mit
 Cloud-Technologien mithilfe der folgenden Tabelle (Tab. 2.1) dar.
@@ -277,7 +277,7 @@ Basis-System geupdated werden individuelle und oft undokumentierte Anpassungen
 nicht berücksichtigt wodurch ein Update unbequeme Konsequenzen nach
 sich ziehen kann. Werden alle Veränderungen in einer einheitlichen
 Codebasis verwaltet und Updates häufig vorgenommen verhindert man
-starken Configuration Drift der ansonsten oftmals stattfindet\cite{conf-drift}.
+starken Configuration Drift der ansonsten oftmals stattfindet\cite[S.17-18]{morris-iac}.
 
 \textbf{Wiederverwendbarkeit durch einheitlichen Code}:
 Ein weiterer Vorteil der durch die Verwendung einer einheitlichen
@@ -288,7 +288,7 @@ Gründen in seiner Gesamtheit verloren kann es schnell und mit
 verhältnismäßig geringem Aufwand reproduziert werden.
 Ein dazu passender Ausdruck in Bezug auf Server ist \enquote{Cattle not Pets}. Statt sich individuell und mit großem Aufwand um einzelne Server zu
 kümmern, wie man es etwa mit dem eigenen Haustier tut, sollten Server
-wie leicht ersetzbares Vieh behandelt werden\cite{cattle-pets}.
+wie leicht ersetzbares Vieh behandelt werden\cite[S.16]{morris-iac}.
 
 \textbf{Schnelleres Provisioning durch Cloud}: Ein bereits häufig angesprochener Vorteil ist die schnelle Bereitstellung, durch diese Verkürzung bzw. Eliminierung des Hardware-Anschaffungs-Prozesses. Dadurch können sowohl frühe Developer-Builds als auch spätere Release-Versionen schneller getestet und deployed werden wodurch der gesamte Release-Cycle beschleunigt wird.
 
@@ -298,7 +298,7 @@ wie leicht ersetzbares Vieh behandelt werden\cite{cattle-pets}.
 
 \textbf{Stärkere Automatisierung im Arbeitsablauf}: Automatisierung bedeutet immer einen gewissen initialen Zusatzaufwand, jedoch kann auf längere Sicht deutlich von automatisierten Abläufen profitiert werden. Testen, Builds und Deployment wurden bereits angesprochen und sind klassische Prozesse deren Automatisierung längerfristig vorteilhaft ist.
 
-\textbf{Höhere Zuverlässigkeit und Sicherheit durch schnelle Updates}: Veränderungen stellen die größte Gefahr für ein Produktionssystem dar, gleichzeitig sind Veränderungen aber unvermeidbar um die Sicherheit des Systems zu gewährleisten und es zu verbessern. Durch die Fähigkeit Veränderungen schnell und dennoch zuverlässig durchzuführen wird die Reaktionszeit auf unvorhergesehene Ereignisse und Anforderungen wesentlich verkürzt\cite{opt-change}.
+\textbf{Höhere Zuverlässigkeit und Sicherheit durch schnelle Updates}: Veränderungen stellen die größte Gefahr für ein Produktionssystem dar, gleichzeitig sind Veränderungen aber unvermeidbar um die Sicherheit des Systems zu gewährleisten und es zu verbessern. Durch die Fähigkeit Veränderungen schnell und dennoch zuverlässig durchzuführen wird die Reaktionszeit auf unvorhergesehene Ereignisse und Anforderungen wesentlich verkürzt\cite[S.4-5]{morris-iac}.
 
 \textbf{Schnellere Fehlersuche und -behebung}: Potentielle Fehler können durch Automatisierung und Modularität (siehe. Kapitel 2.2.4) schneller isoliert, gefunden und behoben werden. Infolgedessen profitieren Sicherheit und Stabilität von einer Struktur die eine einfache und schnelle Integration von Veränderungen fördert.
 
@@ -322,9 +322,9 @@ ist es wichtig Anpassungen nicht erst nach längerer Zeit sondern so
 schnell wie möglich durchzuführen um Sicherheit und Stabilität nicht
 zu gefährden. Ein weiteres Szenario das die Stabilität eines Systems
 gefährden kann ist ein schneller Zuwachs an Last die ein System erfährt,
-können die Kapazitäten automatisiert erweitert werden wird ein Zusammenbruch des Services auf einfache Art verhindert\cite{opt-change}.
+können die Kapazitäten automatisiert erweitert werden wird ein Zusammenbruch des Services auf einfache Art verhindert\cite[S.4-5]{morris-iac}.
 
-\enquote{A fundamental truth of the Cloud Age is: Stablity comes from making changes.}\cite{stab-cloud}
+\enquote{A fundamental truth of the Cloud Age is: Stablity comes from making changes.}\cite[S.5]{morris-iac}
 
 Eine fundamentale Wahrheit des Cloud Zeitalters ist: Stabilität entsteht durch
 Veränderung.
@@ -332,7 +332,7 @@ Veränderung.
 \textbf{2. \enquote{Infrastruktur soll zuerst aufgebaut, danach automatisiert werden.}}
 
 Die Umsetzung von Infrastructure as Code stellt eine durchaus eine große Herausforderung dar, umso mehr wenn die entsprechenden Kompetenzen noch aufgebaut werden müssen. Der Nutzen wird deshalb nicht unbedingt direkt ersichtlich wodurch es zu Situationen kommt in denen es attraktiv erscheint Infrastruktur zuerst aufzubauen und sich erst später um die Automatisierung zu kümmern. Mit diesem
-Ansatz werden viele der Vorteile von IaC jedoch verwirkt. Ein bestehendes, komplexes Infrastruktur-System zu automatisieren ist eine deutlich größere Herausforderung als ein System von Grund auf mit dem Gedanken an Automatisierung aufzubauen\cite{build-auto}.
+Ansatz werden viele der Vorteile von IaC jedoch verwirkt. Ein bestehendes, komplexes Infrastruktur-System zu automatisieren ist eine deutlich größere Herausforderung als ein System von Grund auf mit dem Gedanken an Automatisierung aufzubauen\cite[S.6]{morris-iac}.
 
 \textbf{3. \enquote{Es muss zwischen schneller Umsetzung und hoher Qualität
 gewählt werden.}}
@@ -346,7 +346,7 @@ Ein unausgeglichener Fokus auf eines der beiden Kriterien führt im Lauf der Zeit
 
 	\includegraphics[width=1.0\textwidth]{fig/aa-hauptteil/Speed_vs_Quality.png}
 
-	\caption{Verhältnis von Geschwindigkeit und Qualität\cite{speed-quality}}
+	\caption{Verhältnis von Geschwindigkeit und Qualität\cite[S.8]{morris-iac}}
 
 	\centering
 
@@ -373,13 +373,13 @@ Das Verhalten des Systems ist vorhersehbarer, fortlaufendes automatisches
 Testen ist möglich und damit auch zuverlässiger.
 Definition in Code macht auch den Aufbau eines Systems transparenter,
 da dieser immer dem tatsächlichen Zustand entspricht und
-diesen damit auch dokumentiert\cite{coreprinc-1}.
+diesen damit auch dokumentiert\cite[S.10]{morris-iac}.
 	
 	\item \textbf{Continuously Test and Deliver All Work in Progress}: 
 Fortlaufendes, automatisiertes Testen und Integrieren aller Komponenten
 die sich in Entwicklung befinden dient dem Ziel die Qualität eines
 Systems nicht nur \enquote{einzutesten} sondern von Beginn an und kontinuierlich
-einzubauen\cite{coreprinc-1}.
+einzubauen\cite[S.10]{morris-iac}.
 	
 	\item \textbf{Build Small, Simple Pieces That You Can Change Independently}: Systeme die aus mehreren kleineren voneinander unabhängigen Komponenten
 bestehen sind generell stabiler als große Monolithen. Eine Änderung die
@@ -388,7 +388,7 @@ stattfindet, diese kann dann leichter isoliert und das Problem behoben
 werden. Kleine Komponenten sind in der Regel auch weniger Komplex und
 dadurch leichter zu verstehen. Ein einzelner Fehler nach einem Update
 hat auch den Vorteil dass nur diese Komponente und nicht das gesamte System auf eine ältere Version zurückgesetzt werden muss um
-den Betrieb wieder herzustellen\cite{coreprinc-2}.
+den Betrieb wieder herzustellen\cite[S.11]{morris-iac}.
 
 \end{itemize}
 
@@ -642,7 +642,7 @@ den Einsatz von Infrastructure as Code Tools- und Prinzipien erzielen kann.
 
 	\includegraphics[keepaspectratio, height=4.5cm]{fig/aa-hauptteil/ISO25010.png}
 
-	\caption{Überblick ISO 25010}
+	\caption{Überblick ISO 25010\cite{iso-25010}}
 
 	\centering
 
@@ -1023,7 +1023,7 @@ können.
 
 	\includegraphics[keepaspectratio, height=10cm]{fig/aa-hauptteil/IaC_Showcase_Structure_High-level.png}
 
-	\caption{Infrastructure Showcase High-level Struktur}
+	\caption{Infrastructure Showcase High-level Struktur[Eigene Abbildung]}
 
 	\centering
 
@@ -1045,9 +1045,9 @@ des Systems in Hinsicht auf Dateien aufgeteilt werden soll.
 
 	\begin{figure}[H]
 
-		\includegraphics[keepaspectratio, height=13cm]{fig/aa-hauptteil/gcp-terraform-graph-beautifier.png}
+		\includegraphics[keepaspectratio, height=8.5cm]{fig/aa-hauptteil/gcp_konkreter_aufbau.png}
 
-		\caption{Testsystem in Google Cloud Platform}
+		\caption{Testsystem in Google Cloud Platform[Eigene Abbildung]}
 
 		\centering
 
@@ -1081,7 +1081,7 @@ einfachen Weise implementiert und verwendet werden.
 		
 		\includegraphics[keepaspectratio, height=8cm]{fig/aa-hauptteil/azure_aufbau.png}
 		
-		\caption{Testsystem in Microsoft Azure}
+		\caption{Testsystem in Microsoft Azure[Eigene Abbildung]}
 		
 		\centering
 		

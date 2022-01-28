@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {2.1.2}Vor- und Nachteile des Einsatzes von Cloud Computing}{6}{subsection.2.1.2}%
 \contentsline {subsubsection}{\nonumberline Vorteile und Treiber der Adoption von Cloud Computing}{6}{section*.11}%
 \contentsline {subsubsection}{\nonumberline Herausforderungen und Risiken}{8}{section*.12}%
-\contentsline {subsection}{\numberline {2.1.3}\"Uberblick \"uber die wichtigsten Cloud Service Provider}{8}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.3}\"Uberblick \"uber die wichtigsten Cloud Service Provider}{9}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2}Infrastructure as Code}{10}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Technologischer Wandel und das Cloud Age Mindset}{11}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Vorteile von Infrastructure as Code im Vergleich zu manuellem Infrastruktur-Provisioning}{12}{subsection.2.2.2}%

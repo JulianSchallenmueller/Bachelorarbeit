@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  27 JAN 2022 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  28 JAN 2022 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,7 +1099,7 @@ Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/acronym/acronym.sty
 Package: acronym 2019/11/11 v1.42 Support for acronyms (Tobias Oetiker)
 
@@ -1114,7 +1114,7 @@ Package: suffix 2006/07/15 1.5a Variant command support
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
 \AC@clearlist=\toks34
-)
+))
 (./preamble/pre-newcommands.tex) (./preamble/pre-tablecommands.tex)
 (./preamble/pre-hyphenation.tex)
 Package csquotes Info: Checking for multilingual support...
@@ -1486,7 +1486,7 @@ Package hyperref Info: Reference (cite) `cite.csp-share' on input line 5.
 Package hyperref Info: Reference (link) `figure.caption.13' on input line 5.
 Package hyperref Info: Reference (cite) `cite.gartner-mag' on input line 6.
 Package hyperref Info: Reference (link) `figure.caption.14' on input line 6.
-Package hyperref Info: Reference (cite) `cite.speed-quality' on input line 7.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 7.
 Package hyperref Info: Reference (link) `figure.caption.16' on input line 7.
 Package hyperref Info: Reference (cite) `cite.iac-tools' on input line 8.
 Package hyperref Info: Reference (link) `figure.caption.17' on input line 8.
@@ -1494,6 +1494,7 @@ Package hyperref Info: Reference (cite) `cite.tf-princ' on input line 9.
 Package hyperref Info: Reference (link) `figure.caption.19' on input line 9.
 Package hyperref Info: Reference (cite) `cite.tf-workflow' on input line 10.
 Package hyperref Info: Reference (link) `figure.caption.22' on input line 10.
+Package hyperref Info: Reference (cite) `cite.iso-25010' on input line 12.
 Package hyperref Info: Reference (link) `figure.caption.27' on input line 12.
 Package hyperref Info: Reference (link) `figure.caption.37' on input line 13.
 Package hyperref Info: Reference (link) `figure.caption.38' on input line 14.
@@ -1512,7 +1513,7 @@ Package `hyperref' Info: End of reference (cite) `cite.csp-share', line 5.
 Package `hyperref' Info: End of reference (link) `figure.caption.13', line 5.
 Package `hyperref' Info: End of reference (cite) `cite.gartner-mag', line 6.
 Package `hyperref' Info: End of reference (link) `figure.caption.14', line 6.
-Package `hyperref' Info: End of reference (cite) `cite.speed-quality', line 7.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 7.
 Package `hyperref' Info: End of reference (link) `figure.caption.16', line 7.
 Package `hyperref' Info: End of reference (cite) `cite.iac-tools', line 8.
 Package `hyperref' Info: End of reference (link) `figure.caption.17', line 8.
@@ -1520,6 +1521,7 @@ Package `hyperref' Info: End of reference (cite) `cite.tf-princ', line 9.
 Package `hyperref' Info: End of reference (link) `figure.caption.19', line 9.
 Package `hyperref' Info: End of reference (cite) `cite.tf-workflow', line 10.
 Package `hyperref' Info: End of reference (link) `figure.caption.22', line 10.
+Package `hyperref' Info: End of reference (cite) `cite.iso-25010', line 12.
 Package `hyperref' Info: End of reference (link) `figure.caption.27', line 12.
 Package `hyperref' Info: End of reference (link) `figure.caption.37', line 13.
 Package `hyperref' Info: End of reference (link) `figure.caption.38', line 14.
@@ -1527,7 +1529,9 @@ Package `hyperref' Info: End of reference (link) `figure.caption.39', line 15.
 ]
 Package hyperref Info: Anchor `chapter*.8' on input line 44.
  (./vorlage.lot
-Package hyperref Info: Reference (cite) `cite.dec-imp-iac' on input line 4.
+
+LaTeX Warning: Citation `dec-imp-iac' on page x undefined on input line 4.
+
 Package hyperref Info: Reference (link) `table.caption.15' on input line 4.
 Package hyperref Info: Reference (link) `table.caption.44' on input line 7.
 Package hyperref Info: Reference (link) `table.caption.46' on input line 8.
@@ -1556,7 +1560,6 @@ Package hyperref Info: Anchor `page.x' on input line 45.
 [10
 
 
-Package `hyperref' Info: End of reference (cite) `cite.dec-imp-iac', line 4.
 Package `hyperref' Info: End of reference (link) `table.caption.15', line 4.
 Package `hyperref' Info: End of reference (link) `table.caption.44', line 7.
 Package `hyperref' Info: End of reference (link) `table.caption.46', line 8.
@@ -1703,7 +1706,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--57
  []
 
 Package hyperref Info: Anchor `figure.caption.10' on input line 61.
-<fig/aa-hauptteil/Service-Models.png, id=236, 710.655pt x 392.667pt>
+<fig/aa-hauptteil/Service-Models.png, id=237, 710.655pt x 392.667pt>
 File: fig/aa-hauptteil/Service-Models.png Graphic file (type png)
 <use fig/aa-hauptteil/Service-Models.png>
 Package pdftex.def Info: fig/aa-hauptteil/Service-Models.png  used on input lin
@@ -1749,17 +1752,37 @@ Package hyperref Info: bookmark on input line 118:
 (hyperref)             reference {section*.11}
 (hyperref)             toclevel {3}
 (hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.capex-opex' on input line 126.
-Package hyperref Info: Reference (cite) `cite.total-cost' on input line 129.
+Package hyperref Info: Reference (cite) `cite.lisdorf-cpbasics' on input line 1
+26.
+Package hyperref Info: Reference (cite) `cite.lisdorf-cpbasics' on input line 1
+29.
 Package hyperref Info: Reference (link) `Hfootnote.3' on input line 130.
-Package hyperref Info: Reference (cite) `cite.econ-scale' on input line 134.
+Package hyperref Info: Reference (cite) `cite.lisdorf-cpbasics' on input line 1
+34.
 Package hyperref Info: Anchor `page.6' on input line 135.
 [6
 Package `hyperref' Info: End of reference (link) `Hfootnote.2', line 98.
 ]
-Package hyperref Info: Reference (cite) `cite.scale' on input line 142.
-Package hyperref Info: Reference (cite) `cite.resil' on input line 151.
-Package hyperref Info: Reference (cite) `cite.sec-1' on input line 161.
+Package hyperref Info: Reference (cite) `cite.lisdorf-cpbasics' on input line 1
+42.
+Package hyperref Info: Reference (cite) `cite.lisdorf-cpbasics' on input line 1
+51.
+Package hyperref Info: Reference (cite) `cite.lisdorf-cpbasics' on input line 1
+61.
+Package hyperref Info: Anchor `page.7' on input line 162.
+ [7
+Package `hyperref' Info: End of reference (cite) `cite.lisdorf-cpbasics', line 
+126.
+Package `hyperref' Info: End of reference (cite) `cite.lisdorf-cpbasics', line 
+129.
+Package `hyperref' Info: End of reference (link) `Hfootnote.3', line 130.
+Package `hyperref' Info: End of reference (cite) `cite.lisdorf-cpbasics', line 
+134.
+Package `hyperref' Info: End of reference (cite) `cite.lisdorf-cpbasics', line 
+142.
+Package `hyperref' Info: End of reference (cite) `cite.lisdorf-cpbasics', line 
+151.
+]
 Package hyperref Info: Anchor `section*.12' on input line 163.
 Package hyperref Info: bookmark on input line 163:
 (hyperref)             thecounter {2.1.2.0}
@@ -1768,18 +1791,8 @@ Package hyperref Info: bookmark on input line 163:
 (hyperref)             toclevel {3}
 (hyperref)             type {toc}.
 Package hyperref Info: Reference (cite) `cite.net-dep' on input line 166.
-Package hyperref Info: Anchor `page.7' on input line 168.
- [7
-Package `hyperref' Info: End of reference (cite) `cite.capex-opex', line 126.
-Package `hyperref' Info: End of reference (cite) `cite.total-cost', line 129.
-Package `hyperref' Info: End of reference (link) `Hfootnote.3', line 130.
-Package `hyperref' Info: End of reference (cite) `cite.econ-scale', line 134.
-Package `hyperref' Info: End of reference (cite) `cite.scale', line 142.
-Package `hyperref' Info: End of reference (cite) `cite.resil', line 151.
-Package `hyperref' Info: End of reference (cite) `cite.sec-1', line 161.
-]
 Package hyperref Info: Reference (cite) `cite.lock-in' on input line 174.
-Package hyperref Info: Reference (cite) `cite.sec-2' on input line 177.
+Package hyperref Info: Reference (cite) `cite.net-dep' on input line 177.
 Package hyperref Info: Reference (cite) `cite.migration-cost' on input line 189
 .
 Package hyperref Info: Anchor `subsection.2.1.3' on input line 191.
@@ -1790,8 +1803,18 @@ ame }\@currenttocentry }
 (hyperref)             reference {subsection.2.1.3}
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
+Package hyperref Info: Anchor `page.8' on input line 194.
+ [8
+Package `hyperref' Info: End of reference (cite) `cite.lisdorf-cpbasics', line 
+161.
+Package `hyperref' Info: End of reference (cite) `cite.net-dep', line 166.
+Package `hyperref' Info: End of reference (cite) `cite.lock-in', line 174.
+Package `hyperref' Info: End of reference (cite) `cite.net-dep', line 177.
+Package `hyperref' Info: End of reference (cite) `cite.migration-cost', line 18
+9.
+]
 Package hyperref Info: Anchor `figure.caption.13' on input line 195.
-<fig/aa-hauptteil/CSP-share.png, id=279, 585.68813pt x 286.82156pt>
+<fig/aa-hauptteil/CSP-share.png, id=283, 585.68813pt x 286.82156pt>
 File: fig/aa-hauptteil/CSP-share.png Graphic file (type png)
 <use fig/aa-hauptteil/CSP-share.png>
 Package pdftex.def Info: fig/aa-hauptteil/CSP-share.png  used on input line 197
@@ -1807,16 +1830,8 @@ Umsatz\cite {csp-share}\relax }}
 (hyperref)             type {lof}.
 Package hyperref Info: Reference (cite) `cite.csp-share' on input line 198.
 Package hyperref Info: Reference (cite) `cite.csp-share' on input line 198.
-Package hyperref Info: Anchor `page.8' on input line 202.
- [8
-Package `hyperref' Info: End of reference (cite) `cite.net-dep', line 166.
-Package `hyperref' Info: End of reference (cite) `cite.lock-in', line 174.
-Package `hyperref' Info: End of reference (cite) `cite.sec-2', line 177.
-Package `hyperref' Info: End of reference (cite) `cite.migration-cost', line 18
-9.
-]
 Package hyperref Info: Anchor `figure.caption.14' on input line 206.
-<fig/aa-hauptteil/Gartner.png, id=292, 429.10312pt x 445.665pt>
+<fig/aa-hauptteil/Gartner.png, id=286, 429.10312pt x 445.665pt>
 File: fig/aa-hauptteil/Gartner.png Graphic file (type png)
 <use fig/aa-hauptteil/Gartner.png>
 Package pdftex.def Info: fig/aa-hauptteil/Gartner.png  used on input line 208.
@@ -1847,8 +1862,16 @@ Package hyperref Info: Anchor `page.10' on input line 224.
  [10
 Package `hyperref' Info: End of reference (cite) `cite.gartner-mag', line 210.
  <./fig/aa-hauptteil/Gartner.png>]
-Package hyperref Info: Reference (cite) `cite.def-iac' on input line 226.
-Package hyperref Info: Reference (cite) `cite.dec-imp-iac' on input line 232.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 226.
+
+Overfull \hbox (5.33498pt too wide) in paragraph at lines 225--227
+\T1/lmr/m/n/12 Infrastruktur-Provisionings ba-sie-rend auf Me-tho-den aus der S
+oftwareentwicklung[[], S.4]. 
+ []
+
+
+LaTeX Warning: Citation `dec-imp-iac' on page 11 undefined on input line 232.
+
 Package hyperref Info: Anchor `subsection.2.2.1' on input line 234.
 Package hyperref Info: bookmark on input line 234:
 (hyperref)             thecounter {2.2.1}
@@ -1857,10 +1880,9 @@ ame }\@currenttocentry }
 (hyperref)             reference {subsection.2.2.1}
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.iac-schneller' on input line 243.
-
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 243.
 Package hyperref Info: Anchor `table.caption.15' on input line 248.
-<fig/aa-hauptteil/iron_vs_cloud.png, id=308, 1587.9325pt x 523.9575pt>
+<fig/aa-hauptteil/iron_vs_cloud.png, id=301, 1587.9325pt x 523.9575pt>
 File: fig/aa-hauptteil/iron_vs_cloud.png Graphic file (type png)
 <use fig/aa-hauptteil/iron_vs_cloud.png>
 Package pdftex.def Info: fig/aa-hauptteil/iron_vs_cloud.png  used on input line
@@ -1874,15 +1896,16 @@ e {dec-imp-iac}\relax }}
 (hyperref)             reference {table.caption.15}
 (hyperref)             toclevel {1}
 (hyperref)             type {lot}.
-Package hyperref Info: Reference (cite) `cite.dec-imp-iac' on input line 251.
-Package hyperref Info: Reference (cite) `cite.dec-imp-iac' on input line 251.
+
+LaTeX Warning: Citation `dec-imp-iac' on page 11 undefined on input line 251.
+
+
+LaTeX Warning: Citation `dec-imp-iac' on page 11 undefined on input line 251.
+
 Package hyperref Info: Anchor `page.11' on input line 266.
- [11
-Package `hyperref' Info: End of reference (cite) `cite.def-iac', line 226.
-Package `hyperref' Info: End of reference (cite) `cite.dec-imp-iac', line 232.
-Package `hyperref' Info: End of reference (cite) `cite.iac-schneller', line 243
-.
-Package `hyperref' Info: End of reference (cite) `cite.dec-imp-iac', line 251.
+[11
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 226.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 243.
  <./fig/aa-hauptteil/iron_vs_cloud.png>]
 Package hyperref Info: Anchor `subsection.2.2.2' on input line 267.
 Package hyperref Info: bookmark on input line 267:
@@ -1892,14 +1915,14 @@ ame }\@currenttocentry }
 (hyperref)             reference {subsection.2.2.2}
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.conf-drift' on input line 280.
-Package hyperref Info: Reference (cite) `cite.cattle-pets' on input line 291.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 280.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 291.
 Package hyperref Info: Anchor `page.12' on input line 294.
  [12
-Package `hyperref' Info: End of reference (cite) `cite.conf-drift', line 280.
-Package `hyperref' Info: End of reference (cite) `cite.cattle-pets', line 291.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 280.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 291.
 ]
-Package hyperref Info: Reference (cite) `cite.opt-change' on input line 301.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 301.
 Package hyperref Info: Anchor `subsection.2.2.3' on input line 305.
 Package hyperref Info: bookmark on input line 305:
 (hyperref)             thecounter {2.2.3}
@@ -1910,18 +1933,18 @@ ame }\@currenttocentry }
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.13' on input line 312.
  [13
-Package `hyperref' Info: End of reference (cite) `cite.opt-change', line 301.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 301.
 ]
-Package hyperref Info: Reference (cite) `cite.opt-change' on input line 325.
-Package hyperref Info: Reference (cite) `cite.stab-cloud' on input line 327.
-Package hyperref Info: Reference (cite) `cite.build-auto' on input line 335.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 325.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 327.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 335.
 Package hyperref Info: Anchor `page.14' on input line 338.
  [14
-Package `hyperref' Info: End of reference (cite) `cite.opt-change', line 325.
-Package `hyperref' Info: End of reference (cite) `cite.stab-cloud', line 327.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 325.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 327.
 ]
 Package hyperref Info: Anchor `figure.caption.16' on input line 345.
-<fig/aa-hauptteil/Speed_vs_Quality.png, id=342, 1877.0125pt x 770.88pt>
+<fig/aa-hauptteil/Speed_vs_Quality.png, id=327, 1877.0125pt x 770.88pt>
 File: fig/aa-hauptteil/Speed_vs_Quality.png Graphic file (type png)
 <use fig/aa-hauptteil/Speed_vs_Quality.png>
 Package pdftex.def Info: fig/aa-hauptteil/Speed_vs_Quality.png  used on input l
@@ -1931,14 +1954,12 @@ Package hyperref Info: bookmark on input line 349:
 (hyperref)             thecounter {2.4}
 (hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
 p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Verhältnis von Geschwindigkeit
- und Qualität\cite {speed-quality}\relax }}
+ und Qualität\cite [S.8]{morris-iac}\relax }}
 (hyperref)             reference {figure.caption.16}
 (hyperref)             toclevel {1}
 (hyperref)             type {lof}.
-Package hyperref Info: Reference (cite) `cite.speed-quality' on input line 349.
-
-Package hyperref Info: Reference (cite) `cite.speed-quality' on input line 349.
-
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 349.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 349.
 Package hyperref Info: Anchor `subsection.2.2.4' on input line 364.
 Package hyperref Info: bookmark on input line 364:
 (hyperref)             thecounter {2.2.4}
@@ -1953,15 +1974,14 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Package hyperref Info: Reference (cite) `cite.coreprinc-1' on input line 376.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 376.
 Package hyperref Info: Anchor `page.15' on input line 377.
  [15
-Package `hyperref' Info: End of reference (cite) `cite.build-auto', line 335.
-Package `hyperref' Info: End of reference (cite) `cite.speed-quality', line 349
-.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 335.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 349.
  <./fig/aa-hauptteil/Speed_vs_Quality.png>]
-Package hyperref Info: Reference (cite) `cite.coreprinc-1' on input line 382.
-Package hyperref Info: Reference (cite) `cite.coreprinc-2' on input line 391.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 382.
+Package hyperref Info: Reference (cite) `cite.morris-iac' on input line 391.
 Package hyperref Info: Anchor `section.2.3' on input line 395.
 Package hyperref Info: bookmark on input line 395:
 (hyperref)             thecounter {2.3}
@@ -1972,9 +1992,9 @@ Package hyperref Info: bookmark on input line 395:
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `page.16' on input line 399.
  [16
-Package `hyperref' Info: End of reference (cite) `cite.coreprinc-1', line 376.
-Package `hyperref' Info: End of reference (cite) `cite.coreprinc-1', line 382.
-Package `hyperref' Info: End of reference (cite) `cite.coreprinc-2', line 391.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 376.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 382.
+Package `hyperref' Info: End of reference (cite) `cite.morris-iac', line 391.
 ]
 Package hyperref Info: Anchor `subsection.2.3.1' on input line 399.
 Package hyperref Info: bookmark on input line 399:
@@ -1985,7 +2005,7 @@ ame }\@currenttocentry }
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `figure.caption.17' on input line 414.
-<fig/aa-hauptteil/IaC_Tools.png, id=361, 2007.5pt x 1133.23375pt>
+<fig/aa-hauptteil/IaC_Tools.png, id=343, 2007.5pt x 1133.23375pt>
 File: fig/aa-hauptteil/IaC_Tools.png Graphic file (type png)
 <use fig/aa-hauptteil/IaC_Tools.png>
 Package pdftex.def Info: fig/aa-hauptteil/IaC_Tools.png  used on input line 416
@@ -2021,7 +2041,7 @@ ame }\@currenttocentry }
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `figure.caption.19' on input line 461.
-<fig/aa-hauptteil/Terraform.png, id=368, 1782.66pt x 2309.62875pt>
+<fig/aa-hauptteil/Terraform.png, id=350, 1782.66pt x 2309.62875pt>
 File: fig/aa-hauptteil/Terraform.png Graphic file (type png)
 <use fig/aa-hauptteil/Terraform.png>
 Package pdftex.def Info: fig/aa-hauptteil/Terraform.png  used on input line 463
@@ -2061,7 +2081,7 @@ Package hyperref Info: bookmark on input line 481:
 (hyperref)             toclevel {3}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `figure.caption.22' on input line 485.
-<fig/aa-hauptteil/init-plan-apply-destroy.png, id=384, 770.88pt x 282.05376pt>
+<fig/aa-hauptteil/init-plan-apply-destroy.png, id=366, 770.88pt x 282.05376pt>
 File: fig/aa-hauptteil/init-plan-apply-destroy.png Graphic file (type png)
 <use fig/aa-hauptteil/init-plan-apply-destroy.png>
 Package pdftex.def Info: fig/aa-hauptteil/init-plan-apply-destroy.png  used on 
@@ -2274,7 +2294,7 @@ ame }\@currenttocentry }
 (hyperref)             type {toc}.
 Package hyperref Info: Reference (cite) `cite.iso-25010' on input line 626.
 Package hyperref Info: Anchor `figure.caption.27' on input line 641.
-<fig/aa-hauptteil/ISO25010.png, id=464, 732.8178pt x 207.174pt>
+<fig/aa-hauptteil/ISO25010.png, id=446, 732.8178pt x 207.174pt>
 File: fig/aa-hauptteil/ISO25010.png Graphic file (type png)
 <use fig/aa-hauptteil/ISO25010.png>
 Package pdftex.def Info: fig/aa-hauptteil/ISO25010.png  used on input line 643.
@@ -2283,10 +2303,13 @@ Package pdftex.def Info: fig/aa-hauptteil/ISO25010.png  used on input line 643.
 Package hyperref Info: bookmark on input line 645:
 (hyperref)             thecounter {3.1}
 (hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Überblick ISO 25010\relax }}
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Überblick ISO 25010\cite {iso-
+25010}\relax }}
 (hyperref)             reference {figure.caption.27}
 (hyperref)             toclevel {1}
 (hyperref)             type {lof}.
+Package hyperref Info: Reference (cite) `cite.iso-25010' on input line 645.
+Package hyperref Info: Reference (cite) `cite.iso-25010' on input line 645.
 Package hyperref Info: Anchor `section*.28' on input line 656.
 Package hyperref Info: bookmark on input line 656:
 (hyperref)             thecounter {3.1.4.0}
@@ -2297,6 +2320,7 @@ Package hyperref Info: bookmark on input line 656:
 Package hyperref Info: Anchor `page.26' on input line 666.
  [26
 Package `hyperref' Info: End of reference (cite) `cite.iso-25010', line 626.
+Package `hyperref' Info: End of reference (cite) `cite.iso-25010', line 645.
  <./fig/aa-hauptteil/ISO25010.png>]
 Package hyperref Info: Anchor `section*.29' on input line 696.
 Package hyperref Info: bookmark on input line 696:
@@ -2401,7 +2425,7 @@ ame }\@currenttocentry }
 Package hyperref Info: Anchor `page.32' on input line 1010.
 [32]
 Package hyperref Info: Anchor `figure.caption.37' on input line 1022.
-<fig/aa-hauptteil/IaC_Showcase_Structure_High-level.png, id=507, 615.7404pt x 3
+<fig/aa-hauptteil/IaC_Showcase_Structure_High-level.png, id=490, 615.7404pt x 3
 89.7762pt>
 File: fig/aa-hauptteil/IaC_Showcase_Structure_High-level.png Graphic file (type
  png)
@@ -2413,7 +2437,7 @@ Package hyperref Info: bookmark on input line 1026:
 (hyperref)             thecounter {3.2}
 (hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
 p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Infrastructure Showcase High-l
-evel Struktur\relax }}
+evel Struktur[Eigene Abbildung]\relax }}
 (hyperref)             reference {figure.caption.37}
 (hyperref)             toclevel {1}
 (hyperref)             type {lof}.
@@ -2430,31 +2454,25 @@ ame }\@currenttocentry }
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `figure.caption.38' on input line 1046.
-<fig/aa-hauptteil/gcp-terraform-graph-beautifier.png, id=517, 1434.35875pt x 84
-9.1725pt>
-File: fig/aa-hauptteil/gcp-terraform-graph-beautifier.png Graphic file (type pn
-g)
-<use fig/aa-hauptteil/gcp-terraform-graph-beautifier.png>
-Package pdftex.def Info: fig/aa-hauptteil/gcp-terraform-graph-beautifier.png  u
-sed on input line 1048.
-(pdftex.def)             Requested size: 624.77272pt x 369.88582pt.
-
-Overfull \hbox (3.77454pt too wide) in paragraph at lines 1048--1049
-[][] 
- []
-
+<fig/aa-hauptteil/gcp_konkreter_aufbau.png, id=500, 2302.6025pt x 915.42pt>
+File: fig/aa-hauptteil/gcp_konkreter_aufbau.png Graphic file (type png)
+<use fig/aa-hauptteil/gcp_konkreter_aufbau.png>
+Package pdftex.def Info: fig/aa-hauptteil/gcp_konkreter_aufbau.png  used on inp
+ut line 1048.
+(pdftex.def)             Requested size: 608.32462pt x 241.84842pt.
 Package hyperref Info: bookmark on input line 1050:
 (hyperref)             thecounter {3.3}
 (hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
 p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Testsystem in Google Cloud Pla
-tform\relax }}
+tform[Eigene Abbildung]\relax }}
 (hyperref)             reference {figure.caption.38}
 (hyperref)             toclevel {1}
 (hyperref)             type {lof}.
 Package hyperref Info: Anchor `page.35' on input line 1056.
+
 [35
 
- <./fig/aa-hauptteil/gcp-terraform-graph-beautifier.png>]
+ <./fig/aa-hauptteil/gcp_konkreter_aufbau.png>]
 Package hyperref Info: Anchor `page.36' on input line 1076.
  [36
 
@@ -2468,7 +2486,7 @@ ame }\@currenttocentry }
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `figure.caption.39' on input line 1080.
-<fig/aa-hauptteil/azure_aufbau.png, id=527, 3123.67pt x 1176.395pt>
+<fig/aa-hauptteil/azure_aufbau.png, id=510, 3123.67pt x 1176.395pt>
 File: fig/aa-hauptteil/azure_aufbau.png Graphic file (type png)
 <use fig/aa-hauptteil/azure_aufbau.png>
 Package pdftex.def Info: fig/aa-hauptteil/azure_aufbau.png  used on input line 
@@ -2477,8 +2495,8 @@ Package pdftex.def Info: fig/aa-hauptteil/azure_aufbau.png  used on input line
 Package hyperref Info: bookmark on input line 1084:
 (hyperref)             thecounter {3.4}
 (hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Testsystem in Microsoft Azure\
-relax }}
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Testsystem in Microsoft Azure[
+Eigene Abbildung]\relax }}
 (hyperref)             reference {figure.caption.39}
 (hyperref)             toclevel {1}
 (hyperref)             type {lof}.
@@ -2745,36 +2763,74 @@ Package hyperref Info: Anchor `page.50' on input line 56.
 
 ] (./chapters/ch-zz-bibEinfach.tex
 chapter without number
-Package hyperref Info: Anchor `chapter*.53' on input line 1.
-Package hyperref Info: bookmark on input line 1:
+Package hyperref Info: Anchor `chapter*.53' on input line 10.
+Package hyperref Info: bookmark on input line 10:
 (hyperref)             thecounter {A}
 (hyperref)             text {\protect \nonumberline \@currenttocentry }
 (hyperref)             reference {chapter*.53}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `cite.verbr-cloud' on input line 3.
-Package hyperref Info: Anchor `cite.def-cloud' on input line 5.
-Package hyperref Info: Anchor `cite.svc-mod' on input line 7.
+Package hyperref Info: Anchor `cite.verbr-cloud' on input line 12.
+Package hyperref Info: Anchor `cite.def-cloud' on input line 14.
+Package hyperref Info: Anchor `cite.svc-mod' on input line 16.
+Package hyperref Info: Anchor `cite.lisdorf-cpbasics' on input line 18.
+Package hyperref Info: Anchor `cite.net-dep' on input line 20.
 
-Underfull \hbox (badness 1028) in paragraph at lines 7--8
-[]\T1/lmr/m/n/12 Chou, Da-vid. Cloud Ser-vice Mo-dels (IaaS, PaaS, SaaS) Dia-gr
-am (2018).
+Underfull \hbox (badness 5133) in paragraph at lines 20--21
+[]\T1/lmr/m/n/12 Nandgaonkar, Su-ru-chee V.; Raut, A. B. A com-pre-hen-si-ve st
+u-dy on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-\T1/lmr/m/n/12 [On-li-ne] Ver-füg-bar un-ter: [][]$\T1/lmtt/m/n/12 https : / / 
-dachou . github . io / 2018 / 09 / 28 /
+Underfull \hbox (badness 1881) in paragraph at lines 20--21
+\T1/lmr/m/n/12 cloud com-pu-ting. In-ter-na-tio-nal Jour-nal of Com-pu-ter Scie
+nce and Mo-bi-
  []
 
-Package hyperref Info: Anchor `cite.capex-opex' on input line 9.
-Package hyperref Info: Anchor `cite.total-cost' on input line 11.
-Package hyperref Info: Anchor `cite.econ-scale' on input line 13.
-Package hyperref Info: Anchor `cite.scale' on input line 15.
-Package hyperref Info: Anchor `cite.resil' on input line 17.
-Package hyperref Info: Anchor `cite.sec-1' on input line 19.
-Package hyperref Info: Anchor `cite.net-dep' on input line 21.
-Package hyperref Info: Anchor `page.51' on input line 22.
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+[][]$\T1/lmtt/m/n/12 h t t p s : / / d1 w q t x t s1 x z l e7 . c l o u d f r o
+ n t . n e t /33540634 / V3 I 4201499 a 71 -[] w i t h
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\T1/lmtt/m/n/12 -[] c o v e r -[] p a g e -[] v2 . p d f ? E x p i r e s = 1643
+306860 & S i g n a t u r e = P5 Q 4 J 9 n y W U I 0 Z 1 E m ~
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\T1/lmtt/m/n/12 h D e v -[] I 09 E i y I i B L j ~ O r D N u9 A A T a4 f G O v 
+H s a ~ p h L E3 I N x m6268 e p o f a J u q x T e D o 67 z
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\T1/lmtt/m/n/12 6 o f l 66 t l z V5 -[] p H U i 11 V e7 T n B J X t g d W Z r R
+ M P5 P J79 Q T84 Y A j L P K K n J n n -[] r A Z t U I b h H
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\T1/lmtt/m/n/12 a M e w 3 c x2 u S J ~ K W j 40 -[] l L f Q T W n S 684 W r B B
+ d I X p w v j c F P M 6 p P e G g h m P N p9 t d29 p 6 k g N
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\T1/lmtt/m/n/12 z t L c W7 u ~ ~ 0 w L -[] C o H Y w p k x 7 m s ~ 3 W W I Q L 
+U0 R 7 K D N Y y j x o t F B 2 E V e o g R u q Q A F E V 5 l 516 R
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\T1/lmtt/m/n/12 p I b9 f v i H l Y m r t 3 i w0 t K7 x q s O X L A g R U039 L 8
+ K n d y v K X 5 W Z g r l 9 r j g C v 6 o 1 c a f E r x g _ _
+ []
+
+Package hyperref Info: Anchor `cite.lock-in' on input line 22.
+Package hyperref Info: Anchor `page.51' on input line 23.
 [51
 
 
@@ -2782,111 +2838,62 @@ Package hyperref Info: Anchor `page.51' on input line 22.
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
+Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 ]
-Package hyperref Info: Anchor `cite.sec-2' on input line 23.
-Package hyperref Info: Anchor `cite.lock-in' on input line 25.
-Package hyperref Info: Anchor `cite.migration-cost' on input line 27.
-Package hyperref Info: Anchor `cite.csp-share' on input line 29.
+Package hyperref Info: Anchor `cite.migration-cost' on input line 24.
+Package hyperref Info: Anchor `cite.csp-share' on input line 26.
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 2452) in paragraph at lines 26--27
 []\T1/lmr/m/n/12 Kein Au-tor. En-ter-pri-se spen-ding on cloud in-fra-struc-tur
-e ser-vices
+e ser-vices grows
  []
 
 
-Underfull \hbox (badness 6445) in paragraph at lines 29--30
-\T1/lmr/m/n/12 grows to USD 42 bil-li-on in Q2, 2021: SRG (2021) [On-li-ne] Ver
--
+Underfull \hbox (badness 1762) in paragraph at lines 26--27
+\T1/lmr/m/n/12 to USD 42 bil-li-on in Q2, 2021: SRG (2021) [On-li-ne] Ver-füg-b
+ar un-ter:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-\T1/lmr/m/n/12 füg-bar un-ter: [][]$\T1/lmtt/m/n/12 https : / / www . cioandlea
-der . com / article / 2021 / 07 / 30 /
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+[][]$\T1/lmtt/m/n/12 h t t p s : / / w w w . c i o a n d l e a d e r . c o m / 
+a r t i c l e /2021 / 07 / 30 / e n t e r p r i s e -[] s p e n d
  []
 
 
-Overfull \hbox (75.99248pt too wide) in paragraph at lines 29--30
-\T1/lmtt/m/n/12 enterprise-[]spending-[]cloud-[]infrastructure-[]services-[]gro
-ws-[]usd-[]42-[]billion-[]q2-[]2021$[][][]
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+\T1/lmtt/m/n/12 i n g -[] c l o u d -[] i n f r a s t r u c t u r e -[] s e r v
+ i c e s -[] g r o w s -[] u s d -[] 42 -[] b i l l i o n -[] q2 -[] 2021$[][][
+]
  []
 
-Package hyperref Info: Anchor `cite.gartner-mag' on input line 31.
-Package hyperref Info: Anchor `cite.def-iac' on input line 33.
-Package hyperref Info: Anchor `cite.dec-imp-iac' on input line 35.
+Package hyperref Info: Anchor `cite.gartner-mag' on input line 28.
+Package hyperref Info: Anchor `cite.morris-iac' on input line 30.
+Package hyperref Info: Anchor `cite.iac-tools' on input line 32.
+Package hyperref Info: Anchor `cite.tf-princ' on input line 34.
+Package hyperref Info: Anchor `cite.tf-state' on input line 36.
+Package hyperref Info: Anchor `cite.tf-workflow' on input line 38.
+Package hyperref Info: Anchor `cite.hcl' on input line 40.
 
-Underfull \hbox (badness 1117) in paragraph at lines 35--36
-[]\T1/lmr/m/n/12 Jacobs, Mi-ke; Kaim, Ed. What is In-fra-struc-ture as Co-de? (
-2021) [On-li-
+Underfull \hbox (badness 1484) in paragraph at lines 40--41
+\T1/lmr/m/n/12 un-ter: [][]$\T1/lmtt/m/n/12 h t t p s : / / w w w . l i n o d e
+ . c o m / d o c s / g u i d e s / i n t r o d u c t i o n -[] t o -[] h c l /$
+[][][] \T1/lmr/m/n/12 (Zu-
  []
 
-Package hyperref Info: Anchor `cite.iac-schneller' on input line 37.
-Package hyperref Info: Anchor `cite.conf-drift' on input line 39.
-Package hyperref Info: Anchor `cite.cattle-pets' on input line 41.
-Package hyperref Info: Anchor `cite.opt-change' on input line 43.
-Package hyperref Info: Anchor `page.52' on input line 45.
+Package hyperref Info: Anchor `cite.iso-25010' on input line 42.
+Package hyperref Info: Anchor `page.52' on input line 48.
 [52
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
-]
-Package hyperref Info: Anchor `cite.stab-cloud' on input line 45.
-Package hyperref Info: Anchor `cite.build-auto' on input line 47.
-Package hyperref Info: Anchor `cite.speed-quality' on input line 49.
-Package hyperref Info: Anchor `cite.coreprinc-1' on input line 51.
-Package hyperref Info: Anchor `cite.coreprinc-2' on input line 53.
-Package hyperref Info: Anchor `cite.iac-tools' on input line 55.
-
-Underfull \hbox (badness 1721) in paragraph at lines 55--56
-[]\T1/lmr/m/n/12 Nayak, Ramnath. When to use which Infrastructure-as-code tool 
-(2019)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
-\T1/lmr/m/n/12 [On-li-ne] Ver-füg-bar un-ter: [][]$\T1/lmtt/m/n/12 https : / / 
-medium . com / cloudnativeinfra /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
-\T1/lmtt/m/n/12 when-[]to-[]use-[]which-[]infrastructure-[]as-[]code-[]tool-[]6
-65af289fbde$[][][] \T1/lmr/m/n/12 (Zu-
- []
-
-Package hyperref Info: Anchor `cite.tf-princ' on input line 57.
-Package hyperref Info: Anchor `cite.hcl' on input line 59.
-
-Underfull \hbox (badness 1484) in paragraph at lines 59--60
-\T1/lmr/m/n/12 un-ter: [][]$\T1/lmtt/m/n/12 https : / / www . linode . com / do
-cs / guides / introduction-[]to-[]hcl/$[][][] \T1/lmr/m/n/12 (Zu-
- []
-
-Package hyperref Info: Anchor `cite.tf-provider' on input line 61.
-Package hyperref Info: Anchor `cite.tf-state' on input line 63.
-
-Underfull \hbox (badness 1867) in paragraph at lines 63--64
-[]\T1/lmr/m/n/12 Terraform State Do-cu-men-ta-ti-on. [On-li-ne] Ver-füg-bar un-
-ter: [][]$\T1/lmtt/m/n/12 https : / / www .
- []
-
-Package hyperref Info: Anchor `cite.tf-workflow' on input line 65.
-
-Underfull \hbox (badness 7540) in paragraph at lines 65--66
-[]\T1/lmr/m/n/12 Kumar, Ra-jesh. Ter-ra-form Ba-sics Work-flow loop ex-plai-ned
-!!! (2019).
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
-\T1/lmr/m/n/12 [On-li-ne] Ver-füg-bar un-ter: [][]$\T1/lmtt/m/n/12 https : / / 
-www . devopsschool . com / blog /
- []
-
-Package hyperref Info: Anchor `cite.iso-25010' on input line 67.
-)
+Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
+Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
+Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
+Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
+])
 
 Package caption Warning: Unused \captionsetup[subfloat] on input line 376.
 See the caption package documentation for explanation.
@@ -2894,12 +2901,6 @@ See the caption package documentation for explanation.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
 Package hyperref Info: Anchor `page.53' on input line 65.
 [53
-Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
-Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
-Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
-Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
-Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
-Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 Package `hyperref' Info: End of reference (link) `Hfootnote.4', line 473.
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
@@ -2911,12 +2912,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
 Package rerunfilecheck Info: File `vorlage.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 19089 strings out of 483057
- 308352 string characters out of 5962301
- 875409 words of memory out of 5000000
- 33358 multiletter control sequences out of 15000+600000
+ 19055 strings out of 483057
+ 307869 string characters out of 5962301
+ 875410 words of memory out of 5000000
+ 33341 multiletter control sequences out of 15000+600000
  612999 words of font info for 90 fonts, out of 8000000 for 9000
  60 hyphenation exceptions out of 8191
  53i,18n,72p,10102b,1967s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2943,10 +2948,10 @@ onts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb>
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt12.pfb>
-Output written on vorlage.pdf (64 pages, 1883678 bytes).
+Output written on vorlage.pdf (64 pages, 1986763 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
- 733 compressed objects within 8 object streams
- 235 named destinations out of 1000 (max. 500000)
+ 838 PDF objects out of 1000 (max. 8388607)
+ 716 compressed objects within 8 object streams
+ 218 named destinations out of 1000 (max. 500000)
  375 words of extra memory for PDF output out of 10000 (max. 10000000)
 
