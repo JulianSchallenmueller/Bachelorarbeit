@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  29 JAN 2022 20:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.29)  29 JAN 2022 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2143,70 +2143,70 @@ Package hyperref Info: Anchor `lstnumber.2.1.1' on input line 513.
 Package hyperref Info: Anchor `lstnumber.2.1.2' on input line 514.
 Package hyperref Info: Anchor `lstnumber.2.1.3' on input line 515.
 Package hyperref Info: Anchor `lstnumber.2.1.4' on input line 516.
-Package hyperref Info: Anchor `lstnumber.2.1.5' on input line 518.
+Package hyperref Info: Anchor `lstnumber.2.1.5' on input line 517.
 Package hyperref Info: Anchor `lstnumber.2.1.6' on input line 518.
-Package hyperref Info: Anchor `lstnumber.2.1.7' on input line 520.
-Package hyperref Info: Anchor `lstnumber.2.1.8' on input line 520.
-Package hyperref Info: Anchor `lstnumber.2.1.9' on input line 521.
-Package hyperref Info: Anchor `page.21' on input line 522.
+Package hyperref Info: Anchor `lstnumber.2.1.7' on input line 519.
+Package hyperref Info: Anchor `page.21' on input line 520.
 [21
 Package `hyperref' Info: End of reference (cite) `cite.hcl', line 501.
 ]
-Package hyperref Info: Anchor `section*.24' on input line 535.
-Package hyperref Info: bookmark on input line 535:
+Package hyperref Info: Anchor `section*.24' on input line 533.
+Package hyperref Info: bookmark on input line 533:
 (hyperref)             thecounter {2.3.3.0}
 (hyperref)             text {\protect \nonumberline \@currenttocentry }
 (hyperref)             reference {section*.24}
 (hyperref)             toclevel {3}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `lstlisting.2.2' on input line 543.
-Package hyperref Info: bookmark on input line 543:
+Package hyperref Info: Anchor `lstlisting.2.2' on input line 541.
+Package hyperref Info: bookmark on input line 541:
 (hyperref)             thecounter {2.2}
 (hyperref)             text {\protect \numberline {\thelstlisting }\lst@@captio
 n }
 (hyperref)             reference {lstlisting.2.2}
 (hyperref)             toclevel {0}
 (hyperref)             type {lol}.
-Package hyperref Info: Anchor `lstnumber.2.2.1' on input line 544.
-Package hyperref Info: Anchor `lstnumber.2.2.2' on input line 545.
-Package hyperref Info: Anchor `lstnumber.2.2.3' on input line 546.
-Package hyperref Info: Anchor `lstnumber.2.2.4' on input line 547.
-Package hyperref Info: Anchor `lstlisting.2.3' on input line 554.
-Package hyperref Info: bookmark on input line 554:
+Package hyperref Info: Anchor `lstnumber.2.2.1' on input line 542.
+Package hyperref Info: Anchor `lstnumber.2.2.2' on input line 543.
+Package hyperref Info: Anchor `lstnumber.2.2.3' on input line 544.
+Package hyperref Info: Anchor `lstnumber.2.2.4' on input line 545.
+Package hyperref Info: Anchor `lstlisting.2.3' on input line 552.
+Package hyperref Info: bookmark on input line 552:
 (hyperref)             thecounter {2.3}
 (hyperref)             text {\protect \numberline {\thelstlisting }\lst@@captio
 n }
 (hyperref)             reference {lstlisting.2.3}
 (hyperref)             toclevel {0}
 (hyperref)             type {lol}.
-Package hyperref Info: Anchor `lstnumber.2.3.1' on input line 555.
-Package hyperref Info: Anchor `lstnumber.2.3.2' on input line 556.
-Package hyperref Info: Anchor `lstnumber.2.3.3' on input line 557.
-Package hyperref Info: Anchor `page.22' on input line 563.
- [22]
-Package hyperref Info: Anchor `section*.25' on input line 563.
-Package hyperref Info: bookmark on input line 563:
+Package hyperref Info: Anchor `lstnumber.2.3.1' on input line 553.
+Package hyperref Info: Anchor `lstnumber.2.3.2' on input line 554.
+Package hyperref Info: Anchor `lstnumber.2.3.3' on input line 555.
+Package hyperref Info: Anchor `section*.25' on input line 561.
+Package hyperref Info: bookmark on input line 561:
 (hyperref)             thecounter {2.3.3.0}
 (hyperref)             text {\protect \nonumberline \@currenttocentry }
 (hyperref)             reference {section*.25}
 (hyperref)             toclevel {3}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `lstlisting.2.4' on input line 567.
-Package hyperref Info: bookmark on input line 567:
+Package hyperref Info: Anchor `page.22' on input line 564.
+ [22]
+Package hyperref Info: Anchor `lstlisting.2.4' on input line 565.
+Package hyperref Info: bookmark on input line 565:
 (hyperref)             thecounter {2.4}
 (hyperref)             text {\protect \numberline {\thelstlisting }\lst@@captio
 n }
 (hyperref)             reference {lstlisting.2.4}
 (hyperref)             toclevel {0}
 (hyperref)             type {lol}.
-Package hyperref Info: Anchor `lstnumber.2.4.1' on input line 568.
-Package hyperref Info: Anchor `lstnumber.2.4.2' on input line 569.
-Package hyperref Info: Anchor `lstnumber.2.4.3' on input line 571.
-Package hyperref Info: Anchor `lstnumber.2.4.4' on input line 571.
-Package hyperref Info: Anchor `lstnumber.2.4.5' on input line 572.
-Package hyperref Info: Anchor `lstnumber.2.4.6' on input line 573.
-Package hyperref Info: Anchor `lstnumber.2.4.7' on input line 574.
-Package hyperref Info: Anchor `lstnumber.2.4.8' on input line 575.
+Package hyperref Info: Anchor `lstnumber.2.4.1' on input line 566.
+Package hyperref Info: Anchor `lstnumber.2.4.2' on input line 567.
+Package hyperref Info: Anchor `lstnumber.2.4.3' on input line 569.
+Package hyperref Info: Anchor `lstnumber.2.4.4' on input line 569.
+Package hyperref Info: Anchor `lstnumber.2.4.5' on input line 570.
+Package hyperref Info: Anchor `lstnumber.2.4.6' on input line 571.
+Package hyperref Info: Anchor `lstnumber.2.4.7' on input line 572.
+Package hyperref Info: Anchor `lstnumber.2.4.8' on input line 573.
+Package hyperref Info: Anchor `page.23' on input line 576.
+ [23]
 Package hyperref Info: Anchor `section*.26' on input line 578.
 Package hyperref Info: bookmark on input line 578:
 (hyperref)             thecounter {2.3.3.0}
@@ -2233,8 +2233,6 @@ Package hyperref Info: Anchor `lstnumber.2.5.8' on input line 591.
 Package hyperref Info: Anchor `lstnumber.2.5.9' on input line 591.
 Package hyperref Info: Anchor `lstnumber.2.5.10' on input line 592.
 Package hyperref Info: Anchor `lstnumber.2.5.11' on input line 593.
-Package hyperref Info: Anchor `page.23' on input line 594.
- [23]
 Package hyperref Info: Anchor `lstnumber.2.5.12' on input line 594.
 Package hyperref Info: Anchor `lstnumber.2.5.13' on input line 595.
 Package hyperref Info: Anchor `lstnumber.2.5.14' on input line 596.
@@ -2297,7 +2295,7 @@ ame }\@currenttocentry }
 (hyperref)             type {toc}.
 Package hyperref Info: Reference (cite) `cite.iso-25010' on input line 621.
 Package hyperref Info: Anchor `figure.caption.27' on input line 636.
-<fig/aa-hauptteil/ISO25010.png, id=460, 732.8178pt x 207.174pt>
+<fig/aa-hauptteil/ISO25010.png, id=458, 732.8178pt x 207.174pt>
 File: fig/aa-hauptteil/ISO25010.png Graphic file (type png)
 <use fig/aa-hauptteil/ISO25010.png>
 Package pdftex.def Info: fig/aa-hauptteil/ISO25010.png  used on input line 638.
@@ -2414,7 +2412,7 @@ ame }\@currenttocentry }
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `figure.caption.37' on input line 983.
-<fig/aa-hauptteil/tf-graph.png, id=497, 1846.9pt x 414.54875pt>
+<fig/aa-hauptteil/tf-graph.png, id=495, 1846.9pt x 414.54875pt>
 File: fig/aa-hauptteil/tf-graph.png Graphic file (type png)
 <use fig/aa-hauptteil/tf-graph.png>
 Package pdftex.def Info: fig/aa-hauptteil/tf-graph.png  used on input line 985.
@@ -2431,7 +2429,7 @@ Abbildung]\relax }}
 Package hyperref Info: Anchor `page.32' on input line 993.
  [32]
 Package hyperref Info: Anchor `figure.caption.38' on input line 996.
-<fig/aa-hauptteil/tf-graph-beautified.png, id=504, 1393.205pt x 635.37375pt>
+<fig/aa-hauptteil/tf-graph-beautified.png, id=502, 1393.205pt x 635.37375pt>
 File: fig/aa-hauptteil/tf-graph-beautified.png Graphic file (type png)
 <use fig/aa-hauptteil/tf-graph-beautified.png>
 Package pdftex.def Info: fig/aa-hauptteil/tf-graph-beautified.png  used on inpu
@@ -2457,7 +2455,7 @@ Package hyperref Info: Anchor `page.33' on input line 1023.
  [33 <./fig/aa-hauptteil/tf-graph.png> <./fig/aa-hauptteil/tf-graph-beautified.
 png>]
 Package hyperref Info: Anchor `figure.caption.39' on input line 1035.
-<fig/aa-hauptteil/IaC_Showcase_Structure_High-level.png, id=511, 615.7404pt x 3
+<fig/aa-hauptteil/IaC_Showcase_Structure_High-level.png, id=509, 615.7404pt x 3
 89.7762pt>
 File: fig/aa-hauptteil/IaC_Showcase_Structure_High-level.png Graphic file (type
  png)
@@ -2486,7 +2484,7 @@ ame }\@currenttocentry }
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `figure.caption.40' on input line 1058.
-<fig/aa-hauptteil/azure_aufbau.png, id=521, 3123.67pt x 1176.395pt>
+<fig/aa-hauptteil/azure_aufbau.png, id=519, 3123.67pt x 1176.395pt>
 File: fig/aa-hauptteil/azure_aufbau.png Graphic file (type png)
 <use fig/aa-hauptteil/azure_aufbau.png>
 Package pdftex.def Info: fig/aa-hauptteil/azure_aufbau.png  used on input line 
@@ -2519,7 +2517,7 @@ ame }\@currenttocentry }
 (hyperref)             toclevel {2}
 (hyperref)             type {toc}.
 Package hyperref Info: Anchor `figure.caption.41' on input line 1085.
-<fig/aa-hauptteil/gcp_konkreter_aufbau.png, id=533, 2302.6025pt x 915.42pt>
+<fig/aa-hauptteil/gcp_konkreter_aufbau.png, id=531, 2302.6025pt x 915.42pt>
 File: fig/aa-hauptteil/gcp_konkreter_aufbau.png Graphic file (type png)
 <use fig/aa-hauptteil/gcp_konkreter_aufbau.png>
 Package pdftex.def Info: fig/aa-hauptteil/gcp_konkreter_aufbau.png  used on inp
@@ -3028,8 +3026,8 @@ Package rerunfilecheck Info: File `vorlage.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19156 strings out of 483057
- 309682 string characters out of 5962301
+ 19154 strings out of 483057
+ 309652 string characters out of 5962301
  880410 words of memory out of 5000000
  33378 multiletter control sequences out of 15000+600000
  613304 words of font info for 91 fonts, out of 8000000 for 9000
@@ -3061,10 +3059,10 @@ onts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb>
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt12.pfb>
-Output written on vorlage.pdf (66 pages, 2194398 bytes).
+Output written on vorlage.pdf (66 pages, 2194406 bytes).
 PDF statistics:
- 934 PDF objects out of 1000 (max. 8388607)
- 804 compressed objects within 9 object streams
- 276 named destinations out of 1000 (max. 500000)
+ 932 PDF objects out of 1000 (max. 8388607)
+ 802 compressed objects within 9 object streams
+ 274 named destinations out of 1000 (max. 500000)
  393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
